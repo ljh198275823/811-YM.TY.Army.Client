@@ -15,7 +15,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.CommonUI
 {
-    public partial class FrmDivisionDetail : FrmDetailBase<string,Division>
+    public partial class FrmDivisionDetail : FrmDetailBase<Guid, Division>
     {
         public FrmDivisionDetail()
         {
@@ -28,7 +28,7 @@ namespace HH.ZK.CommonUI
         protected override void InitControls()
         {
             base.InitControls();
-            txtDivision.Init(AppSettings.Current.PhysicalProject.ID);
+            txtDivision.Init(null);
             if (ParentDivision != null) txtDivision.SelectedDivisionID = ParentDivision.ID;
         }
 
@@ -57,8 +57,8 @@ namespace HH.ZK.CommonUI
         protected override void ItemShowing(Division item)
         {
             txtName.Text = item.Name;
-            txtDivision.SelectedDivisionID = item.Parent;
-            txtMemo.Text = item.Memo;
+            txtDivision.SelectedDivisionID = item.ParentID;
+            txtMemo.Text = item.Number;
         }
 
         protected override Division GetItemFromInput()
@@ -66,23 +66,23 @@ namespace HH.ZK.CommonUI
             Division ct = UpdatingItem as Division;
             if (IsAdding)
             {
-                ct = new Division();
+                ct = new Division() { ID = Guid.NewGuid() };
             }
             ct.Name = txtName.Text;
-            ct.Parent = txtDivision.SelectedDivisionID;
-            ct.Memo = txtMemo.Text;
+            ct.ParentID = txtDivision.SelectedDivisionID;
+            ct.Number = txtMemo.Text;
             return ct;
         }
 
         protected override CommandResult<Division> AddItem(Division addingItem)
         {
-            var ret = (new APIClient(AppSettings.Current.ConnStr)).Add<string, Division>(addingItem, AppSettings.Current.PhysicalProject.ID);
+            var ret = (new APIClient(AppSettings.Current.ConnStr)).Add<Guid, Division>(addingItem, null);
             return ret;
         }
 
         protected override CommandResult<Division> UpdateItem(Division updatingItem)
         {
-            return (new APIClient(AppSettings.Current.ConnStr)).Add<string, Division>(updatingItem, AppSettings.Current.PhysicalProject.ID);
+            return (new APIClient(AppSettings.Current.ConnStr)).Add<Guid, Division>(updatingItem, null);
         }
 
         protected override void ClearInput()

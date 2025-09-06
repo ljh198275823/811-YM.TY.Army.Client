@@ -63,7 +63,7 @@ namespace HH.ZK.WebAPIClient
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public virtual QueryResult<TEntity> GetByID<TID, TEntity>(TID id, string projectID) where TEntity : class, IEntity<TID>
+        public virtual QueryResult<TEntity> GetByID<TID, TEntity>(TID id, string projectID = null) where TEntity : class, IEntity<TID>
         {
             try
             {
@@ -97,7 +97,7 @@ namespace HH.ZK.WebAPIClient
         /// </summary>
         /// <param name="condition"></param>
         /// <returns></returns>
-        public virtual QueryResultList<TEntity> GetList<TID, TEntity>(SearchCondition con, string projectID) where TEntity : class, IEntity<TID>
+        public virtual QueryResultList<TEntity> GetList<TID, TEntity>(SearchCondition con, string projectID = null) where TEntity : class, IEntity<TID>
         {
             try
             {
@@ -133,7 +133,7 @@ namespace HH.ZK.WebAPIClient
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        public virtual CommandResult<TEntity> Add<TID, TEntity>(TEntity info, string projectID) where TEntity : class, IEntity<TID>
+        public virtual CommandResult<TEntity> Add<TID, TEntity>(TEntity info, string projectID = null) where TEntity : class, IEntity<TID>
         {
             try
             {
@@ -172,7 +172,7 @@ namespace HH.ZK.WebAPIClient
         /// <param name="id"></param>
         /// <param name="items"></param>
         /// <returns></returns>
-        public virtual CommandResult<TEntity> Patch<TID, TEntity>(TID id, List<UpdateItem<TID>> items, string projectID) where TEntity : class, IEntity<TID>
+        public virtual CommandResult<TEntity> Patch<TID, TEntity>(TID id, List<UpdateItem<TID>> items, string projectID = null) where TEntity : class, IEntity<TID>
         {
             try
             {
@@ -208,7 +208,7 @@ namespace HH.ZK.WebAPIClient
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        public virtual CommandResult Delete<TID, TEntity>(TEntity info, string projectID) where TEntity : class, IEntity<TID>
+        public virtual CommandResult Delete<TID, TEntity>(TEntity info, string projectID = null) where TEntity : class, IEntity<TID>
         {
             return Delete<TID, TEntity>(info.ID, projectID);
         }
@@ -217,7 +217,7 @@ namespace HH.ZK.WebAPIClient
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        public virtual CommandResult Delete<TID, TEntity>(TID id, string projectID) where TEntity : class, IEntity<TID>
+        public virtual CommandResult Delete<TID, TEntity>(TID id, string projectID = null) where TEntity : class, IEntity<TID>
         {
             try
             {
@@ -251,7 +251,7 @@ namespace HH.ZK.WebAPIClient
         /// <summary>
         /// 批量增加数据
         /// </summary>
-        public virtual CommandResult<BatchOptResult<TID, TEntity>> BatchAdd<TID, TEntity>(List<TEntity> items, ImportOption option, string projectID) where TEntity : class, IEntity<TID>
+        public virtual CommandResult<BatchOptResult<TID, TEntity>> BatchAdd<TID, TEntity>(List<TEntity> items, ImportOption option, string projectID = null) where TEntity : class, IEntity<TID>
         {
             try
             {
@@ -286,7 +286,7 @@ namespace HH.ZK.WebAPIClient
         /// <summary>
         /// 批量更新数据
         /// </summary>
-        public virtual CommandResult<BatchOptResult<TID, TEntity>> BatchPatch<TID, TEntity>(List<UpdateItem<TID>> items, string projectID) where TEntity : class, IEntity<TID>
+        public virtual CommandResult<BatchOptResult<TID, TEntity>> BatchPatch<TID, TEntity>(List<UpdateItem<TID>> items, string projectID = null) where TEntity : class, IEntity<TID>
         {
             try
             {
@@ -321,14 +321,14 @@ namespace HH.ZK.WebAPIClient
         /// <summary>
         /// 批量删除数据
         /// </summary>
-        public virtual CommandResult BatchDelete<TID, TEntity>(List<TEntity> items, string projectID) where TEntity : class, IEntity<TID>
+        public virtual CommandResult BatchDelete<TID, TEntity>(List<TEntity> items, string projectID = null) where TEntity : class, IEntity<TID>
         {
             return BatchDelete<TID, TEntity>(items.Select(it => it.ID).ToList(), projectID);
         }
         /// <summary>
         /// 批量删除数据
         /// </summary>
-        public virtual CommandResult BatchDelete<TID, TEntity>(List<TID> items, string projectID) where TEntity : class, IEntity<TID>
+        public virtual CommandResult BatchDelete<TID, TEntity>(List<TID> items, string projectID = null) where TEntity : class, IEntity<TID>
         {
             try
             {

@@ -179,8 +179,6 @@ namespace HH.ZK.UI
             {
                 if (this.facilityTree.SelectedNode.Tag is Division)
                 {
-                    var fs = facilityTree.GetFacilitytofNode(this.facilityTree.SelectedNode);
-                    if (fs == null || fs.Count == 0) this._Search = null;
                 }
             }
             _Search = new StudentSearchCondition() { PageSize = pageSize, PageIndex = pageIndex, SortMode = SortMode.Asc };
@@ -214,11 +212,7 @@ namespace HH.ZK.UI
             }
             if (this.facilityTree.SelectedNode != null && this.facilityTree.SelectedNode.Tag != null)
             {
-                if (this.facilityTree.SelectedNode.Tag is Facility)
-                {
-                    _Search.FacilityID = (this.facilityTree.SelectedNode.Tag as Facility).ID;
-                }
-                else if (this.facilityTree.SelectedNode.Tag is Division)
+                if (this.facilityTree.SelectedNode.Tag is Division)
                 {
                     _Search.DivisionID = (this.facilityTree.SelectedNode.Tag as Division).ID;
                 }
@@ -234,8 +228,8 @@ namespace HH.ZK.UI
         protected override void Init()
         {
             base.Init();
-            this.facilityTree.Init(AppSettings.Current.PhysicalProject.ID);
-            txt考试状态.Init(AppSettings.Current.PhysicalProject.StateSettings, true);
+            this.facilityTree.Init(null);
+            //txt考试状态.Init(AppSettings.Current.PhysicalProject.StateSettings, true);
             this.ucPaging1.Init();
             this.ucPaging1.GetPageData += UcPaging1_GetPageData;
             var temp = GetConfig(_PageSizeConfig, "PageSize");
@@ -384,7 +378,7 @@ namespace HH.ZK.UI
                 Division pc = node.Tag as Division;
                 if (pc != null)
                 {
-                    var ret = (new APIClient(AppSettings.Current.ConnStr)).Delete<string, Division>(pc, AppSettings.Current.PhysicalProject.ID);
+                    var ret = (new APIClient(AppSettings.Current.ConnStr)).Delete<Guid, Division>(pc, AppSettings.Current.PhysicalProject.ID);
                     if (ret.Result == ResultCode.Successful)
                     {
                         this.facilityTree.RemoveNode(node);
@@ -421,17 +415,6 @@ namespace HH.ZK.UI
 
         private void mnu_AddFacility_Click(object sender, EventArgs e)
         {
-            Division pc = facilityTree.SelectedNode.Tag as Division;
-            FrmFacilityDetail frm = new FrmFacilityDetail();
-            frm.IsAdding = true;
-            frm.Division = pc;
-            frm.ItemAdded += delegate (object obj, ItemAddedEventArgs args)
-            {
-                Facility item = args.AddedItem as Facility;
-                facilityTree.AddFacilityNode(item, facilityTree.SelectedNode);
-                facilityTree.SelectedNode.Expand();
-            };
-            frm.ShowDialog();
         }
 
         private void mnu_DelFacility_Click(object sender, EventArgs e)
@@ -446,19 +429,6 @@ namespace HH.ZK.UI
 
         private void mnu_FacilityProperty_Click(object sender, EventArgs e)
         {
-            Facility pc = facilityTree.SelectedNode.Tag as Facility;
-            if (pc != null)
-            {
-                FrmFacilityDetail frm = new FrmFacilityDetail();
-                frm.IsAdding = false;
-                frm.UpdatingItem = pc;
-                frm.ItemUpdated += delegate (object obj, ItemUpdatedEventArgs args)
-                {
-                    this.facilityTree.Init(AppSettings.Current.PhysicalProject.ID);
-                    facilityTree.SelectFacilityNode(pc.ID);
-                };
-                frm.ShowDialog();
-            }
         }
         #endregion
 

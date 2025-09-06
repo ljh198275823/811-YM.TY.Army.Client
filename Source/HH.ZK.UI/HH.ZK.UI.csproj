@@ -608,34 +608,6 @@
     <Compile Include="Printer\StudentWithDXCJExporter.cs" />
     <Compile Include="VideoLocalDBProvider.cs" />
     <Compile Include="VideoServerClient.cs" />
-    <Compile Include="宁波中考\Frm宁波中考数据接口.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="宁波中考\Frm宁波中考数据接口.designer.cs">
-      <DependentUpon>Frm宁波中考数据接口.cs</DependentUpon>
-    </Compile>
-    <Compile Include="宁波中考\宁波中考接口Client.cs" />
-    <Compile Include="中山中考\Frm中山中考数据接口.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="中山中考\Frm中山中考数据接口.designer.cs">
-      <DependentUpon>Frm中山中考数据接口.cs</DependentUpon>
-    </Compile>
-    <Compile Include="中山中考\中山中考接口Client.cs" />
-    <Compile Include="小奔体育\Frm小奔体育数据接口.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="小奔体育\Frm小奔体育数据接口.designer.cs">
-      <DependentUpon>Frm小奔体育数据接口.cs</DependentUpon>
-    </Compile>
-    <Compile Include="小奔体育\小奔体育接口Client.cs" />
-    <Compile Include="瑞致和\FrmRZH数据接口.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="瑞致和\FrmRZH数据接口.designer.cs">
-      <DependentUpon>FrmRZH数据接口.cs</DependentUpon>
-    </Compile>
-    <Compile Include="瑞致和\RZH接口Client.cs" />
     <EmbeddedResource Include="Controls\UCCertificateTemplate.resx">
       <DependentUpon>UCCertificateTemplate.cs</DependentUpon>
     </EmbeddedResource>
@@ -895,18 +867,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="宁波中考\Frm宁波中考数据接口.resx">
-      <DependentUpon>Frm宁波中考数据接口.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="中山中考\Frm中山中考数据接口.resx">
-      <DependentUpon>Frm中山中考数据接口.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="小奔体育\Frm小奔体育数据接口.resx">
-      <DependentUpon>Frm小奔体育数据接口.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="瑞致和\FrmRZH数据接口.resx">
-      <DependentUpon>FrmRZH数据接口.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

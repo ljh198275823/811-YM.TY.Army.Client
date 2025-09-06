@@ -29,10 +29,10 @@ namespace HH.ZK.CommonUI.Controls
         {
             var des = new List<Division>();
             var con = new DivisionSearchCondition() { SortMode = LJH.GeneralLibrary.SortMode.Asc };
-            List<Division> ds = new APIClient(AppSettings.Current.ConnStr).GetList<string, Division>(con, projectID).QueryObjects;
+            List<Division> ds = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Division>(con, projectID).QueryObjects;
             if (ds != null && ds.Count > 0)
             {
-                AddItems(null, ds, des);
+                AddItems((Guid?)null, ds, des);
                 des.Insert(0, new Division());
             }
             else
@@ -46,13 +46,13 @@ namespace HH.ZK.CommonUI.Controls
             this.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void AddItems(string parentid, List<Division> source, List<Division> des)
+        private void AddItems(Guid? parentid, List<Division> source, List<Division> des)
         {
-            var items = source.Where(it => (string.IsNullOrEmpty(parentid) && string.IsNullOrEmpty (it.Parent)) || it.Parent == parentid).OrderBy(it => it.Name).ToList();
+            var items = source.Where(it => it.ParentID == parentid).OrderBy(it => it.Name).ToList();
             if (items == null || items.Count == 0) return;
             foreach (var item in items)
             {
-                if (!string.IsNullOrEmpty(item.Parent)) item.Name = "    " + item.Name;
+                if (item.ParentID.HasValue) item.Name = "    " + item.Name;
                 des.Add(item);
                 AddItems(item.ID, source, des);
             }
@@ -91,7 +91,7 @@ namespace HH.ZK.CommonUI.Controls
         [Browsable(false)]
         [Localizable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string SelectedDivisionID
+        public Guid? SelectedDivisionID
         {
             get
             {

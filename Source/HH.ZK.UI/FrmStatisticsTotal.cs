@@ -103,7 +103,7 @@ namespace HH.ZK.UI
                 if (!string.IsNullOrEmpty(item.Key.ClassName)) con.ClassName = item.Key.ClassName;
                 if (!string.IsNullOrEmpty(item.Key.Sex)) con.Sex = item.Key.Sex == "男" ? Sex.Male : Sex.Female;
                 if (!string.IsNullOrEmpty(item.Key.FacilityID)) con.FacilityID = item.Key.FacilityID;
-                if (!string.IsNullOrEmpty(item.Key.DivisionID)) con.DivisionID = item.Key.DivisionID;
+                if (!string.IsNullOrEmpty(item.Key.DivisionID)) con.DivisionID =Guid.Parse ( item.Key.DivisionID);
 
                 if (column.Name == "col总人数") con.TestStates = null;
                 else if (column.Name == "col未测试人数") con.TestStates = new List<TestCompleteState>() { TestCompleteState.未测试 };

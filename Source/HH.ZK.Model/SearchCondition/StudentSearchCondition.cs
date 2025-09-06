@@ -7,7 +7,7 @@ namespace HH.ZK.Model.SearchCondition
 {
     public class StudentSearchCondition : LJH.GeneralLibrary.SearchCondition
     {
-        public string DivisionID { get; set; }
+        public Guid? DivisionID { get; set; }
 
         public string FacilityID { get; set; }
 

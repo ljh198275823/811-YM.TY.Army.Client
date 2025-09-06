@@ -28,10 +28,10 @@ namespace HH.ZK.CommonUI.Controls
         #region 私有变量
         #endregion
 
-        public void Init(string projectID, string divisionID = null)
+        public void Init(string projectID, Guid? divisionID = null)
         {
             var con = new FacilitySearchCondition() { SortMode = LJH.GeneralLibrary.SortMode.Asc };
-            if (!string.IsNullOrEmpty(divisionID)) con.DivisionID = divisionID;
+            if (divisionID.HasValue ) con.DivisionID = divisionID;
             var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, Facility>(con, projectID).QueryObjects;
             if (ss != null && ss.Count >0)
             {

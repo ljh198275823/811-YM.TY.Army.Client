@@ -32,7 +32,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置区域ID
         /// </summary>
-        public string DivisionID { get; set; }
+        public Guid? DivisionID { get; set; }
         /// <summary>
         /// 获取或设置区域名称
         /// </summary>

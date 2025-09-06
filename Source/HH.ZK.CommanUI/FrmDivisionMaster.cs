@@ -14,7 +14,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.CommonUI
 {
-    public partial class FrmDivisionMaster : FrmMasterBase<string, Division>
+    public partial class FrmDivisionMaster : FrmMasterBase<Guid, Division>
     {
         public FrmDivisionMaster()
         {
@@ -31,21 +31,21 @@ namespace HH.ZK.CommonUI
             cMnu_Edit.Enabled = AppSettings.Current.Operator.PermitAll(Permission.Division, PermissionActions.Edit);
         }
 
-        protected override FrmDetailBase<string, Division> GetDetailForm()
+        protected override FrmDetailBase<Guid, Division> GetDetailForm()
         {
             return new FrmDivisionDetail();
         }
 
         protected override QueryResultList<Division> GetDataSource()
         {
-            return (new APIClient(AppSettings.Current.ConnStr)).GetList<string, Division>(SearchCondition, AppSettings.Current.PhysicalProject.ID);
+            return (new APIClient(AppSettings.Current.ConnStr)).GetList<Guid, Division>(SearchCondition);
         }
 
         protected override List<Division> FilterData(List<Division> items)
         {
             items = FullTextSearch(items, txtKey.Text);
             return (from it in items
-                    orderby it.Parent ascending, it.Name ascending
+                    orderby it.FullPath ascending, it.Number ascending, it.Name ascending
                     select it).ToList();
         }
 
@@ -54,7 +54,7 @@ namespace HH.ZK.CommonUI
             if (colName == "colName") return item.Name;
             if (colName == "colParent")
             {
-                var p = _Items.SingleOrDefault(it => it.ID == item.Parent);
+                var p = _Items.SingleOrDefault(it => it.ID == item.ParentID);
                 return p?.Name;
             }
             return base.GetCellValue(item, colName);
@@ -62,7 +62,7 @@ namespace HH.ZK.CommonUI
 
         protected override CommandResult DeletingItem(Division item)
         {
-            return (new APIClient(AppSettings.Current.ConnStr)).Delete<string, Division>(item, AppSettings.Current.PhysicalProject.ID);
+            return (new APIClient(AppSettings.Current.ConnStr)).Delete<Guid, Division>(item);
         }
         #endregion
 
