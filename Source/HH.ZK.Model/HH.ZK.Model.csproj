@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83611D2C-F630-4038-AB23-D5E03D022ABB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HH.ZK.Model</RootNamespace>
+    <AssemblyName>HH.ZK.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\汇海WebAPI\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>..\Debug\HH.Model.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\HH.Model.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jurassic">
+      <HintPath>..\Reference\Jurassic.dll</HintPath>
+    </Reference>
+    <Reference Include="LJH.GeneralLibrary, Version=2.0.2014.424, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\LJH.GeneralLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountRegisterInfo.cs" />
+    <Compile Include="Alarm.cs" />
+    <Compile Include="AppraiseTemplate.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="CheckOptions.cs" />
+    <Compile Include="CRM\HHModules.cs" />
+    <Compile Include="CRM\UserPermission.cs" />
+    <Compile Include="CRM\UserPermissionSearchCondition.cs" />
+    <Compile Include="Discussion.cs" />
+    <Compile Include="MiniWXSettings.cs" />
+    <Compile Include="NVRClientSettings.cs" />
+    <Compile Include="ScoreRank.cs" />
+    <Compile Include="SearchCondition\DiscussionSearchCondition.cs" />
+    <Compile Include="SearchCondition\OperatorParaSearchCondition.cs" />
+    <Compile Include="SearchCondition\OperatorSearchCondition.cs" />
+    <Compile Include="SearchCondition\StudentWithTotalSearchCondition.cs" />
+    <Compile Include="SearchCondition\StudentWithDXCJSearchCondition.cs" />
+    <Compile Include="LogInInfo.cs" />
+    <Compile Include="CRM\Roles.cs" />
+    <Compile Include="CRM\UserInSchool.cs" />
+    <Compile Include="CRM\UserSearchCondition.cs" />
+    <Compile Include="StudentCheckPara.cs" />
+    <Compile Include="StudentGroupWithCheckState.cs" />
+    <Compile Include="StudentGroupSummary.cs" />
+    <Compile Include="StudentGroupWithTestState.cs" />
+    <Compile Include="StudentFP.cs" />
+    <Compile Include="StudentPhysicalPair.cs" />
+    <Compile Include="SearchCondition\DivisionSearchCondition.cs" />
+    <Compile Include="SearchCondition\FacilitySearchCondition.cs" />
+    <Compile Include="School.cs" />
+    <Compile Include="Division.cs" />
+    <Compile Include="Facility.cs" />
+    <Compile Include="GlobalSettings.cs" />
+    <Compile Include="GradeHelper.cs" />
+    <Compile Include="NationHelper.cs" />
+    <Compile Include="PhysicalItem.cs" />
+    <Compile Include="PhysicalProject.cs" />
+    <Compile Include="PhysicalProjectStatistic.cs" />
+    <Compile Include="ScoreStatistic.cs" />
+    <Compile Include="SearchCondition\StatisticSearchCondition.cs" />
+    <Compile Include="SearchCondition\StudentClassSearchCondition.cs" />
+    <Compile Include="StatiticKey.cs" />
+    <Compile Include="StudentScoreFull.cs" />
+    <Compile Include="StudentScoreLog.cs" />
+    <Compile Include="StudentStateSettings.cs" />
+    <Compile Include="StudentWithDXCJ.cs" />
+    <Compile Include="StudentScore.cs" />
+    <Compile Include="SearchCondition\AlarmSearchCondition.cs" />
+    <Compile Include="SearchCondition\PhysicalProjectSearchCondition.cs" />
+    <Compile Include="SearchCondition\StudentScoreSearchCondition.cs" />
+    <Compile Include="SearchCondition\StandardSearchCondition.cs" />
+    <Compile Include="SearchCondition\StudentCheckRecordSearchCondition.cs" />
+    <Compile Include="SearchCondition\StudentGroupSearchCondition.cs" />
+    <Compile Include="SearchCondition\StudentSearchCondition.cs" />
+    <Compile Include="CRM\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CRM\PermissionActions.cs" />
+    <Compile Include="CRM\Permissions.cs" />
+    <Compile Include="Sex.cs" />
+    <Compile Include="SpecialScoreSetting.cs" />
+    <Compile Include="SpecialScoreType.cs" />
+    <Compile Include="SportSuggestion.cs" />
+    <Compile Include="Standard.cs" />
+    <Compile Include="StandardItem.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentCheckRecord.cs" />
+    <Compile Include="StudentClass.cs" />
+    <Compile Include="StudentGroup.cs" />
+    <Compile Include="StudentGroupPair.cs" />
+    <Compile Include="StudentPhoto.cs" />
+    <Compile Include="StudentRawScore.cs" />
+    <Compile Include="StudentWithTotal.cs" />
+    <Compile Include="SysParameter.cs" />
+    <Compile Include="ThirdPlateFormSettings.cs" />
+    <Compile Include="ThirdPlateForm.cs" />
+    <Compile Include="TotalCalType.cs" />
+    <Compile Include="TotalStatistic.cs" />
+    <Compile Include="PhysicalProjectOptions.cs" />
+    <Compile Include="StudentState.cs" />
+    <Compile Include="ScoreSource.cs" />
+    <Compile Include="PhysicalItemSettings.cs" />
+    <Compile Include="TestCompleteState.cs" />
+    <Compile Include="VideoItem.cs" />
+    <Compile Include="VideoPlaybackInfo.cs" />
+    <Compile Include="VideoPlayControlType.cs" />
+    <Compile Include="身高体重对应表.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

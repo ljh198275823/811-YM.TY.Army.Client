@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.ZK.Model", "HH.ZK.Model\HH.ZK.Model.csproj", "{83611D2C-F630-4038-AB23-D5E03D022ABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.ZK.WebAPIClient", "HH.ZK.WebAPIClient\HH.ZK.WebAPIClient.csproj", "{566EF97D-F8AA-4163-A756-E282519D19F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.ZK.SQLite", "HH.ZK.SQLite\HH.ZK.SQLite.csproj", "{EFF73310-1EF6-4A5B-B344-07D6124D51DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.ZK.CommonUI", "HH.ZK.CommanUI\HH.ZK.CommonUI.csproj", "{FC31B8E1-71A9-4918-85C5-F2B4B0054BC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.ZK.UI", "HH.ZK.UI\HH.ZK.UI.csproj", "{6D36BB1F-F659-46B5-90CC-BF15E16181EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.ZK.ZKApp", "HH.ZK.ZhongkaoApp\HH.ZK.ZKApp.csproj", "{E7CE578C-3891-4079-A18F-E233FBCD3BEB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZK_Setup", "HH.ZK.Setup\ZK_Setup.vdproj", "{CF6FD968-8C94-4517-BB4E-C5988E364582}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83611D2C-F630-4038-AB23-D5E03D022ABB}.Debug|x86.ActiveCfg = Debug|x86
+		{83611D2C-F630-4038-AB23-D5E03D022ABB}.Debug|x86.Build.0 = Debug|x86
+		{83611D2C-F630-4038-AB23-D5E03D022ABB}.Release|x86.ActiveCfg = Release|x86
+		{83611D2C-F630-4038-AB23-D5E03D022ABB}.Release|x86.Build.0 = Release|x86
+		{566EF97D-F8AA-4163-A756-E282519D19F5}.Debug|x86.ActiveCfg = Debug|x86
+		{566EF97D-F8AA-4163-A756-E282519D19F5}.Debug|x86.Build.0 = Debug|x86
+		{566EF97D-F8AA-4163-A756-E282519D19F5}.Release|x86.ActiveCfg = Release|x86
+		{566EF97D-F8AA-4163-A756-E282519D19F5}.Release|x86.Build.0 = Release|x86
+		{EFF73310-1EF6-4A5B-B344-07D6124D51DA}.Debug|x86.ActiveCfg = Debug|x86
+		{EFF73310-1EF6-4A5B-B344-07D6124D51DA}.Debug|x86.Build.0 = Debug|x86
+		{EFF73310-1EF6-4A5B-B344-07D6124D51DA}.Release|x86.ActiveCfg = Release|x86
+		{EFF73310-1EF6-4A5B-B344-07D6124D51DA}.Release|x86.Build.0 = Release|x86
+		{FC31B8E1-71A9-4918-85C5-F2B4B0054BC5}.Debug|x86.ActiveCfg = Debug|x86
+		{FC31B8E1-71A9-4918-85C5-F2B4B0054BC5}.Debug|x86.Build.0 = Debug|x86
+		{FC31B8E1-71A9-4918-85C5-F2B4B0054BC5}.Release|x86.ActiveCfg = Release|x86
+		{FC31B8E1-71A9-4918-85C5-F2B4B0054BC5}.Release|x86.Build.0 = Release|x86
+		{6D36BB1F-F659-46B5-90CC-BF15E16181EE}.Debug|x86.ActiveCfg = Debug|x86
+		{6D36BB1F-F659-46B5-90CC-BF15E16181EE}.Debug|x86.Build.0 = Debug|x86
+		{6D36BB1F-F659-46B5-90CC-BF15E16181EE}.Release|x86.ActiveCfg = Release|x86
+		{6D36BB1F-F659-46B5-90CC-BF15E16181EE}.Release|x86.Build.0 = Release|x86
+		{E7CE578C-3891-4079-A18F-E233FBCD3BEB}.Debug|x86.ActiveCfg = Debug|x86
+		{E7CE578C-3891-4079-A18F-E233FBCD3BEB}.Debug|x86.Build.0 = Debug|x86
+		{E7CE578C-3891-4079-A18F-E233FBCD3BEB}.Release|x86.ActiveCfg = Release|x86
+		{E7CE578C-3891-4079-A18F-E233FBCD3BEB}.Release|x86.Build.0 = Release|x86
+		{CF6FD968-8C94-4517-BB4E-C5988E364582}.Debug|x86.ActiveCfg = Debug
+		{CF6FD968-8C94-4517-BB4E-C5988E364582}.Release|x86.ActiveCfg = Release
+		{CF6FD968-8C94-4517-BB4E-C5988E364582}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF8A45F6-6121-43F2-B4DA-82A3AB6D8663}
+	EndGlobalSection
+EndGlobal

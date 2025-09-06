@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chk显示已分组学生.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chk显示已分组学生.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chk显示已分组学生.Location" type="System.Drawing.Point, System.Drawing">
+    <value>635, 46</value>
+  </data>
+  <data name="chk显示已分组学生.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 16</value>
+  </data>
+  <data name="chk显示已分组学生.TabIndex" type="System.Int32, mscorlib">
+    <value>175</value>
+  </data>
+  <data name="chk显示已分组学生.Text" xml:space="preserve">
+    <value>显示已分组学生</value>
+  </data>
+  <data name="&gt;&gt;chk显示已分组学生.Name" xml:space="preserve">
+    <value>chk显示已分组学生</value>
+  </data>
+  <data name="&gt;&gt;chk显示已分组学生.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk显示已分组学生.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chk显示已分组学生.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>576, 47</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>174</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>分组情况</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="chk缓考.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk缓考.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk缓考.Location" type="System.Drawing.Point, System.Drawing">
+    <value>767, 80</value>
+  </data>
+  <data name="chk缓考.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="chk缓考.TabIndex" type="System.Int32, mscorlib">
+    <value>173</value>
+  </data>
+  <data name="chk缓考.Text" xml:space="preserve">
+    <value>缓考</value>
+  </data>
+  <data name="&gt;&gt;chk缓考.Name" xml:space="preserve">
+    <value>chk缓考</value>
+  </data>
+  <data name="&gt;&gt;chk缓考.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk缓考.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chk缓考.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chk择考.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk择考.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk择考.Location" type="System.Drawing.Point, System.Drawing">
+    <value>713, 80</value>
+  </data>
+  <data name="chk择考.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="chk择考.TabIndex" type="System.Int32, mscorlib">
+    <value>172</value>
+  </data>
+  <data name="chk择考.Text" xml:space="preserve">
+    <value>择考</value>
+  </data>
+  <data name="&gt;&gt;chk择考.Name" xml:space="preserve">
+    <value>chk择考</value>
+  </data>
+  <data name="&gt;&gt;chk择考.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk择考.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chk择考.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chk正常考试.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk正常考试.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk正常考试.Location" type="System.Drawing.Point, System.Drawing">
+    <value>635, 80</value>
+  </data>
+  <data name="chk正常考试.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="chk正常考试.TabIndex" type="System.Int32, mscorlib">
+    <value>171</value>
+  </data>
+  <data name="chk正常考试.Text" xml:space="preserve">
+    <value>正常考试</value>
+  </data>
+  <data name="&gt;&gt;chk正常考试.Name" xml:space="preserve">
+    <value>chk正常考试</value>
+  </data>
+  <data name="&gt;&gt;chk正常考试.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk正常考试.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chk正常考试.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>576, 82</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>考试状态</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lnk考试科目.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnk考试科目.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lnk考试科目.Location" type="System.Drawing.Point, System.Drawing">
+    <value>576, 14</value>
+  </data>
+  <data name="lnk考试科目.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="lnk考试科目.TabIndex" type="System.Int32, mscorlib">
+    <value>169</value>
+  </data>
+  <data name="lnk考试科目.Text" xml:space="preserve">
+    <value>考试科目</value>
+  </data>
+  <data name="&gt;&gt;lnk考试科目.Name" xml:space="preserve">
+    <value>lnk考试科目</value>
+  </data>
+  <data name="&gt;&gt;lnk考试科目.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnk考试科目.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lnk考试科目.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="txt考试科目.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="txt考试科目.Location" type="System.Drawing.Point, System.Drawing">
+    <value>635, 10</value>
+  </data>
+  <data name="txt考试科目.MaxLength" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="txt考试科目.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 21</value>
+  </data>
+  <data name="txt考试科目.TabIndex" type="System.Int32, mscorlib">
+    <value>168</value>
+  </data>
+  <data name="&gt;&gt;txt考试科目.Name" xml:space="preserve">
+    <value>txt考试科目</value>
+  </data>
+  <data name="&gt;&gt;txt考试科目.Type" xml:space="preserve">
+    <value>LJH.GeneralLibrary.WinformControl.DBCTextBox, LJH.GeneralLibrary, Version=2.0.2021.128, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txt考试科目.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txt考试科目.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="btnQuery.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnQuery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>906, 10</value>
+  </data>
+  <data name="btnQuery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 84</value>
+  </data>
+  <data name="btnQuery.TabIndex" type="System.Int32, mscorlib">
+    <value>133</value>
+  </data>
+  <data name="btnQuery.Text" xml:space="preserve">
+    <value>查询(&amp;Q)</value>
+  </data>
+  <data name="&gt;&gt;btnQuery.Name" xml:space="preserve">
+    <value>btnQuery</value>
+  </data>
+  <data name="&gt;&gt;btnQuery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnQuery.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnQuery.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="dataGridview1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <metadata name="colHeader.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colHeader.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="colHeader.Width" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <metadata name="colFacility.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colFacility.HeaderText" xml:space="preserve">
+    <value>学校</value>
+  </data>
+  <data name="colFacility.MinimumWidth" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <metadata name="colID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colID.HeaderText" xml:space="preserve">
+    <value>准考证号</value>
+  </data>
+  <data name="colID.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <metadata name="colName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colName.HeaderText" xml:space="preserve">
+    <value>姓名</value>
+  </data>
+  <data name="colName.MinimumWidth" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="colName.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <metadata name="colSex.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colSex.HeaderText" xml:space="preserve">
+    <value>性别</value>
+  </data>
+  <data name="colSex.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <metadata name="colClassName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colClassName.HeaderText" xml:space="preserve">
+    <value>班级</value>
+  </data>
+  <metadata name="col考试科目.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="col考试科目.HeaderText" xml:space="preserve">
+    <value>考试科目</value>
+  </data>
+  <data name="dataGridview1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 110</value>
+  </data>
+  <data name="dataGridview1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>900, 532</value>
+  </data>
+  <data name="dataGridview1.TabIndex" type="System.Int32, mscorlib">
+    <value>135</value>
+  </data>
+  <data name="&gt;&gt;dataGridview1.Name" xml:space="preserve">
+    <value>dataGridview1</value>
+  </data>
+  <data name="&gt;&gt;dataGridview1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridview1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridview1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1140, 17</value>
+  </data>
+  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
+    <value>总共 0 项</value>
+  </data>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 645</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1155, 22</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>137</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="gpStudent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="chk分考试科目.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk分考试科目.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk分考试科目.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 30</value>
+  </data>
+  <data name="chk分考试科目.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 16</value>
+  </data>
+  <data name="chk分考试科目.TabIndex" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="chk分考试科目.Text" xml:space="preserve">
+    <value>分考试科目</value>
+  </data>
+  <data name="&gt;&gt;chk分考试科目.Name" xml:space="preserve">
+    <value>chk分考试科目</value>
+  </data>
+  <data name="&gt;&gt;chk分考试科目.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk分考试科目.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;chk分考试科目.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chk分班级.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk分班级.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk分班级.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 56</value>
+  </data>
+  <data name="chk分班级.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 16</value>
+  </data>
+  <data name="chk分班级.TabIndex" type="System.Int32, mscorlib">
+    <value>149</value>
+  </data>
+  <data name="chk分班级.Text" xml:space="preserve">
+    <value>分班级</value>
+  </data>
+  <data name="&gt;&gt;chk分班级.Name" xml:space="preserve">
+    <value>chk分班级</value>
+  </data>
+  <data name="&gt;&gt;chk分班级.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk分班级.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;chk分班级.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chk最后两组平均.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk最后两组平均.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 9pt, style=Bold</value>
+  </data>
+  <data name="chk最后两组平均.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk最后两组平均.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 154</value>
+  </data>
+  <data name="chk最后两组平均.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 16</value>
+  </data>
+  <data name="chk最后两组平均.TabIndex" type="System.Int32, mscorlib">
+    <value>148</value>
+  </data>
+  <data name="chk最后两组平均.Text" xml:space="preserve">
+    <value>最后两组学生人数进行平均</value>
+  </data>
+  <data name="&gt;&gt;chk最后两组平均.Name" xml:space="preserve">
+    <value>chk最后两组平均</value>
+  </data>
+  <data name="&gt;&gt;chk最后两组平均.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk最后两组平均.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;chk最后两组平均.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 89</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>146</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>考试日期</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txt考试日期.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="txt考试日期.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 85</value>
+  </data>
+  <data name="txt考试日期.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 21</value>
+  </data>
+  <data name="txt考试日期.TabIndex" type="System.Int32, mscorlib">
+    <value>147</value>
+  </data>
+  <data name="&gt;&gt;txt考试日期.Name" xml:space="preserve">
+    <value>txt考试日期</value>
+  </data>
+  <data name="&gt;&gt;txt考试日期.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt考试日期.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;txt考试日期.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="chk分学校.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk分学校.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk分学校.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 30</value>
+  </data>
+  <data name="chk分学校.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 16</value>
+  </data>
+  <data name="chk分学校.TabIndex" type="System.Int32, mscorlib">
+    <value>145</value>
+  </data>
+  <data name="chk分学校.Text" xml:space="preserve">
+    <value>分学校</value>
+  </data>
+  <data name="&gt;&gt;chk分学校.Name" xml:space="preserve">
+    <value>chk分学校</value>
+  </data>
+  <data name="&gt;&gt;chk分学校.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk分学校.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;chk分学校.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chk分性别.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk分性别.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk分性别.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 30</value>
+  </data>
+  <data name="chk分性别.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 16</value>
+  </data>
+  <data name="chk分性别.TabIndex" type="System.Int32, mscorlib">
+    <value>144</value>
+  </data>
+  <data name="chk分性别.Text" xml:space="preserve">
+    <value>分性别</value>
+  </data>
+  <data name="&gt;&gt;chk分性别.Name" xml:space="preserve">
+    <value>chk分性别</value>
+  </data>
+  <data name="&gt;&gt;chk分性别.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk分性别.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;chk分性别.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>183, 122</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>143</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>个学生</value>
+  </data>
+  <data name="label10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="txtInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 118</value>
+  </data>
+  <data name="txtInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 21</value>
+  </data>
+  <data name="txtInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>142</value>
+  </data>
+  <data name="txtInterval.Text" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;txtInterval.Name" xml:space="preserve">
+    <value>txtInterval</value>
+  </data>
+  <data name="&gt;&gt;txtInterval.Type" xml:space="preserve">
+    <value>LJH.GeneralLibrary.WinformControl.IntergerTextBox, LJH.GeneralLibrary, Version=2.0.2021.128, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtInterval.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;txtInterval.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 122</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 12</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>141</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>每组最多有</value>
+  </data>
+  <data name="label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnWrite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnWrite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 186</value>
+  </data>
+  <data name="btnWrite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 35</value>
+  </data>
+  <data name="btnWrite.TabIndex" type="System.Int32, mscorlib">
+    <value>135</value>
+  </data>
+  <data name="btnWrite.Text" xml:space="preserve">
+    <value>开始分组(&amp;S)</value>
+  </data>
+  <data name="&gt;&gt;btnWrite.Name" xml:space="preserve">
+    <value>btnWrite</value>
+  </data>
+  <data name="&gt;&gt;btnWrite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnWrite.Parent" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;btnWrite.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="gpStudent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>908, 178</value>
+  </data>
+  <data name="gpStudent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 236</value>
+  </data>
+  <data name="gpStudent.TabIndex" type="System.Int32, mscorlib">
+    <value>140</value>
+  </data>
+  <data name="gpStudent.Text" xml:space="preserve">
+    <value>第二步  分组</value>
+  </data>
+  <data name="&gt;&gt;gpStudent.Name" xml:space="preserve">
+    <value>gpStudent</value>
+  </data>
+  <data name="&gt;&gt;gpStudent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gpStudent.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gpStudent.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btnNone.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnNone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>908, 141</value>
+  </data>
+  <data name="btnNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 25</value>
+  </data>
+  <data name="btnNone.TabIndex" type="System.Int32, mscorlib">
+    <value>149</value>
+  </data>
+  <data name="btnNone.Text" xml:space="preserve">
+    <value>全不选(&amp;N)</value>
+  </data>
+  <data name="&gt;&gt;btnNone.Name" xml:space="preserve">
+    <value>btnNone</value>
+  </data>
+  <data name="&gt;&gt;btnNone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnNone.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnNone.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>908, 110</value>
+  </data>
+  <data name="btnAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 25</value>
+  </data>
+  <data name="btnAll.TabIndex" type="System.Int32, mscorlib">
+    <value>148</value>
+  </data>
+  <data name="btnAll.Text" xml:space="preserve">
+    <value>全选(&amp;A)</value>
+  </data>
+  <data name="&gt;&gt;btnAll.Name" xml:space="preserve">
+    <value>btnAll</value>
+  </data>
+  <data name="&gt;&gt;btnAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAll.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAll.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtStudentID1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="txtStudentID1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 6</value>
+  </data>
+  <data name="txtStudentID1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 21</value>
+  </data>
+  <data name="txtStudentID1.TabIndex" type="System.Int32, mscorlib">
+    <value>283</value>
+  </data>
+  <data name="&gt;&gt;txtStudentID1.Name" xml:space="preserve">
+    <value>txtStudentID1</value>
+  </data>
+  <data name="&gt;&gt;txtStudentID1.Type" xml:space="preserve">
+    <value>LJH.GeneralLibrary.WinformControl.DBCTextBox, LJH.GeneralLibrary, Version=2.0.2021.128, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtStudentID1.Parent" xml:space="preserve">
+    <value>ucStudentSearch1</value>
+  </data>
+  <data name="&gt;&gt;txtStudentID1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="cmbDivision.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cmbDivision.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 9pt</value>
+  </data>
+  <data name="cmbDivision.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 6</value>
+  </data>
+  <data name="cmbDivision.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 20</value>
+  </data>
+  <data name="cmbDivision.TabIndex" type="System.Int32, mscorlib">
+    <value>280</value>
+  </data>
+  <data name="&gt;&gt;cmbDivision.Name" xml:space="preserve">
+    <value>cmbDivision</value>
+  </data>
+  <data name="&gt;&gt;cmbDivision.Type" xml:space="preserve">
+    <value>HH.ZK.CommonUI.Controls.DivisionComboBox, HH.ZK.CommonUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbDivision.Parent" xml:space="preserve">
+    <value>ucStudentSearch1</value>
+  </data>
+  <data name="&gt;&gt;cmbDivision.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="txtGroupID.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtGroupID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 72</value>
+  </data>
+  <data name="txtGroupID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 20</value>
+  </data>
+  <data name="txtGroupID.TabIndex" type="System.Int32, mscorlib">
+    <value>185</value>
+  </data>
+  <data name="&gt;&gt;txtGroupID.Name" xml:space="preserve">
+    <value>txtGroupID</value>
+  </data>
+  <data name="&gt;&gt;txtGroupID.Type" xml:space="preserve">
+    <value>HH.ZK.CommonUI.Controls.StudentGroupComboBox, HH.ZK.CommonUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtGroupID.Parent" xml:space="preserve">
+    <value>ucStudentSearch1</value>
+  </data>
+  <data name="&gt;&gt;txtGroupID.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="cmbFacility.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cmbFacility.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 39</value>
+  </data>
+  <data name="cmbFacility.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 20</value>
+  </data>
+  <data name="cmbFacility.TabIndex" type="System.Int32, mscorlib">
+    <value>184</value>
+  </data>
+  <data name="&gt;&gt;cmbFacility.Name" xml:space="preserve">
+    <value>cmbFacility</value>
+  </data>
+  <data name="&gt;&gt;cmbFacility.Type" xml:space="preserve">
+    <value>HH.ZK.CommonUI.Controls.FacilityComboBox, HH.ZK.CommonUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbFacility.Parent" xml:space="preserve">
+    <value>ucStudentSearch1</value>
+  </data>
+  <data name="&gt;&gt;cmbFacility.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="txtName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 39</value>
+  </data>
+  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 21</value>
+  </data>
+  <data name="txtName.TabIndex" type="System.Int32, mscorlib">
+    <value>178</value>
+  </data>
+  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
+    <value>txtName</value>
+  </data>
+  <data name="&gt;&gt;txtName.Type" xml:space="preserve">
+    <value>LJH.GeneralLibrary.WinformControl.DBCTextBox, LJH.GeneralLibrary, Version=2.0.2021.128, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
+    <value>ucStudentSearch1</value>
+  </data>
+  <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="ucStudentSearch1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 4</value>
+  </data>
+  <data name="ucStudentSearch1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>562, 100</value>
+  </data>
+  <data name="ucStudentSearch1.TabIndex" type="System.Int32, mscorlib">
+    <value>176</value>
+  </data>
+  <data name="&gt;&gt;ucStudentSearch1.Name" xml:space="preserve">
+    <value>ucStudentSearch1</value>
+  </data>
+  <data name="&gt;&gt;ucStudentSearch1.Type" xml:space="preserve">
+    <value>HH.ZK.CommonUI.Controls.UCStudentSearch, HH.ZK.CommonUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucStudentSearch1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ucStudentSearch1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>40</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1155, 667</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAEAAAAAADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
+        AAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/////////////////////+P//////
+        //////////////f////////////////////4f////////////////////8j//////4d3eI/4j/iP//+H
+        //+IiIiP/4iIiI+Hj///9v//j4iIj//4j4h4iI////d////4/4j/+P/4iIiP///4z///////////////
+        /////2j//4d/hmxvho/3Zo////93//iHz3bGaIZ/iIx/////9v/3/2iM+I/4b2xmaP////aPh/+Hhv//
+        +G94aGj////3b4f/hoaP//9odo9v////+M9o//iMj///iGZsZv////+I/4j3/O///2Z2Zmf///93h4eH
+        d4Z///9s/IZ4//h3iIiIiHj3f///aPZsbv////iP+P/4h2////iGZmf////3//d/jGho/492dniIj///
+        9///ePaIRsZ/dodmbH///4j4n/j+iHd3j3j/aI+P//9v95j////////////////4j/d4////////////
+        ///////4n///////////////////////////////////////////////////////////////////////
+        ////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////w==
+</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>自动分组</value>
+  </data>
+  <data name="&gt;&gt;colHeader.Name" xml:space="preserve">
+    <value>colHeader</value>
+  </data>
+  <data name="&gt;&gt;colHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colFacility.Name" xml:space="preserve">
+    <value>colFacility</value>
+  </data>
+  <data name="&gt;&gt;colFacility.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colID.Name" xml:space="preserve">
+    <value>colID</value>
+  </data>
+  <data name="&gt;&gt;colID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colName.Name" xml:space="preserve">
+    <value>colName</value>
+  </data>
+  <data name="&gt;&gt;colName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colSex.Name" xml:space="preserve">
+    <value>colSex</value>
+  </data>
+  <data name="&gt;&gt;colSex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colClassName.Name" xml:space="preserve">
+    <value>colClassName</value>
+  </data>
+  <data name="&gt;&gt;colClassName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;col考试科目.Name" xml:space="preserve">
+    <value>col考试科目</value>
+  </data>
+  <data name="&gt;&gt;col考试科目.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmAutoStudentGrouping</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

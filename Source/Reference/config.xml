@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <add key="RemoteServer" value="120.77.11.122" />
+    <add key="RemotePort" value="8100" />
+  </appSettings>
+</configuration>

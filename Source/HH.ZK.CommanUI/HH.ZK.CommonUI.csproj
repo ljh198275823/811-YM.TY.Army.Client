@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC31B8E1-71A9-4918-85C5-F2B4B0054BC5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HH.ZK.CommonUI</RootNamespace>
+    <AssemblyName>HH.ZK.CommonUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Controls.2.2.5\lib\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Device">
+      <HintPath>..\Reference\Device.dll</HintPath>
+    </Reference>
+    <Reference Include="FJ.CoreWin">
+      <HintPath>..\Reference\FJ.CoreWin.dll</HintPath>
+    </Reference>
+    <Reference Include="LJH.GeneralLibrary">
+      <HintPath>..\Reference\LJH.GeneralLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ClassNameCombox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ClassNameCombox.designer.cs">
+      <DependentUpon>ClassNameCombox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DivisionComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DivisionComboBox.designer.cs">
+      <DependentUpon>DivisionComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FacilityTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FacilityTree.designer.cs">
+      <DependentUpon>FacilityTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FunctionTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FunctionTree.designer.cs">
+      <DependentUpon>FunctionTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PhysicalItemComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PhysicalItemComboBox.designer.cs">
+      <DependentUpon>PhysicalItemComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PhysicalProjectComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PhysicalProjectComboBox.designer.cs">
+      <DependentUpon>PhysicalProjectComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SchoolComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SchoolComboBox.designer.cs">
+      <DependentUpon>SchoolComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FacilityComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FacilityComboBox.designer.cs">
+      <DependentUpon>FacilityComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NationComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NationComboBox.designer.cs">
+      <DependentUpon>NationComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NullableDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NullableDateTimePicker.designer.cs">
+      <DependentUpon>NullableDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ResolveTypeComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ResolveTypeComboBox.designer.cs">
+      <DependentUpon>ResolveTypeComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StudentGroupComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\StudentGroupComboBox.designer.cs">
+      <DependentUpon>StudentGroupComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StudentStateComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\StudentStateComboBox.designer.cs">
+      <DependentUpon>StudentStateComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TotalCalTypeComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TotalCalTypeComboBox.designer.cs">
+      <DependentUpon>TotalCalTypeComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCFacilitySearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCFacilitySearch.Designer.cs">
+      <DependentUpon>UCFacilitySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCStatiticsSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCStatiticsSearch.Designer.cs">
+      <DependentUpon>UCStatiticsSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCStudentSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCStudentSearch.Designer.cs">
+      <DependentUpon>UCStudentSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC学生信息.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC学生信息.designer.cs">
+      <DependentUpon>UC学生信息.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAboat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAboat.designer.cs">
+      <DependentUpon>FrmAboat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddHost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddHost.designer.cs">
+      <DependentUpon>FrmAddHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddHost_USB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddHost_USB.designer.cs">
+      <DependentUpon>FrmAddHost_USB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCardIDImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCardIDImport.designer.cs">
+      <DependentUpon>FrmCardIDImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangePwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangePwd.designer.cs">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDateRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDateRange.designer.cs">
+      <DependentUpon>FrmDateRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDivisionDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDivisionDetail.designer.cs">
+      <DependentUpon>FrmDivisionDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDivisionMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDivisionMaster.designer.cs">
+      <DependentUpon>FrmDivisionMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFacilityDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFacilityDetail.designer.cs">
+      <DependentUpon>FrmFacilityDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFacilityImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFacilityImport.designer.cs">
+      <DependentUpon>FrmFacilityImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFacilityMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFacilityMaster.designer.cs">
+      <DependentUpon>FrmFacilityMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPhysicalItemMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPhysicalItemMaster.designer.cs">
+      <DependentUpon>FrmPhysicalItemMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScoreCollect_游泳.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScoreCollect_游泳.designer.cs">
+      <DependentUpon>FrmScoreCollect_游泳.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScoreCollect_澳亚特.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScoreCollect_澳亚特.designer.cs">
+      <DependentUpon>FrmScoreCollect_澳亚特.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScoreImport_文件夹.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScoreImport_文件夹.designer.cs">
+      <DependentUpon>FrmScoreImport_文件夹.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm修改成绩.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm修改成绩.designer.cs">
+      <DependentUpon>Frm修改成绩.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm删除学生成绩.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm删除学生成绩.designer.cs">
+      <DependentUpon>Frm删除学生成绩.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm人工修改成绩查询报表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm人工修改成绩查询报表.designer.cs">
+      <DependentUpon>Frm人工修改成绩查询报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm增加成绩.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm增加成绩.designer.cs">
+      <DependentUpon>Frm增加成绩.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm主机采集成绩查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm主机采集成绩查询.designer.cs">
+      <DependentUpon>Frm主机采集成绩查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm导入学生照片.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm导入学生照片.designer.cs">
+      <DependentUpon>Frm导入学生照片.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHostParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHostParameters.designer.cs">
+      <DependentUpon>FrmHostParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHosts.designer.cs">
+      <DependentUpon>FrmHosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogView.designer.cs">
+      <DependentUpon>FrmLogView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProcessing.designer.cs">
+      <DependentUpon>FrmProcessing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportBase.designer.cs">
+      <DependentUpon>FrmReportBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScoreCollectStatitics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScoreCollectStatitics.designer.cs">
+      <DependentUpon>FrmScoreCollectStatitics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScoreCollect_Com.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScoreCollect_Com.designer.cs">
+      <DependentUpon>FrmScoreCollect_Com.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScoreCollect_Wifi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScoreCollect_Wifi.designer.cs">
+      <DependentUpon>FrmScoreCollect_Wifi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScoreImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScoreImport.designer.cs">
+      <DependentUpon>FrmScoreImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScoreImport_SingleCol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScoreImport_SingleCol.designer.cs">
+      <DependentUpon>FrmScoreImport_SingleCol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectHostIDs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectHostIDs.designer.cs">
+      <DependentUpon>FrmSelectHostIDs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSerialRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSerialRange.designer.cs">
+      <DependentUpon>FrmSerialRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSoftDog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSoftDog.designer.cs">
+      <DependentUpon>FrmSoftDog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStudentDownload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentDownload.designer.cs">
+      <DependentUpon>FrmStudentDownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStudentDownloadPara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentDownloadPara.designer.cs">
+      <DependentUpon>FrmStudentDownloadPara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStudentIDRange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentIDRange.designer.cs">
+      <DependentUpon>FrmStudentIDRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStudentMasterBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentMasterBase.designer.cs">
+      <DependentUpon>FrmStudentMasterBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTsnConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTsnConnect.designer.cs">
+      <DependentUpon>FrmTsnConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUKey初始化.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUKey初始化.designer.cs">
+      <DependentUpon>FrmUKey初始化.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生照片采集.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生照片采集.designer.cs">
+      <DependentUpon>Frm学生照片采集.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm导入特殊情况学生.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm导入特殊情况学生.designer.cs">
+      <DependentUpon>Frm导入特殊情况学生.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm导出学生照片.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm导出学生照片.designer.cs">
+      <DependentUpon>Frm导出学生照片.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm照片采集示例.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm照片采集示例.Designer.cs">
+      <DependentUpon>Frm照片采集示例.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考试科目选择.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考试科目选择.designer.cs">
+      <DependentUpon>Frm考试科目选择.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm设置考试状态.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm设置考试状态.designer.cs">
+      <DependentUpon>Frm设置考试状态.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm重新生成特征值.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm重新生成特征值.designer.cs">
+      <DependentUpon>Frm重新生成特征值.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm重置密码.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm重置密码.designer.cs">
+      <DependentUpon>Frm重置密码.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm账号验证.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm账号验证.designer.cs">
+      <DependentUpon>Frm账号验证.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm组人员实时显示.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm组人员实时显示.designer.cs">
+      <DependentUpon>Frm组人员实时显示.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhysicalScoresSavingService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingleFormManager.cs" />
+    <Compile Include="StudentExpression.cs" />
+    <Compile Include="LocalSysParaSettingsBll.cs" />
+    <EmbeddedResource Include="Controls\FacilityTree.resx">
+      <DependentUpon>FacilityTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FunctionTree.resx">
+      <DependentUpon>FunctionTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCFacilitySearch.resx">
+      <DependentUpon>UCFacilitySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCStatiticsSearch.resx">
+      <DependentUpon>UCStatiticsSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCStudentSearch.resx">
+      <DependentUpon>UCStudentSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC学生信息.resx">
+      <DependentUpon>UC学生信息.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAboat.resx">
+      <DependentUpon>FrmAboat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddHost.resx">
+      <DependentUpon>FrmAddHost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddHost_USB.resx">
+      <DependentUpon>FrmAddHost_USB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCardIDImport.resx">
+      <DependentUpon>FrmCardIDImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangePwd.resx">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDateRange.resx">
+      <DependentUpon>FrmDateRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDivisionDetail.resx">
+      <DependentUpon>FrmDivisionDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDivisionMaster.resx">
+      <DependentUpon>FrmDivisionMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFacilityDetail.resx">
+      <DependentUpon>FrmFacilityDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFacilityImport.resx">
+      <DependentUpon>FrmFacilityImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFacilityMaster.resx">
+      <DependentUpon>FrmFacilityMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPhysicalItemMaster.resx">
+      <DependentUpon>FrmPhysicalItemMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScoreCollect_游泳.resx">
+      <DependentUpon>FrmScoreCollect_游泳.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScoreCollect_澳亚特.resx">
+      <DependentUpon>FrmScoreCollect_澳亚特.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScoreImport_文件夹.resx">
+      <DependentUpon>FrmScoreImport_文件夹.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentMasterBase.resx">
+      <DependentUpon>FrmStudentMasterBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm修改成绩.resx">
+      <DependentUpon>Frm修改成绩.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm删除学生成绩.resx">
+      <DependentUpon>Frm删除学生成绩.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm人工修改成绩查询报表.resx">
+      <DependentUpon>Frm人工修改成绩查询报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm增加成绩.resx">
+      <DependentUpon>Frm增加成绩.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm主机采集成绩查询.resx">
+      <DependentUpon>Frm主机采集成绩查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm导入学生照片.resx">
+      <DependentUpon>Frm导入学生照片.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHostParameters.resx">
+      <DependentUpon>FrmHostParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHosts.resx">
+      <DependentUpon>FrmHosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogView.resx">
+      <DependentUpon>FrmLogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProcessing.resx">
+      <DependentUpon>FrmProcessing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportBase.resx">
+      <DependentUpon>FrmReportBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScoreCollectStatitics.resx">
+      <DependentUpon>FrmScoreCollectStatitics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScoreCollect_Com.resx">
+      <DependentUpon>FrmScoreCollect_Com.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScoreCollect_Wifi.resx">
+      <DependentUpon>FrmScoreCollect_Wifi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScoreImport.resx">
+      <DependentUpon>FrmScoreImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScoreImport_SingleCol.resx">
+      <DependentUpon>FrmScoreImport_SingleCol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectHostIDs.resx">
+      <DependentUpon>FrmSelectHostIDs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSerialRange.resx">
+      <DependentUpon>FrmSerialRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSoftDog.resx">
+      <DependentUpon>FrmSoftDog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentDownload.resx">
+      <DependentUpon>FrmStudentDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentDownloadPara.resx">
+      <DependentUpon>FrmStudentDownloadPara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentIDRange.resx">
+      <DependentUpon>FrmStudentIDRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTsnConnect.resx">
+      <DependentUpon>FrmTsnConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUKey初始化.resx">
+      <DependentUpon>FrmUKey初始化.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生照片采集.resx">
+      <DependentUpon>Frm学生照片采集.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm导入特殊情况学生.resx">
+      <DependentUpon>Frm导入特殊情况学生.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm导出学生照片.resx">
+      <DependentUpon>Frm导出学生照片.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm照片采集示例.resx">
+      <DependentUpon>Frm照片采集示例.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考试科目选择.resx">
+      <DependentUpon>Frm考试科目选择.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm设置考试状态.resx">
+      <DependentUpon>Frm设置考试状态.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm重新生成特征值.resx">
+      <DependentUpon>Frm重新生成特征值.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm重置密码.resx">
+      <DependentUpon>Frm重置密码.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm账号验证.resx">
+      <DependentUpon>Frm账号验证.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm组人员实时显示.resx">
+      <DependentUpon>Frm组人员实时显示.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HH.ZK.Model\HH.ZK.Model.csproj">
+      <Project>{83611d2c-f630-4038-ab23-d5e03d022abb}</Project>
+      <Name>HH.ZK.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HH.ZK.SQLite\HH.ZK.SQLite.csproj">
+      <Project>{eff73310-1ef6-4a5b-b344-07d6124d51da}</Project>
+      <Name>HH.ZK.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HH.ZK.WebAPIClient\HH.ZK.WebAPIClient.csproj">
+      <Project>{566ef97d-f8aa-4163-a756-e282519d19f5}</Project>
+      <Name>HH.ZK.WebAPIClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HXHH_green.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\columns.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greydot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reddot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\demo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\demo2.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

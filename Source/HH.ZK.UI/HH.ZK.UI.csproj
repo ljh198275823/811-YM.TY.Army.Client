@@ -1,0 +1,1007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D36BB1F-F659-46B5-90CC-BF15E16181EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HH.ZK.UI</RootNamespace>
+    <AssemblyName>HH.ZK.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET, Version=1.6.0.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autoupdater.NET.Official.1.6.0\lib\net40\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Barcode._1D">
+      <HintPath>..\Reference\Barcode._1D.dll</HintPath>
+    </Reference>
+    <Reference Include="Device">
+      <HintPath>..\Reference\Device.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="libzkfpcsharp">
+      <HintPath>..\Reference\libzkfpcsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LJH.GeneralLibrary">
+      <HintPath>..\Reference\LJH.GeneralLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Reference\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\Reference\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\Reference\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\Reference\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\UCCertificateTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCCertificateTemplate.designer.cs">
+      <DependentUpon>UCCertificateTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCCertificateTemplate_A4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCCertificateTemplate_A4.designer.cs">
+      <DependentUpon>UCCertificateTemplate_A4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCCertificateTemplate_Small.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCCertificateTemplate_Small.designer.cs">
+      <DependentUpon>UCCertificateTemplate_Small.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCCertificateTemplate_江西.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCCertificateTemplate_江西.designer.cs">
+      <DependentUpon>UCCertificateTemplate_江西.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCCertificateTemplate_阳江.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCCertificateTemplate_阳江.designer.cs">
+      <DependentUpon>UCCertificateTemplate_阳江.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC考场进度.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC考场进度.designer.cs">
+      <DependentUpon>UC考场进度.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm视频录相机设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm视频录相机设置.designer.cs">
+      <DependentUpon>Frm视频录相机设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm视频通道明细.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm视频通道明细.Designer.cs">
+      <DependentUpon>Frm视频通道明细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm设置视频通道.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm设置视频通道.designer.cs">
+      <DependentUpon>Frm设置视频通道.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm原始成绩查询报表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm原始成绩查询报表.designer.cs">
+      <DependentUpon>Frm原始成绩查询报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperatorParaDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperatorParaDetail.Designer.cs">
+      <DependentUpon>FrmOperatorParaDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddStudentGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddStudentGroup.designer.cs">
+      <DependentUpon>FrmAddStudentGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm同步相像本地保存路径设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm同步相像本地保存路径设置.designer.cs">
+      <DependentUpon>Frm同步相像本地保存路径设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm同步相像服务器设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm同步相像服务器设置.designer.cs">
+      <DependentUpon>Frm同步相像服务器设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm切换账号.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm切换账号.Designer.cs">
+      <DependentUpon>Frm切换账号.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm多学校选择.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm多学校选择.designer.cs">
+      <DependentUpon>Frm多学校选择.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生信息导入_仙桃.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生信息导入_仙桃.designer.cs">
+      <DependentUpon>Frm学生信息导入_仙桃.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生准考证导出.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生准考证导出.designer.cs">
+      <DependentUpon>Frm学生准考证导出.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生成绩单导出.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生成绩单导出.designer.cs">
+      <DependentUpon>Frm学生成绩单导出.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生成绩查看.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生成绩查看.designer.cs">
+      <DependentUpon>Frm学生成绩查看.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm多考点选择.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm多考点选择.designer.cs">
+      <DependentUpon>Frm多考点选择.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生成绩速录.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生成绩速录.designer.cs">
+      <DependentUpon>Frm学生成绩速录.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生特殊情况设置Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生特殊情况设置Detail.Designer.cs">
+      <DependentUpon>Frm学生特殊情况设置Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生秩序册导出.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生秩序册导出.designer.cs">
+      <DependentUpon>Frm学生秩序册导出.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm导入平时成绩.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm导入平时成绩.designer.cs">
+      <DependentUpon>Frm导入平时成绩.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm导出准考证.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm导出准考证.designer.cs">
+      <DependentUpon>Frm导出准考证.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm小程序参数.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm小程序参数.Designer.cs">
+      <DependentUpon>Frm小程序参数.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm第三方平台学生上传状态查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm第三方平台学生上传状态查询.designer.cs">
+      <DependentUpon>Frm第三方平台学生上传状态查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm第三方平台成绩上传状态查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm第三方平台成绩上传状态查询.designer.cs">
+      <DependentUpon>Frm第三方平台成绩上传状态查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生特殊情况设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生特殊情况设置.designer.cs">
+      <DependentUpon>Frm学生特殊情况设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考场视频查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考场视频查询.designer.cs">
+      <DependentUpon>Frm考场视频查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考试科目选择_后台.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考试科目选择_后台.designer.cs">
+      <DependentUpon>Frm考试科目选择_后台.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm账号管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm账号管理.Designer.cs">
+      <DependentUpon>Frm账号管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考点名称确认.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考点名称确认.Designer.cs">
+      <DependentUpon>Frm考点名称确认.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生单项成绩查看.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生单项成绩查看.designer.cs">
+      <DependentUpon>Frm学生单项成绩查看.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm违规考试查询报表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm违规考试查询报表.designer.cs">
+      <DependentUpon>Frm违规考试查询报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生成绩导出.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生成绩导出.designer.cs">
+      <DependentUpon>Frm学生成绩导出.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOption_检录.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOption_检录.designer.cs">
+      <DependentUpon>FrmOption_检录.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考试科目导入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考试科目导入.designer.cs">
+      <DependentUpon>Frm考试科目导入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生成绩导出模板设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生成绩导出模板设置.Designer.cs">
+      <DependentUpon>Frm学生成绩导出模板设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm检录公示.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm检录公示.designer.cs">
+      <DependentUpon>Frm检录公示.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm检录写卡.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm检录写卡.designer.cs">
+      <DependentUpon>Frm检录写卡.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer\DiscussionExporter.cs" />
+    <Compile Include="FrmAutoStudentGrouping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAutoStudentGrouping.designer.cs">
+      <DependentUpon>FrmAutoStudentGrouping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAutoStudentGroupPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAutoStudentGroupPreview.designer.cs">
+      <DependentUpon>FrmAutoStudentGroupPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCertificatePrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCertificatePrinter.designer.cs">
+      <DependentUpon>FrmCertificatePrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm软件更新日志.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm软件更新日志.Designer.cs">
+      <DependentUpon>Frm软件更新日志.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDiscussionDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDiscussionDetail.designer.cs">
+      <DependentUpon>FrmDiscussionDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDiscussionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDiscussionView.designer.cs">
+      <DependentUpon>FrmDiscussionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain_Admin.designer.cs">
+      <DependentUpon>FrmMain_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain_ZK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain_ZK.designer.cs">
+      <DependentUpon>FrmMain_ZK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOption_后台.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOption_后台.designer.cs">
+      <DependentUpon>FrmOption_后台.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOption_联机.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOption_联机.designer.cs">
+      <DependentUpon>FrmOption_联机.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm写卡.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm写卡.designer.cs">
+      <DependentUpon>Frm写卡.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生分组成绩自动打印.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生分组成绩自动打印.designer.cs">
+      <DependentUpon>Frm学生分组成绩自动打印.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生检录记录报表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生检录记录报表.designer.cs">
+      <DependentUpon>Frm学生检录记录报表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm成绩公示屏.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm成绩公示屏.designer.cs">
+      <DependentUpon>Frm成绩公示屏.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStatisticsTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStatisticsTotal.designer.cs">
+      <DependentUpon>FrmStatisticsTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStatistics.designer.cs">
+      <DependentUpon>FrmStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStudentGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentGroup.designer.cs">
+      <DependentUpon>FrmStudentGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStudentGroupDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentGroupDetail.designer.cs">
+      <DependentUpon>FrmStudentGroupDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStudentGroupImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentGroupImport.designer.cs">
+      <DependentUpon>FrmStudentGroupImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStudentScoreDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentScoreDetailView.designer.cs">
+      <DependentUpon>FrmStudentScoreDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm分组学生选择.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm分组学生选择.designer.cs">
+      <DependentUpon>Frm分组学生选择.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生单项成绩查询.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生单项成绩查询.designer.cs">
+      <DependentUpon>Frm学生单项成绩查询.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生成绩管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生成绩管理.designer.cs">
+      <DependentUpon>Frm学生成绩管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm按组导出准考证.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm按组导出准考证.designer.cs">
+      <DependentUpon>Frm按组导出准考证.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考场实时状态.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考场实时状态.designer.cs">
+      <DependentUpon>Frm考场实时状态.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考场视频.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考场视频.designer.cs">
+      <DependentUpon>Frm考场视频.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStudentDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStudentDetail.designer.cs">
+      <DependentUpon>FrmStudentDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生信息导入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生信息导入.designer.cs">
+      <DependentUpon>Frm学生信息导入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考点Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考点Detail.designer.cs">
+      <DependentUpon>Frm考点Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考点管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考点管理.designer.cs">
+      <DependentUpon>Frm考点管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考试科目Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考试科目Detail.designer.cs">
+      <DependentUpon>Frm考试科目Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm特殊评分.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm特殊评分.designer.cs">
+      <DependentUpon>Frm特殊评分.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考试科目设置查看.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考试科目设置查看.designer.cs">
+      <DependentUpon>Frm考试科目设置查看.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm设置考试时间.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm设置考试时间.designer.cs">
+      <DependentUpon>Frm设置考试时间.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm评分标准查看.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm评分标准查看.designer.cs">
+      <DependentUpon>Frm评分标准查看.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm评分标准导入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm评分标准导入.designer.cs">
+      <DependentUpon>Frm评分标准导入.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm评分标准.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm评分标准.designer.cs">
+      <DependentUpon>Frm评分标准.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考点选择.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考点选择.designer.cs">
+      <DependentUpon>Frm考点选择.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm学生信息管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm学生信息管理.designer.cs">
+      <DependentUpon>Frm学生信息管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考试科目设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考试科目设置.designer.cs">
+      <DependentUpon>Frm考试科目设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer\StudentScoreSheetPrinter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Printer\StudentWithTotalExporter.cs" />
+    <Compile Include="Printer\StudentWithDXCJExporter.cs" />
+    <Compile Include="VideoLocalDBProvider.cs" />
+    <Compile Include="VideoServerClient.cs" />
+    <Compile Include="宁波中考\Frm宁波中考数据接口.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="宁波中考\Frm宁波中考数据接口.designer.cs">
+      <DependentUpon>Frm宁波中考数据接口.cs</DependentUpon>
+    </Compile>
+    <Compile Include="宁波中考\宁波中考接口Client.cs" />
+    <Compile Include="中山中考\Frm中山中考数据接口.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="中山中考\Frm中山中考数据接口.designer.cs">
+      <DependentUpon>Frm中山中考数据接口.cs</DependentUpon>
+    </Compile>
+    <Compile Include="中山中考\中山中考接口Client.cs" />
+    <Compile Include="小奔体育\Frm小奔体育数据接口.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="小奔体育\Frm小奔体育数据接口.designer.cs">
+      <DependentUpon>Frm小奔体育数据接口.cs</DependentUpon>
+    </Compile>
+    <Compile Include="小奔体育\小奔体育接口Client.cs" />
+    <Compile Include="瑞致和\FrmRZH数据接口.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="瑞致和\FrmRZH数据接口.designer.cs">
+      <DependentUpon>FrmRZH数据接口.cs</DependentUpon>
+    </Compile>
+    <Compile Include="瑞致和\RZH接口Client.cs" />
+    <EmbeddedResource Include="Controls\UCCertificateTemplate.resx">
+      <DependentUpon>UCCertificateTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCCertificateTemplate_A4.resx">
+      <DependentUpon>UCCertificateTemplate_A4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCCertificateTemplate_Small.resx">
+      <DependentUpon>UCCertificateTemplate_Small.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCCertificateTemplate_江西.resx">
+      <DependentUpon>UCCertificateTemplate_江西.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCCertificateTemplate_阳江.resx">
+      <DependentUpon>UCCertificateTemplate_阳江.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC考场进度.resx">
+      <DependentUpon>UC考场进度.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAutoStudentGrouping.resx">
+      <DependentUpon>FrmAutoStudentGrouping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAutoStudentGroupPreview.resx">
+      <DependentUpon>FrmAutoStudentGroupPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCertificatePrinter.resx">
+      <DependentUpon>FrmCertificatePrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm视频录相机设置.resx">
+      <DependentUpon>Frm视频录相机设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm视频通道明细.resx">
+      <DependentUpon>Frm视频通道明细.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm设置视频通道.resx">
+      <DependentUpon>Frm设置视频通道.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm原始成绩查询报表.resx">
+      <DependentUpon>Frm原始成绩查询报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperatorParaDetail.resx">
+      <DependentUpon>FrmOperatorParaDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddStudentGroup.resx">
+      <DependentUpon>FrmAddStudentGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm同步相像本地保存路径设置.resx">
+      <DependentUpon>Frm同步相像本地保存路径设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm同步相像服务器设置.resx">
+      <DependentUpon>Frm同步相像服务器设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm切换账号.resx">
+      <DependentUpon>Frm切换账号.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm多学校选择.resx">
+      <DependentUpon>Frm多学校选择.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生信息导入_仙桃.resx">
+      <DependentUpon>Frm学生信息导入_仙桃.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生准考证导出.resx">
+      <DependentUpon>Frm学生准考证导出.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生成绩单导出.resx">
+      <DependentUpon>Frm学生成绩单导出.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生成绩查看.resx">
+      <DependentUpon>Frm学生成绩查看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm多考点选择.resx">
+      <DependentUpon>Frm多考点选择.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生成绩速录.resx">
+      <DependentUpon>Frm学生成绩速录.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生特殊情况设置Detail.resx">
+      <DependentUpon>Frm学生特殊情况设置Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生秩序册导出.resx">
+      <DependentUpon>Frm学生秩序册导出.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm导入平时成绩.resx">
+      <DependentUpon>Frm导入平时成绩.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm导出准考证.resx">
+      <DependentUpon>Frm导出准考证.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm小程序参数.resx">
+      <DependentUpon>Frm小程序参数.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm第三方平台学生上传状态查询.resx">
+      <DependentUpon>Frm第三方平台学生上传状态查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm第三方平台成绩上传状态查询.resx">
+      <DependentUpon>Frm第三方平台成绩上传状态查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生特殊情况设置.resx">
+      <DependentUpon>Frm学生特殊情况设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考场视频查询.resx">
+      <DependentUpon>Frm考场视频查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考试科目选择_后台.resx">
+      <DependentUpon>Frm考试科目选择_后台.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm账号管理.resx">
+      <DependentUpon>Frm账号管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考点名称确认.resx">
+      <DependentUpon>Frm考点名称确认.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生单项成绩查看.resx">
+      <DependentUpon>Frm学生单项成绩查看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm违规考试查询报表.resx">
+      <DependentUpon>Frm违规考试查询报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生成绩导出.resx">
+      <DependentUpon>Frm学生成绩导出.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生成绩导出模板设置.resx">
+      <DependentUpon>Frm学生成绩导出模板设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm软件更新日志.resx">
+      <DependentUpon>Frm软件更新日志.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDiscussionDetail.resx">
+      <DependentUpon>FrmDiscussionDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDiscussionView.resx">
+      <DependentUpon>FrmDiscussionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain_Admin.resx">
+      <DependentUpon>FrmMain_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain_ZK.resx">
+      <DependentUpon>FrmMain_ZK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOption_后台.resx">
+      <DependentUpon>FrmOption_后台.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOption_检录.resx">
+      <DependentUpon>FrmOption_检录.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOption_联机.resx">
+      <DependentUpon>FrmOption_联机.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考试科目导入.resx">
+      <DependentUpon>Frm考试科目导入.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm写卡.resx">
+      <DependentUpon>Frm写卡.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生分组成绩自动打印.resx">
+      <DependentUpon>Frm学生分组成绩自动打印.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生检录记录报表.resx">
+      <DependentUpon>Frm学生检录记录报表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm成绩公示屏.resx">
+      <DependentUpon>Frm成绩公示屏.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStatisticsTotal.resx">
+      <DependentUpon>FrmStatisticsTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStatistics.resx">
+      <DependentUpon>FrmStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentGroup.resx">
+      <DependentUpon>FrmStudentGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentGroupDetail.resx">
+      <DependentUpon>FrmStudentGroupDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentGroupImport.resx">
+      <DependentUpon>FrmStudentGroupImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentScoreDetailView.resx">
+      <DependentUpon>FrmStudentScoreDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm分组学生选择.resx">
+      <DependentUpon>Frm分组学生选择.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生单项成绩查询.resx">
+      <DependentUpon>Frm学生单项成绩查询.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生成绩管理.resx">
+      <DependentUpon>Frm学生成绩管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm按组导出准考证.resx">
+      <DependentUpon>Frm按组导出准考证.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm检录公示.resx">
+      <DependentUpon>Frm检录公示.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm检录写卡.resx">
+      <DependentUpon>Frm检录写卡.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考场实时状态.resx">
+      <DependentUpon>Frm考场实时状态.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考场视频.resx">
+      <DependentUpon>Frm考场视频.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStudentDetail.resx">
+      <DependentUpon>FrmStudentDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生信息导入.resx">
+      <DependentUpon>Frm学生信息导入.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考点Detail.resx">
+      <DependentUpon>Frm考点Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考点管理.resx">
+      <DependentUpon>Frm考点管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考试科目Detail.resx">
+      <DependentUpon>Frm考试科目Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm特殊评分.resx">
+      <DependentUpon>Frm特殊评分.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考试科目设置查看.resx">
+      <DependentUpon>Frm考试科目设置查看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm设置考试时间.resx">
+      <DependentUpon>Frm设置考试时间.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm评分标准查看.resx">
+      <DependentUpon>Frm评分标准查看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm评分标准导入.resx">
+      <DependentUpon>Frm评分标准导入.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm评分标准.resx">
+      <DependentUpon>Frm评分标准.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考点选择.resx">
+      <DependentUpon>Frm考点选择.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm学生信息管理.resx">
+      <DependentUpon>Frm学生信息管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考试科目设置.resx">
+      <DependentUpon>Frm考试科目设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="宁波中考\Frm宁波中考数据接口.resx">
+      <DependentUpon>Frm宁波中考数据接口.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="中山中考\Frm中山中考数据接口.resx">
+      <DependentUpon>Frm中山中考数据接口.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="小奔体育\Frm小奔体育数据接口.resx">
+      <DependentUpon>Frm小奔体育数据接口.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="瑞致和\FrmRZH数据接口.resx">
+      <DependentUpon>FrmRZH数据接口.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HH.ZK.CommanUI\HH.ZK.CommonUI.csproj">
+      <Project>{fc31b8e1-71a9-4918-85c5-f2b4b0054bc5}</Project>
+      <Name>HH.ZK.CommonUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HH.ZK.Model\HH.ZK.Model.csproj">
+      <Project>{83611d2c-f630-4038-ab23-d5e03d022abb}</Project>
+      <Name>HH.ZK.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HH.ZK.SQLite\HH.ZK.SQLite.csproj">
+      <Project>{eff73310-1ef6-4a5b-b344-07d6124d51da}</Project>
+      <Name>HH.ZK.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HH.ZK.WebAPIClient\HH.ZK.WebAPIClient.csproj">
+      <Project>{566ef97d-f8aa-4163-a756-e282519d19f5}</Project>
+      <Name>HH.ZK.WebAPIClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\columns.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Operator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wireless.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discussion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\columns1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\阳江登分卡.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\检录点.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fpInput.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
