@@ -140,7 +140,7 @@ namespace HH.ZK.UI
                                 _FreshNeeded = false;
                             }
                             QueryResultList<Student> ret = null;
-                            if (_Search != null) ret = new APIClient(AppSettings.Current.ConnStr).GetList<string, Student>(_Search, AppSettings.Current.PhysicalProject.ID);
+                            if (_Search != null) ret = new APIClient(AppSettings.Current.ConnStr).GetList<string, Student>(_Search);
                             Action action = delegate ()
                             {
                                 if (ret.Result ==ResultCode.Successful)

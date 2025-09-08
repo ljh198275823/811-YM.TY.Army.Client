@@ -130,7 +130,6 @@ namespace HH.ZK.UI
                 if (picPhoto.Tag != null)
                 {
                     var sp = new StudentPhoto(s.ID, picPhoto.Tag.ToString());
-                    sp.CheckFace = AppSettings.Current.PhysicalProject.Options.IgnoreFaceFeature ? false : true;
                     if (sp.Photo != null && sp.Photo.Length > 200 * 1024)
                     {
                         MessageBox.Show("学生信息增加成功，但学生照片保存失败，失败原因:图片超过200K");
