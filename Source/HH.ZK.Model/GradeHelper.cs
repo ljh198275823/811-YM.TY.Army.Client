@@ -26,6 +26,7 @@ namespace HH.ZK.Model
         #endregion
 
         #region 静态属性
+        public static readonly int 无 = 0;
         public static readonly int 一年级 = 11;
         public static readonly int 二年级 = 12;
         public static readonly int 三年级 = 13;

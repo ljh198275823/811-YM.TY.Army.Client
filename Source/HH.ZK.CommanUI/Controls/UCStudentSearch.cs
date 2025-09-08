@@ -22,35 +22,25 @@ namespace HH.ZK.CommonUI.Controls
         private string _ProjectID;
 
         #region 公共方法
-        public void Init(string projectID)
+        public void Init()
         {
-            _ProjectID = projectID;
-            if (!string.IsNullOrEmpty(projectID))
-            {
-                cmbDivision.SelectedIndexChanged -= new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
-                cmbDivision.Init(projectID);
-                cmbDivision.SelectedIndexChanged += new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
+            cmbDivision.SelectedIndexChanged -= new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
+            cmbDivision.Init();
+            cmbDivision.SelectedIndexChanged += new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
 
-                cmbFacility.SelectedIndexChanged -= new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
-                cmbFacility.Init(projectID);
-                cmbFacility.SelectedIndexChanged += new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
+            cmbFacility.SelectedIndexChanged -= new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
+            cmbFacility.Init();
+            cmbFacility.SelectedIndexChanged += new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
 
-                txtGroupID.Init(projectID, null);
-                txtGroupID.Enabled = txtGroupID.Items.Count > 1;
-            }
-            else
-            {
-                cmbDivision.Enabled = false;
-                cmbFacility.Enabled = false;
-                txtGroupID.Enabled = false;
-            }
+            txtGroupID.Init(null, null);
+            txtGroupID.Enabled = txtGroupID.Items.Count > 1;
         }
 
         public StudentSearchCondition GetSearchCondition()
         {
             var con = new StudentSearchCondition();
-            if (rdMale.Checked) con.Sex = Sex.Male;
-            if (rdFemale.Checked) con.Sex = Sex.Female;
+            if (rdMale.Checked) con.Sex = Gender.Male;
+            if (rdFemale.Checked) con.Sex = Gender.Female;
             if (!string.IsNullOrEmpty(txtStudentID1.Text)) con.StudentIDLike = txtStudentID1.Text;
             if (!string.IsNullOrEmpty(txtName.Text)) con.Name = txtName.Text;
             if (!string.IsNullOrEmpty(txtGroupID.Text)) con.GroupID = txtGroupID.SelectedGroupID;
@@ -62,8 +52,8 @@ namespace HH.ZK.CommonUI.Controls
 
         public void GetSearchCondition(StudentSearchCondition con)
         {
-            if (rdMale.Checked) con.Sex = Sex.Male;
-            if (rdFemale.Checked) con.Sex = Sex.Female;
+            if (rdMale.Checked) con.Sex = Gender.Male;
+            if (rdFemale.Checked) con.Sex = Gender.Female;
             if (!string.IsNullOrEmpty(txtStudentID1.Text)) con.StudentIDLike = txtStudentID1.Text;
             if (!string.IsNullOrEmpty(txtName.Text)) con.Name = txtName.Text;
             if (!string.IsNullOrEmpty(txtGroupID.Text)) con.GroupID = txtGroupID.SelectedGroupID;
@@ -97,7 +87,7 @@ namespace HH.ZK.CommonUI.Controls
         private void cmbDivision_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbFacility.SelectedIndexChanged -= new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
-            cmbFacility.Init(_ProjectID, cmbDivision.SelectedDivisionID);
+            cmbFacility.Init(cmbDivision.SelectedDivisionID);
             txtGroupID.Init(_ProjectID, null);
             cmbFacility.SelectedIndexChanged += new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
         }

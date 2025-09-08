@@ -27,17 +27,17 @@ namespace HH.ZK.Model
         /// </summary>
         public string Name { get; set; }
         /// <summary>
+        /// 获取或设置ProjectID
+        /// </summary>
+        public string ProjectID { get; set; }
+        /// <summary>
         /// 获取或设置标准适用的测试项目ID
         /// </summary>
         public int PhysicalItemID { get; set; }
         /// <summary>
-        /// 获取或设置标准适用的测试项目
-        /// </summary>
-        public PhysicalItem PhysicalItem { get; set; }
-        /// <summary>
         /// 获取或设置标准适用的性别
         /// </summary>
-        public Sex Sex { get; set; }
+        public Gender Gender { get; set; }
         /// <summary>
         /// 获取或设置标准适用的年级
         /// </summary>
@@ -53,72 +53,6 @@ namespace HH.ZK.Model
         #endregion
 
         #region 公共方法
-        /// <summary>
-        /// 根据测试成绩计算得分和等级
-        /// </summary>
-        /// <param name="score"></param>
-        /// <returns></returns>
-        public bool CalResult(decimal score, out decimal ret, out string rank)
-        {
-            ret = 0;
-            rank = null;
-            if (Items != null && Items.Count > 0)
-            {
-                StandardItem si = Items.FirstOrDefault(it => it.InMyRange(score));
-                if (si != null)
-                {
-                    ret = si.Result;
-                    rank = si.Rank;
-                    return true;
-                }
-                return true; //如果值不在标准项范围内
-            }
-            return false;
-        }
-        /// <summary>
-        /// 检测评分标准是否有效
-        /// </summary>
-        /// <param name="msg"></param>
-        /// <returns></returns>
-        public bool IsValid(out string msg)
-        {
-            msg = null;
-            if (this.Items != null && Items.Count > 0)
-            {
-                decimal dmin = Items.Min(it => it.Score1);
-                decimal dmax = Items.Max(it => it.Score1);
-                decimal step = (decimal)(PhysicalItem != null ? (1 / Math.Pow(10, PhysicalItem.PointCount)) : 0.01);
-                for (decimal i = dmin; i <= dmax; i += step)
-                {
-                    if (!Items.Exists(it => it.InMyRange(i))) //没有评分
-                    {
-                        msg = string.Format("标准没有完全包括某些值，比如:{0}", i);
-                        return false;
-                    }
-                    if (Items.Count(it => it.InMyRange(i)) > 1) //重复评分
-                    {
-                        msg = string.Format("某些值有两个以上的评分标准项，比如:{0}", i);
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-        /// <summary>
-        /// 将标准项转化成字符串的形式
-        /// </summary>
-        /// <param name="si"></param>
-        /// <returns></returns>
-        public string StandardItemToString(StandardItem si)
-        {
-            string ret = OperatorsHelper.GetString(si.Operator1) + (PhysicalItem != null ? PhysicalItem.ConvertToStr(si.Score1) : si.Score1.Trim().ToString());
-            if (si.Operator2 != null && si.Score2 != null)
-            {
-                ret += "  " + OperatorsHelper.GetString(si.Operator2.Value) + (PhysicalItem != null ? PhysicalItem.ConvertToStr(si.Score2.Value) : si.Score2.Value.Trim().ToString());
-            }
-            return ret;
-        }
-
         public Standard Clone()
         {
             var ret = MemberwiseClone() as Standard;

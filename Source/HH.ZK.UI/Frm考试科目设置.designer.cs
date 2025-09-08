@@ -54,7 +54,6 @@
             this.colSortMode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col舍入类型 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTestCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col成绩来源 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -106,7 +105,6 @@
             this.colSortMode,
             this.col舍入类型,
             this.colTestCount,
-            this.col成绩来源,
             this.colFill});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
@@ -300,13 +298,6 @@
             this.colTestCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colTestCount.Width = 80;
             // 
-            // col成绩来源
-            // 
-            this.col成绩来源.HeaderText = "成绩来源";
-            this.col成绩来源.Name = "col成绩来源";
-            this.col成绩来源.ReadOnly = true;
-            this.col成绩来源.Width = 120;
-            // 
             // colFill
             // 
             this.colFill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -367,7 +358,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSortMode;
         private System.Windows.Forms.DataGridViewTextBoxColumn col舍入类型;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTestCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col成绩来源;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFill;
     }
 }

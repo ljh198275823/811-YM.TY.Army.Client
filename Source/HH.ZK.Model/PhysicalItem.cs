@@ -38,13 +38,13 @@ namespace HH.ZK.Model
         public static int _体成份综合评分 = 160;
         public static int _生理年龄 = 161;
 
-        public static int ConvertPhysicalItem(Sex sex, int physicalItem)
+        public static int ConvertPhysicalItem(Gender sex, int physicalItem)
         {
-            if (sex == Model.Sex.Male && physicalItem == PhysicalItem._800米)
+            if (sex == Model.Gender.Male && physicalItem == PhysicalItem._800米)
             {
                 return PhysicalItem._1000米;
             }
-            else if (sex == Model.Sex.Female && physicalItem == PhysicalItem._1000米)
+            else if (sex == Model.Gender.Female && physicalItem == PhysicalItem._1000米)
             {
                 return PhysicalItem._800米;
             }
@@ -73,10 +73,6 @@ namespace HH.ZK.Model
         /// 获取或设置小数点位数
         /// </summary>
         public int PointCount { get; set; }
-        /// <summary>
-        /// 获取或设置项目成绩来源，true表示通过设备测试，false表示通过手持机APP录入
-        /// </summary>
-        public bool HasMachine { get; set; }
         /// <summary>
         /// 获取或设置测试项目成绩的排序，0表示没有排序，1表示值越低，成绩越好，2表示值越高，成绩越好
         /// </summary>
@@ -107,7 +103,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置测试次数
         /// </summary>
-        public int? TestCount { get; set; }
+        public int TestCount { get; set; }
         /// <summary>
         /// 0表示非零进一，1表示四舍五入，2表示直接截取
         /// </summary>

@@ -28,7 +28,7 @@ namespace HH.ZK.CommonUI
         protected override void InitControls()
         {
             base.InitControls();
-            txtDivision.Init(null);
+            txtDivision.Init();
             if (ParentDivision != null) txtDivision.SelectedDivisionID = ParentDivision.ID;
         }
 

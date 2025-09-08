@@ -169,7 +169,7 @@ namespace HH.ZK.CommonUI
         #region 事件处理程序
         private void FrmWriteStudentToICCard_Load(object sender, EventArgs e)
         {
-            ucStudentSearch1.Init(AppSettings.Current.PhysicalProject.ID);
+            ucStudentSearch1.Init();
             lblClear.Visible = false;
             _拍照框X = (pictureBox1.Width - _拍照框宽) / 2;
             _拍照框Y = (pictureBox1.Height - _拍照框高) / 2;
@@ -180,11 +180,11 @@ namespace HH.ZK.CommonUI
         private void ShowStudentInfo(DataGridViewRow row, Student s)
         {
             row.Tag = s;
-            row.Cells["colFacility"].Value = s.FacilityName;
+            row.Cells["colFacility"].Value = s.DivisionName;
             row.Cells["colID"].Value = s.ID;
             row.Cells["colClassName"].Value = s.ClassName;
             row.Cells["colName"].Value = s.Name;
-            row.Cells["colSex"].Value = s.Sex == Sex.Male ? "男" : "女";
+            row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
             row.Cells["colGrade"].Value = GradeHelper.Instance.GetName(s.Grade);
             row.Cells["col照片"].Value = s.HasPhoto;
         }

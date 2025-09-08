@@ -72,14 +72,14 @@ namespace HH.ZK.CommonUI.Controls
         /// <summary>
         /// 初始化
         /// </summary
-        public void Init(string projectID)
+        public void Init()
         {
             _AllDivisionNodes.Clear();
             this.ImageList = imageList1;
             this.Nodes.Clear();
             this.Nodes.Add("所有机构");
 
-            List<Division> items = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Division>(null, projectID).QueryObjects;
+            List<Division> items = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Division>(null, null).QueryObjects;
             if (items != null && items.Count > 0)
             {
                 AddDivisionNodes(items, this.Nodes[0]);

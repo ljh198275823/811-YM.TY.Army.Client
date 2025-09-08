@@ -21,6 +21,8 @@ namespace HH.ZK.UI
             InitializeComponent();
         }
 
+        public PhysicalProject Project { get; set; }
+
         #region 私有变量
         private DataTable _SourceTable = null;
 
@@ -38,11 +40,11 @@ namespace HH.ZK.UI
             Label preArrow = lblArrow;
             Label preDes = lblDestination;
             int pad = 30;
-            var 考试科目 = SysParaSettingsClient.GetSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, AppSettings.Current.PhysicalProject.ID);
+            var 考试科目 = SysParaSettingsClient.GetSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, Project.ID);
             if (考试科目 == null || 考试科目.Items == null || 考试科目.Items.Count == 0) return;
             foreach (PhysicalItem pi in 考试科目.Items)
             {
-                if (pi.Sex == 0 || pi.Sex == (int)Sex.Male)
+                if (pi.Sex == 0 || pi.Sex == (int)Gender.Male)
                 {
                     ComboBox cmb = new ComboBox();
                     cmb.Name = "cmb" + pi.ID.ToString();
@@ -75,7 +77,7 @@ namespace HH.ZK.UI
                     preArrow = lblArrow1;
                     preDes = lblDes;
                 }
-                if (pi.Sex == 0 || pi.Sex == (int)Sex.Female)
+                if (pi.Sex == 0 || pi.Sex == (int)Gender.Female)
                 {
                     ComboBox cmb_F = new ComboBox();
                     cmb_F.Name = "cmb" + pi.ID.ToString();
@@ -185,8 +187,8 @@ namespace HH.ZK.UI
 
         private void ShowStandardItems(Standard s, PhysicalItem pi)
         {
-            string colName = string.Format("col_{0}_{1}", s.PhysicalItemID.ToString(), s.Sex == Sex.Male ? 1 : 2);
-            if (viewDestination.Columns[colName] == null) AddPhysicalColumn(s.PhysicalItem, s.Sex);
+            string colName = string.Format("col_{0}_{1}", s.PhysicalItemID.ToString(), s.Gender == Gender.Male ? 1 : 2);
+            if (viewDestination.Columns[colName] == null) AddPhysicalColumn(pi, s.Gender);
             for (int i = 0; i < s.Items.Count; i++)
             {
                 if (viewDestination.Rows.Count < (i + 1))
@@ -201,24 +203,24 @@ namespace HH.ZK.UI
             }
         }
 
-        private DataGridViewColumn AddPhysicalColumn(PhysicalItem item, Sex sex)
+        private DataGridViewColumn AddPhysicalColumn(PhysicalItem item, Gender sex)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
-            col.Name = string.Format("col_{0}_{1}", item.ID.ToString(), sex == Sex.Male ? 1 : 2);
+            col.Name = string.Format("col_{0}_{1}", item.ID.ToString(), sex == Gender.Male ? 1 : 2);
             col.Tag = item;
             col.MinimumWidth = 60;
             col.Width = 80;
             col.ReadOnly = true;
             col.SortMode = DataGridViewColumnSortMode.NotSortable;
             col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            col.HeaderText = string.Format("{0}_{1}", item.Name, sex == Sex.Male ? "男" : "女");
+            col.HeaderText = string.Format("{0}_{1}", item.Name, sex == Gender.Male ? "男" : "女");
             this.viewDestination.Columns.Insert(this.viewDestination.Columns.Count, col);
             return col;
         }
 
         private void ClearStandard(Standard s)
         {
-            string colName = string.Format("col_{0}_{1}", s.PhysicalItemID.ToString(), s.Sex == Sex.Male ? 1 : 2);
+            string colName = string.Format("col_{0}_{1}", s.PhysicalItemID.ToString(), s.Gender == Gender.Male ? 1 : 2);
             if (viewDestination.Columns[colName] != null)
             {
                 foreach (DataGridViewRow row in viewDestination.Rows)
@@ -228,14 +230,13 @@ namespace HH.ZK.UI
             }
         }
 
-        private Standard CreateStandard(PhysicalItem pi, int grade, Sex sex)
+        private Standard CreateStandard(PhysicalItem pi, int grade, Gender sex)
         {
             Standard ret = new Standard();
             ret.ID = Guid.NewGuid();
             ret.Name = pi.Name + "评分标准";
-            ret.PhysicalItem = pi;
             ret.PhysicalItemID = pi.ID;
-            ret.Sex = sex;
+            ret.Gender = sex;
             ret.Grade = grade;
             return ret;
         }
@@ -301,18 +302,19 @@ namespace HH.ZK.UI
             viewDestination.Rows.Clear();
             _Standards.Clear();
             if (string.IsNullOrEmpty(cmbResult.Text)) return;
-            CreateStandards(_PhysicalItemCmbs_Male, Sex.Male);
-            CreateStandards(_PhysicalItemCmbs_Female, Sex.Female);
+            CreateStandards(_PhysicalItemCmbs_Male, Gender.Male);
+            CreateStandards(_PhysicalItemCmbs_Female, Gender.Female);
         }
 
-        private void CreateStandards(List<ComboBox> cmbs, Sex sex)
+        private void CreateStandards(List<ComboBox> cmbs, Gender sex)
         {
             foreach (ComboBox cmb in cmbs)
             {
                 if (!string.IsNullOrEmpty(cmb.Text))
                 {
                     PhysicalItem pi = cmb.Tag as PhysicalItem;
-                    Standard standard = CreateStandard(pi, GradeHelper.初三, sex);
+                    Standard standard = CreateStandard(pi, GradeHelper.无, sex);
+                    standard.ProjectID = Project.ID;
                     List<StandardItem> sis = new List<StandardItem>();
                     for (int i = 0; i < _SourceTable.Rows.Count; i++)
                     {
@@ -352,7 +354,7 @@ namespace HH.ZK.UI
                 int success = 0;
                 foreach (var std in _Standards)
                 {
-                    var ret = new APIClient(AppSettings.Current.ConnStr).Add<Guid, Standard>(std, AppSettings.Current.PhysicalProject.ID);
+                    var ret = new APIClient(AppSettings.Current.ConnStr).Add<Guid, Standard>(std, null);
                     if (ret.Result == ResultCode.Successful) success++;
                 }
                 MessageBox.Show(string.Format("成功导入 {0} 个评分标准", success), "消息", MessageBoxButtons.OK, MessageBoxIcon.Information);

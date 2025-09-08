@@ -28,10 +28,10 @@ namespace HH.ZK.UI
         private void ShowItemInGridViewRow(DataGridViewRow row, StudentWithDXCJ s)
         {
             row.Tag = s;
-            row.Cells["colFacility"].Value = s.FacilityName;
+            row.Cells["colFacility"].Value = s.DivisionName;
             row.Cells["colID"].Value = s.ID;
             row.Cells["colName"].Value = s.Name;
-            row.Cells["colSex"].Value = s.Sex == Sex.Male ? "男" : "女";
+            row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
             row.Cells["colClassName"].Value = s.ClassName;
             row.Cells["colPhysicalItem"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetName(s.PhysicalItemID);
             var pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(s.PhysicalItemID);

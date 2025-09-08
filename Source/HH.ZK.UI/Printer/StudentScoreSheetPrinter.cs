@@ -96,14 +96,14 @@ namespace HH.ZK.UI.Printer
             }
             else if (espression == "[学校]")
             {
-                str = s.FacilityName;
+                str = s.DivisionName;
                 return true;
             }
-            else if (espression == "[组别]")
-            {
-                str = s.Groups;
-                return true;
-            }
+            //else if (espression == "[组别]")
+            //{
+            //    str = s.Groups;
+            //    return true;
+            //}
             return false;
         }
         #endregion

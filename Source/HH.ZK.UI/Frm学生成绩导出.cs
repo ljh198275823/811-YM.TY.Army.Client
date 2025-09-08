@@ -39,7 +39,7 @@ namespace HH.ZK.UI
                 _ResultCols.ForEach(it => dataGridView1.Columns.Remove(it));
                 _ResultCols.Clear();
             }
-            var stds = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Standard>(null, AppSettings.Current.PhysicalProject.TemplateProjectID).QueryObjects;
+            var stds = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Standard>(null, AppSettings.Current.PhysicalProject.ID).QueryObjects;
             if (AppSettings.Current.PhysicalProject.PhysicalItems != null && AppSettings.Current.PhysicalProject.PhysicalItems.Items != null)
             {
                 foreach (var pi in AppSettings.Current.PhysicalProject.PhysicalItems.Items)
@@ -95,34 +95,34 @@ namespace HH.ZK.UI
             row.Tag = s;
             row.Cells["colID"].Value = s.ID;
             row.Cells["colName"].Value = s.Name;
-            row.Cells["colSex"].Value = s.Sex == Sex.Male ? "男" : "女";
-            row.Cells["colGroup"].Value = s.Groups;
+            row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
+            //row.Cells["colGroup"].Value = s.Groups;
             row.Cells["colClassName"].Value = s.ClassName;
-            row.Cells["col考试科目"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(s.PhysicalItems);
-            row.Cells["colFacility"].Value = s.FacilityName;
+            //row.Cells["col考试科目"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(s.PhysicalItems);
+            row.Cells["colFacility"].Value = s.DivisionName;
             row.Cells["colState"].Value = s.State == StudentState.正常考试 ? null : s.State.ToString();
             if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) row.Cells["col总分"].Value = s.Total;
-            row.Cells["col检录"].Value = s.CheckTime?.ToString("yyyy-MM-dd HH:mm:ss");
-            if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) row.Cells["col加分"].Value = s.JiaFen.Trim();
+            //row.Cells["col检录"].Value = s.CheckTime?.ToString("yyyy-MM-dd HH:mm:ss");
+            //if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) row.Cells["col加分"].Value = s.JiaFen.Trim();
             foreach (DataGridViewColumn col in _ScoreCols)
             {
                 row.Cells[col.Index].ReadOnly = true;
                 var pi = col.Tag as PhysicalItem;
-                if (s.包函考试科目(pi.ID))
-                {
-                    var score = s.Scores != null ? s.Scores.SingleOrDefault(it => it.PhysicalItemID == pi.ID) : null;
-                    if (score == null) row.Cells[col.Index].Style.BackColor = Color.Moccasin;
-                    else
-                    {
-                        row.Cells[col.Index].Tag = score;
-                        ShowScoreCell(row.Cells[col.Index], score);
-                        row.Cells[col.Index].Style.BackColor = Color.White;
-                        foreach (var rcol in _ResultCols)
-                        {
-                            if ((rcol.Tag as PhysicalItem).ID == pi.ID && score.Result.HasValue) row.Cells[rcol.Index].Value = score.Result.Value.Trim();
-                        }
-                    }
-                }
+                //if (s.包函考试科目(pi.ID))
+                //{
+                //    var score = s.Scores != null ? s.Scores.SingleOrDefault(it => it.PhysicalItemID == pi.ID) : null;
+                //    if (score == null) row.Cells[col.Index].Style.BackColor = Color.Moccasin;
+                //    else
+                //    {
+                //        row.Cells[col.Index].Tag = score;
+                //        ShowScoreCell(row.Cells[col.Index], score);
+                //        row.Cells[col.Index].Style.BackColor = Color.White;
+                //        foreach (var rcol in _ResultCols)
+                //        {
+                //            if ((rcol.Tag as PhysicalItem).ID == pi.ID && score.Result.HasValue) row.Cells[rcol.Index].Value = score.Result.Value.Trim();
+                //        }
+                //    }
+                //}
             }
         }
 
@@ -173,7 +173,7 @@ namespace HH.ZK.UI
         #region 事件处理程序
         private void FrmExportScores_Load(object sender, EventArgs e)
         {
-            ucStudentSearch1.Init(AppSettings.Current.PhysicalProject.ID);
+            ucStudentSearch1.Init();
             InitGridViewColumns();
             txt考试状态.Init(AppSettings.Current.PhysicalProject.StateSettings, true);
             dataGridView1.Columns["col总分"].Visible = AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read);
@@ -354,8 +354,8 @@ namespace HH.ZK.UI
                 if (dig.ShowDialog() != DialogResult.OK) return;
                 var folder = dig.SelectedPath;
                 var groups = from s in students
-                             orderby s.FacilityName ascending, s.ID ascending
-                             group s by s.FacilityName;
+                             orderby s.DivisionName ascending, s.ID ascending
+                             group s by s.DivisionName;
                 foreach (var gp in groups)
                 {
                     string path = System.IO.Path.Combine(folder, gp.Key + ".xls");

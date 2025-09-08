@@ -27,7 +27,7 @@ namespace HH.ZK.UI
         protected override void Init()
         {
             base.Init();
-            ucStatiticsSearch1.Init(AppSettings.Current.PhysicalProject.ID);
+            ucStatiticsSearch1.Init();
         }
 
         public override void ShowOperatorRights()
@@ -101,7 +101,7 @@ namespace HH.ZK.UI
                 con.ClassName = con1.ClassName;
                 con.Sex = con1.Sex;
                 if (!string.IsNullOrEmpty(item.Key.ClassName)) con.ClassName = item.Key.ClassName;
-                if (!string.IsNullOrEmpty(item.Key.Sex)) con.Sex = item.Key.Sex == "男" ? Sex.Male : Sex.Female;
+                if (!string.IsNullOrEmpty(item.Key.Sex)) con.Sex = item.Key.Sex == "男" ? Gender.Male : Gender.Female;
                 if (!string.IsNullOrEmpty(item.Key.FacilityID)) con.FacilityID = item.Key.FacilityID;
                 if (!string.IsNullOrEmpty(item.Key.DivisionID)) con.DivisionID =Guid.Parse ( item.Key.DivisionID);
 

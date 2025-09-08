@@ -31,7 +31,7 @@ namespace HH.ZK.UI
         {
             this.myTree1.Nodes.Clear();
             TreeNode root = this.myTree1.Nodes.Add("考试科目");
-            var 考试科目 = SysParaSettingsClient.GetSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, AppSettings.Current.PhysicalProject.TemplateProjectID);
+            var 考试科目 = SysParaSettingsClient.GetSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, AppSettings.Current.PhysicalProject.ID);
             if (考试科目 == null || 考试科目.Items == null || 考试科目.Items.Count == 0) return;
             foreach (PhysicalItem pi in 考试科目.Items)
             {
@@ -39,24 +39,20 @@ namespace HH.ZK.UI
                 node.Text = string.Format("{0}[{1}]", pi.Name, pi.Unit);
                 node.Tag = pi;
                 root.Nodes.Add(node);
-                if (pi.Sex == 0 || pi.Sex == (int)Sex.Male) node.Nodes.Add("男");
-                if (pi.Sex == 0 || pi.Sex == (int)Sex.Female) node.Nodes.Add("女");
+                if (pi.Sex == 0 || pi.Sex == (int)Gender.Male) node.Nodes.Add("男");
+                if (pi.Sex == 0 || pi.Sex == (int)Gender.Female) node.Nodes.Add("女");
             }
             this.myTree1.ExpandAll();
         }
 
-        private void ShowStandards(PhysicalItem pi, Sex sex)
+        private void ShowStandards(PhysicalItem pi, Gender sex)
         {
             this.dataGridview1.Rows.Clear();
             dataGridview1.Visible = true;
-            var items = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Standard>(new StandardSearchCondition() { PhysicalItem = pi.ID, Sex = sex }, AppSettings.Current.PhysicalProject.TemplateProjectID).QueryObjects;
+            var items = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Standard>(new StandardSearchCondition() { PhysicalItem = pi.ID, Sex = sex }, AppSettings.Current.PhysicalProject.ID).QueryObjects;
             if (items != null && items != null && items.Count >= 1)
             {
                 _CurStandard = items[0];
-                if (_CurStandard == null)
-                {
-                    _CurStandard = CreateStandard(pi, sex);
-                }
                 ShowStandardItems(_CurStandard,pi);
             }
         }
@@ -84,30 +80,18 @@ namespace HH.ZK.UI
             if (node != null && node.Text == "男")
             {
                 PhysicalItem pi = node.Parent.Tag as PhysicalItem;
-                ShowStandards(pi, Sex.Male);
+                ShowStandards(pi, Gender.Male);
             }
             else if (node != null && node.Text == "女")
             {
                 PhysicalItem pi = node.Parent.Tag as PhysicalItem;
-                ShowStandards(pi, Sex.Female);
+                ShowStandards(pi, Gender.Female);
             }
             else
             {
                 dataGridview1.Visible = false;
                 _CurStandard = null;
             }
-        }
-
-        private Standard CreateStandard(PhysicalItem pi, Sex sex)
-        {
-            Standard st = new Standard();
-            st.ID = Guid.NewGuid();
-            st.Name = pi.Name + "评分标准";
-            st.PhysicalItem = pi;
-            st.PhysicalItemID = pi.ID;
-            st.Sex = sex;
-            st.Grade = GradeHelper.初三;
-            return st;
         }
         #endregion
 

@@ -35,42 +35,10 @@
             this.mnu切换用户 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Logout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.Main_基本信息 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu区域信息管理 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu学校信息管理 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu学生信息管理 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu考试分组管理 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu_测试项目管理 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu_Standard = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu特殊评分标准管理 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu学生照片采集 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu导入学生照片 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu导出学生照片 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu重新生成照片特征值 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu_Options = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu视频服务器设置 = new System.Windows.Forms.ToolStripMenuItem();
-            this.Main_测试成绩 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu学生成绩管理 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu_CollectScore_Wifi = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu_CollectScore = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu_成绩采集澳亚特 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu采集成绩数据查询 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu正在考试 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu考场进度 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu_ImportScore = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu_ScoreImport1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu学生成绩快速录入 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu连接成绩公示屏 = new System.Windows.Forms.ToolStripMenuItem();
+            this.账号管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.训练考核大ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Main_报表 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu学生原始成绩查询 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu学生检录查询报表 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
             this.mnu重复成绩 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu人工修改成绩查询报表 = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,13 +54,7 @@
             this.mainToolBar = new System.Windows.Forms.ToolStrip();
             this.btn学生信息 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu导入学生 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu导出学生准考证 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn分组管理 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu自动分组 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu导入分组 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu导出学生分组准考证 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.btn成绩管理 = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Collect = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu导出成绩 = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,8 +85,8 @@
             this.mainMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.系统ToolStripMenuItem,
-            this.Main_基本信息,
-            this.Main_测试成绩,
+            this.账号管理ToolStripMenuItem,
+            this.训练考核大ToolStripMenuItem,
             this.Main_报表,
             this.帮助ToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
@@ -172,261 +134,23 @@
             this.mnu_Exit.Text = "退出";
             this.mnu_Exit.Click += new System.EventHandler(this.mnu_Exit_Click);
             // 
-            // Main_基本信息
+            // 账号管理ToolStripMenuItem
             // 
-            this.Main_基本信息.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnu区域信息管理,
-            this.mnu学校信息管理,
-            this.mnu学生信息管理,
-            this.mnu考试分组管理,
-            this.toolStripSeparator15,
-            this.mnu_测试项目管理,
-            this.mnu_Standard,
-            this.mnu特殊评分标准管理,
-            this.toolStripSeparator3,
-            this.mnu学生照片采集,
-            this.mnu导入学生照片,
-            this.mnu导出学生照片,
-            this.mnu重新生成照片特征值,
-            this.toolStripSeparator6,
-            this.mnu_Options,
-            this.mnu视频服务器设置});
-            this.Main_基本信息.Name = "Main_基本信息";
-            this.Main_基本信息.Size = new System.Drawing.Size(71, 20);
-            this.Main_基本信息.Text = "基本信息";
+            this.账号管理ToolStripMenuItem.Name = "账号管理ToolStripMenuItem";
+            this.账号管理ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.账号管理ToolStripMenuItem.Text = "账号管理";
             // 
-            // mnu区域信息管理
+            // 训练考核大ToolStripMenuItem
             // 
-            this.mnu区域信息管理.Name = "mnu区域信息管理";
-            this.mnu区域信息管理.Size = new System.Drawing.Size(217, 22);
-            this.mnu区域信息管理.Text = "区域信息管理";
-            this.mnu区域信息管理.Click += new System.EventHandler(this.mnu区域信息管理_Click);
-            // 
-            // mnu学校信息管理
-            // 
-            this.mnu学校信息管理.Name = "mnu学校信息管理";
-            this.mnu学校信息管理.Size = new System.Drawing.Size(217, 22);
-            this.mnu学校信息管理.Text = "学校信息管理";
-            this.mnu学校信息管理.Click += new System.EventHandler(this.mnu学校信息管理_Click);
-            // 
-            // mnu学生信息管理
-            // 
-            this.mnu学生信息管理.Name = "mnu学生信息管理";
-            this.mnu学生信息管理.Size = new System.Drawing.Size(217, 22);
-            this.mnu学生信息管理.Text = "学生信息管理";
-            this.mnu学生信息管理.Click += new System.EventHandler(this.mnu学生信息管理_Click);
-            // 
-            // mnu考试分组管理
-            // 
-            this.mnu考试分组管理.Name = "mnu考试分组管理";
-            this.mnu考试分组管理.Size = new System.Drawing.Size(217, 22);
-            this.mnu考试分组管理.Text = "考试分组管理";
-            this.mnu考试分组管理.Click += new System.EventHandler(this.mnu考试分组管理_Click);
-            // 
-            // toolStripSeparator15
-            // 
-            this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(214, 6);
-            // 
-            // mnu_测试项目管理
-            // 
-            this.mnu_测试项目管理.Name = "mnu_测试项目管理";
-            this.mnu_测试项目管理.Size = new System.Drawing.Size(217, 22);
-            this.mnu_测试项目管理.Text = "查看考试科目";
-            this.mnu_测试项目管理.Click += new System.EventHandler(this.mnu_测试项目管理_Click);
-            // 
-            // mnu_Standard
-            // 
-            this.mnu_Standard.Name = "mnu_Standard";
-            this.mnu_Standard.Size = new System.Drawing.Size(217, 22);
-            this.mnu_Standard.Text = "查看评分标准";
-            this.mnu_Standard.Click += new System.EventHandler(this.mnu_Standard_Click);
-            // 
-            // mnu特殊评分标准管理
-            // 
-            this.mnu特殊评分标准管理.Name = "mnu特殊评分标准管理";
-            this.mnu特殊评分标准管理.Size = new System.Drawing.Size(217, 22);
-            this.mnu特殊评分标准管理.Text = "特殊评分标准管理";
-            this.mnu特殊评分标准管理.Visible = false;
-            this.mnu特殊评分标准管理.Click += new System.EventHandler(this.mnu特殊评分标准管理_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(214, 6);
-            // 
-            // mnu学生照片采集
-            // 
-            this.mnu学生照片采集.Name = "mnu学生照片采集";
-            this.mnu学生照片采集.Size = new System.Drawing.Size(217, 22);
-            this.mnu学生照片采集.Text = "学生照片采集";
-            this.mnu学生照片采集.Click += new System.EventHandler(this.mnu学生照片采集_Click);
-            // 
-            // mnu导入学生照片
-            // 
-            this.mnu导入学生照片.Name = "mnu导入学生照片";
-            this.mnu导入学生照片.Size = new System.Drawing.Size(217, 22);
-            this.mnu导入学生照片.Text = "导入学生照片";
-            this.mnu导入学生照片.Click += new System.EventHandler(this.mnu导入学生照片_Click);
-            // 
-            // mnu导出学生照片
-            // 
-            this.mnu导出学生照片.Name = "mnu导出学生照片";
-            this.mnu导出学生照片.Size = new System.Drawing.Size(217, 22);
-            this.mnu导出学生照片.Text = "导出学生照片";
-            this.mnu导出学生照片.Click += new System.EventHandler(this.mnu导出学生照片_Click);
-            // 
-            // mnu重新生成照片特征值
-            // 
-            this.mnu重新生成照片特征值.Name = "mnu重新生成照片特征值";
-            this.mnu重新生成照片特征值.Size = new System.Drawing.Size(217, 22);
-            this.mnu重新生成照片特征值.Text = "重新生成照片人脸特征值";
-            this.mnu重新生成照片特征值.Click += new System.EventHandler(this.mnu重新生成照片特征值_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(214, 6);
-            // 
-            // mnu_Options
-            // 
-            this.mnu_Options.Name = "mnu_Options";
-            this.mnu_Options.Size = new System.Drawing.Size(217, 22);
-            this.mnu_Options.Text = "系统选项";
-            this.mnu_Options.Click += new System.EventHandler(this.mnu_Options_Click);
-            // 
-            // mnu视频服务器设置
-            // 
-            this.mnu视频服务器设置.Name = "mnu视频服务器设置";
-            this.mnu视频服务器设置.Size = new System.Drawing.Size(217, 22);
-            this.mnu视频服务器设置.Text = "视频服务器设置";
-            this.mnu视频服务器设置.Click += new System.EventHandler(this.mnu视频服务器设置_Click);
-            // 
-            // Main_测试成绩
-            // 
-            this.Main_测试成绩.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnu学生成绩管理,
-            this.toolStripSeparator5,
-            this.mnu_CollectScore_Wifi,
-            this.mnu_CollectScore,
-            this.mnu_成绩采集澳亚特,
-            this.mnu采集成绩数据查询,
-            this.toolStripSeparator17,
-            this.mnu正在考试,
-            this.mnu考场进度,
-            this.toolStripSeparator2,
-            this.mnu_ImportScore,
-            this.mnu_ScoreImport1,
-            this.mnu学生成绩快速录入,
-            this.toolStripSeparator7,
-            this.mnu连接成绩公示屏});
-            this.Main_测试成绩.Name = "Main_测试成绩";
-            this.Main_测试成绩.Size = new System.Drawing.Size(71, 20);
-            this.Main_测试成绩.Text = "成绩管理";
-            // 
-            // mnu学生成绩管理
-            // 
-            this.mnu学生成绩管理.Name = "mnu学生成绩管理";
-            this.mnu学生成绩管理.Size = new System.Drawing.Size(178, 22);
-            this.mnu学生成绩管理.Text = "学生成绩管理";
-            this.mnu学生成绩管理.Click += new System.EventHandler(this.mnu学生成绩管理_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(175, 6);
-            // 
-            // mnu_CollectScore_Wifi
-            // 
-            this.mnu_CollectScore_Wifi.Name = "mnu_CollectScore_Wifi";
-            this.mnu_CollectScore_Wifi.Size = new System.Drawing.Size(178, 22);
-            this.mnu_CollectScore_Wifi.Text = "成绩采集WIFI";
-            this.mnu_CollectScore_Wifi.Click += new System.EventHandler(this.mnu_CollectScore_Wifi_Click);
-            // 
-            // mnu_CollectScore
-            // 
-            this.mnu_CollectScore.Name = "mnu_CollectScore";
-            this.mnu_CollectScore.Size = new System.Drawing.Size(178, 22);
-            this.mnu_CollectScore.Text = "成绩采集";
-            this.mnu_CollectScore.Click += new System.EventHandler(this.mnu_CollectScore_Click);
-            // 
-            // mnu_成绩采集澳亚特
-            // 
-            this.mnu_成绩采集澳亚特.Name = "mnu_成绩采集澳亚特";
-            this.mnu_成绩采集澳亚特.Size = new System.Drawing.Size(178, 22);
-            this.mnu_成绩采集澳亚特.Text = "成绩采集_电计";
-            this.mnu_成绩采集澳亚特.Click += new System.EventHandler(this.mnu_成绩采集澳亚特_Click);
-            // 
-            // mnu采集成绩数据查询
-            // 
-            this.mnu采集成绩数据查询.Name = "mnu采集成绩数据查询";
-            this.mnu采集成绩数据查询.Size = new System.Drawing.Size(178, 22);
-            this.mnu采集成绩数据查询.Text = "采集成绩数据查询";
-            this.mnu采集成绩数据查询.Click += new System.EventHandler(this.mnu采集成绩数据查询_Click);
-            // 
-            // toolStripSeparator17
-            // 
-            this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size(175, 6);
-            // 
-            // mnu正在考试
-            // 
-            this.mnu正在考试.Name = "mnu正在考试";
-            this.mnu正在考试.Size = new System.Drawing.Size(178, 22);
-            this.mnu正在考试.Text = "实时成绩打印";
-            this.mnu正在考试.Click += new System.EventHandler(this.mnu正在考试_Click);
-            // 
-            // mnu考场进度
-            // 
-            this.mnu考场进度.Name = "mnu考场进度";
-            this.mnu考场进度.Size = new System.Drawing.Size(178, 22);
-            this.mnu考场进度.Text = "考场进度";
-            this.mnu考场进度.Visible = false;
-            this.mnu考场进度.Click += new System.EventHandler(this.mnu考场进度_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
-            // 
-            // mnu_ImportScore
-            // 
-            this.mnu_ImportScore.Name = "mnu_ImportScore";
-            this.mnu_ImportScore.Size = new System.Drawing.Size(178, 22);
-            this.mnu_ImportScore.Text = "导入成绩";
-            this.mnu_ImportScore.Click += new System.EventHandler(this.mnu_ImportScore_Click);
-            // 
-            // mnu_ScoreImport1
-            // 
-            this.mnu_ScoreImport1.Name = "mnu_ScoreImport1";
-            this.mnu_ScoreImport1.Size = new System.Drawing.Size(178, 22);
-            this.mnu_ScoreImport1.Text = "导入主机采集成绩";
-            this.mnu_ScoreImport1.Click += new System.EventHandler(this.mnu_ScoreImport1_Click);
-            // 
-            // mnu学生成绩快速录入
-            // 
-            this.mnu学生成绩快速录入.Name = "mnu学生成绩快速录入";
-            this.mnu学生成绩快速录入.Size = new System.Drawing.Size(178, 22);
-            this.mnu学生成绩快速录入.Text = "学生成绩快速录入";
-            this.mnu学生成绩快速录入.Click += new System.EventHandler(this.mnu学生成绩快速录入_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(175, 6);
-            // 
-            // mnu连接成绩公示屏
-            // 
-            this.mnu连接成绩公示屏.Name = "mnu连接成绩公示屏";
-            this.mnu连接成绩公示屏.Size = new System.Drawing.Size(178, 22);
-            this.mnu连接成绩公示屏.Text = "连接成绩公示屏";
-            this.mnu连接成绩公示屏.Click += new System.EventHandler(this.mnu连接成绩公示屏_Click);
+            this.训练考核大ToolStripMenuItem.Name = "训练考核大ToolStripMenuItem";
+            this.训练考核大ToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.训练考核大ToolStripMenuItem.Text = "训练/考核大纲管理";
+            this.训练考核大ToolStripMenuItem.Click += new System.EventHandler(this.训练考核大ToolStripMenuItem_Click);
             // 
             // Main_报表
             // 
             this.Main_报表.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnu学生原始成绩查询,
-            this.mnu学生检录查询报表,
             this.toolStripSeparator20,
             this.mnu重复成绩,
             this.mnu人工修改成绩查询报表,
@@ -446,13 +170,6 @@
             this.mnu学生原始成绩查询.Size = new System.Drawing.Size(204, 22);
             this.mnu学生原始成绩查询.Text = "学生成绩查询报表";
             this.mnu学生原始成绩查询.Click += new System.EventHandler(this.mnu学生原始成绩查询_Click);
-            // 
-            // mnu学生检录查询报表
-            // 
-            this.mnu学生检录查询报表.Name = "mnu学生检录查询报表";
-            this.mnu学生检录查询报表.Size = new System.Drawing.Size(204, 22);
-            this.mnu学生检录查询报表.Text = "学生检录记录报表";
-            this.mnu学生检录查询报表.Click += new System.EventHandler(this.mnu学生检录查询报表_Click);
             // 
             // toolStripSeparator20
             // 
@@ -525,14 +242,14 @@
             // 用户手册ToolStripMenuItem
             // 
             this.用户手册ToolStripMenuItem.Name = "用户手册ToolStripMenuItem";
-            this.用户手册ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.用户手册ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.用户手册ToolStripMenuItem.Text = "用户手册";
             this.用户手册ToolStripMenuItem.Click += new System.EventHandler(this.用户手册ToolStripMenuItem_Click);
             // 
             // mnu软件更新日志
             // 
             this.mnu软件更新日志.Name = "mnu软件更新日志";
-            this.mnu软件更新日志.Size = new System.Drawing.Size(180, 22);
+            this.mnu软件更新日志.Size = new System.Drawing.Size(152, 22);
             this.mnu软件更新日志.Text = "软件更新日志";
             this.mnu软件更新日志.Click += new System.EventHandler(this.mnu软件更新日志_Click);
             // 
@@ -544,13 +261,7 @@
             this.mainToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn学生信息,
             this.mnu导入学生,
-            this.mnu导出学生准考证,
             this.toolStripSeparator8,
-            this.btn分组管理,
-            this.mnu自动分组,
-            this.mnu导入分组,
-            this.mnu导出学生分组准考证,
-            this.toolStripSeparator11,
             this.btn成绩管理,
             this.btn_Collect,
             this.mnu导出成绩,
@@ -576,74 +287,24 @@
             this.btn学生信息.Image = global::HH.ZK.UI.Properties.Resources.Operator;
             this.btn学生信息.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn学生信息.Name = "btn学生信息";
-            this.btn学生信息.Size = new System.Drawing.Size(71, 51);
-            this.btn学生信息.Text = "学生信息";
+            this.btn学生信息.Size = new System.Drawing.Size(97, 51);
+            this.btn学生信息.Text = "人员部门信息";
             this.btn学生信息.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn学生信息.Click += new System.EventHandler(this.btn_ImportStudent_Click);
+            this.btn学生信息.Click += new System.EventHandler(this.btn学生信息_Click);
             // 
             // mnu导入学生
             // 
             this.mnu导入学生.Image = global::HH.ZK.UI.Properties.Resources.import;
             this.mnu导入学生.Name = "mnu导入学生";
             this.mnu导入学生.Size = new System.Drawing.Size(71, 51);
-            this.mnu导入学生.Text = "导入学生";
+            this.mnu导入学生.Text = "导入人员";
             this.mnu导入学生.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.mnu导入学生.Click += new System.EventHandler(this.mnu导入学生_Click);
-            // 
-            // mnu导出学生准考证
-            // 
-            this.mnu导出学生准考证.Image = global::HH.ZK.UI.Properties.Resources.barcode;
-            this.mnu导出学生准考证.Name = "mnu导出学生准考证";
-            this.mnu导出学生准考证.Size = new System.Drawing.Size(58, 51);
-            this.mnu导出学生准考证.Text = "准考证";
-            this.mnu导出学生准考证.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.mnu导出学生准考证.Click += new System.EventHandler(this.mnu导出学生准考证_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 51);
-            // 
-            // btn分组管理
-            // 
-            this.btn分组管理.Image = global::HH.ZK.UI.Properties.Resources.forward;
-            this.btn分组管理.Name = "btn分组管理";
-            this.btn分组管理.Size = new System.Drawing.Size(71, 51);
-            this.btn分组管理.Text = "分组管理";
-            this.btn分组管理.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn分组管理.Click += new System.EventHandler(this.btn自动分组_Click);
-            // 
-            // mnu自动分组
-            // 
-            this.mnu自动分组.Image = global::HH.ZK.UI.Properties.Resources.forward;
-            this.mnu自动分组.Name = "mnu自动分组";
-            this.mnu自动分组.Size = new System.Drawing.Size(71, 51);
-            this.mnu自动分组.Text = "自动分组";
-            this.mnu自动分组.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.mnu自动分组.Click += new System.EventHandler(this.mnu自动分组_Click);
-            // 
-            // mnu导入分组
-            // 
-            this.mnu导入分组.Image = global::HH.ZK.UI.Properties.Resources.import;
-            this.mnu导入分组.Name = "mnu导入分组";
-            this.mnu导入分组.Size = new System.Drawing.Size(71, 51);
-            this.mnu导入分组.Text = "导入分组";
-            this.mnu导入分组.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.mnu导入分组.Click += new System.EventHandler(this.mnu导入分组_Click);
-            // 
-            // mnu导出学生分组准考证
-            // 
-            this.mnu导出学生分组准考证.Image = global::HH.ZK.UI.Properties.Resources.barcode;
-            this.mnu导出学生分组准考证.Name = "mnu导出学生分组准考证";
-            this.mnu导出学生分组准考证.Size = new System.Drawing.Size(84, 51);
-            this.mnu导出学生分组准考证.Text = "分组准考证";
-            this.mnu导出学生分组准考证.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.mnu导出学生分组准考证.Click += new System.EventHandler(this.mnu学生条码_Click);
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 51);
             // 
             // btn成绩管理
             // 
@@ -653,7 +314,6 @@
             this.btn成绩管理.Size = new System.Drawing.Size(71, 51);
             this.btn成绩管理.Text = "成绩管理";
             this.btn成绩管理.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn成绩管理.Click += new System.EventHandler(this.btn学生成绩管理_Click);
             // 
             // btn_Collect
             // 
@@ -663,7 +323,6 @@
             this.btn_Collect.Size = new System.Drawing.Size(71, 51);
             this.btn_Collect.Text = "成绩采集";
             this.btn_Collect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_Collect.Click += new System.EventHandler(this.btn_Collect_Click);
             // 
             // mnu导出成绩
             // 
@@ -684,7 +343,6 @@
             this.btn考场进度.Text = "考场进度";
             this.btn考场进度.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn考场进度.Visible = false;
-            this.btn考场进度.Click += new System.EventHandler(this.btn考场进度_Click);
             // 
             // btn考试视频
             // 
@@ -704,7 +362,6 @@
             this.btn自动打印成绩.Size = new System.Drawing.Size(71, 51);
             this.btn自动打印成绩.Text = "实时打印";
             this.btn自动打印成绩.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn自动打印成绩.Click += new System.EventHandler(this.btn自动打印成绩_Click);
             // 
             // btn学生成绩单
             // 
@@ -838,7 +495,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mainMenu;
             this.Name = "FrmMain_ZK";
-            this.Text = "部队训练平台客户端";
+            this.Text = "AI 军事体能考核总系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
@@ -861,24 +518,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnu_ChangPwd;
         private System.Windows.Forms.ToolStripMenuItem mnu_Logout;
         private System.Windows.Forms.ToolStripMenuItem mnu_Exit;
-        private System.Windows.Forms.ToolStripMenuItem Main_基本信息;
-        private System.Windows.Forms.ToolStripMenuItem Main_测试成绩;
         private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 用户手册ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnu_Standard;
-        private System.Windows.Forms.ToolStripMenuItem mnu_ImportScore;
-        private System.Windows.Forms.ToolStripMenuItem mnu_CollectScore;
-        private System.Windows.Forms.ToolStripMenuItem mnu_Options;
-        private System.Windows.Forms.ToolStripMenuItem mnu_ScoreImport1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem mnu_CollectScore_Wifi;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripMenuItem mnu_成绩采集澳亚特;
-        private System.Windows.Forms.ToolStripMenuItem mnu_测试项目管理;
-        private System.Windows.Forms.ToolStripMenuItem mnu特殊评分标准管理;
         private System.Windows.Forms.ToolStripMenuItem btn学生信息;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripMenuItem btn_Collect;
         private System.Windows.Forms.ToolStripMenuItem btn自动打印成绩;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
@@ -888,15 +530,6 @@
         private System.Windows.Forms.ToolStripMenuItem btn考场进度;
         private System.Windows.Forms.ToolStripMenuItem btn考试视频;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
-        private System.Windows.Forms.ToolStripMenuItem mnu考试分组管理;
-        private System.Windows.Forms.ToolStripMenuItem mnu学生信息管理;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripMenuItem mnu连接成绩公示屏;
-        private System.Windows.Forms.ToolStripMenuItem btn分组管理;
-        private System.Windows.Forms.ToolStripMenuItem mnu正在考试;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
-        private System.Windows.Forms.ToolStripMenuItem mnu考场进度;
         private System.Windows.Forms.ToolStripMenuItem Main_报表;
         private System.Windows.Forms.ToolStripMenuItem mnu重复成绩;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
@@ -904,7 +537,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnu总成绩统计报表;
         private System.Windows.Forms.ToolStripMenuItem mnu单项成绩统计报表;
         private System.Windows.Forms.ToolStripMenuItem btn单项成绩;
-        private System.Windows.Forms.ToolStripMenuItem mnu学生检录查询报表;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator20;
         private System.Windows.Forms.ToolStripMenuItem mnu学生原始成绩查询;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -914,31 +546,18 @@
         private System.Windows.Forms.ToolStripStatusLabel lblOperator;
         private System.Windows.Forms.ToolStripStatusLabel lblState;
         private System.Windows.Forms.ToolStripMenuItem mnu软件更新日志;
-        private System.Windows.Forms.ToolStripMenuItem mnu学生照片采集;
-        private System.Windows.Forms.ToolStripMenuItem mnu导入学生照片;
-        private System.Windows.Forms.ToolStripMenuItem mnu导出学生照片;
         private LJH.GeneralLibrary.WinformControl.UCFormViewEx ucFormViewMain;
         private System.Windows.Forms.ToolStripMenuItem mnu导入学生;
-        private System.Windows.Forms.ToolStripMenuItem mnu导入分组;
         private System.Windows.Forms.ToolStripMenuItem mnu仲裁报表;
-        private System.Windows.Forms.ToolStripMenuItem mnu学生成绩管理;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem mnu学生成绩仲裁记录报表;
-        private System.Windows.Forms.ToolStripMenuItem mnu导出学生分组准考证;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripMenuItem mnu自动分组;
-        private System.Windows.Forms.ToolStripMenuItem mnu采集成绩数据查询;
         private System.Windows.Forms.ToolStripMenuItem mnu导出成绩;
         private System.Windows.Forms.ToolStripMenuItem mnu切换用户;
-        private System.Windows.Forms.ToolStripMenuItem mnu学生成绩快速录入;
-        private System.Windows.Forms.ToolStripMenuItem mnu导出学生准考证;
         private System.Windows.Forms.ToolStripMenuItem mnu人工修改成绩查询报表;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem mnu视频服务器设置;
-        private System.Windows.Forms.ToolStripMenuItem mnu重新生成照片特征值;
         private System.Windows.Forms.ToolStripMenuItem btn学生成绩单;
-        private System.Windows.Forms.ToolStripMenuItem mnu区域信息管理;
-        private System.Windows.Forms.ToolStripMenuItem mnu学校信息管理;
+        private System.Windows.Forms.ToolStripMenuItem 账号管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 训练考核大ToolStripMenuItem;
     }
 }
 

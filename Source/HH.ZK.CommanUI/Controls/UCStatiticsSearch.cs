@@ -22,25 +22,15 @@ namespace HH.ZK.CommonUI.Controls
         private string _ProjectID;
 
         #region 公共方法
-        public void Init(string projectID)
+        public void Init()
         {
-            _ProjectID = projectID;
-            if (!string.IsNullOrEmpty(projectID))
-            {
-                cmbDivision.Init(projectID);
-                cmbDivision.SelectedIndexChanged -= new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
-                cmbDivision.SelectedIndexChanged += new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
+            cmbDivision.Init();
+            cmbDivision.SelectedIndexChanged -= new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
+            cmbDivision.SelectedIndexChanged += new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
 
-                cmbFacility.Init(projectID);
-                cmbFacility.SelectedIndexChanged -= new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
-                cmbFacility.SelectedIndexChanged += new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
-            }
-            else
-            {
-                cmbDivision.Enabled = false;
-                cmbFacility.Enabled = false;
-                txtClassName.Enabled = false;
-            }
+            cmbFacility.Init();
+            cmbFacility.SelectedIndexChanged -= new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
+            cmbFacility.SelectedIndexChanged += new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
         }
 
         public StatisticSearchCondition GetSearchCondition()
@@ -50,8 +40,8 @@ namespace HH.ZK.CommonUI.Controls
             con.ByFacility = chkByFacility.Checked;
             con.ByClass = chkByClass.Checked;
             con.BySex = chkBySex.Checked;
-            if (rdMale.Checked) con.Sex = Sex.Male;
-            if (rdFemale.Checked) con.Sex = Sex.Female;
+            if (rdMale.Checked) con.Sex = Gender.Male;
+            if (rdFemale.Checked) con.Sex = Gender.Female;
             if (!string.IsNullOrEmpty(txtClassName.Text)) con.ClassName = txtClassName.Text;
             if (!string.IsNullOrEmpty(cmbFacility.Text)) con.FacilityID = cmbFacility.SelectedFacilityID;
             else if (!string.IsNullOrEmpty(cmbDivision.Text)) con.DivisionID = cmbDivision.SelectedDivisionID;
@@ -74,7 +64,7 @@ namespace HH.ZK.CommonUI.Controls
         private void cmbDivision_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbFacility.SelectedIndexChanged -= new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
-            cmbFacility.Init(_ProjectID, cmbDivision.SelectedDivisionID);
+            cmbFacility.Init(cmbDivision.SelectedDivisionID);
             txtClassName.DataSource = null;
             cmbFacility.SelectedIndexChanged += new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
         }

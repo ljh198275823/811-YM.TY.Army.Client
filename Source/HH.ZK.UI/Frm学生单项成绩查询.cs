@@ -41,7 +41,7 @@ namespace HH.ZK.UI
         {
             base.Init();
             cmbPhysicalItem.Init(AppSettings.Current.PhysicalProject);
-            ucStudentSearch1.Init(AppSettings.Current.PhysicalProject.ID);
+            ucStudentSearch1.Init();
         }
 
         protected override QueryResultList<StudentWithDXCJ> GetDataSource(int pageSize, int pageIndex)
@@ -63,11 +63,9 @@ namespace HH.ZK.UI
             row.Tag = s;
             row.Cells["colID"].Value = s.ID;
             row.Cells["colName"].Value = s.Name;
-            row.Cells["colSex"].Value = s.Sex == Sex.Male ? "男" : "女";
-            row.Cells["colChannel"].Value = s?.Channel;
-            row.Cells["colFacility"].Value = s.FacilityName;
+            row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
+            row.Cells["colFacility"].Value = s.DivisionName;
             row.Cells["colPhysicalItem"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetName(s.PhysicalItemID);
-            row.Cells["colCheckTime"].Value = s.CheckTime?.ToString("yyyy-MM-dd HH:mm:ss");
             var pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(s.PhysicalItemID);
             var score = s.GetScoreByIndex(0);
             if (score != null)

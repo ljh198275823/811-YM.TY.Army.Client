@@ -187,7 +187,7 @@ namespace HH.ZK.UI
 
         private void btn考点管理_Click(object sender, EventArgs e)
         {
-            ShowSingleForm<Frm考点管理>();
+            ShowSingleForm<Frm训练大纲管理>();
         }
 
         private void btn账号管理_Click(object sender, EventArgs e)

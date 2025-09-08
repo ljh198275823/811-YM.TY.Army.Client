@@ -19,7 +19,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置学生性别
         /// </summary>
-        public Sex Sex { get; set; }
+        public Gender Sex { get; set; }
         /// <summary>
         /// 获取或设置学生学校名称
         /// </summary>

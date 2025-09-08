@@ -70,14 +70,10 @@ namespace HH.ZK.UI
                 MessageBox.Show("最小值不能比最大值还要大");
                 return false;
             }
-            if (txt测试次数.IntergerValue == 0)
+            int testCount;
+            if (string.IsNullOrEmpty(txt测试次数.Text) || int.TryParse(txt测试次数.Text, out testCount) == false || testCount < 0)
             {
                 MessageBox.Show("请设置科目的测试次数");
-                return false;
-            }
-            if (rd通过手持机录入.Checked == false && rd采用设备测试.Checked == false)
-            {
-                MessageBox.Show("请选择一种成绩录入模式");
                 return false;
             }
             return true;
@@ -99,11 +95,9 @@ namespace HH.ZK.UI
             rdDesending.Checked = PhysicalItem.SortMode == 2;
             chk必考.Checked = PhysicalItem.IsMust;
             rd不限男女.Checked = PhysicalItem.Sex == 0;
-            rdMale.Checked = PhysicalItem.Sex == (int)Sex.Male;
-            rdFemale.Checked = PhysicalItem.Sex == (int)Sex.Female;
-            if (PhysicalItem.TestCount.HasValue) txt测试次数.IntergerValue = PhysicalItem.TestCount.Value;
-            rd采用设备测试.Checked = PhysicalItem.HasMachine;
-            rd通过手持机录入.Checked = PhysicalItem.HasMachine == false;
+            rdMale.Checked = PhysicalItem.Sex == (int)Gender.Male;
+            rdFemale.Checked = PhysicalItem.Sex == (int)Gender.Female;
+            txt测试次数.Text = PhysicalItem.TestCount.ToString();
         }
 
         private void GetItemFromInput()
@@ -137,14 +131,12 @@ namespace HH.ZK.UI
                 PhysicalItem.Max = null;
             }
             if (rd不限男女.Checked) PhysicalItem.Sex = 0;
-            else if (rdMale.Checked) PhysicalItem.Sex = (int)Sex.Male;
-            else PhysicalItem.Sex = (int)Sex.Female;
+            else if (rdMale.Checked) PhysicalItem.Sex = (int)Gender.Male;
+            else PhysicalItem.Sex = (int)Gender.Female;
             if (rdNone.Checked) PhysicalItem.SortMode = 0;
             if (rdAscending.Checked) PhysicalItem.SortMode = 1;
             if (rdDesending.Checked) PhysicalItem.SortMode = 2;
-            PhysicalItem.TestCount = txt测试次数.IntergerValue;
-            if (rd采用设备测试.Checked) PhysicalItem.HasMachine = true;
-            else PhysicalItem.HasMachine = false;
+            PhysicalItem.TestCount =int.Parse ( txt测试次数.Text );
         }
         #endregion
 
@@ -153,9 +145,7 @@ namespace HH.ZK.UI
             if (PhysicalItem != null)
             {
                 ItemShowing();
-                pnl成绩模式.Enabled = !PhysicalItem.HasMachine;
             }
-            if (IsAdding) txt测试次数.IntergerValue = 1;
         }
 
         private void btnOk_Click(object sender, EventArgs e)

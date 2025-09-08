@@ -89,50 +89,18 @@ namespace HH.ZK.UI
             }
         }
 
-        
-
         public void ShowOperatorRights()
         {
-            
-            Main_基本信息.Enabled = AppSettings.Current.Operator != null;
-            Main_测试成绩.Enabled = AppSettings.Current.Operator != null;
             Main_报表.Enabled = AppSettings.Current.Operator != null;
             this.mainToolBar.Enabled = AppSettings.Current.Operator != null;
             mnu切换用户.Enabled = AppSettings.Current.Operator != null;
             if (AppSettings.Current.Operator != null)
             {
                 var cur = AppSettings.Current.Operator;
-                //基本信息
-                mnu区域信息管理.Enabled = cur.PermitAny(Permission.Division, PermissionActions.Read);
-                mnu学校信息管理.Enabled = cur.PermitAny(Permission.Facility, PermissionActions.Read);
-                mnu考试分组管理.Enabled = cur.PermitAny(Permission.StudentGroup, PermissionActions.Read);
-                mnu学生信息管理.Enabled = cur.PermitAny(Permission.Student, PermissionActions.Read);
-                mnu_测试项目管理.Enabled = true;
-                mnu_Standard.Enabled = true;
-                mnu特殊评分标准管理.Enabled = true;
-                mnu学生照片采集.Enabled = cur.PermitAny(Permission.StudentPhoto, PermissionActions.Edit);
-                mnu导入学生照片.Enabled = cur.PermitAny(Permission.StudentPhoto, PermissionActions.Edit);
-                mnu导出学生照片.Enabled = cur.PermitAny(Permission.StudentPhoto, PermissionActions.Read);
-                mnu重新生成照片特征值.Enabled = cur.PermitAny(Permission.StudentPhoto, PermissionActions.Edit);
-                mnu_Options.Enabled = true;
-                mnu视频服务器设置.Enabled = true;
-                //成绩管理
-                mnu学生成绩管理.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                btn成绩管理.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu_ImportScore.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.ImportScore);
-                mnu_ScoreImport1.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.ImportScore);
-                mnu_CollectScore.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.CollectScore);
-                mnu_CollectScore_Wifi.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.CollectScore);
-                mnu_成绩采集澳亚特.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.CollectScore);
-                mnu正在考试.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu考场进度.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu连接成绩公示屏.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu采集成绩数据查询.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu学生成绩快速录入.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Edit);
+                
                 //报表
                 mnu学生原始成绩查询.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 mnu重复成绩.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu学生成绩管理.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 mnu重复成绩.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 mnu学生成绩仲裁记录报表.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 mnu单项成绩统计报表.Enabled = cur.PermitAny(Permission.总分, PermissionActions.Read);
@@ -140,25 +108,13 @@ namespace HH.ZK.UI
                 mnu_Log.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 mnu人工修改成绩查询报表.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 //工具栏
-                btn学生信息.Enabled = mnu学生信息管理.Enabled;
                 mnu导入学生.Enabled = cur.PermitAny(Permission.Student, PermissionActions.Edit);
-                mnu导出学生准考证.Enabled = mnu学生信息管理.Enabled;
-                btn分组管理.Enabled = mnu考试分组管理.Enabled;
-                mnu导入分组.Enabled = cur.PermitAny(Permission.StudentGroup, PermissionActions.Edit);
-                mnu自动分组.Enabled = cur.PermitAny(Permission.StudentGroup, PermissionActions.Edit);
-                mnu导出学生分组准考证.Enabled = mnu考试分组管理.Enabled;
-                btn成绩管理.Enabled = mnu学生成绩管理.Enabled;
-                btn_Collect.Enabled = mnu_CollectScore_Wifi.Enabled;
-                mnu导出成绩.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                btn考场进度.Enabled = mnu考场进度.Enabled;
-                btn自动打印成绩.Enabled = mnu正在考试.Enabled;
                 btn考试视频.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 //报表
                 btn单项成绩.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 btn单项统计报表.Enabled = mnu单项成绩统计报表.Enabled;
                 btn总成绩统计报表.Enabled = mnu总成绩统计报表.Enabled;
                 mnu仲裁报表.Enabled = mnu学生成绩仲裁记录报表.Enabled;
-                mnu学生检录查询报表.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
             }
         }
         #endregion
@@ -423,11 +379,6 @@ namespace HH.ZK.UI
             ShowSingleForm<Frm学生信息管理>(sender);
         }
 
-        private void mnu考试分组管理_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<FrmStudentGroup>(sender);
-        }
-
         private void 下载学生信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_Reader != null)
@@ -437,19 +388,6 @@ namespace HH.ZK.UI
             }
             var frm = new FrmStudentDownload();
             frm.StartPosition = FormStartPosition.CenterParent;
-            frm.MinimizeBox = false;
-            frm.ShowDialog();
-            InitICCardReader();
-        }
-
-        private void mnu写卡管理_Click(object sender, EventArgs e)
-        {
-            if (_Reader != null)
-            {
-                _Reader.Close();
-                _Reader = null;
-            }
-            Frm写卡 frm = new Frm写卡();
             frm.MinimizeBox = false;
             frm.ShowDialog();
             InitICCardReader();
@@ -518,11 +456,6 @@ namespace HH.ZK.UI
             PerformImportScore(true);
         }
 
-        private void mnu正在考试_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生分组成绩自动打印>();
-        }
-
         private void mnu考场进度_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm考场实时状态>();
@@ -584,44 +517,10 @@ namespace HH.ZK.UI
         #endregion
 
         #region 工具栏菜单
-        private void btn_ImportStudent_Click(object sender, EventArgs e)
-        {
-            mnu学生信息管理.PerformClick();
-        }
-
-        private void btn自动分组_Click(object sender, EventArgs e)
-        {
-            mnu考试分组管理.PerformClick();
-        }
-
+        
         private void btn_PhysicalItemSelect_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm考试科目设置查看>();
-        }
-
-        private void btn_Standard_Click(object sender, EventArgs e)
-        {
-            mnu_Standard.PerformClick();
-        }
-
-        private void btn_Collect_Click(object sender, EventArgs e)
-        {
-            mnu_CollectScore_Wifi.PerformClick();
-        }
-
-        private void btn_ImportScore_Click(object sender, EventArgs e)
-        {
-            mnu_ImportScore.PerformClick();
-        }
-
-        private void btn自动打印成绩_Click(object sender, EventArgs e)
-        {
-            mnu正在考试.PerformClick();
-        }
-
-        private void btn学生成绩管理_Click(object sender, EventArgs e)
-        {
-            mnu学生成绩管理.PerformClick();
         }
 
         private void mnu_Statistics_Click(object sender, EventArgs e)
@@ -642,11 +541,6 @@ namespace HH.ZK.UI
         private void btn考试视频_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm考场视频>(null);
-        }
-
-        private void btn考场进度_Click(object sender, EventArgs e)
-        {
-            mnu考场进度.PerformClick();
         }
         #endregion
 
@@ -690,11 +584,6 @@ namespace HH.ZK.UI
         }
         #endregion
 
-        private void mnu学生检录查询报表_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生检录记录报表>();
-        }
-
         private void mnu学生原始成绩查询_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm原始成绩查询报表>(null);
@@ -707,18 +596,9 @@ namespace HH.ZK.UI
 
         private void mnu导入学生_Click(object sender, EventArgs e)
         {
-            if (AppSettings.Current.PhysicalProject.SchoolID == "1000029")
-            {
-                var frm = new Frm学生信息导入_仙桃();
-                frm.MinimizeBox = false;
-                frm.ShowDialog();
-            }
-            else
-            {
-                var frm = new Frm学生信息导入();
-                frm.MinimizeBox = false;
-                frm.ShowDialog();
-            }
+            var frm = new Frm学生信息导入();
+            frm.MinimizeBox = false;
+            frm.ShowDialog();
             foreach (var f in _openedForms.Keys)
             {
                 if (f is Frm学生信息管理)
@@ -747,42 +627,6 @@ namespace HH.ZK.UI
         private void mnu重新生成照片特征值_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm重新生成特征值>();
-        }
-
-        private void mnu学生条码_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生准考证导出>();
-        } 
-
-        private void mnu导入分组_Click(object sender, EventArgs e)
-        {
-            FrmStudentGroupImport frm = new FrmStudentGroupImport();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowInTaskbar = true;
-            frm.ShowDialog();
-            foreach (var f in _openedForms.Keys)
-            {
-                if (f is FrmStudentGroup)
-                {
-                    (f as FrmStudentGroup).ReFreshData();
-                    break;
-                }
-            }
-        }
-
-        private void mnu自动分组_Click(object sender, EventArgs e)
-        {
-            FrmAutoStudentGrouping frm = new FrmAutoStudentGrouping();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.ShowDialog();
-            foreach (var f in _openedForms.Keys)
-            {
-                if (f is FrmStudentGroup)
-                {
-                    (f as FrmStudentGroup).ReFreshData();
-                    break;
-                }
-            }
         }
 
         private void mnu采集成绩数据查询_Click(object sender, EventArgs e)
@@ -832,24 +676,9 @@ namespace HH.ZK.UI
             }
         }
 
-        private void mnu成绩上传状态查询_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm第三方平台成绩上传状态查询>();
-        }
-
-        private void mnu学生信息上传状态查询_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm第三方平台学生上传状态查询>();
-        }
-
         private void mnu学生成绩快速录入_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm学生成绩速录>();
-        }
-
-        private void mnu导出学生准考证_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<FrmCertificatePrinter>();
         }
 
         private void mnu人工修改成绩查询报表_Click(object sender, EventArgs e)
@@ -862,6 +691,23 @@ namespace HH.ZK.UI
             var frm = new Frm视频录相机设置();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
+        }
+
+        private void 训练考核大ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm= new Frm训练大纲管理();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+        }
+
+        private void btn学生信息_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<Frm学生信息管理>();
+        }
+
+        private void btn分组管理_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

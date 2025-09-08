@@ -192,9 +192,6 @@ namespace HH.ZK.CommonUI
         {
             lock (_UnsavedRecordsLocker)
             {
-                //判断采集上来的记录是否在当前项目的日期范围内
-                if (_Project.StartDate > item.RecordDate) return;
-                if (item.RecordDate > _Project.EndDate) return;
                 var score = new StudentRawScore()
                 {
                     ID = Guid.NewGuid(),
@@ -225,9 +222,6 @@ namespace HH.ZK.CommonUI
         {
             lock (_UnsavedRecordsLocker)
             {
-                //判断采集上来的记录是否在当前项目的日期范围内
-                if (_Project.StartDate > score.CreateTime) return;
-                if (score.CreateTime > _Project.EndDate) return;
                 _UnsavedItems.Add(score);
             }
         }

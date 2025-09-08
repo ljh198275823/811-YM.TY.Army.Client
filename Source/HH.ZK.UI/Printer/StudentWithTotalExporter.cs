@@ -128,7 +128,7 @@ namespace HH.ZK.UI
         private string GetPhysicalName(StudentGroupSummary group, List<StudentWithTotal> ss, int index)
         {
             var pnames = AppSettings.Current.PhysicalProject.PhysicalItems.GetNames(group?.PhysicalItems);
-            if (string.IsNullOrEmpty (pnames)) pnames = AppSettings.Current.PhysicalProject.PhysicalItems.GetNames(ss[0].PhysicalItems);
+            //if (string.IsNullOrEmpty (pnames)) pnames = AppSettings.Current.PhysicalProject.PhysicalItems.GetNames(ss[0].PhysicalItems);
             if (string.IsNullOrEmpty(pnames)) return null;
             var strs = pnames.Split(',');
             if (strs.Length < index + 1) return null;

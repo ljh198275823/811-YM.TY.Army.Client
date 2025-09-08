@@ -33,8 +33,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.txtVideoUrl = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.chkCnanotModifyScore = new System.Windows.Forms.CheckBox();
             this.txt总分满分 = new LJH.GeneralLibrary.WinformControl.DecimalTextBox(this.components);
             this.label8 = new System.Windows.Forms.Label();
@@ -54,7 +52,6 @@
             this.txt总分计算方式 = new HH.ZK.CommonUI.Controls.TotalCalTypeComboBox(this.components);
             this.txt自定义标题 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.chkIgnoreFaceFeature = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pnl舍入方式.SuspendLayout();
@@ -97,9 +94,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.chkIgnoreFaceFeature);
-            this.tabPage1.Controls.Add(this.txtVideoUrl);
-            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.chkCnanotModifyScore);
             this.tabPage1.Controls.Add(this.txt总分满分);
             this.tabPage1.Controls.Add(this.label8);
@@ -122,27 +116,6 @@
             this.tabPage1.Size = new System.Drawing.Size(662, 418);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "常规";
-            // 
-            // txtVideoUrl
-            // 
-            this.txtVideoUrl.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtVideoUrl.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtVideoUrl.Location = new System.Drawing.Point(111, 320);
-            this.txtVideoUrl.MaxLength = 100;
-            this.txtVideoUrl.Name = "txtVideoUrl";
-            this.txtVideoUrl.Size = new System.Drawing.Size(516, 30);
-            this.txtVideoUrl.TabIndex = 223;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(18, 330);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 12);
-            this.label7.TabIndex = 222;
-            this.label7.Text = "同步录像服务器";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkCnanotModifyScore
             // 
@@ -362,18 +335,6 @@
             this.label3.Text = "准考证标题";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // chkIgnoreFaceFeature
-            // 
-            this.chkIgnoreFaceFeature.AutoSize = true;
-            this.chkIgnoreFaceFeature.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkIgnoreFaceFeature.ForeColor = System.Drawing.Color.Red;
-            this.chkIgnoreFaceFeature.Location = new System.Drawing.Point(112, 366);
-            this.chkIgnoreFaceFeature.Name = "chkIgnoreFaceFeature";
-            this.chkIgnoreFaceFeature.Size = new System.Drawing.Size(154, 16);
-            this.chkIgnoreFaceFeature.TabIndex = 224;
-            this.chkIgnoreFaceFeature.Text = "照片不需要提取特征值";
-            this.chkIgnoreFaceFeature.UseVisualStyleBackColor = true;
-            // 
             // FrmOption_后台
             // 
             this.AcceptButton = this.btnOk;
@@ -421,8 +382,5 @@
         private LJH.GeneralLibrary.WinformControl.DecimalTextBox txt总分满分;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox chkCnanotModifyScore;
-        private System.Windows.Forms.TextBox txtVideoUrl;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox chkIgnoreFaceFeature;
     }
 }

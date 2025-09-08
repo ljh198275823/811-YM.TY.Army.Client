@@ -69,69 +69,69 @@ namespace HH.ZK.UI
 
         private void ShowStudentScores(StudentWithTotal s)
         {
-            this.scoreView.Rows.Clear();
-            var pids = s.获取所有考试科目();
-            if (pids == null || pids.Count == 0) return;
-            this.scoreView.Height = pids.Count * 40 + 50 + 30;
-            foreach (var pid in s.获取所有考试科目())
-            {
-                var pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pid);
-                if (pi != null)
-                {
-                    int row = scoreView.Rows.Add();
-                    scoreView.Rows[row].Cells["colPhysicalItem"].Value = pi.Name;
-                    var ps = s.Scores.SingleOrDefault(it => it.PhysicalItemID == pid);
-                    if (ps != null)
-                    {
-                        scoreView.Rows[row].Cells["colScore"].Tag = pi;
-                        scoreView.Rows[row].Cells["colScore"].Value = ps.FormatScore;
-                        if (AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read))
-                        {
-                            scoreView.Rows[row].Cells["colResult"].Value = ps.Result != null ? ps.Result.Value.Trim().ToString() : null;
-                        }
-                    }
-                }
-            }
-            if (AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read))
-            {
-                int total = scoreView.Rows.Add();
-                scoreView.Rows[total].Cells["colPhysicalItem"].Value = "总分";
-                scoreView.Rows[total].Cells["colResult"].Value = s.Total > 0 ? s.Total : 0;
-                scoreView.Rows[total].DefaultCellStyle.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-                scoreView.Rows[total].Height = 50;
-            }
+            //this.scoreView.Rows.Clear();
+            //var pids = s.获取所有考试科目();
+            //if (pids == null || pids.Count == 0) return;
+            //this.scoreView.Height = pids.Count * 40 + 50 + 30;
+            //foreach (var pid in s.获取所有考试科目())
+            //{
+            //    var pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pid);
+            //    if (pi != null)
+            //    {
+            //        int row = scoreView.Rows.Add();
+            //        scoreView.Rows[row].Cells["colPhysicalItem"].Value = pi.Name;
+            //        var ps = s.Scores.SingleOrDefault(it => it.PhysicalItemID == pid);
+            //        if (ps != null)
+            //        {
+            //            scoreView.Rows[row].Cells["colScore"].Tag = pi;
+            //            scoreView.Rows[row].Cells["colScore"].Value = ps.FormatScore;
+            //            if (AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read))
+            //            {
+            //                scoreView.Rows[row].Cells["colResult"].Value = ps.Result != null ? ps.Result.Value.Trim().ToString() : null;
+            //            }
+            //        }
+            //    }
+            //}
+            //if (AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read))
+            //{
+            //    int total = scoreView.Rows.Add();
+            //    scoreView.Rows[total].Cells["colPhysicalItem"].Value = "总分";
+            //    scoreView.Rows[total].Cells["colResult"].Value = s.Total > 0 ? s.Total : 0;
+            //    scoreView.Rows[total].DefaultCellStyle.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            //    scoreView.Rows[total].Height = 50;
+            //}
 
-            this.picFPImg.Left = this.scoreView.Left + 400;
-            this.picFPImg.Width = this.scoreView.Width - 400;
-            this.picFPImg.Top = this.scoreView.Top + this.scoreView.Height;
-            this.picFPImg.Height = pnl.Height - this.picFPImg.Top - 3;
-            var fp = (new APIClient(AppSettings.Current.ConnStr)).GetByID<string, StudentFP>(s.ID, AppSettings.Current.PhysicalProject.ID).QueryObject;
-            if (fp != null)
-            {
-                this.picFPImg.Visible = true;
-                this.picFPImg.Image = fp.GetImage();
-                _FPCaptured = false;
-            }
-            else if (mDevHandle != IntPtr.Zero)
-            {
-                this.picFPImg.Visible = true;
-                picFPImg.Image = HH.ZK.UI.Properties.Resources.fpInput;
-                _FPCaptured = true;
-            }
-            else
-            {
-                this.picFPImg.Image = null;
-                picFPImg.Visible = false;
-            }
+            //this.picFPImg.Left = this.scoreView.Left + 400;
+            //this.picFPImg.Width = this.scoreView.Width - 400;
+            //this.picFPImg.Top = this.scoreView.Top + this.scoreView.Height;
+            //this.picFPImg.Height = pnl.Height - this.picFPImg.Top - 3;
+            //var fp = (new APIClient(AppSettings.Current.ConnStr)).GetByID<string, StudentFP>(s.ID, AppSettings.Current.PhysicalProject.ID).QueryObject;
+            //if (fp != null)
+            //{
+            //    this.picFPImg.Visible = true;
+            //    this.picFPImg.Image = fp.GetImage();
+            //    _FPCaptured = false;
+            //}
+            //else if (mDevHandle != IntPtr.Zero)
+            //{
+            //    this.picFPImg.Visible = true;
+            //    picFPImg.Image = HH.ZK.UI.Properties.Resources.fpInput;
+            //    _FPCaptured = true;
+            //}
+            //else
+            //{
+            //    this.picFPImg.Image = null;
+            //    picFPImg.Visible = false;
+            //}
         }
 
         private void ShowStudentInfo(Student s)
         {
             _txtID.Text = s.ID;
             _txtName.Text = s.Name;
-            _rdMale.Checked = s.Sex == Sex.Male;
-            _rdFemale.Checked = s.Sex == Sex.Female;
-            txt学校.Text = s.FacilityName;
+            _rdMale.Checked = s.Gender == Gender.Male;
+            _rdFemale.Checked = s.Gender == Gender.Female;
+            txt学校.Text = s.DivisionName;
             StudentPhoto sp = (new APIClient(AppSettings.Current.ConnStr)).GetByID<string, StudentPhoto>(s.ID, AppSettings.Current.PhysicalProject.ID).QueryObject;
             if (sp != null)
             {

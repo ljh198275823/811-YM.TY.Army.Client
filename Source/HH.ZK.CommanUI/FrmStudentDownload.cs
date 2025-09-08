@@ -32,11 +32,11 @@ namespace HH.ZK.CommonUI
         private void ShowStudentInfo(DataGridViewRow row, Student s)
         {
             row.Tag = s;
-            row.Cells["colFacility"].Value = s.FacilityName;
+            row.Cells["colFacility"].Value = s.DivisionName;
             row.Cells["colID"].Value = s.ID;
             row.Cells["colClassName"].Value = s.ClassName;
             row.Cells["colName"].Value = s.Name;
-            row.Cells["colSex"].Value = s.Sex == Sex.Male ? "男" : "女";
+            row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
             row.Cells["colCardID"].Value = s.CardID;
         }
 
@@ -60,7 +60,7 @@ namespace HH.ZK.CommonUI
             foreach (DataGridViewRow row in rows)
             {
                 var s = row.Tag as Student;
-                sb.Append(string.Format("{0},{1},{2},{3},{4},{5},\r\n", s.ID, s.Name, s.Sex == Sex.Male ? "男" : "女", s.Grade, s.ClassName, s.CardID));
+                sb.Append(string.Format("{0},{1},{2},{3},{4},{5},\r\n", s.ID, s.Name, s.Gender == Gender.Male ? "男" : "女", s.Grade, s.ClassName, s.CardID));
             }
             File.WriteAllText(path, sb.ToString(), Encoding.Default);
         }
@@ -70,7 +70,7 @@ namespace HH.ZK.CommonUI
         private void FrmStudentUpload_Load(object sender, EventArgs e)
         {
             cmbCommport.Init();
-            ucStudentSearch1.Init(AppSettings.Current.PhysicalProject.ID);
+            ucStudentSearch1.Init();
             cmbCommport.ComPort = AppSettings.Current.HostCommport;
 
             bool clearFirst = false;
@@ -201,7 +201,7 @@ namespace HH.ZK.CommonUI
                         if (_Stoping) break;
                         Student s = row.Tag as Student;
                         count++;
-                        ss.Add(new HostStudent() { StudentID = (cardID4StudentID && !string.IsNullOrEmpty(s.CardID)) ? s.CardID : s.ID, Name = s.Name, Sex = s.Sex == Sex.Male ? "男" : "女", Grade = (byte)s.Grade, ClassName = s.ClassName, CardID = s.CardID });
+                        ss.Add(new HostStudent() { StudentID = (cardID4StudentID && !string.IsNullOrEmpty(s.CardID)) ? s.CardID : s.ID, Name = s.Name, Sex = s.Gender == Gender.Male ? "男" : "女", Grade = (byte)s.Grade, ClassName = s.ClassName, CardID = s.CardID });
                         if (ss.Count >= maxStudentPertime)
                         {
                             HH.Zhongkao.Device.Download.CommandResult ret = _HXHost.DownloadStudents(_HostID, ss.ToArray());

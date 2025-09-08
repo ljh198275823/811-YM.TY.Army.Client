@@ -33,7 +33,6 @@ namespace HH.ZK.CommonUI
             if (colName == "colShortName") return item.ShortName;
             if (colName == "colUnit") return item.Unit;
             if (colName == "colPointCount") return item.PointCount;
-            if (colName == "colHasMachine") return item.HasMachine;
             if (colName == "colMax") return item.Max != null ? item.ConvertToStr(item.Max.Value) : null;
             if (colName == "colMin") return item.Min != null ? item.ConvertToStr(item.Min.Value) : null;
             if (colName == "colSortMode") return item.SortMode;

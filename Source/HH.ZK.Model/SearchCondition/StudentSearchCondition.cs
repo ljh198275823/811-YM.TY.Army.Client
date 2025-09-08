@@ -21,7 +21,7 @@ namespace HH.ZK.Model.SearchCondition
 
         public string StudentID_IDNumber_CardID { get; set; }
 
-        public Sex? Sex { get; set; }
+        public Gender? Sex { get; set; }
 
         public bool? HasPhoto { get; set; }
 

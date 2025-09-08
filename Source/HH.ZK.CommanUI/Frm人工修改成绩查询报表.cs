@@ -40,7 +40,7 @@ namespace HH.ZK.CommonUI
         {
             base.Init();
             cmbPhysicalItem.Init(AppSettings.Current.PhysicalProject);
-            ucStudentSearch1.Init(AppSettings.Current.PhysicalProject.ID);
+            ucStudentSearch1.Init();
             if (AppSettings.Current.PhysicalProject == null) btnSearch.Enabled = false;
         }
 
@@ -68,7 +68,7 @@ namespace HH.ZK.CommonUI
             row.Cells["colOperator"].Value = log.Operator;
             row.Cells["colID"].Value = log.StudentID;
             row.Cells["colName"].Value = log.StudentName;
-            row.Cells["colSex"].Value = log.Sex == Sex.Male ? "男" : "女";
+            row.Cells["colSex"].Value = log.Sex == Gender.Male ? "男" : "女";
             row.Cells["colFacility"].Value = log.FacilityName;
             row.Cells["colPhysicalItem"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetName(log.PhysicalItemID);
             row.Cells["colScore"].Value = log.Score;

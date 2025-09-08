@@ -89,9 +89,9 @@ namespace HH.ZK.CommonUI
         protected override void Init()
         {
             base.Init();
-            Project.PhysicalItems = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, Project.TemplateProjectID);
+            Project.PhysicalItems = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, Project.ID);
             cmbPhysicalItem.Init(Project);
-            ucFacilitySearch1.Init(Project.ID);
+            ucFacilitySearch1.Init();
             Init成绩来源();
             if (Project == null) btnSearch.Enabled = false;
         }
@@ -103,8 +103,8 @@ namespace HH.ZK.CommonUI
             con.ClassName = con1.ClassName;
             con.FacilityID = con1.FacilityID;
             con.DivisionID = con1.DivisionID;
-            if (rdMale.Checked) con.Sex = Sex.Male;
-            if (rdFemale.Checked) con.Sex = Sex.Female;
+            if (rdMale.Checked) con.Sex = Gender.Male;
+            if (rdFemale.Checked) con.Sex = Gender.Female;
             con.Name = txtName.Text;
             con.StudentIDLike = txtStudentID1.Text;
             if (!string.IsNullOrEmpty(cmbPhysicalItem.Text)) con.PhysicalItem = cmbPhysicalItem.SelectedPhysicalItem;
@@ -124,7 +124,7 @@ namespace HH.ZK.CommonUI
             row.Tag = score;
             row.Cells["colID"].Value = score.StudentID;
             row.Cells["colName"].Value = score.StudentName;
-            row.Cells["colSex"].Value = score.Sex == Sex.Male ? "男" : "女";
+            row.Cells["colSex"].Value = score.Sex == Gender.Male ? "男" : "女";
             row.Cells["colFacility"].Value = score.FacilityName;
             row.Cells["colGrade"].Value = GradeHelper.Instance.GetName(score.Grade);
             row.Cells["colPhysicalItem"].Value = score.PhysicalItemName;

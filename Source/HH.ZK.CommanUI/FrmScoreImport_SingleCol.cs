@@ -119,11 +119,6 @@ namespace HH.ZK.CommonUI
             DateTime dt;
             if (!string.IsNullOrEmpty(strDt) && DateTime.TryParse(strDt, out dt))
             {
-                if (dt < AppSettings.Current.PhysicalProject.StartDate || dt > AppSettings.Current.PhysicalProject.EndDate)
-                {
-                    row.Cells["colReason"].Value = "测试时间不在项目的开始结束时间范围内";
-                    return null;
-                }
                 creatTime = dt;
             }
 

@@ -55,19 +55,19 @@ namespace HH.ZK.CommonUI
             // 
             this.txtMemo.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtMemo.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtMemo.Location = new System.Drawing.Point(66, 110);
+            this.txtMemo.Location = new System.Drawing.Point(66, 65);
             this.txtMemo.Name = "txtMemo";
             this.txtMemo.Size = new System.Drawing.Size(366, 30);
-            this.txtMemo.TabIndex = 2;
+            this.txtMemo.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 120);
+            this.label2.Location = new System.Drawing.Point(34, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 42;
-            this.label2.Text = "备注";
+            this.label2.Text = "编号";
             // 
             // txtName
             // 
@@ -90,7 +90,7 @@ namespace HH.ZK.CommonUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 73);
+            this.label1.Location = new System.Drawing.Point(10, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 43;
@@ -101,10 +101,10 @@ namespace HH.ZK.CommonUI
             this.txtDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtDivision.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDivision.FormattingEnabled = true;
-            this.txtDivision.Location = new System.Drawing.Point(66, 65);
+            this.txtDivision.Location = new System.Drawing.Point(66, 113);
             this.txtDivision.Name = "txtDivision";
             this.txtDivision.Size = new System.Drawing.Size(366, 28);
-            this.txtDivision.TabIndex = 44;
+            this.txtDivision.TabIndex = 2;
             // 
             // FrmDivisionDetail
             // 

@@ -29,12 +29,12 @@ namespace HH.ZK.CommonUI
         private void ShowStudentInfo(DataGridViewRow row, Student s)
         {
             row.Tag = s;
-            row.Cells["colFacility"].Value = s.FacilityName;
+            row.Cells["colFacility"].Value = s.DivisionName;
             row.Cells["colID"].Value = s.ID;
             row.Cells["colClassName"].Value = s.ClassName;
             row.Cells["colGrade"].Value = GradeHelper.Instance.GetName(s.Grade);
             row.Cells["colName"].Value = s.Name;
-            row.Cells["colSex"].Value = s.Sex == Sex.Male ? "男" : "女";
+            row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
         }
 
         private DataGridViewRow GetPrintingRow()
@@ -82,7 +82,7 @@ namespace HH.ZK.CommonUI
             foreach (DataGridViewRow row in rows)
             {
                 var s = row.Tag as Student;
-                dt.Rows.Add(s.FacilityName, s.ID, s.Name, s.Sex == Sex.Male ? "男" : "女", GradeHelper.Instance.GetName(s.Grade), "1", string.IsNullOrEmpty(s.ClassName) ? "1" : s.ClassName, s.IDNumber);
+                dt.Rows.Add(s.DivisionName, s.ID, s.Name, s.Gender == Gender.Male ? "男" : "女", GradeHelper.Instance.GetName(s.Grade), "1", string.IsNullOrEmpty(s.ClassName) ? "1" : s.ClassName, s.IDNumber);
             }
             NPOIExcelHelper.Export(dt, file);
         }
@@ -91,7 +91,7 @@ namespace HH.ZK.CommonUI
         #region 事件处理程序
         private void FrmScoreBillPrint_Load(object sender, EventArgs e)
         {
-            ucStudentSearch1.Init(AppSettings.Current.PhysicalProject.ID);
+            ucStudentSearch1.Init();
             int printInterval = 0;
             string temp = AppSettings.Current.GetConfigContent("PrintInterval");
             int.TryParse(temp, out printInterval);

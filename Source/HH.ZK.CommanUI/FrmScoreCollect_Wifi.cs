@@ -93,11 +93,6 @@ namespace HH.ZK.CommonUI
                     else dataGridView1.Rows[0].Cells["colScore"].Value = SpecialScoreType.犯规.ToString();
                 }
                 dataGridView1.Rows[0].Cells["colRecordDate"].Value = record.RecordDate != null ? record.RecordDate.Value.ToString("yyyy-MM-dd HH:mm:ss") : string.Empty;
-                if (AppSettings.Current.PhysicalProject.StartDate > record.RecordDate || record.RecordDate > AppSettings.Current.PhysicalProject.EndDate)
-                {
-                    dataGridView1.Rows[0].Cells["colMemo"].Value = "测试时间不在范围内";
-                    dataGridView1.Rows[0].DefaultCellStyle.ForeColor = System.Drawing.Color.Red;
-                }
                 if (dataGridView1.Rows[0].Visible) _CurItemCount++;
                 lblCount.Text = string.Format("总共 {0} 项", _CurItemCount);
             }

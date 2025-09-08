@@ -112,20 +112,20 @@ namespace HH.ZK.UI
                     }
                     else if (express == "[性别]")
                     {
-                        cell.SetCellValue(s.Sex == Sex.Male ? "男" : "女");
+                        cell.SetCellValue(s.Gender == Gender.Male ? "男" : "女");
                     }
                     else if (express == "[学校]")
                     {
-                        cell.SetCellValue(s.FacilityName);
+                        cell.SetCellValue(s.DivisionName);
                     }
                     else if (express == "[班级]" || express == "[班级名称]")
                     {
                         cell.SetCellValue(s.ClassName);
                     }
-                    else if (express == "[道次]")
-                    {
-                        cell.SetCellValue(s.Channel.HasValue ? s.Channel.ToString() : string.Empty);
-                    }
+                    //else if (express == "[道次]")
+                    //{
+                    //    cell.SetCellValue(s.Channel.HasValue ? s.Channel.ToString() : string.Empty);
+                    //}
                     else if (express == "[考试科目]")
                     {
                         cell.SetCellValue(pi.Name);

@@ -32,23 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm考点Detail));
             this.txtName = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this.rd训练 = new System.Windows.Forms.RadioButton();
+            this.rd考核 = new System.Windows.Forms.RadioButton();
+            this.txt简称 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
-            this.rd模拟考试 = new System.Windows.Forms.RadioButton();
-            this.rd正式考试 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(340, 224);
+            this.btnClose.Location = new System.Drawing.Point(340, 187);
             this.btnClose.Size = new System.Drawing.Size(75, 40);
             this.btnClose.TabIndex = 5;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(181, 224);
+            this.btnOk.Location = new System.Drawing.Point(181, 187);
             this.btnOk.Size = new System.Drawing.Size(137, 40);
             this.btnOk.TabIndex = 4;
             // 
@@ -70,96 +68,72 @@
             this.label3.TabIndex = 41;
             this.label3.Text = "名称";
             // 
+            // rd训练
+            // 
+            this.rd训练.AutoSize = true;
+            this.rd训练.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rd训练.ForeColor = System.Drawing.Color.Red;
+            this.rd训练.Location = new System.Drawing.Point(96, 128);
+            this.rd训练.Name = "rd训练";
+            this.rd训练.Size = new System.Drawing.Size(60, 20);
+            this.rd训练.TabIndex = 47;
+            this.rd训练.TabStop = true;
+            this.rd训练.Text = "训练";
+            this.rd训练.UseVisualStyleBackColor = true;
+            // 
+            // rd考核
+            // 
+            this.rd考核.AutoSize = true;
+            this.rd考核.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rd考核.ForeColor = System.Drawing.Color.Blue;
+            this.rd考核.Location = new System.Drawing.Point(176, 128);
+            this.rd考核.Name = "rd考核";
+            this.rd考核.Size = new System.Drawing.Size(60, 20);
+            this.rd考核.TabIndex = 48;
+            this.rd考核.TabStop = true;
+            this.rd考核.Text = "考核";
+            this.rd考核.UseVisualStyleBackColor = true;
+            // 
+            // txt简称
+            // 
+            this.txt简称.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt简称.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txt简称.Location = new System.Drawing.Point(92, 74);
+            this.txt简称.Name = "txt简称";
+            this.txt简称.Size = new System.Drawing.Size(323, 30);
+            this.txt简称.TabIndex = 49;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 81);
+            this.label1.Location = new System.Drawing.Point(54, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "开考日期";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "结束日期";
-            // 
-            // dtStartDate
-            // 
-            this.dtStartDate.CustomFormat = "yyyy年MM月dd日";
-            this.dtStartDate.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtStartDate.Location = new System.Drawing.Point(92, 72);
-            this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(323, 30);
-            this.dtStartDate.TabIndex = 44;
-            // 
-            // dtEndDate
-            // 
-            this.dtEndDate.CustomFormat = "yyyy年MM月dd日";
-            this.dtEndDate.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtEndDate.Location = new System.Drawing.Point(92, 123);
-            this.dtEndDate.Name = "dtEndDate";
-            this.dtEndDate.Size = new System.Drawing.Size(323, 30);
-            this.dtEndDate.TabIndex = 45;
-            // 
-            // rd模拟考试
-            // 
-            this.rd模拟考试.AutoSize = true;
-            this.rd模拟考试.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rd模拟考试.ForeColor = System.Drawing.Color.Red;
-            this.rd模拟考试.Location = new System.Drawing.Point(92, 173);
-            this.rd模拟考试.Name = "rd模拟考试";
-            this.rd模拟考试.Size = new System.Drawing.Size(94, 20);
-            this.rd模拟考试.TabIndex = 47;
-            this.rd模拟考试.TabStop = true;
-            this.rd模拟考试.Text = "模拟考试";
-            this.rd模拟考试.UseVisualStyleBackColor = true;
-            // 
-            // rd正式考试
-            // 
-            this.rd正式考试.AutoSize = true;
-            this.rd正式考试.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rd正式考试.ForeColor = System.Drawing.Color.Blue;
-            this.rd正式考试.Location = new System.Drawing.Point(223, 173);
-            this.rd正式考试.Name = "rd正式考试";
-            this.rd正式考试.Size = new System.Drawing.Size(94, 20);
-            this.rd正式考试.TabIndex = 48;
-            this.rd正式考试.TabStop = true;
-            this.rd正式考试.Text = "正式考试";
-            this.rd正式考试.UseVisualStyleBackColor = true;
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "简称";
             // 
             // Frm考点Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 276);
-            this.Controls.Add(this.rd正式考试);
-            this.Controls.Add(this.rd模拟考试);
-            this.Controls.Add(this.dtEndDate);
-            this.Controls.Add(this.dtStartDate);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(442, 239);
+            this.Controls.Add(this.txt简称);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.rd考核);
+            this.Controls.Add(this.rd训练);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm考点Detail";
-            this.Text = "考点";
+            this.Text = "训练/考核大纲";
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.txtName, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.dtStartDate, 0);
-            this.Controls.SetChildIndex(this.dtEndDate, 0);
-            this.Controls.SetChildIndex(this.rd模拟考试, 0);
+            this.Controls.SetChildIndex(this.rd训练, 0);
             this.Controls.SetChildIndex(this.btnOk, 0);
             this.Controls.SetChildIndex(this.btnClose, 0);
-            this.Controls.SetChildIndex(this.rd正式考试, 0);
+            this.Controls.SetChildIndex(this.rd考核, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.txt简称, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,11 +142,9 @@
         #endregion
         private LJH.GeneralLibrary.WinformControl.DBCTextBox txtName;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton rd训练;
+        private System.Windows.Forms.RadioButton rd考核;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox txt简称;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtStartDate;
-        private System.Windows.Forms.DateTimePicker dtEndDate;
-        private System.Windows.Forms.RadioButton rd模拟考试;
-        private System.Windows.Forms.RadioButton rd正式考试;
     }
 }

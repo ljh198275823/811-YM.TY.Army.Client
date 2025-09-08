@@ -25,17 +25,14 @@ namespace HH.ZK.UI
         protected override void InitControls()
         {
             base.InitControls();
-            dtStartDate.Value = AppSettings.Current.PhysicalProject.StartDate.Date;
-            dtEndDate.Value = AppSettings.Current.PhysicalProject.EndDate.Date;
         }
 
         protected override void ItemShowing(PhysicalProject ct)
         {
             txtName.Text = ct.Name;
-            dtStartDate.Value = ct.StartDate;
-            dtEndDate.Value = ct.EndDate;
-            rd正式考试.Checked = ct.State == PhysicalProjectState.正式考试;
-            rd模拟考试.Checked = ct.State == PhysicalProjectState.模拟考试;
+            txt简称.Text = ct.ShortName;
+            rd考核.Checked = ct.ProjectClass == PhysicalProjectClass.考核;
+            rd训练.Checked = ct.ProjectClass == PhysicalProjectClass.训练;
         }
 
         protected override bool CheckInput()
@@ -46,14 +43,9 @@ namespace HH.ZK.UI
                 txtName.Focus();
                 return false;
             }
-            if (dtStartDate.Value > dtEndDate.Value)
+            if (rd训练.Checked == false && rd考核.Checked == false)
             {
-                MessageBox.Show("开考日期大于结束日期");
-                return false;
-            }
-            if (rd模拟考试.Checked == false && rd正式考试.Checked == false)
-            {
-                MessageBox.Show("请选择考试状态");
+                MessageBox.Show("请选择类型");
                 return false;
             }
             return true;
@@ -62,17 +54,12 @@ namespace HH.ZK.UI
         protected override PhysicalProject GetItemFromInput()
         {
             PhysicalProject ct = UpdatingItem as PhysicalProject;
-            if (ct == null)
-            {
-                ct = new PhysicalProject();
-                ct.ProjectClass = PhysicalProjectClass.汇海中考;
-                ct.Year = AppSettings.Current.PhysicalProject.Year;
-                ct.TemplateProjectID = AppSettings.Current.PhysicalProject.ID;
-            }
+            if (ct == null) ct = new PhysicalProject() { ID = string.Empty };
             ct.Name = txtName.Text;
-            ct.StartDate = dtStartDate.Value.Date;
-            ct.EndDate = dtEndDate.Value.Date.AddDays(1).AddSeconds(-1);
-            ct.State = rd模拟考试.Checked ? PhysicalProjectState.模拟考试 : PhysicalProjectState.正式考试;
+            ct.ShortName = txt简称.Text;
+            if (rd考核.Checked) ct.ProjectClass = PhysicalProjectClass.考核;
+            if (rd训练.Checked) ct.ProjectClass = PhysicalProjectClass.训练;
+            ct.CreateDate = DateTime.Now;
             return ct;
         }
 

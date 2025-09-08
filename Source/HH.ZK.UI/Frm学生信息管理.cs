@@ -59,7 +59,7 @@ namespace HH.ZK.UI
                                     {
                                         var newVal = ret.Value.Successes[s.ID];
                                         s.State = newVal.State;
-                                        s.UpdateDate = newVal.UpdateDate;
+                                        //s.UpdateDate = newVal.UpdateDate;
                                     }
                                 }
                             }
@@ -184,8 +184,8 @@ namespace HH.ZK.UI
             _Search = new StudentSearchCondition() { PageSize = pageSize, PageIndex = pageIndex, SortMode = SortMode.Asc };
             if (!string.IsNullOrEmpty(txtStudentID1.Text)) _Search.StudentIDLike = txtStudentID1.Text;
             if (!string.IsNullOrEmpty(txtName.Text)) _Search.Name = txtName.Text;
-            if (rdMale.Checked) _Search.Sex = Sex.Male;
-            if (rdFemale.Checked) _Search.Sex = Sex.Female;
+            if (rdMale.Checked) _Search.Sex = Gender.Male;
+            if (rdFemale.Checked) _Search.Sex = Gender.Female;
             if (rdHasPhoto.Checked) _Search.HasPhoto = true;
             if (rdNonePhoto.Checked) _Search.HasPhoto = false;
             if (rd有人脸特征.Checked) _Search.HasFaceFeature = true;
@@ -228,7 +228,7 @@ namespace HH.ZK.UI
         protected override void Init()
         {
             base.Init();
-            this.facilityTree.Init(null);
+            this.facilityTree.Init();
             //txt考试状态.Init(AppSettings.Current.PhysicalProject.StateSettings, true);
             this.ucPaging1.Init();
             this.ucPaging1.GetPageData += UcPaging1_GetPageData;
@@ -272,7 +272,7 @@ namespace HH.ZK.UI
         {
             if (AppSettings.Current.PhysicalProject != null)
             {
-                this.facilityTree.Init(AppSettings.Current.PhysicalProject.ID);
+                this.facilityTree.Init();
                 FreshView(ucPaging1.GetPageSize(), 1);
             }
         }
@@ -283,20 +283,20 @@ namespace HH.ZK.UI
             if (colName == "colID") return item.ID;
             if (colName == "colCardID") return item.CardID;
             if (colName == "colName") return item.Name;
-            if (colName == "colSex") return item.Sex == Sex.Male ? "男" : "女";
+            if (colName == "colSex") return item.Gender == Gender.Male ? "男" : "女";
             if (colName == "colClassName") return item.ClassName;
             if (colName == "colIDNumber") return item.IDNumber;
-            if (colName == "colFacility") return item.FacilityName;
+            if (colName == "colFacility") return item.DivisionName;
             if (colName == "col照片") return item.HasPhoto;
-            if (colName == "col平时成绩")
-            {
-                if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) return item.JiaFen.Trim();
-                return null;
-            }
+            //if (colName == "col平时成绩")
+            //{
+            //    if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) return item.JiaFen.Trim();
+            //    return null;
+            //}
             if (colName == "colState") return item.State != StudentState.正常考试 ? item.State.ToString() : null;
-            if (colName == "col学校代码") return item.SchoolCode;
-            if (colName == "col考试科目") return AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(item.PhysicalItems);
-            if (colName == "colGroupID") return item.Groups;
+            //if (colName == "col学校代码") return item.SchoolCode;
+            //if (colName == "col考试科目") return AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(item.PhysicalItems);
+            //if (colName == "colGroupID") return item.Groups;
             return base.GetCellValue(item, colName);
         }
 
@@ -406,7 +406,7 @@ namespace HH.ZK.UI
                 frm.UpdatingItem = pc;
                 frm.ItemUpdated += delegate (object obj, ItemUpdatedEventArgs args)
                 {
-                    this.facilityTree.Init(AppSettings.Current.PhysicalProject.ID);
+                    this.facilityTree.Init();
                     facilityTree.SelectDivisionNode(pc.ID);
                 };
                 frm.ShowDialog();
@@ -423,7 +423,7 @@ namespace HH.ZK.UI
             if (pc != null && MessageBox.Show("是否删除此学校?", "询问", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
                 DelNode(facilityTree.SelectedNode);
-                facilityTree.Init(AppSettings.Current.PhysicalProject.ID);
+                facilityTree.Init();
             }
         }
 
@@ -435,20 +435,10 @@ namespace HH.ZK.UI
         #region 主网格右键菜单
         private void mnu导入学生信息_Click(object sender, EventArgs e)
         {
-            if (AppSettings.Current.PhysicalProject.SchoolID == "1000029")
-            {
-                var frm = new Frm学生信息导入_仙桃();
-                frm.MinimizeBox = false;
-                frm.ShowDialog();
-                ReFreshData();
-            }
-            else
-            {
-                var frm = new Frm学生信息导入();
-                frm.MinimizeBox = false;
-                frm.ShowDialog();
-                ReFreshData();
-            }
+            var frm = new Frm学生信息导入();
+            frm.MinimizeBox = false;
+            frm.ShowDialog();
+            ReFreshData();
         }
 
         private void Mnu_DeleteStudents_Click(object sender, EventArgs e)
@@ -461,98 +451,25 @@ namespace HH.ZK.UI
 
         private void mnu批量修改考试科目_Click(object sender, EventArgs e)
         {
-            List<Student> students = GetSelectedItems();
-            if (students.Count == 0) return;
-            var frm = new Frm考试科目选择();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.SexFlag = students[0].Sex;
-            var dig = frm.ShowDialog();
-            if (dig != DialogResult.OK) return;
-            var pis = frm.SelectedPhysicalIDs;
-            int fail = 0;
-            FrmProcessing frmP = new FrmProcessing();
-            Action action = delegate ()
-            {
-                try
-                {
-                    List<Student> temp = new List<Student>();
-                    for (int i = 0; i < students.Count; i++)
-                    {
-                        temp.Add(students[i]);
-                        if (i == students.Count - 1 || temp.Count == 100)
-                        {
-                            var patchs = temp.Select(it => new UpdateItem<string>() { ID = it.ID, Key = "PhysicalItems", Value = pis, OriginalValue = "override" }).ToList();
-                            var ret = new APIClient(AppSettings.Current.ConnStr).BatchPatch<string, Student>(patchs, AppSettings.Current.PhysicalProject.ID);
-                            if (ret.Result == ResultCode.Successful && ret.Value != null && ret.Value.Successes != null)
-                            {
-                                foreach (var s in temp)
-                                {
-                                    if (ret.Value.Successes.ContainsKey(s.ID))
-                                    {
-                                        var newVal = ret.Value.Successes[s.ID];
-                                        s.PhysicalItems = newVal.PhysicalItems;
-                                        s.UpdateDate = newVal.UpdateDate;
-                                    }
-                                }
-                            }
-                            if (ret.Result == ResultCode.Successful && ret.Value != null && ret.Value.Errors != null) fail += ret.Value.Errors.Count;
-                            else if (ret.Result == ResultCode.Fail) fail += temp.Count;
-                            temp.Clear();
-                            if (fail == 0) frmP.ShowProgress(string.Empty, (decimal)(i + 1) / students.Count);
-                            else frmP.ShowProgressEX($"失败 {fail} 条", (decimal)(i + 1) / students.Count);
-                        }
-                    }
-                }
-                catch (ThreadAbortException)
-                {
-                }
-                catch (Exception)
-                {
-                }
-            };
-            Thread t = new Thread(new ThreadStart(action));
-            t.IsBackground = true;
-            t.Start();
-            if (frmP.ShowDialog() != DialogResult.OK)
-            {
-                t.Abort();
-            }
-            this.dataGridView1.Invalidate();
+            
         }
 
         private void mnu导入学生考试科目_Click(object sender, EventArgs e)
         {
-            Frm考试科目导入 frm = new Frm考试科目导入();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
-            FreshView(ucPaging1.GetPageSize(), 1);
+           
         }
 
         private void mnu导入学生特殊情况_Click(object sender, EventArgs e)
         {
-            var frm = new Frm导入特殊情况学生();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
-            FreshView(ucPaging1.GetPageSize(), 1);
         }
 
         private void mnu导入平时成绩_Click(object sender, EventArgs e)
         {
-            var frm = new Frm导入平时成绩();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
-            FreshView(ucPaging1.GetPageSize(), 1);
+           
         }
 
         private void mnu设置学生考试状态_Click(object sender, EventArgs e)
         {
-            List<Student> students = GetSelectedItems();
-            if (students.Count == 0) return;
-            var frm = new Frm设置考试状态();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            if (frm.ShowDialog() != DialogResult.OK) return;
-            SetState(students, frm.StudentState);
-            this.dataGridView1.Invalidate();
         }
         #endregion
 
@@ -574,7 +491,7 @@ namespace HH.ZK.UI
 
         private void mn刷新学校_Click(object sender, EventArgs e)
         {
-            facilityTree.Init(AppSettings.Current.PhysicalProject.ID);
+            facilityTree.Init();
         }
 
         private void lnk考试科目_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

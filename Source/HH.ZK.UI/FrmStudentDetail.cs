@@ -26,7 +26,7 @@ namespace HH.ZK.UI
         protected override void InitControls()
         {
             base.InitControls();
-            txtFacility.Init(AppSettings.Current.PhysicalProject.ID);
+            txtFacility.Init();
         }
 
         public override void ShowOperatorRights()
@@ -43,16 +43,12 @@ namespace HH.ZK.UI
             txtID.Enabled = false;
             txtName.Text = item.Name;
             txtCardID.Text = item.CardID;
-            txtFacility.SelectedFacilityID = item.FacilityID;
-            rdMale.Checked = item.Sex == Sex.Male;
-            rdFemale.Checked = item.Sex == Sex.Female;
+            txtFacility.SelectedDivisionID = item.DivisionID;
+            rdMale.Checked = item.Gender == Gender.Male;
+            rdFemale.Checked = item.Gender == Gender.Female;
             txtClassName.Text = item.ClassName;
             txtIDNumber.Text = item.IDNumber;
-            txt国标分.Text = item.JiaFen.Trim().ToString();
-            txt考试科目.Tag = item.PhysicalItems;
-            txt考试科目.Text = AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(item.PhysicalItems);
-            txt学校代码.Text = item.SchoolCode;
-            StudentPhoto sp = (new APIClient(AppSettings.Current.ConnStr)).GetByID<string, StudentPhoto>(item.ID, AppSettings.Current.PhysicalProject.ID).QueryObject;
+            StudentPhoto sp = (new APIClient(AppSettings.Current.ConnStr)).GetByID<string, StudentPhoto>(item.ID).QueryObject;
             if (sp != null) picPhoto.Image = sp.GetPhoto();
         }
 
@@ -75,12 +71,6 @@ namespace HH.ZK.UI
                 MessageBox.Show("学生的所属学校没有指定");
                 return false;
             }
-            decimal jiafen = 0;
-            if(!string.IsNullOrEmpty (txt国标分.Text )&& (!decimal .TryParse (txt国标分.Text ,out jiafen ) || jiafen < 0))
-            {
-                MessageBox.Show("国标分不正确");
-                return false;
-            }
             return true;
         }
 
@@ -91,23 +81,18 @@ namespace HH.ZK.UI
             info.ID = txtID.Text.Trim();
             info.Name = txtName.Text.Trim();
             info.CardID = txtCardID.Text.Trim();
-            info.FacilityID = txtFacility.SelectedFacilityID;
-            info.Sex = rdMale.Checked ? Sex.Male : Sex.Female;
-            info.Grade = GradeHelper.初三;
+            info.DivisionID = txtFacility.SelectedDivisionID.Value;
+            info.Gender = rdMale.Checked ? Gender.Male : Gender.Female;
+            info.Grade = GradeHelper.无;
             info.ClassName = !string.IsNullOrEmpty(txtClassName.Text) ? txtClassName.Text : null;
             info.IDNumber = !string.IsNullOrEmpty(txtIDNumber.Text) ? txtIDNumber.Text.Trim() : null;
-            info.UpdateDate = DateTime.Now;
-            info.SchoolCode = !string.IsNullOrEmpty(txt学校代码.Text) ? txt学校代码.Text : null;
-            info.PhysicalItems = txt考试科目.Tag != null ? txt考试科目.Tag.ToString() : null;
-            if (!string.IsNullOrEmpty(txt国标分.Text)) info.JiaFen = decimal.Parse(txt国标分.Text);
-            else info.JiaFen = 0;
             return info;
         }
 
         protected override CommandResult<Student> AddItem(Student addingItem)
         {
             Student s = addingItem;
-            var ret = (new APIClient(AppSettings.Current.ConnStr)).Add<string, Student>(s, AppSettings.Current.PhysicalProject.ID);
+            var ret = (new APIClient(AppSettings.Current.ConnStr)).Add<string, Student>(s);
             if (ret.Result == ResultCode.Successful)
             {
                 if (picPhoto.Tag != null)
@@ -120,7 +105,7 @@ namespace HH.ZK.UI
                     }
                     else
                     {
-                        CommandResult ret1 = (new APIClient(AppSettings.Current.ConnStr)).Add<string, StudentPhoto>(sp, AppSettings.Current.PhysicalProject.ID);
+                        CommandResult ret1 = (new APIClient(AppSettings.Current.ConnStr)).Add<string, StudentPhoto>(sp);
                         if (ret1.Result == ResultCode.Successful)
                         {
                             s.HasPhoto = true;
@@ -131,8 +116,7 @@ namespace HH.ZK.UI
                         }
                     }
                 }
-                s.FacilityName = ret.Value.FacilityName;
-                s.UpdateDate = ret.Value.UpdateDate;
+                s.DivisionName = ret.Value.DivisionName;
             }
             return ret;
         }
@@ -140,7 +124,7 @@ namespace HH.ZK.UI
         protected override CommandResult<Student> UpdateItem(Student updatingItem)
         {
             Student s = updatingItem;
-            var ret = (new APIClient(AppSettings.Current.ConnStr)).Add<string, Student>(s, AppSettings.Current.PhysicalProject.ID);
+            var ret = (new APIClient(AppSettings.Current.ConnStr)).Add<string, Student>(s);
             if (ret.Result == ResultCode.Successful)
             {
                 if (picPhoto.Tag != null)
@@ -153,7 +137,7 @@ namespace HH.ZK.UI
                     }
                     else
                     {
-                        CommandResult ret1 = (new APIClient(AppSettings.Current.ConnStr)).Add<string, StudentPhoto>(sp, AppSettings.Current.PhysicalProject.ID);
+                        CommandResult ret1 = (new APIClient(AppSettings.Current.ConnStr)).Add<string, StudentPhoto>(sp);
                         if (ret1.Result == ResultCode.Successful)
                         {
                             s.HasPhoto = true;
@@ -164,8 +148,7 @@ namespace HH.ZK.UI
                         }
                     }
                 }
-                s.FacilityName = ret.Value.FacilityName;
-                s.UpdateDate = ret.Value.UpdateDate;
+                s.DivisionName = ret.Value.DivisionName;
             }
             return ret;
         }
@@ -201,7 +184,7 @@ namespace HH.ZK.UI
             if (UpdatingItem != null)
             {
                 Student student = UpdatingItem as Student;
-                CommandResult ret = (new APIClient(AppSettings.Current.ConnStr)).Delete<string, StudentPhoto>(student.ID, AppSettings.Current.PhysicalProject.ID);
+                CommandResult ret = (new APIClient(AppSettings.Current.ConnStr)).Delete<string, StudentPhoto>(student.ID);
                 if (ret.Result == ResultCode.Successful)
                 {
                     student.HasPhoto = false;
@@ -216,28 +199,6 @@ namespace HH.ZK.UI
             else
             {
                 picPhoto.Image = null;
-            }
-        }
-
-        private void lnk考试科目_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Frm考试科目选择 frm = new Frm考试科目选择();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.SexFlag = rdMale.Checked ? Sex.Male : Sex.Female;
-            frm.SelectedPhysicalIDs = txt考试科目.Tag != null ? txt考试科目.Tag.ToString() : null;
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                var sp = frm.SelectedPhysicalIDs;
-                if (string.IsNullOrEmpty(sp))
-                {
-                    txt考试科目.Text = string.Empty;
-                    txt考试科目.Tag = null;
-                }
-                else
-                {
-                    txt考试科目.Text = AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(frm.SelectedPhysicalIDs);
-                    txt考试科目.Tag = frm.SelectedPhysicalIDs;
-                }
             }
         }
         #endregion

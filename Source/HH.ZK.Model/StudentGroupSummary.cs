@@ -16,7 +16,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置性别
         /// </summary>
-        public Sex? Sex { get; set; }
+        public Gender? Sex { get; set; }
         /// <summary>
         /// 获取或设置所属学校
         /// </summary>
@@ -48,7 +48,7 @@ namespace HH.ZK.Model
                 return string.Format("{0}{1}{2}{3}组",
                     PlanDate,
                     AppSettings.Current?.PhysicalProject?.PhysicalItems?.GetShortNames(PhysicalItems, string.Empty),
-                    Sex == null ? null : (Sex == HH.ZK.Model.Sex.Male ? "男子" : "女子"),
+                    Sex == null ? null : (Sex == HH.ZK.Model.Gender.Male ? "男子" : "女子"),
                     Number
                     );
             }
@@ -63,7 +63,7 @@ namespace HH.ZK.Model
                     PlanDate,
                     FacilityName,
                     AppSettings.Current?.PhysicalProject?.PhysicalItems?.GetShortNames(PhysicalItems, string.Empty),
-                    Sex == null ? null : (Sex == HH.ZK.Model.Sex.Male ? "男子" : "女子"),
+                    Sex == null ? null : (Sex == HH.ZK.Model.Gender.Male ? "男子" : "女子"),
                     Number
                     );
             }

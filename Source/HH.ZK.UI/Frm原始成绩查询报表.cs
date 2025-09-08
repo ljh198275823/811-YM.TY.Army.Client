@@ -39,12 +39,6 @@ namespace HH.ZK.UI
         {
             txt测试日期.Items.Clear();
             txt测试日期.Items.Add(string.Empty);
-            for (int i = 0; i < 1000000; i++)
-            {
-                DateTime dt = AppSettings.Current.PhysicalProject.StartDate.AddDays(i);
-                if (dt <= AppSettings.Current.PhysicalProject.EndDate) txt测试日期.Items.Add(dt.ToString("yyyy年MM月dd日"));
-                else break;
-            }
         }
 
         private List<StudentScore> GetSelectedScores()
@@ -153,7 +147,7 @@ namespace HH.ZK.UI
         {
             base.Init();
             cmbPhysicalItem.Init(AppSettings.Current.PhysicalProject);
-            ucStudentSearch1.Init(AppSettings.Current.PhysicalProject.ID);
+            ucStudentSearch1.Init();
             Init成绩来源();
             Init测试日期();
             if (AppSettings.Current.PhysicalProject == null) btnSearch.Enabled = false;
@@ -206,7 +200,7 @@ namespace HH.ZK.UI
             row.Tag = score;
             row.Cells["colID"].Value = score.StudentID;
             row.Cells["colName"].Value = score.StudentName;
-            row.Cells["colSex"].Value = score.Sex == Sex.Male ? "男" : "女";
+            row.Cells["colSex"].Value = score.Sex == Gender.Male ? "男" : "女";
             row.Cells["colFacility"].Value = score.FacilityName;
             row.Cells["colPhysicalItem"].Value = score.PhysicalItemName;
             if (score.SpecialType == SpecialScoreType.作废)

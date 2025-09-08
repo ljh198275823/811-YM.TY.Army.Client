@@ -54,20 +54,15 @@
             this.rd不限男女 = new System.Windows.Forms.RadioButton();
             this.rdFemale = new System.Windows.Forms.RadioButton();
             this.rdMale = new System.Windows.Forms.RadioButton();
-            this.txt测试次数 = new LJH.GeneralLibrary.WinformControl.IntergerTextBox(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.rdNone = new System.Windows.Forms.RadioButton();
             this.rdDesending = new System.Windows.Forms.RadioButton();
             this.rdAscending = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.pnl成绩模式 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.rd通过手持机录入 = new System.Windows.Forms.RadioButton();
-            this.rd采用设备测试 = new System.Windows.Forms.RadioButton();
+            this.txt测试次数 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
             this.panel2.SuspendLayout();
             this.pnl成绩模式.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtID
@@ -179,7 +174,7 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(320, 479);
+            this.btnClose.Location = new System.Drawing.Point(320, 428);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(74, 41);
             this.btnClose.TabIndex = 105;
@@ -190,7 +185,7 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(120, 479);
+            this.btnOk.Location = new System.Drawing.Point(120, 428);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(181, 41);
             this.btnOk.TabIndex = 104;
@@ -315,18 +310,6 @@
             this.rdMale.Text = "只限男生";
             this.rdMale.UseVisualStyleBackColor = true;
             // 
-            // txt测试次数
-            // 
-            this.txt测试次数.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt测试次数.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txt测试次数.Location = new System.Drawing.Point(68, 380);
-            this.txt测试次数.MaxValue = 5;
-            this.txt测试次数.MinValue = 0;
-            this.txt测试次数.Name = "txt测试次数";
-            this.txt测试次数.Size = new System.Drawing.Size(119, 30);
-            this.txt测试次数.TabIndex = 10;
-            this.txt测试次数.Text = "0";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -391,59 +374,23 @@
             this.pnl成绩模式.Size = new System.Drawing.Size(326, 31);
             this.pnl成绩模式.TabIndex = 119;
             // 
-            // label12
+            // txt测试次数
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 435);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 12);
-            this.label12.TabIndex = 120;
-            this.label12.Text = "成绩来源";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.rd通过手持机录入);
-            this.panel1.Controls.Add(this.rd采用设备测试);
-            this.panel1.Location = new System.Drawing.Point(68, 426);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(326, 31);
-            this.panel1.TabIndex = 121;
-            // 
-            // rd通过手持机录入
-            // 
-            this.rd通过手持机录入.AutoSize = true;
-            this.rd通过手持机录入.Checked = true;
-            this.rd通过手持机录入.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rd通过手持机录入.Location = new System.Drawing.Point(156, 4);
-            this.rd通过手持机录入.Name = "rd通过手持机录入";
-            this.rd通过手持机录入.Size = new System.Drawing.Size(157, 24);
-            this.rd通过手持机录入.TabIndex = 3;
-            this.rd通过手持机录入.TabStop = true;
-            this.rd通过手持机录入.Text = "手持机APP录入";
-            this.rd通过手持机录入.UseVisualStyleBackColor = true;
-            // 
-            // rd采用设备测试
-            // 
-            this.rd采用设备测试.AutoSize = true;
-            this.rd采用设备测试.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rd采用设备测试.Location = new System.Drawing.Point(3, 4);
-            this.rd采用设备测试.Name = "rd采用设备测试";
-            this.rd采用设备测试.Size = new System.Drawing.Size(107, 24);
-            this.rd采用设备测试.TabIndex = 2;
-            this.rd采用设备测试.Text = "设备测试";
-            this.rd采用设备测试.UseVisualStyleBackColor = true;
+            this.txt测试次数.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt测试次数.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txt测试次数.Location = new System.Drawing.Point(68, 379);
+            this.txt测试次数.Name = "txt测试次数";
+            this.txt测试次数.Size = new System.Drawing.Size(119, 30);
+            this.txt测试次数.TabIndex = 120;
             // 
             // Frm考试科目Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 532);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label12);
+            this.ClientSize = new System.Drawing.Size(419, 481);
+            this.Controls.Add(this.txt测试次数);
             this.Controls.Add(this.pnl成绩模式);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txt测试次数);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label8);
@@ -474,8 +421,6 @@
             this.panel2.PerformLayout();
             this.pnl成绩模式.ResumeLayout(false);
             this.pnl成绩模式.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,16 +452,12 @@
         private System.Windows.Forms.RadioButton rd不限男女;
         private System.Windows.Forms.RadioButton rdFemale;
         private System.Windows.Forms.RadioButton rdMale;
-        private LJH.GeneralLibrary.WinformControl.IntergerTextBox txt测试次数;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton rdNone;
         private System.Windows.Forms.RadioButton rdDesending;
         private System.Windows.Forms.RadioButton rdAscending;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel pnl成绩模式;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton rd通过手持机录入;
-        private System.Windows.Forms.RadioButton rd采用设备测试;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox txt测试次数;
     }
 }

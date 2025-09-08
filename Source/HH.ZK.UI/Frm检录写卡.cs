@@ -39,7 +39,7 @@ namespace HH.ZK.UI
                 while (true)
                 {
                     Thread.Sleep(200);
-                    var ret = Reader.InitCard(Student.ID, Student.Name, Student.Sex == Sex.Male ? "1" : "2", string.Empty);
+                    var ret = Reader.InitCard(Student.ID, Student.Name, Student.Gender == Gender.Male ? "1" : "2", string.Empty);
                     if (ret == CommandRet.SUCCEED) break;
                 }
                 this.Invoke((Action)(() => this.DialogResult = DialogResult.OK));

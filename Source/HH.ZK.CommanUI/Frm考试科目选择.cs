@@ -18,7 +18,9 @@ namespace HH.ZK.CommonUI
 
         public string SelectedPhysicalIDs { get; set; }
 
-        public Sex? SexFlag { get; set; }
+        public PhysicalProject Project { get; set; }
+
+        public Gender? SexFlag { get; set; }
 
         public bool SingleSelect { get; set; }
 
@@ -26,7 +28,7 @@ namespace HH.ZK.CommonUI
         private void InitPnlPhysicalItem(Panel pnl)
         {
             pnl.Controls.Clear();
-            var 考试科目 = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, AppSettings.Current.PhysicalProject.TemplateProjectID);
+            var 考试科目 = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, Project.ID);
             var pis = 考试科目.Items != null ? 考试科目.Items : new List<PhysicalItem>();
             if (pis != null && pis.Count > 0)
             {

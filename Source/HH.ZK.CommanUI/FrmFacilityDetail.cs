@@ -33,7 +33,7 @@ namespace HH.ZK.CommonUI
         protected override void InitControls()
         {
             base.InitControls();
-            txtDivision.Init(AppSettings.Current.PhysicalProject.ID);
+            txtDivision.Init();
             if (Division != null) txtDivision.SelectedDivisionID = Division.ID;
         }
 

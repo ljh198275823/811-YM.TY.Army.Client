@@ -21,7 +21,7 @@ namespace HH.ZK.Model
         /// </summary>
         /// <param name="score"></param>
         /// <returns></returns>
-        public bool CalResult(decimal 身高, decimal 体重, int grade, Sex sex, out decimal ret, out string rank)
+        public bool CalResult(decimal 身高, decimal 体重, int grade, Gender sex, out decimal ret, out string rank)
         {
             ret = 0;
             rank = null;
@@ -44,7 +44,7 @@ namespace HH.ZK.Model
         /// 获取或设置标准适用的性别
         /// </summary>
         [DataMember]
-        public Sex Sex { get; set; }
+        public Gender Sex { get; set; }
         /// <summary>
         /// 获取或设置标准适用的年级
         /// </summary>

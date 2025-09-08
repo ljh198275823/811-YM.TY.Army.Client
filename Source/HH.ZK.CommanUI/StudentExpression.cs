@@ -34,10 +34,10 @@ namespace HH.ZK.CommonUI
                     ret = s.CardID;
                     return true;
                 case "性别":
-                    ret = s.Sex == Sex.Male ? "男" : "女";
+                    ret = s.Gender == Gender.Male ? "男" : "女";
                     return true;
                 case "性别代码":
-                    ret = s.Sex == Sex.Male ? "1" : "2";
+                    ret = s.Gender == Gender.Male ? "1" : "2";
                     return true;
                 case "身份证号":
                     ret = s.IDNumber;
@@ -48,7 +48,7 @@ namespace HH.ZK.CommonUI
                     return true;
                 case "学校":
                 case "学校名称":
-                    ret = s.FacilityName;
+                    ret = s.DivisionName;
                     return true;
                 case "考点":
                     ret = AppSettings.Current.PhysicalProject.Name;
@@ -63,29 +63,29 @@ namespace HH.ZK.CommonUI
                 case "班级名称":
                     ret = s.ClassName;
                     return true;
-                case "考试科目":
-                    ret= AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(s.PhysicalItems);
-                    return true;
-                case "组别":
-                case "分组":
-                    ret = s.Groups;
-                    return true;
+                //case "考试科目":
+                //    ret= AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(s.PhysicalItems);
+                //    return true;
+                //case "组别":
+                //case "分组":
+                //    ret = s.Groups;
+                //    return true;
                 case "总分":
                     if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) ret = s.Total.ToString();
                     else ret = null;
                     return true;
-                case "加分":
-                case "附加分":
-                case "平时成绩":
-                case "国标分":
-                    if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) ret = s.JiaFen.Trim().ToString();
-                    else ret = null;
-                    return true;
-                case "标准分":
-                case "考试分":
-                    if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) ret = (s.Total - s.JiaFen).ToString();
-                    else ret = null;
-                    return true;
+                //case "加分":
+                //case "附加分":
+                //case "平时成绩":
+                //case "国标分":
+                //    if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) ret = s.JiaFen.Trim().ToString();
+                //    else ret = null;
+                //    return true;
+                //case "标准分":
+                //case "考试分":
+                //    if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) ret = (s.Total - s.JiaFen).ToString();
+                //    else ret = null;
+                //    return true;
                 case "特殊情况":
                     ret = s.State != StudentState.正常考试 ? s.State.ToString() : null;
                     return true;
@@ -148,67 +148,67 @@ namespace HH.ZK.CommonUI
                 {
                     pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(strTemp);
                 }
-                if (pi != null && !s.包函考试科目(pi.ID)) return false;
-                if (pi == null)  //
-                {
-                    List<string> pids = null;
-                    var names = AppSettings.Current.PhysicalProject.PhysicalItems.GetNames(s.PhysicalItems);  //这里用项目名称的作用是让学生的项目按系统指定的科目排序
-                    if (!string.IsNullOrEmpty(names)) pids = names.Split(',').ToList();
-                    if (strTemp == "项目一" && pids != null && pids.Count >= 1) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[0]);
-                    else if (strTemp == "项目二" && pids != null && pids.Count >= 2) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[1]);
-                    else if (strTemp == "项目三" && pids != null && pids.Count >= 3) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[2]);
-                    else if (strTemp == "项目四" && pids != null && pids.Count >= 4) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[3]);
-                    else if (strTemp == "项目五" && pids != null && pids.Count >= 5) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[4]);
-                    else if (strTemp == "项目六" && pids != null && pids.Count >= 6) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[5]);
-                }
-                if (pi == null) return false;
-                var score = s.Scores?.SingleOrDefault(it => it.PhysicalItemID == pi.ID);
-                if (score != null)
-                {
-                    temp = true;
-                    ret = string.Empty;
-                    if (string.IsNullOrEmpty(prefix)) //获取测试成绩
-                    {
-                        ret = score.FormatScore;
-                    }
-                    else if (prefix == "#") //获取成绩的得分
-                    {
-                        if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read) && score.Result != null) ret = score.Result.Value.Trim().ToString();
-                    }
-                    else if (prefix == "##") //加分
-                    {
-                        ret = score.JiaFen != null ? score.JiaFen.Value.Trim().ToString() : "0";
-                    }
-                    else if (prefix == "###") //等级
-                    {
-                        ret = score.Rank;
-                    }
-                    else if (prefix == "@")
-                    {
-                        ret = pi.Name;
-                    }
-                    else if (prefix == "@@")
-                    {
-                        ret = score.HostID?.ToString();
-                    }
-                    else if (prefix == "@@@")
-                    {
-                        ret = score.TestTime.ToString("yyyy-MM-dd HH:mm:ss");
-                    }
-                }
-                else
-                {
-                    if (prefix == "@")
-                    {
-                        ret = pi.Name;
-                        temp = true;
-                    }
-                    else
-                    {
-                        ret = string.Empty;
-                        temp = false;
-                    }
-                }
+                //if (pi != null && !s.包函考试科目(pi.ID)) return false;
+                //if (pi == null)  //
+                //{
+                //    List<string> pids = null;
+                //    var names = AppSettings.Current.PhysicalProject.PhysicalItems.GetNames(s.PhysicalItems);  //这里用项目名称的作用是让学生的项目按系统指定的科目排序
+                //    if (!string.IsNullOrEmpty(names)) pids = names.Split(',').ToList();
+                //    if (strTemp == "项目一" && pids != null && pids.Count >= 1) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[0]);
+                //    else if (strTemp == "项目二" && pids != null && pids.Count >= 2) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[1]);
+                //    else if (strTemp == "项目三" && pids != null && pids.Count >= 3) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[2]);
+                //    else if (strTemp == "项目四" && pids != null && pids.Count >= 4) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[3]);
+                //    else if (strTemp == "项目五" && pids != null && pids.Count >= 5) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[4]);
+                //    else if (strTemp == "项目六" && pids != null && pids.Count >= 6) pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pids[5]);
+                //}
+                //if (pi == null) return false;
+                //var score = s.Scores?.SingleOrDefault(it => it.PhysicalItemID == pi.ID);
+                //if (score != null)
+                //{
+                //    temp = true;
+                //    ret = string.Empty;
+                //    if (string.IsNullOrEmpty(prefix)) //获取测试成绩
+                //    {
+                //        ret = score.FormatScore;
+                //    }
+                //    else if (prefix == "#") //获取成绩的得分
+                //    {
+                //        if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read) && score.Result != null) ret = score.Result.Value.Trim().ToString();
+                //    }
+                //    else if (prefix == "##") //加分
+                //    {
+                //        ret = score.JiaFen != null ? score.JiaFen.Value.Trim().ToString() : "0";
+                //    }
+                //    else if (prefix == "###") //等级
+                //    {
+                //        ret = score.Rank;
+                //    }
+                //    else if (prefix == "@")
+                //    {
+                //        ret = pi.Name;
+                //    }
+                //    else if (prefix == "@@")
+                //    {
+                //        ret = score.HostID?.ToString();
+                //    }
+                //    else if (prefix == "@@@")
+                //    {
+                //        ret = score.TestTime.ToString("yyyy-MM-dd HH:mm:ss");
+                //    }
+                //}
+                //else
+                //{
+                //    if (prefix == "@")
+                //    {
+                //        ret = pi.Name;
+                //        temp = true;
+                //    }
+                //    else
+                //    {
+                //        ret = string.Empty;
+                //        temp = false;
+                //    }
+                //}
                 return temp;
             }
             catch (Exception ex)

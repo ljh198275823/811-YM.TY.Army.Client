@@ -25,11 +25,11 @@ namespace HH.ZK.CommonUI.Controls
             InitializeComponent();
         }
 
-        public void Init(string projectID)
+        public void Init()
         {
             var des = new List<Division>();
             var con = new DivisionSearchCondition() { SortMode = LJH.GeneralLibrary.SortMode.Asc };
-            List<Division> ds = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Division>(con, projectID).QueryObjects;
+            List<Division> ds = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Division>(con).QueryObjects;
             if (ds != null && ds.Count > 0)
             {
                 AddItems((Guid?)null, ds, des);

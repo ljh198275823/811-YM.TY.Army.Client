@@ -1,6 +1,6 @@
 ﻿namespace HH.ZK.UI
 {
-    partial class Frm考点管理
+    partial class Frm训练大纲管理
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm考点管理));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm训练大纲管理));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cMnu_Fresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.cMnu_Add = new System.Windows.Forms.ToolStripMenuItem();
-            this.cMnu_edit = new System.Windows.Forms.ToolStripMenuItem();
-            this.cMnu_Delete = new System.Windows.Forms.ToolStripMenuItem();
-            this.cMnu_Export = new System.Windows.Forms.ToolStripMenuItem();
-            this.选择列ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.高级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu删除考点学生成绩 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.设置训练科目ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.设置评分标准ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.设置选项ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.btn_Add = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Delete = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +49,8 @@
             this.col序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col开始日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col结束日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col简称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col类别 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col创建时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMemo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1.SuspendLayout();
@@ -66,65 +62,44 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cMnu_Fresh,
-            this.cMnu_Add,
-            this.cMnu_edit,
-            this.cMnu_Delete,
-            this.cMnu_Export,
-            this.选择列ToolStripMenuItem,
-            this.高级ToolStripMenuItem});
+            this.toolStripSeparator3,
+            this.设置训练科目ToolStripMenuItem,
+            this.设置评分标准ToolStripMenuItem,
+            this.设置选项ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 158);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 98);
             // 
             // cMnu_Fresh
             // 
             this.cMnu_Fresh.Name = "cMnu_Fresh";
-            this.cMnu_Fresh.Size = new System.Drawing.Size(121, 22);
+            this.cMnu_Fresh.Size = new System.Drawing.Size(162, 22);
             this.cMnu_Fresh.Text = "刷新";
             // 
-            // cMnu_Add
+            // toolStripSeparator3
             // 
-            this.cMnu_Add.Name = "cMnu_Add";
-            this.cMnu_Add.Size = new System.Drawing.Size(121, 22);
-            this.cMnu_Add.Text = "新建";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(159, 6);
             // 
-            // cMnu_edit
+            // 设置训练科目ToolStripMenuItem
             // 
-            this.cMnu_edit.Name = "cMnu_edit";
-            this.cMnu_edit.Size = new System.Drawing.Size(121, 22);
-            this.cMnu_edit.Text = "编辑";
+            this.设置训练科目ToolStripMenuItem.Name = "设置训练科目ToolStripMenuItem";
+            this.设置训练科目ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.设置训练科目ToolStripMenuItem.Text = "1. 设置训练科目";
+            this.设置训练科目ToolStripMenuItem.Click += new System.EventHandler(this.设置训练科目ToolStripMenuItem_Click);
             // 
-            // cMnu_Delete
+            // 设置评分标准ToolStripMenuItem
             // 
-            this.cMnu_Delete.Name = "cMnu_Delete";
-            this.cMnu_Delete.Size = new System.Drawing.Size(121, 22);
-            this.cMnu_Delete.Text = "删除";
+            this.设置评分标准ToolStripMenuItem.Name = "设置评分标准ToolStripMenuItem";
+            this.设置评分标准ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.设置评分标准ToolStripMenuItem.Text = "2. 设置评分标准";
+            this.设置评分标准ToolStripMenuItem.Click += new System.EventHandler(this.设置评分标准ToolStripMenuItem_Click);
             // 
-            // cMnu_Export
+            // 设置选项ToolStripMenuItem
             // 
-            this.cMnu_Export.Name = "cMnu_Export";
-            this.cMnu_Export.Size = new System.Drawing.Size(121, 22);
-            this.cMnu_Export.Text = "导出...";
-            // 
-            // 选择列ToolStripMenuItem
-            // 
-            this.选择列ToolStripMenuItem.Name = "选择列ToolStripMenuItem";
-            this.选择列ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.选择列ToolStripMenuItem.Text = "选择列...";
-            // 
-            // 高级ToolStripMenuItem
-            // 
-            this.高级ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnu删除考点学生成绩});
-            this.高级ToolStripMenuItem.Name = "高级ToolStripMenuItem";
-            this.高级ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.高级ToolStripMenuItem.Text = "高级";
-            // 
-            // mnu删除考点学生成绩
-            // 
-            this.mnu删除考点学生成绩.Name = "mnu删除考点学生成绩";
-            this.mnu删除考点学生成绩.Size = new System.Drawing.Size(172, 22);
-            this.mnu删除考点学生成绩.Text = "删除考点学生成绩";
-            this.mnu删除考点学生成绩.Click += new System.EventHandler(this.mnu删除考点学生成绩_Click);
+            this.设置选项ToolStripMenuItem.Name = "设置选项ToolStripMenuItem";
+            this.设置选项ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.设置选项ToolStripMenuItem.Text = "3. 设置选项";
+            this.设置选项ToolStripMenuItem.Click += new System.EventHandler(this.设置选项ToolStripMenuItem_Click);
             // 
             // menu
             // 
@@ -216,9 +191,8 @@
             this.col序号,
             this.colID,
             this.colName,
-            this.col开始日期,
-            this.col结束日期,
-            this.colState,
+            this.col简称,
+            this.col类别,
             this.col创建时间,
             this.colMemo});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
@@ -254,25 +228,17 @@
             this.colName.ReadOnly = true;
             this.colName.Width = 150;
             // 
-            // col开始日期
+            // col简称
             // 
-            this.col开始日期.HeaderText = "开始日期";
-            this.col开始日期.Name = "col开始日期";
-            this.col开始日期.ReadOnly = true;
-            this.col开始日期.Width = 130;
+            this.col简称.HeaderText = "简称";
+            this.col简称.Name = "col简称";
+            this.col简称.ReadOnly = true;
             // 
-            // col结束日期
+            // col类别
             // 
-            this.col结束日期.HeaderText = "结束日期";
-            this.col结束日期.Name = "col结束日期";
-            this.col结束日期.ReadOnly = true;
-            this.col结束日期.Width = 130;
-            // 
-            // colState
-            // 
-            this.colState.HeaderText = "考试类别";
-            this.colState.Name = "colState";
-            this.colState.ReadOnly = true;
+            this.col类别.HeaderText = "类别";
+            this.col类别.Name = "col类别";
+            this.col类别.ReadOnly = true;
             // 
             // col创建时间
             // 
@@ -288,7 +254,7 @@
             this.colMemo.Name = "colMemo";
             this.colMemo.ReadOnly = true;
             // 
-            // Frm考点管理
+            // Frm训练大纲管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -296,8 +262,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Frm考点管理";
-            this.Text = "考点管理";
+            this.Name = "Frm训练大纲管理";
+            this.Text = "训练/考核大纲管理";
             this.Controls.SetChildIndex(this.menu, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -313,10 +279,6 @@
 
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cMnu_Fresh;
-        private System.Windows.Forms.ToolStripMenuItem cMnu_Add;
-        private System.Windows.Forms.ToolStripMenuItem cMnu_Delete;
-        private System.Windows.Forms.ToolStripMenuItem cMnu_Export;
-        private System.Windows.Forms.ToolStripMenuItem 选择列ToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem btn_Add;
         private System.Windows.Forms.ToolStripMenuItem btn_Delete;
@@ -327,15 +289,15 @@
         private System.Windows.Forms.ToolStripTextBox txtKeyword;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripMenuItem cMnu_edit;
-        private System.Windows.Forms.ToolStripMenuItem 高级ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnu删除考点学生成绩;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem 设置训练科目ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 设置评分标准ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 设置选项ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn col序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col开始日期;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col结束日期;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col简称;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col类别;
         private System.Windows.Forms.DataGridViewTextBoxColumn col创建时间;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMemo;
     }

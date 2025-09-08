@@ -35,31 +35,31 @@ namespace HH.ZK.UI
         {
             _SeletectedStudent = s;
             _txtName.Text = s.Name;
-            _rdMale.Checked = s.Sex == Sex.Male;
-            _rdFemale.Checked = s.Sex == Sex.Female;
+            _rdMale.Checked = s.Gender == Gender.Male;
+            _rdFemale.Checked = s.Gender == Gender.Female;
             this.scoreView.Rows.Clear();
-            foreach (var pid in s.获取所有考试科目())
-            {
-                var pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pid);
-                if (pi == null) continue;
-                int row = scoreView.Rows.Add();
-                scoreView.Rows[row].Cells["colPhysicalItem"].Value = $"{pi.Name}({pi.Unit})";
-                scoreView.Rows[row].Cells["colPhysicalItem"].Tag = pi;
-                var ps = s.Scores.SingleOrDefault(it => it.PhysicalItemID == pid);
-                if (ps != null)
-                {
-                    scoreView.Rows[row].Cells["colScore"].Tag = ps;
-                    scoreView.Rows[row].Cells["colScore"].Value = ps.FormatScore;
-                    if (AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read))
-                    {
-                        scoreView.Rows[row].Cells["colResult"].Value = ps.Result != null ? ps.Result.Value.Trim().ToString() : null;
-                    }
-                }
-                scoreView.Rows[row].Cells["colAddScore"].Value = null;
-                scoreView.Rows[row].Cells["colAddScore"].ReadOnly = !AppSettings.Current.Operator.PermitAny(Permission.StudentScore, PermissionActions.Edit);
-                scoreView.Rows[row].DefaultCellStyle.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-                scoreView.Rows[row].Height = 50;
-            }
+            //foreach (var pid in s.获取所有考试科目())
+            //{
+            //    var pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(pid);
+            //    if (pi == null) continue;
+            //    int row = scoreView.Rows.Add();
+            //    scoreView.Rows[row].Cells["colPhysicalItem"].Value = $"{pi.Name}({pi.Unit})";
+            //    scoreView.Rows[row].Cells["colPhysicalItem"].Tag = pi;
+            //    var ps = s.Scores.SingleOrDefault(it => it.PhysicalItemID == pid);
+            //    if (ps != null)
+            //    {
+            //        scoreView.Rows[row].Cells["colScore"].Tag = ps;
+            //        scoreView.Rows[row].Cells["colScore"].Value = ps.FormatScore;
+            //        if (AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read))
+            //        {
+            //            scoreView.Rows[row].Cells["colResult"].Value = ps.Result != null ? ps.Result.Value.Trim().ToString() : null;
+            //        }
+            //    }
+            //    scoreView.Rows[row].Cells["colAddScore"].Value = null;
+            //    scoreView.Rows[row].Cells["colAddScore"].ReadOnly = !AppSettings.Current.Operator.PermitAny(Permission.StudentScore, PermissionActions.Edit);
+            //    scoreView.Rows[row].DefaultCellStyle.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            //    scoreView.Rows[row].Height = 50;
+            //}
             if (AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read))
             {
                 int total = scoreView.Rows.Add();

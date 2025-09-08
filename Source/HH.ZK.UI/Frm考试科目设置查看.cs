@@ -20,7 +20,7 @@ namespace HH.ZK.UI
         {
             if (AppSettings.Current.PhysicalProject != null)
             {
-                var 考试科目 = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, AppSettings.Current.PhysicalProject.TemplateProjectID);
+                var 考试科目 = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, AppSettings.Current.PhysicalProject.ID);
                 var items = 考试科目.Items != null ? 考试科目.Items : new List<PhysicalItem>();
                 this.dataGridView1.Rows.Clear();
                 foreach (var pi in items)
@@ -52,8 +52,6 @@ namespace HH.ZK.UI
             if (pi.SortMode == 0) row.Cells["colSortMode"].Value = "无";
             else if (pi.SortMode == 1) row.Cells["colSortMode"].Value = "越低越好";
             else if (pi.SortMode == 2) row.Cells["colSortMode"].Value = "越高越好";
-            if (pi.HasMachine) row.Cells["col成绩来源"].Value = "设备测试";
-            else row.Cells["col成绩来源"].Value = "手持机APP";
         }
         #endregion
     }

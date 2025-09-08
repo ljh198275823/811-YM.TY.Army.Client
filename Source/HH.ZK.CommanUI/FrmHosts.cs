@@ -650,7 +650,7 @@ namespace HH.ZK.CommonUI
                     sd.Open();
                     foreach (var s in students)
                     {
-                        ss.Add(new HostStudent() { StudentID = (cardID4StudentID && !string.IsNullOrEmpty(s.CardID)) ? s.CardID : s.ID, Name = s.Name, Sex = s.Sex == Sex.Male ? "男" : "女", Grade = (byte)s.Grade, ClassName = s.ClassName, CardID = s.CardID });
+                        ss.Add(new HostStudent() { StudentID = (cardID4StudentID && !string.IsNullOrEmpty(s.CardID)) ? s.CardID : s.ID, Name = s.Name, Sex = s.Gender == Gender.Male ? "男" : "女", Grade = (byte)s.Grade, ClassName = s.ClassName, CardID = s.CardID });
                         count++;
                         if (ss.Count >= maxStudentPertime || (count == students.Count && ss.Count > 0))
                         {
@@ -720,7 +720,7 @@ namespace HH.ZK.CommonUI
                         byte[] photo = null;
                         var image = new APIClient(AppSettings.Current.ConnStr).GetByID<string, StudentPhoto>(s.ID, AppSettings.Current.PhysicalProject.ID).QueryObject;
                         if (image != null) photo = ReadImage(image.Photo);
-                        var hostStudent = new HostStudent() { StudentID = (cardID4StudentID && !string.IsNullOrEmpty(s.CardID)) ? s.CardID : s.ID, Name = s.Name, Sex = s.Sex == Sex.Male ? "男" : "女", Grade = (byte)s.Grade, ClassName = s.ClassName, CardID = s.CardID };
+                        var hostStudent = new HostStudent() { StudentID = (cardID4StudentID && !string.IsNullOrEmpty(s.CardID)) ? s.CardID : s.ID, Name = s.Name, Sex = s.Gender == Gender.Male ? "男" : "女", Grade = (byte)s.Grade, ClassName = s.ClassName, CardID = s.CardID };
                         var ret = sd.DownloadStudentWithPhoto(hostStudent, photo);
                         frmP.ShowProgress(string.Format("主机 {0} 已经下载 {1} 人，总共 {2}", hi.HostID, count, students.Count), (decimal)count / students.Count);
                         if (ret == StudentDownloadResult.存储器已满)

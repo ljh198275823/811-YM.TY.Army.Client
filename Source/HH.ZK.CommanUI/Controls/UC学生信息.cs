@@ -22,8 +22,8 @@ namespace HH.ZK.CommonUI
         {
             lblName.Text = s.Name;
             //lbl班级.Text = gp.ToString();
-            lblGender.Text = s.Sex == Sex.Male ? "男" : "女";
-            lblSchool.Text = s.FacilityName;
+            lblGender.Text = s.Gender == Gender.Male ? "男" : "女";
+            lblSchool.Text = s.DivisionName;
             StudentPhoto sp = new APIClient(AppSettings.Current.ConnStr).GetByID<string, StudentPhoto>(s.ID, AppSettings.Current.PhysicalProject.ID).QueryObject;
             picPhoto.Image = sp != null ? sp.GetPhoto() : null;
             if (p.Channel.HasValue)

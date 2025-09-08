@@ -28,7 +28,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置学生姓别
         /// </summary>
-        public Sex Sex { get; set; }
+        public Gender Gender { get; set; }
         /// <summary>
         /// 获取或设置学生的年级编号
         /// </summary>
@@ -38,17 +38,9 @@ namespace HH.ZK.Model
         /// </summary>
         public StudentState State { get; set; }
         /// <summary>
-        /// 获取或设置考试科目
+        /// 获取或设置区域ID
         /// </summary>
-        public string PhysicalItems { get; set; }
-        /// <summary>
-        /// 获取或设置学生的平时成绩
-        /// </summary>
-        public decimal JiaFen { get; set; }
-        /// <summary>
-        /// 获取或设置更新时间
-        /// </summary>
-        public DateTime UpdateDate { get; set; }
+        public Guid DivisionID { get; set; }
         /// <summary>
         /// 获取或设置身份证号
         /// </summary>
@@ -57,35 +49,12 @@ namespace HH.ZK.Model
         /// 获取或设置学生卡号
         /// </summary>
         public string CardID { get; set; }
-        /// <summary>
-        /// 获取或设置学生的班级名称
-        /// </summary>
+
         public string ClassName { get; set; }
         /// <summary>
-        /// 获取或设置院系ID
+        /// 获取或设置出生日期
         /// </summary>
-        public string FacilityID { get; set; }
-        /// <summary>
-        /// 获取或设置学校代码
-        /// </summary>
-        public string SchoolCode { get; set; }
-        /// <summary>
-        /// 获取或设置检录时间
-        /// </summary>
-        public DateTime? CheckTime { get; set; }
-        /// <summary>
-        /// 获取或设置体温
-        /// </summary>
-        public decimal? Temperature { get; set; }
-
-        /// <summary>
-        /// 获取或设置上传到第三方平台时间
-        /// </summary>
-        public DateTime? UploadTime { get; set; }
-        /// <summary>
-        /// 获取或设置上传到第三方平台结果描述
-        /// </summary>
-        public string UploadMsg { get; set; }
+        public DateTime? BirthDay { get; set; }
         #endregion
 
         #region 其它属性
@@ -93,53 +62,11 @@ namespace HH.ZK.Model
         /// 是否带有照片
         /// </summary>
         public bool HasPhoto { get; set; }
-        /// <summary>
-        /// 获取或设置院系名称
-        /// </summary>
-        public string FacilityName { get; set; }
-        /// <summary>
-        /// 获取或设置区域ID
-        /// </summary>
-        public string DivisionID { get; set; }
+        
         /// <summary>
         /// 获取或设置区域名称
         /// </summary>
         public string DivisionName { get; set; }
-        /// <summary>
-        /// 获取或设置学生分组，多个分组之间用逗号隔开
-        /// </summary>
-        public string Groups { get; set; }
-        /// <summary>
-        /// 获取或设置道次
-        /// </summary>
-        public int? Channel { get; set; }
-        #endregion
-
-        #region 学生考试科目相关
-        public List<int> 获取所有考试科目()
-        {
-            if (!string.IsNullOrEmpty(this.PhysicalItems))
-            {
-                var strs = this.PhysicalItems.Split(',');
-                if (strs != null && strs.Length > 0) return strs.Select(it => int.Parse(it)).ToList();
-            }
-            return null;
-        }
-
-        public bool 包函考试科目(int pid)
-        {
-            var temp = 获取所有考试科目();
-            if (temp == null || temp.Count == 0) return false;
-            return temp.Exists(it => it == pid);
-        }
-
-        public void 增加考试科目(int pid)
-        {
-            var ret = 获取所有考试科目();
-            if (ret == null) ret = new List<int>();
-            if (!ret.Contains(pid)) ret.Add(pid);
-            this.PhysicalItems = string.Join(",", ret.Select(it => it.ToString()));
-        }
         #endregion
 
         #region 扩展属性

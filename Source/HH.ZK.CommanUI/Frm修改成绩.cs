@@ -82,8 +82,8 @@ namespace HH.ZK.UI
                 txtID.Text = Student.ID;
                 txtID.Enabled = false;
                 txtName.Text = Student.Name;
-                txtFacility.Text = Student.FacilityName;
-                if (Student.Sex == Sex.Male)
+                txtFacility.Text = Student.DivisionName;
+                if (Student.Gender == Gender.Male)
                 {
                     rdMale.Checked = true;
                 }

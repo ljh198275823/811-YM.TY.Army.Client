@@ -18,7 +18,7 @@ namespace HH.ZK.UI
 
         public string SelectedPhysicalIDs { get; set; }
 
-        public Sex? SexFlag { get; set; }
+        public Gender? SexFlag { get; set; }
 
         public bool SingleSelect { get; set; }
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HH.ZK.Model
 {
-    public enum Sex
+    public enum Gender
     {
         Male=1,
         Female=2,

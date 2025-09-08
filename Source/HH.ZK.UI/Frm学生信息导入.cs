@@ -149,9 +149,9 @@ namespace HH.ZK.UI
             }
             var sucess = Get考试科目(s, row);
             if (!sucess) return null;
-            s.SchoolCode = GetCellValue(row, "col学校代码");
-            decimal pscj = 0;
-            if (decimal.TryParse(平时成绩, out pscj)) s.JiaFen = pscj;
+            //s.SchoolCode = GetCellValue(row, "col学校代码");
+            //decimal pscj = 0;
+            //if (decimal.TryParse(平时成绩, out pscj)) s.JiaFen = pscj;
             s.CardID = GetCellValue(row, "colCardID");
             return s;
         }
@@ -169,13 +169,13 @@ namespace HH.ZK.UI
                 var pi = AppSettings.Current.PhysicalProject.PhysicalItems.GetPhysicalItem(str.Trim());
                 if (pi != null)
                 {
-                    if (pi.Sex == 0 || pi.Sex == (int)s.Sex)
+                    if (pi.Sex == 0 || pi.Sex == (int)s.Gender)
                     {
                         physicals.Add(pi.ID.ToString());
                     }
                     else
                     {
-                        var sex = s.Sex == Sex.Male ? "男" : "女";
+                        var sex = s.Gender == Gender.Male ? "男" : "女";
                         row.Cells["colReason"].Value = $"考试科目 {str} 不能应用在 {sex}生";
                         return false;
                     }
@@ -188,25 +188,25 @@ namespace HH.ZK.UI
             }
             foreach (var pi in AppSettings.Current.PhysicalProject.PhysicalItems.Items)
             {
-                if (pi.IsMust && (pi.Sex == 0 || pi.Sex == (int)s.Sex) && (s.State == StudentState.正常考试 || s.State == StudentState.缓考)) //如果是必考项，正常考试或缓考的学生就自动加上必考项
+                if (pi.IsMust && (pi.Sex == 0 || pi.Sex == (int)s.Gender) && (s.State == StudentState.正常考试 || s.State == StudentState.缓考)) //如果是必考项，正常考试或缓考的学生就自动加上必考项
                 {
                     if (!physicals.Contains(pi.ID.ToString())) physicals.Add(pi.ID.ToString());
                 }
             }
-            if (physicals.Count > 0) s.PhysicalItems = string.Join(",", physicals);
+            //if (physicals.Count > 0) s.PhysicalItems = string.Join(",", physicals);
             return true;
         }
 
         private Student ConvertToStudent(string id, string name, string sex, string school, string className, string idNumber,string 特殊情况, out string msg)
         {
             msg = string.Empty;
-            Sex s = (sex == "男" || sex == "1") ? Sex.Male : Sex.Female; //性别 男生可以用"男"和"1"表示 其它表示女生
+            Gender s = (sex == "男" || sex == "1") ? Gender.Male : Gender.Female; //性别 男生可以用"男"和"1"表示 其它表示女生
             Student info = new Student();
             info.ID = id;
             info.Name = name;
-            info.Sex = s;
-            info.FacilityID = school;
-            info.Grade = GradeHelper.初三;
+            info.Gender = s;
+            info.DivisionName = school;
+            info.Grade = GradeHelper.无;
             info.ClassName = className;
             info.IDNumber = idNumber;
             if (!string.IsNullOrEmpty(特殊情况))
@@ -231,7 +231,7 @@ namespace HH.ZK.UI
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            cmbExistsFacility.Init(AppSettings.Current.PhysicalProject.ID);
+            cmbExistsFacility.Init();
             cmbFacility.Enabled = string.IsNullOrEmpty(AppSettings.Current.Operator.SelectionItems); //如果只是显示有限的学校信息，不能对应学校
         }
 

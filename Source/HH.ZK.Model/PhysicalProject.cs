@@ -32,34 +32,12 @@ namespace HH.ZK.Model
         /// 获取或设置名称
         /// </summary>
         public string Name { get; set; }
+
+        public string ShortName { get; set; }
         /// <summary>
         /// 获取或设置创建日期
         /// </summary>
         public DateTime CreateDate { get; set; }
-        /// <summary>
-        /// 获取或设置测试年度
-        /// </summary>
-        public int Year { get; set; }
-        /// <summary>
-        /// 获取或设置项目的开始日期
-        /// </summary>
-        public DateTime StartDate { get; set; }
-        /// <summary>
-        /// 获取或设置项目的结束日期
-        /// </summary>
-        public DateTime EndDate { get; set; }
-        /// <summary>
-        /// 获取或设置模板项目
-        /// </summary>
-        public string TemplateProjectID { get; set; }
-        /// <summary>
-        /// 获取或设置是否是模板项目
-        /// </summary>
-        public bool IsTemplate { get; set; }
-        /// <summary>
-        /// 获取或设置学校ID
-        /// </summary>
-        public string SchoolID { get; set; }
         /// <summary>
         /// 获取或设置状态
         /// </summary>
@@ -92,13 +70,13 @@ namespace HH.ZK.Model
 
     public enum PhysicalProjectState
     {
-        正式考试 = 3,
-        模拟考试 = 4,
+        正在使用 = 0,
+        存档 = 1,
     }
 
-    [Flags]
     public enum PhysicalProjectClass
     {
-        汇海中考 = 0x01,
+        训练 = 1,
+        考核 = 2,
     }
 }

@@ -15,10 +15,12 @@ namespace HH.ZK.UI
             InitializeComponent();
         }
 
+        public PhysicalProject Project { get; set; }
+
         #region 事件处理程序
         private void Frm考试科目设置_Load(object sender, EventArgs e)
         {
-            var 考试科目 = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, AppSettings.Current.PhysicalProject.ID);
+            var 考试科目 = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, Project.ID);
             var items = 考试科目.Items != null ? 考试科目.Items : new List<PhysicalItem>();
             this.dataGridView1.Rows.Clear();
             foreach (var pi in items)
@@ -49,8 +51,6 @@ namespace HH.ZK.UI
             if (pi.SortMode == 0) row.Cells["colSortMode"].Value = "无";
             else if (pi.SortMode == 1) row.Cells["colSortMode"].Value = "越低越好";
             else if (pi.SortMode == 2) row.Cells["colSortMode"].Value = "越高越好";
-            if (pi.HasMachine) row.Cells["col成绩来源"].Value = "设备测试";
-            else row.Cells["col成绩来源"].Value = "手持机APP";
         }
 
         private void btnUp_Click(object sender, EventArgs e)
@@ -167,7 +167,7 @@ namespace HH.ZK.UI
                 items.Add(row.Tag as PhysicalItem);
             }
             var para = new PhysicalItemSettings() { Items = items };
-            var ret = SysParaSettingsClient.SaveSetting<PhysicalItemSettings>(para, AppSettings.Current.ConnStr, AppSettings.Current.PhysicalProject.ID);
+            var ret = SysParaSettingsClient.SaveSetting<PhysicalItemSettings>(para, AppSettings.Current.ConnStr, Project.ID);
             if (ret.Result == LJH.GeneralLibrary.ResultCode.Successful)
             {
                 this.DialogResult = DialogResult.OK;
