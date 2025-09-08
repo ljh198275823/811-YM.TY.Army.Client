@@ -139,7 +139,7 @@ namespace HH.ZK.UI
                         CommandResult ret1 = (new APIClient(AppSettings.Current.ConnStr)).Add<string, StudentPhoto>(sp);
                         if (ret1.Result == ResultCode.Successful)
                         {
-                            s.HasPhoto = true;
+                            ret.Value.HasPhoto = true;
                         }
                         else
                         {
@@ -147,7 +147,6 @@ namespace HH.ZK.UI
                         }
                     }
                 }
-                s.DivisionName = ret.Value.DivisionName;
             }
             return ret;
         }

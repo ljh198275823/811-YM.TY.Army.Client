@@ -53,8 +53,8 @@ namespace HH.ZK.Model
         {
             get
             {
-                return "http://localhost:8080/api";
-                //return "http://106.52.238.226:8080/api";
+                //return "http://localhost:8080/api";
+                return "http://106.52.238.226:8080/api";
             }
         }
 
@@ -65,8 +65,8 @@ namespace HH.ZK.Model
         {
             get
             {
-                return "http://localhost:8080/api";
-                //return "http://106.52.238.226:8080/api";
+                //return "http://localhost:8080/api";
+                return "http://106.52.238.226:8080/api";
             }
         }
         /// <summary>
