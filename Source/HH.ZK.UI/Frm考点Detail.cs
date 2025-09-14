@@ -14,7 +14,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.UI
 {
-    public partial class Frm考点Detail : FrmDetailBase<string, PhysicalProject>
+    public partial class Frm考点Detail : FrmDetailBase<string, Project>
     {
         public Frm考点Detail()
         {
@@ -27,12 +27,12 @@ namespace HH.ZK.UI
             base.InitControls();
         }
 
-        protected override void ItemShowing(PhysicalProject ct)
+        protected override void ItemShowing(Project ct)
         {
             txtName.Text = ct.Name;
             txt简称.Text = ct.ShortName;
-            rd考核.Checked = ct.ProjectClass == PhysicalProjectClass.考核;
-            rd训练.Checked = ct.ProjectClass == PhysicalProjectClass.训练;
+            rd考核.Checked = ct.ProjectClass == ProjectClass.考核;
+            rd训练.Checked = ct.ProjectClass == ProjectClass.训练;
         }
 
         protected override bool CheckInput()
@@ -51,26 +51,26 @@ namespace HH.ZK.UI
             return true;
         }
 
-        protected override PhysicalProject GetItemFromInput()
+        protected override Project GetItemFromInput()
         {
-            PhysicalProject ct = UpdatingItem as PhysicalProject;
-            if (ct == null) ct = new PhysicalProject() { ID = string.Empty };
+            Project ct = UpdatingItem as Project;
+            if (ct == null) ct = new Project() { ID = string.Empty };
             ct.Name = txtName.Text;
             ct.ShortName = txt简称.Text;
-            if (rd考核.Checked) ct.ProjectClass = PhysicalProjectClass.考核;
-            if (rd训练.Checked) ct.ProjectClass = PhysicalProjectClass.训练;
+            if (rd考核.Checked) ct.ProjectClass = ProjectClass.考核;
+            if (rd训练.Checked) ct.ProjectClass = ProjectClass.训练;
             ct.CreateDate = DateTime.Now;
             return ct;
         }
 
-        protected override CommandResult<PhysicalProject> AddItem(PhysicalProject addingItem)
+        protected override CommandResult<Project> AddItem(Project addingItem)
         {
-            return new APIClient(AppSettings.Current.ConnStr).Add<string, PhysicalProject>(addingItem, null);
+            return new APIClient(AppSettings.Current.ConnStr).Add<string, Project>(addingItem, null);
         }
 
-        protected override CommandResult<PhysicalProject> UpdateItem(PhysicalProject updatingItem)
+        protected override CommandResult<Project> UpdateItem(Project updatingItem)
         {
-            return new APIClient(AppSettings.Current.ConnStr).Add<string, PhysicalProject>(updatingItem, null);
+            return new APIClient(AppSettings.Current.ConnStr).Add<string, Project>(updatingItem, null);
         }
 
         protected override void ClearInput()

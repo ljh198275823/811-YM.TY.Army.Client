@@ -28,7 +28,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置学校可用的项目类型，有中考，体测，抽测，国民等。
         /// </summary>
-        public PhysicalProjectClass ProjectClass { get; set; }
+        public ProjectClass ProjectClass { get; set; }
         /// <summary>
         /// 获取或设置所在城市
         /// </summary>

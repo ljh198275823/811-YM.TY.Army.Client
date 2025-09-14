@@ -18,7 +18,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置类型
         /// </summary>
-        public PhysicalProjectClass Class { get; set; }
+        public ProjectClass Class { get; set; }
         /// <summary>
         /// 获取或设置名称
         /// </summary>

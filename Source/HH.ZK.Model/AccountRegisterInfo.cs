@@ -12,7 +12,7 @@ namespace HH.ZK.Model
 
         public string SchoolName { get; set; }
 
-        public PhysicalProjectClass? ProjectClass { get; set; }
+        public ProjectClass? ProjectClass { get; set; }
 
         public string Name { get; set; }
 

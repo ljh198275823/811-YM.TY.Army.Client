@@ -23,7 +23,7 @@ namespace HH.ZK.UI
         }
 
         #region 私有方法
-        private List<PhysicalProject> _Projects = null;
+        private List<Project> _Projects = null;
 
         private string GetProjectNames(string pids)
         {
@@ -79,7 +79,7 @@ namespace HH.ZK.UI
                 nameof(Roles.报表查看员),
                 nameof(Roles.系统管理员)
             });
-            _Projects = new APIClient(AppSettings.Current.ConnStr).GetList<string, PhysicalProject>(null, null).QueryObjects;
+            _Projects = new APIClient(AppSettings.Current.ConnStr).GetList<string, Project>(null, null).QueryObjects;
         }
 
         protected override void ItemShowing(UserInSchool info)

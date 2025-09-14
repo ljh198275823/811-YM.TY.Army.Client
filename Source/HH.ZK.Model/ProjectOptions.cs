@@ -6,10 +6,10 @@ using System.Runtime.Serialization;
 
 namespace HH.ZK.Model
 {
-    public class PhysicalProjectOptions
+    public class ProjectOptions
     {
         #region 构造函数
-        public PhysicalProjectOptions()
+        public ProjectOptions()
         {
             MaxTotal = 100;
             ScoreSelectMode = 0;

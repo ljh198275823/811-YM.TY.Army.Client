@@ -127,7 +127,7 @@
     <Compile Include="GradeHelper.cs" />
     <Compile Include="NationHelper.cs" />
     <Compile Include="PhysicalItem.cs" />
-    <Compile Include="PhysicalProject.cs" />
+    <Compile Include="Project.cs" />
     <Compile Include="PhysicalProjectStatistic.cs" />
     <Compile Include="ScoreStatistic.cs" />
     <Compile Include="SearchCondition\StatisticSearchCondition.cs" />
@@ -168,7 +168,7 @@
     <Compile Include="ThirdPlateForm.cs" />
     <Compile Include="TotalCalType.cs" />
     <Compile Include="TotalStatistic.cs" />
-    <Compile Include="PhysicalProjectOptions.cs" />
+    <Compile Include="ProjectOptions.cs" />
     <Compile Include="StudentState.cs" />
     <Compile Include="ScoreSource.cs" />
     <Compile Include="PhysicalItemSettings.cs" />

@@ -15,7 +15,7 @@ namespace HH.ZK.UI
             InitializeComponent();
         }
 
-        public PhysicalProject Project { get; set; }
+        public Project Project { get; set; }
 
         #region 事件处理程序
         private void Frm考试科目设置_Load(object sender, EventArgs e)

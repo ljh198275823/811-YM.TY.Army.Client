@@ -11,6 +11,6 @@ namespace HH.ZK.Model.SearchCondition
 
         public string OperatorID { get; set; }
 
-        public PhysicalProjectClass? ProjectClass { get; set; }
+        public ProjectClass? ProjectClass { get; set; }
     }
 }

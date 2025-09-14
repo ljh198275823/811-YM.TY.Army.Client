@@ -23,14 +23,14 @@ namespace HH.ZK.CommonUI
         #endregion
 
         #region 构造函数
-        public PhysicalScoresSavingService(PhysicalProject project)
+        public PhysicalScoresSavingService(Project project)
         {
             _Project = project;
         }
         #endregion
 
         #region 私有变量
-        private PhysicalProject _Project = null;
+        private Project _Project = null;
 
         private object _UnsavedRecordsLocker = new object();
         private Thread _SaveRecordsTask = null;

@@ -15,7 +15,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.UI
 {
-    public partial class Frm训练大纲管理 : FrmMasterBase<string, PhysicalProject>
+    public partial class Frm训练大纲管理 : FrmMasterBase<string, Project>
     {
         public Frm训练大纲管理()
         {
@@ -23,18 +23,18 @@ namespace HH.ZK.UI
         }
 
         #region 重写基类方法
-        protected override FrmDetailBase<string, PhysicalProject> GetDetailForm()
+        protected override FrmDetailBase<string, Project> GetDetailForm()
         {
             var frm = new Frm考点Detail();
             return frm;
         }
 
-        protected override QueryResultList<PhysicalProject> GetDataSource()
+        protected override QueryResultList<Project> GetDataSource()
         {
-            return new APIClient(AppSettings.Current.ConnStr).GetList<string, PhysicalProject>(SearchCondition, null);
+            return new APIClient(AppSettings.Current.ConnStr).GetList<string, Project>(SearchCondition, null);
         }
 
-        protected override List<PhysicalProject> FilterData(List<PhysicalProject> items)
+        protected override List<Project> FilterData(List<Project> items)
         {
             items = FullTextSearch(items, txtKeyword.Text);
             return (from item in items
@@ -42,7 +42,7 @@ namespace HH.ZK.UI
                     select item).ToList();
         }
 
-        protected override object GetCellValue(PhysicalProject item, string colName)
+        protected override object GetCellValue(Project item, string colName)
         {
             if (colName == "colID") return item.ID;
             if (colName == "colName") return item.Name;
@@ -62,10 +62,10 @@ namespace HH.ZK.UI
                     var item = GetRowTag(this.GridView.SelectedRows[0]);
                     var frm = new Frm考点名称确认();
                     frm.StartPosition = FormStartPosition.CenterParent;
-                    frm.ProjectName = (item as PhysicalProject).Name;
+                    frm.ProjectName = (item as Project).Name;
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        CommandResult ret = new APIClient(AppSettings.Current.ConnStr).Delete<string, PhysicalProject>(item, null);
+                        CommandResult ret = new APIClient(AppSettings.Current.ConnStr).Delete<string, Project>(item, null);
                         if (ret.Result == ResultCode.Successful)
                         {
                             _ShowingItems.Remove(item);

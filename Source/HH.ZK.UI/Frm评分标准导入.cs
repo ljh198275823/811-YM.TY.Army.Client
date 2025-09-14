@@ -21,7 +21,7 @@ namespace HH.ZK.UI
             InitializeComponent();
         }
 
-        public PhysicalProject Project { get; set; }
+        public Project Project { get; set; }
 
         #region 私有变量
         private DataTable _SourceTable = null;

@@ -25,9 +25,9 @@ namespace HH.ZK.CommonUI.Controls
             InitializeComponent();
         }
 
-        public void Init(string schoolID, PhysicalProjectClass projectClass)
+        public void Init(string schoolID, ProjectClass projectClass)
         {
-            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<string, PhysicalProject>(null, null);
+            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<string, Project>(null, null);
             var items =ret.QueryObjects;
             if (items != null && items.Count > 0)
             {
@@ -44,7 +44,7 @@ namespace HH.ZK.CommonUI.Controls
         [Browsable(false)]
         [Localizable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public PhysicalProject SelectedProject
+        public Project SelectedProject
         {
             get
             {
@@ -54,14 +54,14 @@ namespace HH.ZK.CommonUI.Controls
                 }
                 else
                 {
-                    return ((PhysicalProject)this.Items[SelectedIndex]);
+                    return ((Project)this.Items[SelectedIndex]);
                 }
             }
             set
             {
                 for (int i = 0; i < this.Items.Count; i++)
                 {
-                    var info = this.Items[i] as PhysicalProject;
+                    var info = this.Items[i] as Project;
                     if (info.ID == value.ID)
                     {
                         this.SelectedIndex = i;
@@ -84,7 +84,7 @@ namespace HH.ZK.CommonUI.Controls
                 }
                 else
                 {
-                    var Facility = (PhysicalProject)this.Items[SelectedIndex];
+                    var Facility = (Project)this.Items[SelectedIndex];
                     return Facility.ID;
                 }
             }
@@ -92,7 +92,7 @@ namespace HH.ZK.CommonUI.Controls
             {
                 for (int i = 0; i < this.Items.Count; i++)
                 {
-                    var info = this.Items[i] as PhysicalProject;
+                    var info = this.Items[i] as Project;
                     if (info.ID == value)
                     {
                         this.SelectedIndex = i;

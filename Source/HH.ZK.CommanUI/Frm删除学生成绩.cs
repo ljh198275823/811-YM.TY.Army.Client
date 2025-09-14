@@ -22,7 +22,7 @@ namespace HH.ZK.CommonUI
             InitializeComponent();
         }
 
-        public PhysicalProject Project { get; set; }
+        public Project Project { get; set; }
 
         #region 私有方法
         private void Init成绩来源()

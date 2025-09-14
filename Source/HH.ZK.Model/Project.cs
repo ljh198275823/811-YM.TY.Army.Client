@@ -11,10 +11,10 @@ namespace HH.ZK.Model
     /// <summary>
     /// 表示体能测试项目,比如一次中考,一次全年级的体能测试
     /// </summary>
-    public class PhysicalProject : LJH.GeneralLibrary.IEntity<string>
+    public class Project : LJH.GeneralLibrary.IEntity<string>
     {
         #region 构造函数
-        public PhysicalProject()
+        public Project()
         {
         }
         #endregion
@@ -27,7 +27,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置类型
         /// </summary>
-        public PhysicalProjectClass ProjectClass { get; set; }
+        public ProjectClass ProjectClass { get; set; }
         /// <summary>
         /// 获取或设置名称
         /// </summary>
@@ -41,7 +41,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置状态
         /// </summary>
-        public PhysicalProjectState State { get; set; }
+        public ProjectState State { get; set; }
         #endregion
 
         #region 运行时属性
@@ -49,7 +49,7 @@ namespace HH.ZK.Model
         /// 获取或设置考点选项
         /// </summary>
         [JsonIgnore]
-        public PhysicalProjectOptions Options { get; set; }
+        public ProjectOptions Options { get; set; }
         /// <summary>
         /// 获取或设置考试科目设置
         /// </summary>
@@ -68,13 +68,13 @@ namespace HH.ZK.Model
         #endregion
     }
 
-    public enum PhysicalProjectState
+    public enum ProjectState
     {
         正在使用 = 0,
         存档 = 1,
     }
 
-    public enum PhysicalProjectClass
+    public enum ProjectClass
     {
         训练 = 1,
         考核 = 2,

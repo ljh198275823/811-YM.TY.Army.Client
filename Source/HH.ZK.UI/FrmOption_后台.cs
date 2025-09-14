@@ -20,12 +20,12 @@ namespace HH.ZK.UI
             InitializeComponent();
         }
 
-        public PhysicalProject Project { get; set; }
+        public Project Project { get; set; }
 
         private void FrmOption_Load(object sender, EventArgs e)
         {
             txt总分计算方式.Init();
-            var po = SysParaSettingsClient.GetOrCreateSetting<PhysicalProjectOptions>(AppSettings.Current.ConnStr, Project.ID);
+            var po = SysParaSettingsClient.GetOrCreateSetting<ProjectOptions>(AppSettings.Current.ConnStr, Project.ID);
             rdBest.Checked = po.ScoreSelectMode == 0;
             rdLast.Checked = po.ScoreSelectMode == 1;
             if (!string.IsNullOrEmpty(po.CertificateTitle)) txt自定义标题.Text = po.CertificateTitle;
@@ -56,7 +56,7 @@ namespace HH.ZK.UI
                 MessageBox.Show("请填写自定义公式");
                 return;
             }
-            var po = SysParaSettingsClient.GetOrCreateSetting<PhysicalProjectOptions>(AppSettings.Current.ConnStr, Project.ID);
+            var po = SysParaSettingsClient.GetOrCreateSetting<ProjectOptions>(AppSettings.Current.ConnStr, Project.ID);
             po.ScoreSelectMode = rdLast.Checked ? 1 : 0;
             po.CertificateTitle = txt自定义标题.Text;
             po.CannotModifyScore = chkCnanotModifyScore.Checked;
@@ -75,7 +75,7 @@ namespace HH.ZK.UI
                 po.TotalPoint = null;
                 po.TotalMode = null;
             }
-            SysParaSettingsClient.SaveSetting<PhysicalProjectOptions>(po, AppSettings.Current.ConnStr, Project.ID);
+            SysParaSettingsClient.SaveSetting<ProjectOptions>(po, AppSettings.Current.ConnStr, Project.ID);
             this.DialogResult = DialogResult.OK;
         }
 

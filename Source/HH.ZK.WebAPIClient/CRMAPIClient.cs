@@ -15,7 +15,7 @@ namespace HH.ZK.WebAPIClient
     {
         private static string _LogID;
         public static string _Password;
-        private static PhysicalProjectClass _SystemFlag;
+        private static ProjectClass _SystemFlag;
         private static string _ClientID;
 
         #region 私有方法

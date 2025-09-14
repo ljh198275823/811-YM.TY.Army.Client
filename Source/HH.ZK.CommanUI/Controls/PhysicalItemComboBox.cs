@@ -26,7 +26,7 @@ namespace HH.ZK.CommonUI.Controls
         }
 
         #region 公共方法
-        public void Init(PhysicalProject project)
+        public void Init(Project project)
         {
             List<PhysicalItem> items = new List<PhysicalItem>();
             items.Add(new PhysicalItem { ID = 0, Name = string.Empty });

@@ -23,7 +23,7 @@ namespace HH.ZK.UI
             InitializeComponent();
         }
 
-        private List<PhysicalProject> _Projects = null;
+        private List<Project> _Projects = null;
         private Dictionary<string, List<Facility>> _Facilities = new Dictionary<string, List<Facility>>();
 
         #region 私有方法
@@ -83,7 +83,7 @@ namespace HH.ZK.UI
 
         protected override QueryResultList<UserInSchool> GetDataSource()
         {
-            _Projects = new APIClient(AppSettings.Current.ConnStr).GetList<string, PhysicalProject>(null, null).QueryObjects;
+            _Projects = new APIClient(AppSettings.Current.ConnStr).GetList<string, Project>(null, null).QueryObjects;
             if (SearchCondition == null)
             {
                 var con = new OperatorParaSearchCondition() { };

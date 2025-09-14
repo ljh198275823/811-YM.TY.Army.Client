@@ -276,7 +276,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置当前测试计划
         /// </summary>
-        public PhysicalProject PhysicalProject { get; set; }
+        public Project PhysicalProject { get; set; }
 
         /// <summary>
         /// 获取或设置当前操作员

@@ -18,7 +18,7 @@ namespace HH.ZK.CommonUI
 
         public string SelectedPhysicalIDs { get; set; }
 
-        public PhysicalProject Project { get; set; }
+        public Project Project { get; set; }
 
         public Gender? SexFlag { get; set; }
 

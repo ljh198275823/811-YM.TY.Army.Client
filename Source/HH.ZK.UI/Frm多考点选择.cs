@@ -25,7 +25,7 @@ namespace HH.ZK.UI
         private void InitProjects()
         {
             this.pnlProjects.Controls.Clear();
-            var projects = new APIClient(AppSettings.Current.ConnStr).GetList<string, PhysicalProject>(null, null).QueryObjects;
+            var projects = new APIClient(AppSettings.Current.ConnStr).GetList<string, Project>(null, null).QueryObjects;
             if (projects != null && projects.Count > 0)
             {
                 //projects = (from it in projects orderby it.Name ascending select it).ToList();
@@ -54,9 +54,9 @@ namespace HH.ZK.UI
                 var pis = items.Split(',');
                 foreach (Control c in pnlProjects.Controls)
                 {
-                    if (c.Tag != null && c.Tag is PhysicalProject && c is CheckBox)
+                    if (c.Tag != null && c.Tag is Project && c is CheckBox)
                     {
-                        var tag = c.Tag as PhysicalProject;
+                        var tag = c.Tag as Project;
                         (c as CheckBox).Checked = pis.Contains(tag.ID.ToString());
                     }
                 }
@@ -67,9 +67,9 @@ namespace HH.ZK.UI
         {
             foreach (Control c in pnl.Controls)
             {
-                if (c.Tag != null && c.Tag is PhysicalProject && c is CheckBox)
+                if (c.Tag != null && c.Tag is Project && c is CheckBox)
                 {
-                    var tag = c.Tag as PhysicalProject;
+                    var tag = c.Tag as Project;
                     if (tag.ID == pid) return c as CheckBox;
                 }
             }
@@ -109,7 +109,7 @@ namespace HH.ZK.UI
                 CheckBox chk = ctrl as CheckBox;
                 if (chk != null && chk.Checked)
                 {
-                    var pi = chk.Tag as PhysicalProject;
+                    var pi = chk.Tag as Project;
                     SelectedProjectIDs += pi.ID.ToString() + ",";
                 }
             }
