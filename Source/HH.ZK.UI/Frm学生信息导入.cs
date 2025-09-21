@@ -56,7 +56,6 @@ namespace HH.ZK.UI
             cmbID.Items.Clear();
             cmbName.Items.Clear();
             cmbSex.Items.Clear();
-            cmb考试科目.Items.Clear();
             cmbFacility.Items.Clear();
         }
 
@@ -137,67 +136,18 @@ namespace HH.ZK.UI
                 return null;
             }
             string facility = GetCellValue(row, "colFacility");
-            string className = GetCellValue(row, "colClassName");
             string idNumber = GetCellValue(row, "colIDNumber", true);
-            var 特殊情况 = GetCellValue(row, "col特殊情况");
-            var 平时成绩 = GetCellValue(row, "col平时成绩");
-            Student s = ConvertToStudent(id, name, sex, facility, className, idNumber, 特殊情况, out msg);
+            Student s = ConvertToStudent(id, name, sex, facility,  idNumber, out msg);
             if (s == null)
             {
                 row.Cells["colReason"].Value = msg;
                 return null;
             }
-            var sucess = Get考试科目(s, row);
-            if (!sucess) return null;
-            //s.SchoolCode = GetCellValue(row, "col学校代码");
-            //decimal pscj = 0;
-            //if (decimal.TryParse(平时成绩, out pscj)) s.JiaFen = pscj;
             s.CardID = GetCellValue(row, "colCardID");
             return s;
         }
 
-        private bool Get考试科目(Student s, DataGridViewRow row)
-        {
-            var names = row.Cells["col考试科目"].Value != null ? row.Cells["col考试科目"].Value.ToString().Trim() : null;
-            if (string.IsNullOrEmpty(names)) return true;
-            if (AppSettings.Current.PhysicalProject.PhysicalItems == null) return true;
-            List<string> physicals = new List<string>();
-            string[] strPhysicals = names.Split(',', '，');
-            foreach (var str in strPhysicals)
-            {
-                if (string.IsNullOrEmpty(str) || string.IsNullOrEmpty(str.Trim())) continue;
-                var pi = AppSettings.Current.PhysicalProject.PhysicalItems.GetPhysicalItem(str.Trim());
-                if (pi != null)
-                {
-                    if (pi.Sex == 0 || pi.Sex == (int)s.Gender)
-                    {
-                        physicals.Add(pi.ID.ToString());
-                    }
-                    else
-                    {
-                        var sex = s.Gender == Gender.Male ? "男" : "女";
-                        row.Cells["colReason"].Value = $"考试科目 {str} 不能应用在 {sex}生";
-                        return false;
-                    }
-                }
-                else
-                {
-                    row.Cells["colReason"].Value = $"不能识别 {str}";
-                    return false;
-                }
-            }
-            foreach (var pi in AppSettings.Current.PhysicalProject.PhysicalItems.Items)
-            {
-                if (pi.IsMust && (pi.Sex == 0 || pi.Sex == (int)s.Gender) && (s.State == StudentState.正常考试 || s.State == StudentState.缓考)) //如果是必考项，正常考试或缓考的学生就自动加上必考项
-                {
-                    if (!physicals.Contains(pi.ID.ToString())) physicals.Add(pi.ID.ToString());
-                }
-            }
-            //if (physicals.Count > 0) s.PhysicalItems = string.Join(",", physicals);
-            return true;
-        }
-
-        private Student ConvertToStudent(string id, string name, string sex, string school, string className, string idNumber,string 特殊情况, out string msg)
+        private Student ConvertToStudent(string id, string name, string sex, string school, string idNumber, out string msg)
         {
             msg = string.Empty;
             Gender s = (sex == "男" || sex == "1") ? Gender.Male : Gender.Female; //性别 男生可以用"男"和"1"表示 其它表示女生
@@ -207,19 +157,7 @@ namespace HH.ZK.UI
             info.Gender = s;
             info.DivisionName = school;
             info.Grade = GradeHelper.无;
-            info.ClassName = className;
             info.IDNumber = idNumber;
-            if (!string.IsNullOrEmpty(特殊情况))
-            {
-                if (特殊情况.Contains("尖子")) info.State = StudentState.尖子生免考;
-                else if (特殊情况.Contains("残疾") || 特殊情况.Contains("CJ")) info.State = StudentState.残疾免考;
-                else if (特殊情况.Contains("疾病") || 特殊情况.Contains("病疾")) info.State = StudentState.疾病免考;
-                else if (特殊情况.Contains("择考")) info.State = StudentState.择考;
-                else if (特殊情况.Contains("回往生") || 特殊情况.Contains("HK")) info.State = StudentState.回往生;
-                else if (特殊情况.Contains("缓考")) info.State = StudentState.缓考;
-                else if (特殊情况.Contains("免试") || 特殊情况.Contains("MS")) info.State = StudentState.免试;
-                else if (特殊情况.Contains("免修") || 特殊情况.Contains("MX")) info.State = StudentState.免修;
-            }
             return info;
         }
         #endregion
@@ -270,24 +208,13 @@ namespace HH.ZK.UI
                         FillColumn(_SourceTable, cmbSex);
                         PreFillDes(cmbSex, "性别");
                         PreFillDes(cmbSex, "性别代码");
-                        FillColumn(_SourceTable, cmb考试科目);
-                        PreFillDes(cmb考试科目, "考试科目");
-                        FillColumn(_SourceTable, cmbFacility);
-                        PreFillDes(cmbFacility, "学校");
-                        FillColumn(_SourceTable, cmbClassName);
-                        PreFillDes(cmbClassName, "班级名称");
-                        PreFillDes(cmbClassName, "班级");
-                        PreFillDes(cmbClassName, "班级代码");
                         FillColumn(_SourceTable, cmbIDNumber);
                         PreFillDes(cmbIDNumber, "身份证号");
                         FillColumn(_SourceTable, cmbCardID );
                         PreFillDes(cmbCardID, "卡号");
-                        FillColumn(_SourceTable, cmb特殊情况);
-                        PreFillDes(cmb特殊情况, "特殊情况");
-                        FillColumn(_SourceTable, cmb平时成绩);
-                        PreFillDes(cmb平时成绩, "平时成绩");
-                        FillColumn(_SourceTable, txt学校代码);
-                        PreFillDes(txt学校代码, "学校代码");
+                        FillColumn(_SourceTable, cmbFacility);
+                        PreFillDes(cmbFacility, "部门");
+                        PreFillDes(cmbFacility, "学校");
                     }
                     lblSource.Text = string.Format("{0}条数据", _SourceTable != null ? _SourceTable.Rows.Count : 0);
                 }
@@ -358,11 +285,11 @@ namespace HH.ZK.UI
                             }
                             if (students.Count == perTime || i == (viewDestination.Rows.Count - 1))
                             {
-                                var ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<string, Student>(students, rdIgnore.Checked ? ImportOption.Ignore : ImportOption.Override, AppSettings.Current.PhysicalProject.ID);
+                                var ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<string, Student>(students, rdIgnore.Checked ? ImportOption.Ignore : ImportOption.Override);
                                 if (ret.Result == ResultCode.Successful)
                                 {
-                                    success += ret.Value.Successes != null ? ret.Value.Successes.Count : 0;
                                     fail += ret.Value.Errors != null ? ret.Value.Errors.Count : 0;
+                                    success += students.Count - (ret.Value.Errors != null ? ret.Value.Errors.Count : 0);
                                     this.Invoke((Action)(() =>
                                     {
                                         foreach (var pair in rows)

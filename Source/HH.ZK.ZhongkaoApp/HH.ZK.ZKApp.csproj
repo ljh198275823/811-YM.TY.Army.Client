@@ -120,10 +120,6 @@
       <Project>{83611d2c-f630-4038-ab23-d5e03d022abb}</Project>
       <Name>HH.ZK.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HH.ZK.SQLite\HH.ZK.SQLite.csproj">
-      <Project>{eff73310-1ef6-4a5b-b344-07d6124d51da}</Project>
-      <Name>HH.ZK.SQLite</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HH.ZK.WebAPIClient\HH.ZK.WebAPIClient.csproj">
       <Project>{566ef97d-f8aa-4163-a756-e282519d19f5}</Project>
       <Name>HH.ZK.WebAPIClient</Name>

@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnColumn.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="btnSaveAs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -159,7 +159,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSaveAs.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -180,7 +180,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -373,7 +373,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="panel4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -385,7 +385,7 @@
     <value>True</value>
   </metadata>
   <data name="colFacility.HeaderText" xml:space="preserve">
-    <value>学校</value>
+    <value>部门</value>
   </data>
   <data name="colFacility.MinimumWidth" type="System.Int32, mscorlib">
     <value>100</value>
@@ -394,7 +394,7 @@
     <value>True</value>
   </metadata>
   <data name="colID.HeaderText" xml:space="preserve">
-    <value>准考证号</value>
+    <value>人员编号</value>
   </data>
   <data name="colID.MinimumWidth" type="System.Int32, mscorlib">
     <value>100</value>
@@ -420,12 +420,6 @@
   <data name="colSex.Width" type="System.Int32, mscorlib">
     <value>60</value>
   </data>
-  <metadata name="colClassName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="colClassName.HeaderText" xml:space="preserve">
-    <value>班级</value>
-  </data>
   <metadata name="col检录.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -434,42 +428,6 @@
   </data>
   <data name="col检录.Width" type="System.Int32, mscorlib">
     <value>150</value>
-  </data>
-  <metadata name="colGroup.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="colGroup.HeaderText" xml:space="preserve">
-    <value>分组</value>
-  </data>
-  <data name="colGroup.MinimumWidth" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <metadata name="col考试科目.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="col考试科目.HeaderText" xml:space="preserve">
-    <value>考试科目</value>
-  </data>
-  <data name="col考试科目.MinimumWidth" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <metadata name="colState.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="colState.HeaderText" xml:space="preserve">
-    <value>特殊情况</value>
-  </data>
-  <data name="colState.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <metadata name="col加分.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="col加分.HeaderText" xml:space="preserve">
-    <value>国标分</value>
-  </data>
-  <data name="col加分.Width" type="System.Int32, mscorlib">
-    <value>70</value>
   </data>
   <metadata name="col总分.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -496,7 +454,7 @@
     <value>0, 0</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1396, 461</value>
+    <value>1465, 461</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>305</value>
@@ -541,7 +499,7 @@
     <value>0, 113</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1396, 461</value>
+    <value>1465, 461</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>304</value>
@@ -556,7 +514,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="ucStudentSearch1.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 7</value>
@@ -577,7 +535,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ucStudentSearch1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="rd所有特殊状态.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -715,172 +673,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="rd检录All.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rd检录All.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rd检录All.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 4</value>
-  </data>
-  <data name="rd检录All.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 16</value>
-  </data>
-  <data name="rd检录All.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="rd检录All.Text" xml:space="preserve">
-    <value>全部</value>
-  </data>
-  <data name="&gt;&gt;rd检录All.Name" xml:space="preserve">
-    <value>rd检录All</value>
-  </data>
-  <data name="&gt;&gt;rd检录All.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rd检录All.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;rd检录All.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rd已检录.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rd已检录.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rd已检录.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 4</value>
-  </data>
-  <data name="rd已检录.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 16</value>
-  </data>
-  <data name="rd已检录.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="rd已检录.Text" xml:space="preserve">
-    <value>已检录</value>
-  </data>
-  <data name="&gt;&gt;rd已检录.Name" xml:space="preserve">
-    <value>rd已检录</value>
-  </data>
-  <data name="&gt;&gt;rd已检录.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rd已检录.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;rd已检录.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="rd未检录.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="txtProject.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 83</value>
   </data>
-  <data name="rd未检录.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="txtProject.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 20</value>
   </data>
-  <data name="rd未检录.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 4</value>
-  </data>
-  <data name="rd未检录.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 16</value>
-  </data>
-  <data name="rd未检录.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="rd未检录.Text" xml:space="preserve">
-    <value>未检录</value>
-  </data>
-  <data name="&gt;&gt;rd未检录.Name" xml:space="preserve">
-    <value>rd未检录</value>
-  </data>
-  <data name="&gt;&gt;rd未检录.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rd未检录.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;rd未检录.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>756, 79</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 26</value>
-  </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtProject.TabIndex" type="System.Int32, mscorlib">
     <value>308</value>
   </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
+  <data name="&gt;&gt;txtProject.Name" xml:space="preserve">
+    <value>txtProject</value>
   </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtProject.Type" xml:space="preserve">
+    <value>HH.ZK.CommonUI.Controls.PhysicalProjectComboBox, HH.ZK.CommonUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtProject.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtClassName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>On</value>
-  </data>
-  <data name="txtClassName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>610, 82</value>
-  </data>
-  <data name="txtClassName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 21</value>
-  </data>
-  <data name="txtClassName.TabIndex" type="System.Int32, mscorlib">
-    <value>310</value>
-  </data>
-  <data name="&gt;&gt;txtClassName.Name" xml:space="preserve">
-    <value>txtClassName</value>
-  </data>
-  <data name="&gt;&gt;txtClassName.Type" xml:space="preserve">
-    <value>LJH.GeneralLibrary.WinformControl.DBCTextBox, LJH.GeneralLibrary, Version=2.0.2022.217, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtClassName.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtClassName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>575, 86</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 12</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>309</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>班级</value>
-  </data>
-  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;txtProject.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -889,7 +703,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1396, 605</value>
+    <value>1465, 605</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -971,40 +785,10 @@
   <data name="&gt;&gt;colSex.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;colClassName.Name" xml:space="preserve">
-    <value>colClassName</value>
-  </data>
-  <data name="&gt;&gt;colClassName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;col检录.Name" xml:space="preserve">
     <value>col检录</value>
   </data>
   <data name="&gt;&gt;col检录.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colGroup.Name" xml:space="preserve">
-    <value>colGroup</value>
-  </data>
-  <data name="&gt;&gt;colGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;col考试科目.Name" xml:space="preserve">
-    <value>col考试科目</value>
-  </data>
-  <data name="&gt;&gt;col考试科目.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colState.Name" xml:space="preserve">
-    <value>colState</value>
-  </data>
-  <data name="&gt;&gt;colState.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;col加分.Name" xml:space="preserve">
-    <value>col加分</value>
-  </data>
-  <data name="&gt;&gt;col加分.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;col总分.Name" xml:space="preserve">

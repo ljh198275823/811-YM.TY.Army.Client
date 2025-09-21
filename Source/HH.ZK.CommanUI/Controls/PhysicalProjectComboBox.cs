@@ -25,7 +25,7 @@ namespace HH.ZK.CommonUI.Controls
             InitializeComponent();
         }
 
-        public void Init(string schoolID, ProjectClass projectClass)
+        public void Init()
         {
             var ret = new APIClient(AppSettings.Current.ConnStr).GetList<string, Project>(null, null);
             var items =ret.QueryObjects;

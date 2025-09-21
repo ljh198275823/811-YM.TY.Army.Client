@@ -39,13 +39,8 @@
             this.cMnu_Add = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_DeleteStudents = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu批量修改考试科目 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu设置学生考试状态 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.mnu导入学生信息 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu导入学生考试科目 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu导入学生特殊情况 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu导入平时成绩 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu设置训练计划 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cMnu_SelectColumns = new System.Windows.Forms.ToolStripMenuItem();
             this.cMnu_Export = new System.Windows.Forms.ToolStripMenuItem();
@@ -152,105 +147,67 @@
             this.cMnu_Add,
             this.Mnu_DeleteStudents,
             this.toolStripSeparator3,
-            this.mnu批量修改考试科目,
-            this.mnu设置学生考试状态,
-            this.toolStripSeparator5,
             this.mnu导入学生信息,
-            this.mnu导入学生考试科目,
-            this.mnu导入学生特殊情况,
-            this.mnu导入平时成绩,
+            this.mnu设置训练计划,
             this.toolStripSeparator1,
             this.cMnu_SelectColumns,
             this.cMnu_Export});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 264);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 192);
             // 
             // cMnu_Fresh
             // 
             this.cMnu_Fresh.Name = "cMnu_Fresh";
-            this.cMnu_Fresh.Size = new System.Drawing.Size(178, 22);
+            this.cMnu_Fresh.Size = new System.Drawing.Size(180, 22);
             this.cMnu_Fresh.Text = "刷新";
             // 
             // cMnu_Add
             // 
             this.cMnu_Add.Name = "cMnu_Add";
-            this.cMnu_Add.Size = new System.Drawing.Size(178, 22);
+            this.cMnu_Add.Size = new System.Drawing.Size(180, 22);
             this.cMnu_Add.Text = "增加学生";
             // 
             // Mnu_DeleteStudents
             // 
             this.Mnu_DeleteStudents.Name = "Mnu_DeleteStudents";
-            this.Mnu_DeleteStudents.Size = new System.Drawing.Size(178, 22);
+            this.Mnu_DeleteStudents.Size = new System.Drawing.Size(180, 22);
             this.Mnu_DeleteStudents.Text = "删除所选学生";
             this.Mnu_DeleteStudents.Click += new System.EventHandler(this.Mnu_DeleteStudents_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(175, 6);
-            // 
-            // mnu批量修改考试科目
-            // 
-            this.mnu批量修改考试科目.Name = "mnu批量修改考试科目";
-            this.mnu批量修改考试科目.Size = new System.Drawing.Size(178, 22);
-            this.mnu批量修改考试科目.Text = "批量修改考试科目";
-            this.mnu批量修改考试科目.Click += new System.EventHandler(this.mnu批量修改考试科目_Click);
-            // 
-            // mnu设置学生考试状态
-            // 
-            this.mnu设置学生考试状态.Name = "mnu设置学生考试状态";
-            this.mnu设置学生考试状态.Size = new System.Drawing.Size(178, 22);
-            this.mnu设置学生考试状态.Text = "设置学生考试状态";
-            this.mnu设置学生考试状态.Click += new System.EventHandler(this.mnu设置学生考试状态_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(175, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // mnu导入学生信息
             // 
             this.mnu导入学生信息.Name = "mnu导入学生信息";
-            this.mnu导入学生信息.Size = new System.Drawing.Size(178, 22);
+            this.mnu导入学生信息.Size = new System.Drawing.Size(180, 22);
             this.mnu导入学生信息.Text = "导入学生信息";
             this.mnu导入学生信息.Click += new System.EventHandler(this.mnu导入学生信息_Click);
             // 
-            // mnu导入学生考试科目
+            // mnu设置训练计划
             // 
-            this.mnu导入学生考试科目.Name = "mnu导入学生考试科目";
-            this.mnu导入学生考试科目.Size = new System.Drawing.Size(178, 22);
-            this.mnu导入学生考试科目.Text = "导入学生考试科目";
-            this.mnu导入学生考试科目.Click += new System.EventHandler(this.mnu导入学生考试科目_Click);
-            // 
-            // mnu导入学生特殊情况
-            // 
-            this.mnu导入学生特殊情况.Name = "mnu导入学生特殊情况";
-            this.mnu导入学生特殊情况.Size = new System.Drawing.Size(178, 22);
-            this.mnu导入学生特殊情况.Text = "导入学生特殊情况";
-            this.mnu导入学生特殊情况.Click += new System.EventHandler(this.mnu导入学生特殊情况_Click);
-            // 
-            // mnu导入平时成绩
-            // 
-            this.mnu导入平时成绩.Name = "mnu导入平时成绩";
-            this.mnu导入平时成绩.Size = new System.Drawing.Size(178, 22);
-            this.mnu导入平时成绩.Text = "导入学生国标分";
-            this.mnu导入平时成绩.Click += new System.EventHandler(this.mnu导入平时成绩_Click);
+            this.mnu设置训练计划.Name = "mnu设置训练计划";
+            this.mnu设置训练计划.Size = new System.Drawing.Size(180, 22);
+            this.mnu设置训练计划.Text = "设置训练计划";
+            this.mnu设置训练计划.Click += new System.EventHandler(this.mnu设置训练计划_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(175, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // cMnu_SelectColumns
             // 
             this.cMnu_SelectColumns.Name = "cMnu_SelectColumns";
-            this.cMnu_SelectColumns.Size = new System.Drawing.Size(178, 22);
+            this.cMnu_SelectColumns.Size = new System.Drawing.Size(180, 22);
             this.cMnu_SelectColumns.Text = "选择列...";
             // 
             // cMnu_Export
             // 
             this.cMnu_Export.Name = "cMnu_Export";
-            this.cMnu_Export.Size = new System.Drawing.Size(178, 22);
+            this.cMnu_Export.Size = new System.Drawing.Size(180, 22);
             this.cMnu_Export.Text = "导出学生信息...";
             // 
             // splitter1
@@ -273,47 +230,47 @@
             this.mnu_DepartmentProperty,
             this.toolStripSeparator8});
             this.DivisionMenu.Name = "contextMenuStrip1";
-            this.DivisionMenu.Size = new System.Drawing.Size(181, 142);
+            this.DivisionMenu.Size = new System.Drawing.Size(127, 120);
             // 
             // mn刷新学校
             // 
             this.mn刷新学校.Name = "mn刷新学校";
-            this.mn刷新学校.Size = new System.Drawing.Size(180, 22);
+            this.mn刷新学校.Size = new System.Drawing.Size(126, 22);
             this.mn刷新学校.Text = "刷新";
             this.mn刷新学校.Click += new System.EventHandler(this.mn刷新学校_Click);
             // 
             // mnu_AddFacility
             // 
             this.mnu_AddFacility.Name = "mnu_AddFacility";
-            this.mnu_AddFacility.Size = new System.Drawing.Size(180, 22);
+            this.mnu_AddFacility.Size = new System.Drawing.Size(126, 22);
             this.mnu_AddFacility.Text = "增加学校";
             this.mnu_AddFacility.Click += new System.EventHandler(this.mnu_AddFacility_Click);
             // 
             // mnu_AddDivision
             // 
             this.mnu_AddDivision.Name = "mnu_AddDivision";
-            this.mnu_AddDivision.Size = new System.Drawing.Size(180, 22);
+            this.mnu_AddDivision.Size = new System.Drawing.Size(126, 22);
             this.mnu_AddDivision.Text = "增加区域";
             this.mnu_AddDivision.Click += new System.EventHandler(this.mnu_AddDivision_Click);
             // 
             // mnu_DeleteDivision
             // 
             this.mnu_DeleteDivision.Name = "mnu_DeleteDivision";
-            this.mnu_DeleteDivision.Size = new System.Drawing.Size(180, 22);
+            this.mnu_DeleteDivision.Size = new System.Drawing.Size(126, 22);
             this.mnu_DeleteDivision.Text = "删除";
             this.mnu_DeleteDivision.Click += new System.EventHandler(this.mnu_DeleteDivision_Click);
             // 
             // mnu_DepartmentProperty
             // 
             this.mnu_DepartmentProperty.Name = "mnu_DepartmentProperty";
-            this.mnu_DepartmentProperty.Size = new System.Drawing.Size(180, 22);
+            this.mnu_DepartmentProperty.Size = new System.Drawing.Size(126, 22);
             this.mnu_DepartmentProperty.Text = "属性";
             this.mnu_DepartmentProperty.Click += new System.EventHandler(this.mnu_DivisionProperty_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(123, 6);
             // 
             // FacilityMenu
             // 
@@ -942,15 +899,10 @@
         private System.Windows.Forms.ContextMenuStrip FacilityMenu;
         private System.Windows.Forms.ToolStripMenuItem mnu_DelFacility;
         private System.Windows.Forms.ToolStripMenuItem mnu_FacilityProperty;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem mnu导入学生信息;
-        private System.Windows.Forms.ToolStripMenuItem mnu导入学生考试科目;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem mnu批量修改考试科目;
-        private System.Windows.Forms.ToolStripMenuItem mnu设置学生考试状态;
-        private System.Windows.Forms.ToolStripMenuItem mnu导入学生特殊情况;
         private LJH.GeneralLibrary.WinformControl.UCPaging ucPaging1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.Panel menu;
@@ -982,7 +934,6 @@
         private System.Windows.Forms.LinkLabel lnk考试科目;
         private LJH.GeneralLibrary.WinformControl.DBCTextBox txt考试科目;
         private System.Windows.Forms.CheckBox chk任意一项;
-        private System.Windows.Forms.ToolStripMenuItem mnu导入平时成绩;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton rd有人脸特征;
         private System.Windows.Forms.RadioButton rd无人脸特征;
@@ -1003,5 +954,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col平时成绩;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col照片;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFill;
+        private System.Windows.Forms.ToolStripMenuItem mnu设置训练计划;
     }
 }

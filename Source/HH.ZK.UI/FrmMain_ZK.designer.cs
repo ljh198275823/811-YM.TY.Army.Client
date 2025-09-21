@@ -314,6 +314,7 @@
             this.btn成绩管理.Size = new System.Drawing.Size(71, 51);
             this.btn成绩管理.Text = "成绩管理";
             this.btn成绩管理.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn成绩管理.Click += new System.EventHandler(this.btn成绩管理_Click);
             // 
             // btn_Collect
             // 
@@ -321,8 +322,9 @@
             this.btn_Collect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Collect.Name = "btn_Collect";
             this.btn_Collect.Size = new System.Drawing.Size(71, 51);
-            this.btn_Collect.Text = "成绩采集";
+            this.btn_Collect.Text = "导入成绩";
             this.btn_Collect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_Collect.Click += new System.EventHandler(this.btn_Collect_Click);
             // 
             // mnu导出成绩
             // 

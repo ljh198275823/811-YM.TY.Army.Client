@@ -22,9 +22,10 @@ namespace HH.ZK.CommonUI
             InitializeComponent();
         }
 
+        public Project Project { get; set; }
+
         #region 私有变量
         private DataTable _SourceTable = null;
-        private List<PhysicalItem> _AllPhysicalItems = null;
         #endregion
 
         #region 私有方法
@@ -92,34 +93,24 @@ namespace HH.ZK.CommonUI
                 row.Cells["colReason"].Value = "学号为空";
                 return ret;
             }
-            string pi = row.Cells["colPhysicalItem"].Value != null ? row.Cells["colPhysicalItem"].Value.ToString().Trim() : null;
-            if (string.IsNullOrEmpty(pi))
+            string strPid = row.Cells["colPhysicalItem"].Value != null ? row.Cells["colPhysicalItem"].Value.ToString().Trim() : null;
+            if (string.IsNullOrEmpty(strPid))
             {
                 row.Cells["colReason"].Value = "测试项为空";
                 return ret;
             }
-            if (_AllPhysicalItems == null || _AllPhysicalItems.Count == 0) return ret;
             int pid = 0;
-            PhysicalItem physicalItem = null;
-            if (int.TryParse(pi, out pid))
+            if (int.TryParse(strPid, out pid) == false || pid <= 0)
             {
-                physicalItem = _AllPhysicalItems.SingleOrDefault(it => it.ID == pid);
-            }
-            else
-            {
-                physicalItem = _AllPhysicalItems.FirstOrDefault(it => it.Name == pi);
-            }
-            if (physicalItem == null)
-            {
-                row.Cells["colReason"].Value = "没有此测试项";
+                row.Cells["colReason"].Value = "测试项为空";
                 return ret;
             }
             string strDt = row.Cells["col测试时间"].Value != null ? row.Cells["col测试时间"].Value.ToString().Trim() : null;
-            DateTime? creatTime = null;
             DateTime dt;
-            if (!string.IsNullOrEmpty(strDt) && DateTime.TryParse(strDt, out dt))
+            if (string.IsNullOrEmpty(strDt) || !DateTime.TryParse(strDt, out dt))
             {
-                creatTime = dt;
+                row.Cells["colReason"].Value = "测试日期为空";
+                return ret;
             }
 
             string s = row.Cells["colScore"].Value != null ? row.Cells["colScore"].Value.ToString().Trim() : null;
@@ -127,28 +118,14 @@ namespace HH.ZK.CommonUI
             if (string.IsNullOrEmpty(s))
             {
                 row.Cells["colReason"].Value = "无效的成绩";
-                return ret;
+                return null;
             }
-            if (physicalItem.TryParse(s, out score))
+            if (!decimal.TryParse(s, out score))
             {
-                if ((physicalItem.Min != null && physicalItem.Min.Value > score) || (physicalItem.Max != null && physicalItem.Max < score)) //判断成绩的取值范围
-                {
-                    row.Cells["colReason"].Value = "成绩不在有效范围内";
-                    return ret;
-                }
-                ret = new StudentRawScore() { ID = Guid.NewGuid(), StudentID = studentID, TestID = physicalItem.ID, Score = score, CreateTime = creatTime, ScoreFrom = ScoreSource.文件导入 };
+                row.Cells["colReason"].Value = "无效的成绩";
+                return null;
             }
-            else
-            {
-                SpecialScoreType spt;
-                if (!Enum.GetNames(typeof(SpecialScoreType)).Contains(s))
-                {
-                    row.Cells["colReason"].Value = "无效的成绩";
-                    return ret;
-                }
-                Enum.TryParse<SpecialScoreType>(s, out spt);
-                ret = new StudentRawScore() { ID = Guid.NewGuid(), StudentID = studentID, TestID = physicalItem.ID, SpecialType = spt, CreateTime = creatTime, ScoreFrom = ScoreSource.文件导入 };
-            }
+            ret = new StudentRawScore() { ID = Guid.NewGuid(), StudentID = studentID, TestID = pid, Score = score.ToString(), CreateTime = dt, ScoreFrom = ScoreSource.文件导入 };
             return ret;
         }
         #endregion
@@ -164,7 +141,6 @@ namespace HH.ZK.CommonUI
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            _AllPhysicalItems = AppSettings.Current.PhysicalProject.PhysicalItems.Items;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -265,10 +241,10 @@ namespace HH.ZK.CommonUI
                             ImportOption option = ImportOption.Ignore;
                             if (rdOverride.Checked) option = ImportOption.Override;
                             if (rdAppend.Checked) option = ImportOption.Append;
-                            var ret = new APIClient(AppSettings.Current.ConnStr).BatchAddScores(temp, option, AppSettings.Current.PhysicalProject.ID);
+                            var ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<Guid,StudentRawScore>(temp, option, null);
                             if (ret.Result == ResultCode.Successful)
                             {
-                                success += ret.Value.Successes != null ? ret.Value.Successes.Count : 0;
+                                success +=temp.Count - (ret.Value.Errors != null ? ret.Value.Errors.Count : 0);
                                 fail += ret.Value.Errors != null ? ret.Value.Errors.Count : 0;
                                 this.Invoke((Action)(() =>
                                 {

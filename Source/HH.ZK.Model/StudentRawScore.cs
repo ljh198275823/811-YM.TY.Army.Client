@@ -31,7 +31,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置成绩
         /// </summary>
-        public decimal? Score { get; set; }
+        public string Score { get; set; }
         /// <summary>
         /// 获取或设置犯规次数
         /// </summary>
@@ -39,7 +39,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置测试时间
         /// </summary>
-        public DateTime? CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         /// <summary>
         /// 获取或设置测试成绩的来源
         /// </summary>

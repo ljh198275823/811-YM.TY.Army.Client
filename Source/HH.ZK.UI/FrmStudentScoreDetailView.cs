@@ -22,7 +22,7 @@ namespace HH.ZK.UI
         }
 
         #region 公共属性
-        public Student Student { get; set; }
+        public StudentInProject  Student { get; set; }
 
         public PhysicalItem PhysicalItem { get; set; }
         #endregion
@@ -48,16 +48,22 @@ namespace HH.ZK.UI
         private void ShowScores()
         {
             dataGridView1.Rows.Clear();
-            var con = new StudentWithDXCJSearchCondition() { StudentID = Student.ID, PhysicalItem = PhysicalItem.ID };
-            var items = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithDXCJ>(con, AppSettings.Current.PhysicalProject.ID).QueryObjects;
+            var con = new StudentWithDXCJSearchCondition()
+            {
+                StudentID = Student.StudentID,
+                ProjectID = Student.ProjectID,
+                DateRange = new DateTimeRange(Student.TestDate, Student.TestDate),
+                TestID = PhysicalItem.ID
+            };
+            var items = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithDXCJ>(con, null).QueryObjects;
             if (items != null && items.Count == 1)
             {
                 var dxcj = items[0];
-                if (dxcj.TestScores != null && dxcj.TestScores.Count > 0)
+                if (dxcj.Scores != null && dxcj.Scores.Count > 0)
                 {
-                    for (int i = 0; i < dxcj.TestScores.Count; i++)
+                    for (int i = 0; i < dxcj.Scores.Count; i++)
                     {
-                        var item = dxcj.TestScores[i];
+                        var item = dxcj.Scores[i];
                         var row = dataGridView1.Rows.Add();
                         dataGridView1.Rows[row].Tag = item;
                         dataGridView1.Rows[row].Cells["colIndex"].Value = dataGridView1.Rows.Count;
@@ -79,7 +85,7 @@ namespace HH.ZK.UI
                         }
                         else
                         {
-                            if (PhysicalItem.TestCount > 0 && item.SpecialType != SpecialScoreType.作废 && dxcj.TestScores.Take(i + 1).Count(it => it.SpecialType != SpecialScoreType.作废) > PhysicalItem.TestCount)
+                            if (PhysicalItem.TestCount > 0 && item.SpecialType != SpecialScoreType.作废 && dxcj.Scores.Take(i + 1).Count(it => it.SpecialType != SpecialScoreType.作废) > PhysicalItem.TestCount)
                             {
                                 dataGridView1.Rows[row].Cells["colCurrent"].Value = "重复测试";
                                 dataGridView1.Rows[row].DefaultCellStyle.ForeColor = Color.Red;
@@ -125,30 +131,30 @@ namespace HH.ZK.UI
 
         private void mnu_Add_Click(object sender, EventArgs e)
         {
-            var frm = new Frm增加成绩();
-            frm.Student = Student;
-            frm.PhysicalItem = PhysicalItem;
-            frm.StartPosition = FormStartPosition.CenterParent;
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                ShowScores();
-            }
+            //var frm = new Frm增加成绩();
+            //frm.Student = Student;
+            //frm.PhysicalItem = PhysicalItem;
+            //frm.StartPosition = FormStartPosition.CenterParent;
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    ShowScores();
+            //}
         }
 
         private void mnu_Update_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                var frm = new Frm修改成绩();
-                frm.StartPosition = FormStartPosition.CenterParent;
-                frm.Student = Student;
-                frm.PhysicalItem = PhysicalItem;
-                frm.StudentScore = dataGridView1.SelectedRows[0].Tag as StudentScore;
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    ShowScores();
-                }
-            }
+            //if (dataGridView1.SelectedRows.Count == 1)
+            //{
+            //    var frm = new Frm修改成绩();
+            //    frm.StartPosition = FormStartPosition.CenterParent;
+            //    frm.Student = Student;
+            //    frm.PhysicalItem = PhysicalItem;
+            //    frm.StudentScore = dataGridView1.SelectedRows[0].Tag as StudentScore;
+            //    if (frm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        ShowScores();
+            //    }
+            //}
         }
 
         private void mnu犯规_Click(object sender, EventArgs e)
@@ -214,16 +220,16 @@ namespace HH.ZK.UI
 
         private void mnu成绩仲裁_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                var frm = new FrmDiscussionDetail();
-                frm.IsAdding = true;
-                frm.Student = Student;
-                frm.Score = dataGridView1.SelectedRows[0].Tag as StudentScore;
-                frm.StartPosition = FormStartPosition.CenterParent;
-                var dig = frm.ShowDialog();
-                ShowScores();
-            }
+            //if (dataGridView1.SelectedRows.Count == 1)
+            //{
+            //    var frm = new FrmDiscussionDetail();
+            //    frm.IsAdding = true;
+            //    frm.Student = Student;
+            //    frm.Score = dataGridView1.SelectedRows[0].Tag as StudentScore;
+            //    frm.StartPosition = FormStartPosition.CenterParent;
+            //    var dig = frm.ShowDialog();
+            //    ShowScores();
+            //}
         }
         #endregion
 

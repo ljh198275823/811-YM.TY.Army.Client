@@ -7,7 +7,7 @@ namespace HH.ZK.Model.SearchCondition
 {
     public class StudentWithDXCJSearchCondition : StudentSearchCondition
     {
-        public int? PhysicalItem { get; set; }
+        public int? TestID { get; set; }
 
         public bool? HasScore { get; set; }
 

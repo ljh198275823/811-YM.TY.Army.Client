@@ -45,9 +45,9 @@ namespace HH.ZK.UI
             else if (pi.PrecisionMode == 1) row.Cells["col舍入类型"].Value = "四舍五入";
             else if (pi.PrecisionMode == 2) row.Cells["col舍入类型"].Value = "截取";
             row.Cells["col必考"].Value = pi.IsMust;
-            if (pi.Sex == 0) row.Cells["col性别"].Value = "男女不限";
-            else if (pi.Sex == 1) row.Cells["col性别"].Value = "只限男生";
-            else if (pi.Sex == 2) row.Cells["col性别"].Value = "只限女生";
+            if (pi.Gender == 0) row.Cells["col性别"].Value = "男女不限";
+            else if (pi.Gender == 1) row.Cells["col性别"].Value = "只限男生";
+            else if (pi.Gender == 2) row.Cells["col性别"].Value = "只限女生";
             if (pi.SortMode == 0) row.Cells["colSortMode"].Value = "无";
             else if (pi.SortMode == 1) row.Cells["colSortMode"].Value = "越低越好";
             else if (pi.SortMode == 2) row.Cells["colSortMode"].Value = "越高越好";

@@ -117,6 +117,7 @@
     <Compile Include="StudentGroupSummary.cs" />
     <Compile Include="StudentGroupWithTestState.cs" />
     <Compile Include="StudentFP.cs" />
+    <Compile Include="StudentInProject.cs" />
     <Compile Include="StudentPhysicalPair.cs" />
     <Compile Include="SearchCondition\DivisionSearchCondition.cs" />
     <Compile Include="SearchCondition\FacilitySearchCondition.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="SearchCondition\StatisticSearchCondition.cs" />
     <Compile Include="SearchCondition\StudentClassSearchCondition.cs" />
     <Compile Include="StatiticKey.cs" />
+    <Compile Include="StudentScoreExpress.cs" />
     <Compile Include="StudentScoreFull.cs" />
     <Compile Include="StudentScoreLog.cs" />
     <Compile Include="StudentStateSettings.cs" />

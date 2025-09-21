@@ -17,6 +17,14 @@ namespace HH.ZK.Model
         }
         #endregion
 
+        #region 公共属性
+        public DateTime TestDate { get; set; }
+
+        public string ProjectID { get; set; }
+
+        public string ProjectName { get; set; }
+        #endregion
+
         #region 学生成绩相关属性
         /// <summary>
         /// 获取或设置学生总分
@@ -29,7 +37,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置考生成绩
         /// </summary>
-        public List<StudentScore> Scores { get; set; }
+        public List<StudentScoreExpress> Scores { get; set; }
         #endregion
     }
 }

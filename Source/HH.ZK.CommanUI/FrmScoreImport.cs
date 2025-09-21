@@ -328,7 +328,7 @@ namespace HH.ZK.CommonUI
                         }
                         else
                         {
-                            score = new StudentRawScore() { ID = Guid.NewGuid(), StudentID = studentID, TestID = pi.ID, Score = value, ScoreFrom = ScoreSource.文件导入 };
+                            score = new StudentRawScore() { ID = Guid.NewGuid(), StudentID = studentID, TestID = pi.ID, Score = value.ToString (), ScoreFrom = ScoreSource.文件导入 };
                         }
                     }
                     else if (Enum.GetNames(typeof(SpecialScoreType)).Contains(s))

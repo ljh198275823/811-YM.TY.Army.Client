@@ -109,6 +109,18 @@
     <Compile Include="Controls\UC考场进度.designer.cs">
       <DependentUpon>UC考场进度.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm设置训练计划.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm设置训练计划.designer.cs">
+      <DependentUpon>Frm设置训练计划.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm考点选择.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm考点选择.designer.cs">
+      <DependentUpon>Frm考点选择.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm视频录相机设置.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,12 +264,6 @@
     </Compile>
     <Compile Include="Frm学生成绩导出.designer.cs">
       <DependentUpon>Frm学生成绩导出.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmOption_检录.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmOption_检录.designer.cs">
-      <DependentUpon>FrmOption_检录.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm考试科目导入.cs">
       <SubType>Form</SubType>
@@ -467,6 +473,12 @@
     <EmbeddedResource Include="Controls\UC考场进度.resx">
       <DependentUpon>UC考场进度.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm设置训练计划.resx">
+      <DependentUpon>Frm设置训练计划.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm考点选择.resx">
+      <DependentUpon>Frm考点选择.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm视频录相机设置.resx">
       <DependentUpon>Frm视频录相机设置.cs</DependentUpon>
     </EmbeddedResource>
@@ -562,9 +574,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOption_后台.resx">
       <DependentUpon>FrmOption_后台.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmOption_检录.resx">
-      <DependentUpon>FrmOption_检录.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOption_联机.resx">
       <DependentUpon>FrmOption_联机.cs</DependentUpon>
@@ -671,10 +680,6 @@
     <ProjectReference Include="..\HH.ZK.Model\HH.ZK.Model.csproj">
       <Project>{83611d2c-f630-4038-ab23-d5e03d022abb}</Project>
       <Name>HH.ZK.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HH.ZK.SQLite\HH.ZK.SQLite.csproj">
-      <Project>{eff73310-1ef6-4a5b-b344-07d6124d51da}</Project>
-      <Name>HH.ZK.SQLite</Name>
     </ProjectReference>
     <ProjectReference Include="..\HH.ZK.WebAPIClient\HH.ZK.WebAPIClient.csproj">
       <Project>{566ef97d-f8aa-4163-a756-e282519d19f5}</Project>

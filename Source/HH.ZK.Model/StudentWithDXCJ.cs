@@ -15,11 +15,21 @@ namespace HH.ZK.Model
         #endregion
 
         #region 公共属性
-        public int PhysicalItemID { get; set; }
+        public DateTime TestDate { get; set; }
+
+        public string ProjectID { get; set; }
+
+        public string ProjectName { get; set; }
+
+        public string ProjectShortName { get; set; }
+        #endregion
+
+        #region 公共属性
+        public int TestID { get; set; }
 
         public Guid? BestScoreID { get; set; }
 
-        public List<StudentScore> TestScores { get; set; }
+        public List<StudentScore> Scores { get; set; }
         /// <summary>
         /// 获取或设置是否超出测试次数
         /// </summary>
@@ -35,29 +45,29 @@ namespace HH.ZK.Model
             get
             {
                 if (BestScoreID == null) return null;
-                return TestScores.Single(it => it.ID == BestScoreID);
+                return Scores.Single(it => it.ID == BestScoreID);
             }
         }
 
         public StudentScore GetScoreByIndex(int ind, bool 包括作废 = false)
         {
-            if (TestScores == null || TestScores.Count == 0) return null;
+            if (Scores == null || Scores.Count == 0) return null;
             if (包括作废)
             {
-                if (TestScores.Count <= ind) return null;
-                return TestScores.ElementAt(ind);
+                if (Scores.Count <= ind) return null;
+                return Scores.ElementAt(ind);
             }
             else
             {
-                if (TestScores.Count(it => it.SpecialType != SpecialScoreType.作废) <= ind) return null;
-                return TestScores.Where(it => it.SpecialType != SpecialScoreType.作废).ElementAt(ind);
+                if (Scores.Count(it => it.SpecialType != SpecialScoreType.作废) <= ind) return null;
+                return Scores.Where(it => it.SpecialType != SpecialScoreType.作废).ElementAt(ind);
             }
         }
 
         public int 获取成绩序号(StudentScore score)
         {
-            if (this.TestScores == null || this.TestScores.Count == 0) return -1;
-            return this.TestScores.FindIndex(it => it.ID == score.ID) + 1;
+            if (this.Scores == null || this.Scores.Count == 0) return -1;
+            return this.Scores.FindIndex(it => it.ID == score.ID) + 1;
         }
     }
 }

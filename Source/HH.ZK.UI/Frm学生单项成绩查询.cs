@@ -50,7 +50,7 @@ namespace HH.ZK.UI
             dataGridView1.Rows.Clear();
             var con = new StudentWithDXCJSearchCondition() { PageSize = pageSize, PageIndex = pageIndex, SortMode = SortMode.Asc };
             ucStudentSearch1.GetSearchCondition(con);
-            if (!string.IsNullOrEmpty(cmbPhysicalItem.Text)) con.PhysicalItem = cmbPhysicalItem.SelectedPhysicalItem;
+            if (!string.IsNullOrEmpty(cmbPhysicalItem.Text)) con.TestID = cmbPhysicalItem.SelectedPhysicalItem;
             if (chkOnlyScore.Checked) con.HasScore = true;
             if (con.GroupID.HasValue) _Group = new APIClient(AppSettings.Current.ConnStr).GetByID<Guid, StudentGroupSummary>(con.GroupID.Value, AppSettings.Current.PhysicalProject.ID).QueryObject;
             var ret= new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithDXCJ>(con, AppSettings.Current.PhysicalProject.ID);
@@ -65,8 +65,8 @@ namespace HH.ZK.UI
             row.Cells["colName"].Value = s.Name;
             row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
             row.Cells["colFacility"].Value = s.DivisionName;
-            row.Cells["colPhysicalItem"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetName(s.PhysicalItemID);
-            var pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(s.PhysicalItemID);
+            row.Cells["colPhysicalItem"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetName(s.TestID);
+            var pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(s.TestID);
             var score = s.GetScoreByIndex(0);
             if (score != null)
             {
@@ -120,13 +120,13 @@ namespace HH.ZK.UI
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
             var row = dataGridView1.Rows[e.RowIndex];
             var student = row.Tag as StudentWithDXCJ;
-            PhysicalItem pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(student.PhysicalItemID);
+            PhysicalItem pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(student.TestID);
             if (pi == null) return;
             FrmStudentScoreDetailView frm = new FrmStudentScoreDetailView();
-            frm.Student = student;
+            frm.Student = new StudentInProject() { StudentID = student.ID, ProjectID = student.ProjectID, TestDate = student.TestDate };
             frm.PhysicalItem = pi;
             frm.ShowDialog();
-            var con = new StudentWithDXCJSearchCondition() { StudentID = student.ID, PhysicalItem = pi.ID };
+            var con = new StudentWithDXCJSearchCondition() { StudentID = student.ID, TestID = pi.ID };
             var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithDXCJ>(con, AppSettings.Current.PhysicalProject.ID).QueryObjects;
             if (ss != null && ss.Count == 1) ShowItemInGridViewRow(row, ss[0]);
         }

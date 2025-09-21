@@ -629,11 +629,6 @@ namespace HH.ZK.UI
             ShowSingleForm<Frm重新生成特征值>();
         }
 
-        private void mnu采集成绩数据查询_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm主机采集成绩查询>();
-        }
-
         private void mnu学生成绩管理_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm学生成绩管理>(sender);
@@ -708,6 +703,18 @@ namespace HH.ZK.UI
         private void btn分组管理_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn成绩管理_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<Frm学生成绩管理>();
+        }
+
+        private void btn_Collect_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmScoreImport_SingleCol();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
         }
     }
 }

@@ -126,7 +126,7 @@ namespace HH.ZK.UI
             {
                 decimal dv = 0;
                 PhysicalItem.TryParse(txtScore.Text, out dv);
-                raw.Score = dv;
+                raw.Score = dv.ToString ();
             }
             var ret = new APIClient(AppSettings.Current.ConnStr).BatchAddScores(new List<StudentRawScore>() { raw }, ImportOption.Append, AppSettings.Current.PhysicalProject.ID);
             if (ret.Result == ResultCode.Successful && ret.Value != null && ret.Value.Successes != null && ret.Value.Successes.ContainsKey(raw.ID))

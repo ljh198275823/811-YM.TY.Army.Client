@@ -39,8 +39,8 @@ namespace HH.ZK.UI
                 node.Text = string.Format("{0}[{1}]", pi.Name, pi.Unit);
                 node.Tag = pi;
                 root.Nodes.Add(node);
-                if (pi.Sex == 0 || pi.Sex == (int)Gender.Male) node.Nodes.Add("男");
-                if (pi.Sex == 0 || pi.Sex == (int)Gender.Female) node.Nodes.Add("女");
+                if (pi.Gender == 0 || pi.Gender == (int)Gender.Male) node.Nodes.Add("男");
+                if (pi.Gender == 0 || pi.Gender == (int)Gender.Female) node.Nodes.Add("女");
             }
             this.myTree1.ExpandAll();
         }

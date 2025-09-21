@@ -44,18 +44,6 @@
             this.rd全部 = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colFacility = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col检录 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col考试科目 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col加分 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col总分 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col打印 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cmbFacility = new HH.ZK.CommonUI.Controls.FacilityComboBox(this.components);
             this.ucStudentSearch1 = new HH.ZK.CommonUI.Controls.UCStudentSearch();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -63,18 +51,19 @@
             this.rd指定状态 = new System.Windows.Forms.RadioButton();
             this.rd不限状态 = new System.Windows.Forms.RadioButton();
             this.txt考试状态 = new HH.ZK.CommonUI.Controls.StudentStateComboBox(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.rd检录All = new System.Windows.Forms.RadioButton();
-            this.rd已检录 = new System.Windows.Forms.RadioButton();
-            this.rd未检录 = new System.Windows.Forms.RadioButton();
-            this.txtClassName = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtProject = new HH.ZK.CommonUI.Controls.PhysicalProjectComboBox(this.components);
+            this.colFacility = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col检录 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col总分 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col打印 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnColumn
@@ -105,13 +94,11 @@
             // 
             this.mnu设置学生类别.Name = "mnu设置学生类别";
             resources.ApplyResources(this.mnu设置学生类别, "mnu设置学生类别");
-            this.mnu设置学生类别.Click += new System.EventHandler(this.mnu设置学生类别_Click);
             // 
             // mnu设置学生考试科目
             // 
             this.mnu设置学生考试科目.Name = "mnu设置学生考试科目";
             resources.ApplyResources(this.mnu设置学生考试科目, "mnu设置学生考试科目");
-            this.mnu设置学生考试科目.Click += new System.EventHandler(this.mnu设置学生考试科目_Click);
             // 
             // toolStripSeparator1
             // 
@@ -122,7 +109,6 @@
             // 
             this.mnu删除所选学生.Name = "mnu删除所选学生";
             resources.ApplyResources(this.mnu删除所选学生, "mnu删除所选学生");
-            this.mnu删除所选学生.Click += new System.EventHandler(this.mnu删除所选学生_Click);
             // 
             // mnu删除所选成绩
             // 
@@ -134,7 +120,6 @@
             // 
             this.mnu取消检录.Name = "mnu取消检录";
             resources.ApplyResources(this.mnu取消检录, "mnu取消检录");
-            this.mnu取消检录.Click += new System.EventHandler(this.mnu取消检录_Click);
             // 
             // rd未测试
             // 
@@ -193,12 +178,7 @@
             this.colID,
             this.colName,
             this.colSex,
-            this.colClassName,
             this.col检录,
-            this.colGroup,
-            this.col考试科目,
-            this.colState,
-            this.col加分,
             this.col总分,
             this.col打印});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
@@ -208,83 +188,6 @@
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // colFacility
-            // 
-            this.colFacility.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            resources.ApplyResources(this.colFacility, "colFacility");
-            this.colFacility.Name = "colFacility";
-            this.colFacility.ReadOnly = true;
-            // 
-            // colID
-            // 
-            this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            resources.ApplyResources(this.colID, "colID");
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            resources.ApplyResources(this.colName, "colName");
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colSex
-            // 
-            resources.ApplyResources(this.colSex, "colSex");
-            this.colSex.Name = "colSex";
-            this.colSex.ReadOnly = true;
-            // 
-            // colClassName
-            // 
-            resources.ApplyResources(this.colClassName, "colClassName");
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
-            // 
-            // col检录
-            // 
-            resources.ApplyResources(this.col检录, "col检录");
-            this.col检录.Name = "col检录";
-            this.col检录.ReadOnly = true;
-            this.col检录.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colGroup
-            // 
-            this.colGroup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            resources.ApplyResources(this.colGroup, "colGroup");
-            this.colGroup.Name = "colGroup";
-            this.colGroup.ReadOnly = true;
-            // 
-            // col考试科目
-            // 
-            this.col考试科目.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            resources.ApplyResources(this.col考试科目, "col考试科目");
-            this.col考试科目.Name = "col考试科目";
-            this.col考试科目.ReadOnly = true;
-            // 
-            // colState
-            // 
-            resources.ApplyResources(this.colState, "colState");
-            this.colState.Name = "colState";
-            this.colState.ReadOnly = true;
-            // 
-            // col加分
-            // 
-            resources.ApplyResources(this.col加分, "col加分");
-            this.col加分.Name = "col加分";
-            this.col加分.ReadOnly = true;
-            // 
-            // col总分
-            // 
-            resources.ApplyResources(this.col总分, "col总分");
-            this.col总分.Name = "col总分";
-            this.col总分.ReadOnly = true;
-            // 
-            // col打印
-            // 
-            resources.ApplyResources(this.col打印, "col打印");
-            this.col打印.Name = "col打印";
-            this.col打印.ReadOnly = true;
             // 
             // cmbFacility
             // 
@@ -336,53 +239,63 @@
             this.txt考试状态.FormattingEnabled = true;
             this.txt考试状态.Name = "txt考试状态";
             // 
-            // panel3
+            // txtProject
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.rd检录All);
-            this.panel3.Controls.Add(this.rd已检录);
-            this.panel3.Controls.Add(this.rd未检录);
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
+            this.txtProject.FormattingEnabled = true;
+            resources.ApplyResources(this.txtProject, "txtProject");
+            this.txtProject.Name = "txtProject";
+            this.txtProject.SelectedIndexChanged += new System.EventHandler(this.txtProject_SelectedIndexChanged);
             // 
-            // rd检录All
+            // colFacility
             // 
-            resources.ApplyResources(this.rd检录All, "rd检录All");
-            this.rd检录All.Checked = true;
-            this.rd检录All.Name = "rd检录All";
-            this.rd检录All.TabStop = true;
-            this.rd检录All.UseVisualStyleBackColor = true;
+            this.colFacility.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            resources.ApplyResources(this.colFacility, "colFacility");
+            this.colFacility.Name = "colFacility";
+            this.colFacility.ReadOnly = true;
             // 
-            // rd已检录
+            // colID
             // 
-            resources.ApplyResources(this.rd已检录, "rd已检录");
-            this.rd已检录.Name = "rd已检录";
-            this.rd已检录.UseVisualStyleBackColor = true;
+            this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            resources.ApplyResources(this.colID, "colID");
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
             // 
-            // rd未检录
+            // colName
             // 
-            resources.ApplyResources(this.rd未检录, "rd未检录");
-            this.rd未检录.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.rd未检录.Name = "rd未检录";
-            this.rd未检录.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.colName, "colName");
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
             // 
-            // txtClassName
+            // colSex
             // 
-            resources.ApplyResources(this.txtClassName, "txtClassName");
-            this.txtClassName.Name = "txtClassName";
+            resources.ApplyResources(this.colSex, "colSex");
+            this.colSex.Name = "colSex";
+            this.colSex.ReadOnly = true;
             // 
-            // label5
+            // col检录
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.col检录, "col检录");
+            this.col检录.Name = "col检录";
+            this.col检录.ReadOnly = true;
+            this.col检录.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // col总分
+            // 
+            resources.ApplyResources(this.col总分, "col总分");
+            this.col总分.Name = "col总分";
+            this.col总分.ReadOnly = true;
+            // 
+            // col打印
+            // 
+            resources.ApplyResources(this.col打印, "col打印");
+            this.col打印.Name = "col打印";
+            this.col打印.ReadOnly = true;
             // 
             // Frm学生成绩管理
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtClassName);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.txtProject);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ucStudentSearch1);
             this.Controls.Add(this.panel4);
@@ -395,9 +308,7 @@
             this.Controls.SetChildIndex(this.panel4, 0);
             this.Controls.SetChildIndex(this.ucStudentSearch1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.panel3, 0);
-            this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.txtClassName, 0);
+            this.Controls.SetChildIndex(this.txtProject, 0);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -405,10 +316,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -433,23 +341,13 @@
         private System.Windows.Forms.RadioButton rd不限状态;
         private CommonUI.Controls.StudentStateComboBox txt考试状态;
         private System.Windows.Forms.ToolStripMenuItem mnu设置学生考试科目;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RadioButton rd检录All;
-        private System.Windows.Forms.RadioButton rd已检录;
-        private System.Windows.Forms.RadioButton rd未检录;
-        private LJH.GeneralLibrary.WinformControl.DBCTextBox txtClassName;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem mnu取消检录;
+        private CommonUI.Controls.PhysicalProjectComboBox txtProject;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFacility;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col检录;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col考试科目;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col加分;
         private System.Windows.Forms.DataGridViewTextBoxColumn col总分;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col打印;
     }

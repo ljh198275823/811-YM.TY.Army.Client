@@ -250,9 +250,7 @@ namespace HH.ZK.UI
             //学生
             cMnu_Add.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
             Mnu_DeleteStudents.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Delete);
-            mnu批量修改考试科目.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
             mnu导入学生信息.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
-            mnu导入学生考试科目.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
             cMnu_Export.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Read);
             //学校
             mnu_AddFacility.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Facility, PermissionActions.Edit);
@@ -262,10 +260,6 @@ namespace HH.ZK.UI
             mnu_AddDivision.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Division, PermissionActions.Edit);
             mnu_DeleteDivision.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Division, PermissionActions.Delete);
             mnu_DepartmentProperty.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Division, PermissionActions.Read);
-            //特殊情况
-            mnu设置学生考试状态.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
-            mnu导入学生特殊情况.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
-            mnu导入平时成绩.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
         }
 
         public override void ReFreshData()
@@ -513,5 +507,15 @@ namespace HH.ZK.UI
             txt考试科目.Text = string.Empty;
         }
         #endregion
+
+        private void mnu设置训练计划_Click(object sender, EventArgs e)
+        {
+            List<Student> students = GetSelectedItems();
+            if (students.Count == 0) return;
+            var frm = new Frm设置训练计划();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.Students = students;
+            frm.ShowDialog();
+        }
     }
 }

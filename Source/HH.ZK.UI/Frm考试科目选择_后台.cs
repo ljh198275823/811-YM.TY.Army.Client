@@ -33,7 +33,7 @@ namespace HH.ZK.UI
                 foreach (PhysicalItem pi in pis)
                 {
                     if (pi.IsMust) continue;
-                    if (SexFlag.HasValue && pi.Sex != 0 && pi.Sex != (int)SexFlag) continue;
+                    if (SexFlag.HasValue && pi.Gender != 0 && pi.Gender != (int)SexFlag) continue;
                     CheckBox chk = GetControl(pnl, pi.ID);
                     if (chk == null)
                     {

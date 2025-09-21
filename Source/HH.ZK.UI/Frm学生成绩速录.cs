@@ -150,7 +150,7 @@ namespace HH.ZK.UI
                     TestID = pi.ID,
                     StudentID = _SeletectedStudent.ID,
                     ScoreFrom = ScoreSource.手工录入,
-                    Score = score,
+                    Score = score.ToString (),
                     CreateTime = DateTime.Now,
                 };
                 row.Cells[e.ColumnIndex].Tag = raw;

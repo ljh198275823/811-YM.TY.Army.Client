@@ -44,7 +44,7 @@ namespace HH.ZK.UI
             if (考试科目 == null || 考试科目.Items == null || 考试科目.Items.Count == 0) return;
             foreach (PhysicalItem pi in 考试科目.Items)
             {
-                if (pi.Sex == 0 || pi.Sex == (int)Gender.Male)
+                if (pi.Gender == 0 || pi.Gender == (int)Gender.Male)
                 {
                     ComboBox cmb = new ComboBox();
                     cmb.Name = "cmb" + pi.ID.ToString();
@@ -77,7 +77,7 @@ namespace HH.ZK.UI
                     preArrow = lblArrow1;
                     preDes = lblDes;
                 }
-                if (pi.Sex == 0 || pi.Sex == (int)Gender.Female)
+                if (pi.Gender == 0 || pi.Gender == (int)Gender.Female)
                 {
                     ComboBox cmb_F = new ComboBox();
                     cmb_F.Name = "cmb" + pi.ID.ToString();

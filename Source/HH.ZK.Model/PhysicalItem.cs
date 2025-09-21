@@ -111,7 +111,7 @@ namespace HH.ZK.Model
 
         public bool IsMust { get; set; }
 
-        public int Sex { get; set; }
+        public int Gender { get; set; }
         #endregion
 
         #region 公共方法

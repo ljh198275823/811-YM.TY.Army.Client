@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using LJH.GeneralLibrary;
 
 namespace HH.ZK.Model.SearchCondition
 {
@@ -42,5 +43,9 @@ namespace HH.ZK.Model.SearchCondition
         public bool? Checked { get; set; } //获取或设置是否已经检录
 
         public bool? StudentUploaded { get; set; }
+
+        public string ProjectID { get; set; }
+
+        public DateTimeRange DateRange { get; set; }
     }
 }

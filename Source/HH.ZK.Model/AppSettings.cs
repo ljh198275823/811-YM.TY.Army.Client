@@ -197,6 +197,18 @@ namespace HH.ZK.Model
             }
         }
 
+        public string ProjectID {
+            get
+            {
+                var temp = GetConfigContent("ProjectID");
+                return temp;
+            }
+            set
+            {
+                SaveConfig("ProjectID", value.ToString());
+            }
+        }
+
         public bool SaveConfig(string configName, string configContent)
         {
             if (_parent != null)

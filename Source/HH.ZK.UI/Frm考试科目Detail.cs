@@ -94,9 +94,9 @@ namespace HH.ZK.UI
             rdAscending.Checked = PhysicalItem.SortMode == 1;
             rdDesending.Checked = PhysicalItem.SortMode == 2;
             chk必考.Checked = PhysicalItem.IsMust;
-            rd不限男女.Checked = PhysicalItem.Sex == 0;
-            rdMale.Checked = PhysicalItem.Sex == (int)Gender.Male;
-            rdFemale.Checked = PhysicalItem.Sex == (int)Gender.Female;
+            rd不限男女.Checked = PhysicalItem.Gender == 0;
+            rdMale.Checked = PhysicalItem.Gender == (int)Gender.Male;
+            rdFemale.Checked = PhysicalItem.Gender == (int)Gender.Female;
             txt测试次数.Text = PhysicalItem.TestCount.ToString();
         }
 
@@ -130,9 +130,9 @@ namespace HH.ZK.UI
             {
                 PhysicalItem.Max = null;
             }
-            if (rd不限男女.Checked) PhysicalItem.Sex = 0;
-            else if (rdMale.Checked) PhysicalItem.Sex = (int)Gender.Male;
-            else PhysicalItem.Sex = (int)Gender.Female;
+            if (rd不限男女.Checked) PhysicalItem.Gender = 0;
+            else if (rdMale.Checked) PhysicalItem.Gender = (int)Gender.Male;
+            else PhysicalItem.Gender = (int)Gender.Female;
             if (rdNone.Checked) PhysicalItem.SortMode = 0;
             if (rdAscending.Checked) PhysicalItem.SortMode = 1;
             if (rdDesending.Checked) PhysicalItem.SortMode = 2;

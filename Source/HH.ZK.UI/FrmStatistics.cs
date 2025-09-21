@@ -114,7 +114,7 @@ namespace HH.ZK.UI
                 con.FacilityID = con1.FacilityID;
                 con.ClassName = con1.ClassName;
                 con.Sex = con1.Sex;
-                con.PhysicalItem = item.PhysicalItemID;
+                con.TestID = item.PhysicalItemID;
                 if (!string.IsNullOrEmpty(item.Key.ClassName)) con.ClassName = item.Key.ClassName;
                 if (!string.IsNullOrEmpty(item.Key.Sex)) con.Sex = item.Key.Sex == "男" ? Gender.Male : Gender.Female;
                 if (!string.IsNullOrEmpty(item.Key.FacilityID)) con.FacilityID = item.Key.FacilityID;

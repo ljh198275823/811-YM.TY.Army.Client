@@ -44,29 +44,14 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.cmbCardID = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.cmb平时成绩 = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cmb特殊情况 = new System.Windows.Forms.ComboBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.txt学校代码 = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.cmbIDNumber = new System.Windows.Forms.ComboBox();
             this.cmbExistsFacility = new HH.ZK.CommonUI.Controls.FacilityComboBox(this.components);
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.cmbClassName = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.cmbFacility = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cmb考试科目 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -92,13 +77,8 @@
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCardID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col考试科目 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col特殊情况 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col平时成绩 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col学校代码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFacility = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colReason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -221,29 +201,14 @@
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.cmbCardID);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.cmb平时成绩);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.cmb特殊情况);
-            this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Controls.Add(this.label34);
-            this.groupBox1.Controls.Add(this.txt学校代码);
             this.groupBox1.Controls.Add(this.label29);
             this.groupBox1.Controls.Add(this.label30);
             this.groupBox1.Controls.Add(this.cmbIDNumber);
             this.groupBox1.Controls.Add(this.cmbExistsFacility);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.label26);
-            this.groupBox1.Controls.Add(this.cmbClassName);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.cmbFacility);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.cmb考试科目);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
@@ -266,7 +231,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(168, 265);
+            this.label23.Location = new System.Drawing.Point(168, 235);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(53, 12);
             this.label23.TabIndex = 74;
@@ -275,7 +240,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(135, 265);
+            this.label24.Location = new System.Drawing.Point(135, 235);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(23, 12);
             this.label24.TabIndex = 73;
@@ -285,104 +250,17 @@
             // 
             this.cmbCardID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCardID.FormattingEnabled = true;
-            this.cmbCardID.Location = new System.Drawing.Point(7, 261);
+            this.cmbCardID.Location = new System.Drawing.Point(7, 231);
             this.cmbCardID.Name = "cmbCardID";
             this.cmbCardID.Size = new System.Drawing.Size(121, 20);
             this.cmbCardID.TabIndex = 72;
             this.cmbCardID.Tag = "colCardID";
             this.cmbCardID.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(169, 359);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 12);
-            this.label21.TabIndex = 71;
-            this.label21.Text = "国标分";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(136, 359);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(23, 12);
-            this.label22.TabIndex = 70;
-            this.label22.Text = "-->";
-            // 
-            // cmb平时成绩
-            // 
-            this.cmb平时成绩.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb平时成绩.FormattingEnabled = true;
-            this.cmb平时成绩.Location = new System.Drawing.Point(7, 356);
-            this.cmb平时成绩.Name = "cmb平时成绩";
-            this.cmb平时成绩.Size = new System.Drawing.Size(121, 20);
-            this.cmb平时成绩.TabIndex = 69;
-            this.cmb平时成绩.Tag = "col平时成绩";
-            this.cmb平时成绩.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(169, 329);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(53, 12);
-            this.label19.TabIndex = 68;
-            this.label19.Text = "特殊情况";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(136, 329);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(23, 12);
-            this.label20.TabIndex = 67;
-            this.label20.Text = "-->";
-            // 
-            // cmb特殊情况
-            // 
-            this.cmb特殊情况.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb特殊情况.FormattingEnabled = true;
-            this.cmb特殊情况.Location = new System.Drawing.Point(7, 326);
-            this.cmb特殊情况.Name = "cmb特殊情况";
-            this.cmb特殊情况.Size = new System.Drawing.Size(121, 20);
-            this.cmb特殊情况.TabIndex = 66;
-            this.cmb特殊情况.Tag = "col特殊情况";
-            this.cmb特殊情况.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(169, 392);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(53, 12);
-            this.label33.TabIndex = 65;
-            this.label33.Text = "学校代码";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(136, 392);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(23, 12);
-            this.label34.TabIndex = 64;
-            this.label34.Text = "-->";
-            // 
-            // txt学校代码
-            // 
-            this.txt学校代码.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt学校代码.FormattingEnabled = true;
-            this.txt学校代码.Location = new System.Drawing.Point(7, 389);
-            this.txt学校代码.Name = "txt学校代码";
-            this.txt学校代码.Size = new System.Drawing.Size(121, 20);
-            this.txt学校代码.TabIndex = 63;
-            this.txt学校代码.Tag = "col学校代码";
-            this.txt学校代码.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
-            // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(169, 234);
+            this.label29.Location = new System.Drawing.Point(169, 204);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(53, 12);
             this.label29.TabIndex = 56;
@@ -391,7 +269,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(136, 234);
+            this.label30.Location = new System.Drawing.Point(136, 204);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(23, 12);
             this.label30.TabIndex = 55;
@@ -401,7 +279,7 @@
             // 
             this.cmbIDNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIDNumber.FormattingEnabled = true;
-            this.cmbIDNumber.Location = new System.Drawing.Point(7, 231);
+            this.cmbIDNumber.Location = new System.Drawing.Point(7, 201);
             this.cmbIDNumber.Name = "cmbIDNumber";
             this.cmbIDNumber.Size = new System.Drawing.Size(121, 20);
             this.cmbIDNumber.TabIndex = 54;
@@ -411,47 +289,18 @@
             // cmbExistsFacility
             // 
             this.cmbExistsFacility.FormattingEnabled = true;
-            this.cmbExistsFacility.Location = new System.Drawing.Point(7, 469);
+            this.cmbExistsFacility.Location = new System.Drawing.Point(7, 310);
             this.cmbExistsFacility.Name = "cmbExistsFacility";
             this.cmbExistsFacility.Size = new System.Drawing.Size(213, 20);
             this.cmbExistsFacility.TabIndex = 47;
             this.cmbExistsFacility.Tag = "colFacility";
             this.cmbExistsFacility.SelectedIndexChanged += new System.EventHandler(this.cmbExistsFacility_SelectedIndexChanged);
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(169, 203);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(53, 12);
-            this.label25.TabIndex = 34;
-            this.label25.Text = "班    级";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(136, 203);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(23, 12);
-            this.label26.TabIndex = 33;
-            this.label26.Text = "-->";
-            // 
-            // cmbClassName
-            // 
-            this.cmbClassName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbClassName.FormattingEnabled = true;
-            this.cmbClassName.Location = new System.Drawing.Point(7, 200);
-            this.cmbClassName.Name = "cmbClassName";
-            this.cmbClassName.Size = new System.Drawing.Size(121, 20);
-            this.cmbClassName.TabIndex = 32;
-            this.cmbClassName.Tag = "colClassName";
-            this.cmbClassName.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(7, 451);
+            this.label18.Location = new System.Drawing.Point(7, 292);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(209, 12);
             this.label18.TabIndex = 21;
@@ -460,16 +309,16 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(169, 426);
+            this.label16.Location = new System.Drawing.Point(169, 267);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 12);
             this.label16.TabIndex = 20;
-            this.label16.Text = "学    校 *";
+            this.label16.Text = "所在部门 *";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(136, 426);
+            this.label17.Location = new System.Drawing.Point(136, 267);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(23, 12);
             this.label17.TabIndex = 19;
@@ -479,41 +328,12 @@
             // 
             this.cmbFacility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFacility.FormattingEnabled = true;
-            this.cmbFacility.Location = new System.Drawing.Point(7, 423);
+            this.cmbFacility.Location = new System.Drawing.Point(7, 264);
             this.cmbFacility.Name = "cmbFacility";
             this.cmbFacility.Size = new System.Drawing.Size(121, 20);
             this.cmbFacility.TabIndex = 18;
             this.cmbFacility.Tag = "colFacility";
             this.cmbFacility.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(169, 295);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 12);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "考试科目";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(136, 295);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 12);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "-->";
-            // 
-            // cmb考试科目
-            // 
-            this.cmb考试科目.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb考试科目.FormattingEnabled = true;
-            this.cmb考试科目.Location = new System.Drawing.Point(7, 292);
-            this.cmb考试科目.Name = "cmb考试科目";
-            this.cmb考试科目.Size = new System.Drawing.Size(121, 20);
-            this.cmb考试科目.TabIndex = 15;
-            this.cmb考试科目.Tag = "col考试科目";
-            this.cmb考试科目.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -537,7 +357,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(115, 504);
+            this.label10.Location = new System.Drawing.Point(115, 345);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 12);
             this.label10.TabIndex = 11;
@@ -745,13 +565,8 @@
             this.colID,
             this.colName,
             this.colSex,
-            this.colClassName,
             this.colIDNumber,
             this.colCardID,
-            this.col考试科目,
-            this.col特殊情况,
-            this.col平时成绩,
-            this.col学校代码,
             this.colFacility,
             this.colReason});
             this.viewDestination.Location = new System.Drawing.Point(6, 103);
@@ -784,12 +599,6 @@
             this.colSex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colSex.Width = 60;
             // 
-            // colClassName
-            // 
-            this.colClassName.HeaderText = "班级";
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
-            // 
             // colIDNumber
             // 
             this.colIDNumber.HeaderText = "身份证号";
@@ -802,34 +611,9 @@
             this.colCardID.Name = "colCardID";
             this.colCardID.ReadOnly = true;
             // 
-            // col考试科目
-            // 
-            this.col考试科目.HeaderText = "考试科目";
-            this.col考试科目.Name = "col考试科目";
-            this.col考试科目.ReadOnly = true;
-            this.col考试科目.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // col特殊情况
-            // 
-            this.col特殊情况.HeaderText = "特殊情况";
-            this.col特殊情况.Name = "col特殊情况";
-            this.col特殊情况.ReadOnly = true;
-            // 
-            // col平时成绩
-            // 
-            this.col平时成绩.HeaderText = "国标分";
-            this.col平时成绩.Name = "col平时成绩";
-            this.col平时成绩.ReadOnly = true;
-            // 
-            // col学校代码
-            // 
-            this.col学校代码.HeaderText = "学校代码";
-            this.col学校代码.Name = "col学校代码";
-            this.col学校代码.ReadOnly = true;
-            // 
             // colFacility
             // 
-            this.colFacility.HeaderText = "学校";
+            this.colFacility.HeaderText = "部门";
             this.colFacility.Name = "colFacility";
             this.colFacility.ReadOnly = true;
             this.colFacility.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -905,42 +689,22 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cmbFacility;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cmb考试科目;
         private System.Windows.Forms.Label lblSource;
         private System.Windows.Forms.Label lblDesCount;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox cmbClassName;
         private HH.ZK.CommonUI.Controls.FacilityComboBox cmbExistsFacility;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox cmbIDNumber;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox txt学校代码;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox cmb特殊情况;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox cmb平时成绩;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox cmbCardID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCardID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col考试科目;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col特殊情况;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col平时成绩;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col学校代码;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFacility;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReason;
     }
