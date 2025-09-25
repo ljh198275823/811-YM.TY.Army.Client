@@ -15,9 +15,9 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.CommonUI
 {
-    public partial class Frm导出学生照片 : Form
+    public partial class Frm导出人员照片 : Form
     {
-        public Frm导出学生照片()
+        public Frm导出人员照片()
         {
             InitializeComponent();
         }

@@ -16,9 +16,9 @@ using LJH.GeneralLibrary;
 
 namespace HH.ZK.CommonUI
 {
-    public partial class Frm导入学生照片 : Form
+    public partial class Frm导入人员照片 : Form
     {
-        public Frm导入学生照片()
+        public Frm导入人员照片()
         {
             InitializeComponent();
         }

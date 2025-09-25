@@ -1,6 +1,6 @@
 ﻿namespace HH.ZK.CommonUI
 {
-    partial class Frm导入学生照片
+    partial class Frm导入人员照片
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm导入学生照片));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm导入人员照片));
             this.label1 = new System.Windows.Forms.Label();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.btnBrowser = new System.Windows.Forms.Button();

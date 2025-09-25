@@ -29,7 +29,6 @@ namespace HH.ZK.UI
         #region 私有变量
         private Dictionary<Form, string> _openedForms = new Dictionary<Form, string>();
         private Random _MyRandom = new Random();
-        private FrmHosts _FrmScoreCollect_Wifi = null;
 
         private ICCardReader _Reader = null;
         private BarcodeReader _BarcodeReader = null;
@@ -108,8 +107,6 @@ namespace HH.ZK.UI
                 mnu_Log.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 mnu人工修改成绩查询报表.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 //工具栏
-                mnu导入学生.Enabled = cur.PermitAny(Permission.Student, PermissionActions.Edit);
-                btn考试视频.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 //报表
                 btn单项成绩.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 btn单项统计报表.Enabled = mnu单项成绩统计报表.Enabled;
@@ -301,22 +298,6 @@ namespace HH.ZK.UI
         }
         #endregion
 
-        #region 公共方法
-        /// <summary>
-        /// 执行成绩导入的操作
-        /// </summary>
-        public void PerformImportScore(bool singleCol = false)
-        {
-            if (AppSettings.Current.PhysicalProject == null)
-            {
-                MessageBox.Show("没有指定当前测试计划");
-                return;
-            }
-            if (singleCol) ShowSingleForm<FrmScoreImport_SingleCol>();
-            else ShowSingleForm<FrmScoreImport>();
-        }
-        #endregion
-
         #region 主菜单
         private void mnu_ChangPwd_Click(object sender, EventArgs e)
         {
@@ -364,101 +345,16 @@ namespace HH.ZK.UI
             this.Close();
         }
 
-        private void mnu学校信息管理_Click(object sender, EventArgs e)
+        private void mnu人员部门管理_Click(object sender, EventArgs e)
         {
-            ShowSingleForm<FrmFacilityMaster>();
+            ShowSingleForm<Frm人员部门管理>(sender);
         }
 
-        private void mnu区域信息管理_Click(object sender, EventArgs e)
+        private void mnu训练考核大纲管理_Click(object sender, EventArgs e)
         {
-            ShowSingleForm<FrmDivisionMaster>();
-        }
-
-        private void mnu学生信息管理_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生信息管理>(sender);
-        }
-
-        private void 下载学生信息ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (_Reader != null)
-            {
-                _Reader.Close();
-                _Reader = null;
-            }
-            var frm = new FrmStudentDownload();
+            var frm = new Frm训练大纲管理();
             frm.StartPosition = FormStartPosition.CenterParent;
-            frm.MinimizeBox = false;
             frm.ShowDialog();
-            InitICCardReader();
-        }
-
-        private void mnu_测试项目管理_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm考试科目设置查看>();
-        }
-
-        private void mnu_Standard_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm评分标准查看>();
-        }
-
-        private void mnu特殊评分标准管理_Click(object sender, EventArgs e)
-        {
-            //var frm = new FrmSpecialScore();
-            //frm.StartPosition = FormStartPosition.CenterParent;
-            //frm.ShowDialog();
-        }
-
-        private void mnu_Options_Click(object sender, EventArgs e)
-        {
-            var frm = new FrmOption_联机();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.MinimizeBox = false;
-            frm.ShowDialog();
-            InitBardcodeReader();
-            InitICCardReader();
-            InitID210();
-        }
-
-        private void mnu_CollectScore_Wifi_Click(object sender, EventArgs e)
-        {
-            if (_FrmScoreCollect_Wifi == null)
-            {
-                _FrmScoreCollect_Wifi = new FrmHosts();
-                _FrmScoreCollect_Wifi.FormClosed += delegate (object o, FormClosedEventArgs args)
-                {
-                    _FrmScoreCollect_Wifi = null;
-                };
-            }
-            if (_FrmScoreCollect_Wifi.WindowState == FormWindowState.Minimized) _FrmScoreCollect_Wifi.WindowState = FormWindowState.Normal;
-            _FrmScoreCollect_Wifi.Activate();
-            _FrmScoreCollect_Wifi.Show();
-        }
-
-        private void mnu_CollectScore_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<FrmScoreCollect_Com>();
-        }
-
-        private void mnu_成绩采集澳亚特_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<FrmScoreCollect_澳亚特>();
-        }
-
-        private void mnu_ImportScore_Click(object sender, EventArgs e)
-        {
-            PerformImportScore(false);
-        }
-
-        private void mnu_ScoreImport1_Click(object sender, EventArgs e)
-        {
-            PerformImportScore(true);
-        }
-
-        private void mnu考场进度_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm考场实时状态>();
         }
 
         private void mnu总成绩统计报表_Click(object sender, EventArgs e)
@@ -480,49 +376,9 @@ namespace HH.ZK.UI
         {
             ShowSingleForm<FrmLogView>();
         }
-
-        private void mnu连接成绩公示屏_Click(object sender, EventArgs e)
-        {
-            if (_Frm成绩公示屏 == null)
-            {
-                _Frm成绩公示屏 = new Frm成绩公示屏();
-                _Frm成绩公示屏.StartPosition = FormStartPosition.Manual;
-                _Frm成绩公示屏.FormBorderStyle = FormBorderStyle.None;
-                _Frm成绩公示屏.WindowState = FormWindowState.Maximized;
-                _Frm成绩公示屏.ShowInTaskbar = false;
-                _Frm成绩公示屏.FormClosed += delegate (object obj, FormClosedEventArgs args)
-                {
-                    _Frm成绩公示屏 = null;
-                };
-                if (Screen.AllScreens.Length >= 2)
-                {
-                    Screen second = Screen.AllScreens[1];
-                    _Frm成绩公示屏.Location = second.WorkingArea.Location;
-                }
-                _Frm成绩公示屏.Show();
-            }
-        }
-
-        private void 用户手册ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start(System.IO.Path.Combine(Application.StartupPath, "汇海中考软件说明书.doc"));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
         #endregion
 
         #region 工具栏菜单
-        
-        private void btn_PhysicalItemSelect_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm考试科目设置查看>();
-        }
-
         private void mnu_Statistics_Click(object sender, EventArgs e)
         {
             mnu单项成绩统计报表.PerformClick();
@@ -536,11 +392,6 @@ namespace HH.ZK.UI
         private void btn单项成绩_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm学生单项成绩查询>();
-        }
-
-        private void btn考试视频_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm考场视频>(null);
         }
         #endregion
 
@@ -561,7 +412,7 @@ namespace HH.ZK.UI
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                if (MessageBox.Show("是否要退出汇海考试平台?", "询问", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                if (MessageBox.Show("是否要退出平台?", "询问", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                 {
                     e.Cancel = true;
                     return;
@@ -592,41 +443,6 @@ namespace HH.ZK.UI
         private void mnu软件更新日志_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm软件更新日志>();
-        }
-
-        private void mnu导入学生_Click(object sender, EventArgs e)
-        {
-            var frm = new Frm学生信息导入();
-            frm.MinimizeBox = false;
-            frm.ShowDialog();
-            foreach (var f in _openedForms.Keys)
-            {
-                if (f is Frm学生信息管理)
-                {
-                    (f as Frm学生信息管理).ReFreshData();
-                    break;
-                }
-            }
-        }
-
-        private void mnu学生照片采集_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生照片采集>();
-        }
-
-        private void mnu导入学生照片_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm导入学生照片>();
-        }
-
-        private void mnu导出学生照片_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm导出学生照片>();
-        }
-
-        private void mnu重新生成照片特征值_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm重新生成特征值>();
         }
 
         private void mnu学生成绩管理_Click(object sender, EventArgs e)
@@ -671,50 +487,21 @@ namespace HH.ZK.UI
             }
         }
 
-        private void mnu学生成绩快速录入_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生成绩速录>();
-        }
-
         private void mnu人工修改成绩查询报表_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm人工修改成绩查询报表>();
         }
 
-        private void mnu视频服务器设置_Click(object sender, EventArgs e)
-        {
-            var frm = new Frm视频录相机设置();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
-        }
-
-        private void 训练考核大ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm= new Frm训练大纲管理();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
-        }
-
-        private void btn学生信息_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生信息管理>();
-        }
-
-        private void btn分组管理_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn成绩管理_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生成绩管理>();
-        }
-
-        private void btn_Collect_Click(object sender, EventArgs e)
+        private void mnu导入成绩_Click(object sender, EventArgs e)
         {
             var frm = new FrmScoreImport_SingleCol();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
+        }
+
+        private void mmu训练成绩管理_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<Frm学生成绩管理>();
         }
     }
 }

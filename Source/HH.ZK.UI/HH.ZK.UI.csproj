@@ -452,11 +452,11 @@
     <Compile Include="Frm评分标准.designer.cs">
       <DependentUpon>Frm评分标准.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm学生信息管理.cs">
+    <Compile Include="Frm人员部门管理.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm学生信息管理.designer.cs">
-      <DependentUpon>Frm学生信息管理.cs</DependentUpon>
+    <Compile Include="Frm人员部门管理.designer.cs">
+      <DependentUpon>Frm人员部门管理.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm考试科目设置.cs">
       <SubType>Form</SubType>
@@ -644,8 +644,8 @@
     <EmbeddedResource Include="Frm评分标准.resx">
       <DependentUpon>Frm评分标准.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm学生信息管理.resx">
-      <DependentUpon>Frm学生信息管理.cs</DependentUpon>
+    <EmbeddedResource Include="Frm人员部门管理.resx">
+      <DependentUpon>Frm人员部门管理.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm考试科目设置.resx">
       <DependentUpon>Frm考试科目设置.cs</DependentUpon>

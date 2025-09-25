@@ -1,6 +1,6 @@
 ﻿namespace HH.ZK.UI
 {
-    partial class Frm学生信息管理
+    partial class Frm人员部门管理
     {
         /// <summary>
         /// Required designer variable.
@@ -30,32 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm学生信息管理));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm人员部门管理));
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.facilityTree = new HH.ZK.CommonUI.Controls.FacilityTree(this.components);
+            this.divisionTree = new HH.ZK.CommonUI.Controls.FacilityTree(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cMnu_Fresh = new System.Windows.Forms.ToolStripMenuItem();
             this.cMnu_Add = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_DeleteStudents = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnu导入学生信息 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu导入学生照片 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu设置训练计划 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cMnu_SelectColumns = new System.Windows.Forms.ToolStripMenuItem();
             this.cMnu_Export = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.DivisionMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mn刷新学校 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu_AddFacility = new System.Windows.Forms.ToolStripMenuItem();
+            this.mn刷新部门 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_AddDivision = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_DeleteDivision = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_DepartmentProperty = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.FacilityMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnu_DelFacility = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu_FacilityProperty = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.ucPaging1 = new LJH.GeneralLibrary.WinformControl.UCPaging();
             this.menu = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -63,14 +58,6 @@
             this.rd无人脸特征 = new System.Windows.Forms.RadioButton();
             this.rd人脸特征全部 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.chk任意一项 = new System.Windows.Forms.CheckBox();
-            this.lnk考试科目 = new System.Windows.Forms.LinkLabel();
-            this.txt考试科目 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rd所有特殊状态 = new System.Windows.Forms.RadioButton();
-            this.rd指定状态 = new System.Windows.Forms.RadioButton();
-            this.rd不限状态 = new System.Windows.Forms.RadioButton();
-            this.txt考试状态 = new HH.ZK.CommonUI.Controls.StudentStateComboBox(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
             this.rdHasPhoto = new System.Windows.Forms.RadioButton();
             this.rdNonePhoto = new System.Windows.Forms.RadioButton();
@@ -82,12 +69,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnFresh = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtStudentID1 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.txtClassName = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
             this.txtName = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
-            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.col序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,22 +80,16 @@
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGroupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCardID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col考试科目 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col学校代码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col平时成绩 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col照片 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.col人脸识别 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colFill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mnu导出人员照片 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.DivisionMenu.SuspendLayout();
-            this.FacilityMenu.SuspendLayout();
             this.menu.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -119,25 +97,25 @@
             // 
             // pnlLeft
             // 
-            this.pnlLeft.Controls.Add(this.facilityTree);
+            this.pnlLeft.Controls.Add(this.divisionTree);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(234, 577);
             this.pnlLeft.TabIndex = 110;
             // 
-            // facilityTree
+            // divisionTree
             // 
-            this.facilityTree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.facilityTree.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
-            this.facilityTree.HideSelection = false;
-            this.facilityTree.ItemHeight = 24;
-            this.facilityTree.Location = new System.Drawing.Point(0, 0);
-            this.facilityTree.Name = "facilityTree";
-            this.facilityTree.Size = new System.Drawing.Size(234, 577);
-            this.facilityTree.TabIndex = 119;
-            this.facilityTree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.facilityTree_MouseDown);
-            this.facilityTree.MouseDown += new System.Windows.Forms.MouseEventHandler(this.facilityTree_NodeMouseClick);
+            this.divisionTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.divisionTree.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
+            this.divisionTree.HideSelection = false;
+            this.divisionTree.ItemHeight = 24;
+            this.divisionTree.Location = new System.Drawing.Point(0, 0);
+            this.divisionTree.Name = "divisionTree";
+            this.divisionTree.Size = new System.Drawing.Size(234, 577);
+            this.divisionTree.TabIndex = 119;
+            this.divisionTree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.facilityTree_MouseDown);
+            this.divisionTree.MouseDown += new System.Windows.Forms.MouseEventHandler(this.facilityTree_NodeMouseClick);
             // 
             // contextMenuStrip1
             // 
@@ -148,12 +126,14 @@
             this.Mnu_DeleteStudents,
             this.toolStripSeparator3,
             this.mnu导入学生信息,
+            this.mnu导入学生照片,
             this.mnu设置训练计划,
             this.toolStripSeparator1,
             this.cMnu_SelectColumns,
-            this.cMnu_Export});
+            this.cMnu_Export,
+            this.mnu导出人员照片});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 192);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 236);
             // 
             // cMnu_Fresh
             // 
@@ -165,13 +145,13 @@
             // 
             this.cMnu_Add.Name = "cMnu_Add";
             this.cMnu_Add.Size = new System.Drawing.Size(180, 22);
-            this.cMnu_Add.Text = "增加学生";
+            this.cMnu_Add.Text = "增加人员";
             // 
             // Mnu_DeleteStudents
             // 
             this.Mnu_DeleteStudents.Name = "Mnu_DeleteStudents";
             this.Mnu_DeleteStudents.Size = new System.Drawing.Size(180, 22);
-            this.Mnu_DeleteStudents.Text = "删除所选学生";
+            this.Mnu_DeleteStudents.Text = "删除所选人员";
             this.Mnu_DeleteStudents.Click += new System.EventHandler(this.Mnu_DeleteStudents_Click);
             // 
             // toolStripSeparator3
@@ -183,8 +163,15 @@
             // 
             this.mnu导入学生信息.Name = "mnu导入学生信息";
             this.mnu导入学生信息.Size = new System.Drawing.Size(180, 22);
-            this.mnu导入学生信息.Text = "导入学生信息";
+            this.mnu导入学生信息.Text = "导入人员信息";
             this.mnu导入学生信息.Click += new System.EventHandler(this.mnu导入学生信息_Click);
+            // 
+            // mnu导入学生照片
+            // 
+            this.mnu导入学生照片.Name = "mnu导入学生照片";
+            this.mnu导入学生照片.Size = new System.Drawing.Size(180, 22);
+            this.mnu导入学生照片.Text = "导入人员照片";
+            this.mnu导入学生照片.Click += new System.EventHandler(this.mnu导入学生照片_Click);
             // 
             // mnu设置训练计划
             // 
@@ -208,7 +195,7 @@
             // 
             this.cMnu_Export.Name = "cMnu_Export";
             this.cMnu_Export.Size = new System.Drawing.Size(180, 22);
-            this.cMnu_Export.Text = "导出学生信息...";
+            this.cMnu_Export.Text = "导出人员信息...";
             // 
             // splitter1
             // 
@@ -223,41 +210,33 @@
             // 
             this.DivisionMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DivisionMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mn刷新学校,
-            this.mnu_AddFacility,
+            this.mn刷新部门,
             this.mnu_AddDivision,
             this.mnu_DeleteDivision,
             this.mnu_DepartmentProperty,
             this.toolStripSeparator8});
             this.DivisionMenu.Name = "contextMenuStrip1";
-            this.DivisionMenu.Size = new System.Drawing.Size(127, 120);
+            this.DivisionMenu.Size = new System.Drawing.Size(127, 98);
             // 
-            // mn刷新学校
+            // mn刷新部门
             // 
-            this.mn刷新学校.Name = "mn刷新学校";
-            this.mn刷新学校.Size = new System.Drawing.Size(126, 22);
-            this.mn刷新学校.Text = "刷新";
-            this.mn刷新学校.Click += new System.EventHandler(this.mn刷新学校_Click);
-            // 
-            // mnu_AddFacility
-            // 
-            this.mnu_AddFacility.Name = "mnu_AddFacility";
-            this.mnu_AddFacility.Size = new System.Drawing.Size(126, 22);
-            this.mnu_AddFacility.Text = "增加学校";
-            this.mnu_AddFacility.Click += new System.EventHandler(this.mnu_AddFacility_Click);
+            this.mn刷新部门.Name = "mn刷新部门";
+            this.mn刷新部门.Size = new System.Drawing.Size(126, 22);
+            this.mn刷新部门.Text = "刷新";
+            this.mn刷新部门.Click += new System.EventHandler(this.mn刷新学校_Click);
             // 
             // mnu_AddDivision
             // 
             this.mnu_AddDivision.Name = "mnu_AddDivision";
             this.mnu_AddDivision.Size = new System.Drawing.Size(126, 22);
-            this.mnu_AddDivision.Text = "增加区域";
+            this.mnu_AddDivision.Text = "增加部门";
             this.mnu_AddDivision.Click += new System.EventHandler(this.mnu_AddDivision_Click);
             // 
             // mnu_DeleteDivision
             // 
             this.mnu_DeleteDivision.Name = "mnu_DeleteDivision";
             this.mnu_DeleteDivision.Size = new System.Drawing.Size(126, 22);
-            this.mnu_DeleteDivision.Text = "删除";
+            this.mnu_DeleteDivision.Text = "删除部门";
             this.mnu_DeleteDivision.Click += new System.EventHandler(this.mnu_DeleteDivision_Click);
             // 
             // mnu_DepartmentProperty
@@ -272,35 +251,6 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(123, 6);
             // 
-            // FacilityMenu
-            // 
-            this.FacilityMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FacilityMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnu_DelFacility,
-            this.mnu_FacilityProperty,
-            this.toolStripSeparator7});
-            this.FacilityMenu.Name = "contextMenuStrip1";
-            this.FacilityMenu.Size = new System.Drawing.Size(101, 54);
-            // 
-            // mnu_DelFacility
-            // 
-            this.mnu_DelFacility.Name = "mnu_DelFacility";
-            this.mnu_DelFacility.Size = new System.Drawing.Size(100, 22);
-            this.mnu_DelFacility.Text = "删除";
-            this.mnu_DelFacility.Click += new System.EventHandler(this.mnu_DelFacility_Click);
-            // 
-            // mnu_FacilityProperty
-            // 
-            this.mnu_FacilityProperty.Name = "mnu_FacilityProperty";
-            this.mnu_FacilityProperty.Size = new System.Drawing.Size(100, 22);
-            this.mnu_FacilityProperty.Text = "属性";
-            this.mnu_FacilityProperty.Click += new System.EventHandler(this.mnu_FacilityProperty_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(97, 6);
-            // 
             // ucPaging1
             // 
             this.ucPaging1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -314,21 +264,14 @@
             this.menu.BackColor = System.Drawing.SystemColors.Control;
             this.menu.Controls.Add(this.panel3);
             this.menu.Controls.Add(this.label3);
-            this.menu.Controls.Add(this.chk任意一项);
-            this.menu.Controls.Add(this.lnk考试科目);
-            this.menu.Controls.Add(this.txt考试科目);
-            this.menu.Controls.Add(this.panel2);
             this.menu.Controls.Add(this.panel5);
             this.menu.Controls.Add(this.panel1);
             this.menu.Controls.Add(this.label6);
             this.menu.Controls.Add(this.label7);
             this.menu.Controls.Add(this.btnFresh);
-            this.menu.Controls.Add(this.label4);
             this.menu.Controls.Add(this.txtStudentID1);
             this.menu.Controls.Add(this.label1);
-            this.menu.Controls.Add(this.txtClassName);
             this.menu.Controls.Add(this.txtName);
-            this.menu.Controls.Add(this.label5);
             this.menu.Controls.Add(this.label2);
             this.menu.Dock = System.Windows.Forms.DockStyle.Top;
             this.menu.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -395,105 +338,6 @@
             this.label3.TabIndex = 294;
             this.label3.Text = "人脸特征";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // chk任意一项
-            // 
-            this.chk任意一项.AutoSize = true;
-            this.chk任意一项.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chk任意一项.Location = new System.Drawing.Point(835, 39);
-            this.chk任意一项.Name = "chk任意一项";
-            this.chk任意一项.Size = new System.Drawing.Size(78, 19);
-            this.chk任意一项.TabIndex = 293;
-            this.chk任意一项.Text = "任意一项";
-            this.chk任意一项.UseVisualStyleBackColor = true;
-            // 
-            // lnk考试科目
-            // 
-            this.lnk考试科目.AutoSize = true;
-            this.lnk考试科目.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lnk考试科目.Location = new System.Drawing.Point(453, 41);
-            this.lnk考试科目.Name = "lnk考试科目";
-            this.lnk考试科目.Size = new System.Drawing.Size(59, 15);
-            this.lnk考试科目.TabIndex = 283;
-            this.lnk考试科目.TabStop = true;
-            this.lnk考试科目.Text = "考试科目";
-            this.lnk考试科目.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk考试科目_LinkClicked);
-            // 
-            // txt考试科目
-            // 
-            this.txt考试科目.BackColor = System.Drawing.Color.White;
-            this.txt考试科目.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txt考试科目.Location = new System.Drawing.Point(512, 37);
-            this.txt考试科目.MaxLength = 20;
-            this.txt考试科目.Name = "txt考试科目";
-            this.txt考试科目.ReadOnly = true;
-            this.txt考试科目.Size = new System.Drawing.Size(317, 23);
-            this.txt考试科目.TabIndex = 282;
-            this.txt考试科目.TextChanged += new System.EventHandler(this.txField_Click);
-            this.txt考试科目.DoubleClick += new System.EventHandler(this.txt考试科目_DoubleClick);
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.rd所有特殊状态);
-            this.panel2.Controls.Add(this.rd指定状态);
-            this.panel2.Controls.Add(this.rd不限状态);
-            this.panel2.Controls.Add(this.txt考试状态);
-            this.panel2.Location = new System.Drawing.Point(513, 6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(406, 25);
-            this.panel2.TabIndex = 281;
-            // 
-            // rd所有特殊状态
-            // 
-            this.rd所有特殊状态.AutoSize = true;
-            this.rd所有特殊状态.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rd所有特殊状态.Location = new System.Drawing.Point(61, 4);
-            this.rd所有特殊状态.Name = "rd所有特殊状态";
-            this.rd所有特殊状态.Size = new System.Drawing.Size(95, 16);
-            this.rd所有特殊状态.TabIndex = 177;
-            this.rd所有特殊状态.Text = "所有特殊学生";
-            this.rd所有特殊状态.UseVisualStyleBackColor = true;
-            this.rd所有特殊状态.Click += new System.EventHandler(this.txField_Click);
-            // 
-            // rd指定状态
-            // 
-            this.rd指定状态.AutoSize = true;
-            this.rd指定状态.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rd指定状态.Location = new System.Drawing.Point(163, 4);
-            this.rd指定状态.Name = "rd指定状态";
-            this.rd指定状态.Size = new System.Drawing.Size(71, 16);
-            this.rd指定状态.TabIndex = 179;
-            this.rd指定状态.Text = "指定状态";
-            this.rd指定状态.UseVisualStyleBackColor = true;
-            this.rd指定状态.CheckedChanged += new System.EventHandler(this.rd指定状态_CheckedChanged);
-            this.rd指定状态.Click += new System.EventHandler(this.txField_Click);
-            // 
-            // rd不限状态
-            // 
-            this.rd不限状态.AutoSize = true;
-            this.rd不限状态.Checked = true;
-            this.rd不限状态.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rd不限状态.Location = new System.Drawing.Point(2, 4);
-            this.rd不限状态.Name = "rd不限状态";
-            this.rd不限状态.Size = new System.Drawing.Size(47, 16);
-            this.rd不限状态.TabIndex = 181;
-            this.rd不限状态.TabStop = true;
-            this.rd不限状态.Text = "不限";
-            this.rd不限状态.UseVisualStyleBackColor = true;
-            this.rd不限状态.CheckedChanged += new System.EventHandler(this.txField_Click);
-            // 
-            // txt考试状态
-            // 
-            this.txt考试状态.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txt考试状态.Enabled = false;
-            this.txt考试状态.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt考试状态.FormattingEnabled = true;
-            this.txt考试状态.Location = new System.Drawing.Point(238, 1);
-            this.txt考试状态.Name = "txt考试状态";
-            this.txt考试状态.Size = new System.Drawing.Size(161, 20);
-            this.txt考试状态.TabIndex = 175;
-            this.txt考试状态.TextChanged += new System.EventHandler(this.txField_Click);
             // 
             // panel5
             // 
@@ -623,67 +467,40 @@
             this.btnFresh.UseVisualStyleBackColor = true;
             this.btnFresh.Click += new System.EventHandler(this.txField_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(453, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 15);
-            this.label4.TabIndex = 162;
-            this.label4.Text = "考试状态";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtStudentID1
             // 
+            this.txtStudentID1.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.txtStudentID1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtStudentID1.Location = new System.Drawing.Point(276, 7);
+            this.txtStudentID1.Location = new System.Drawing.Point(276, 10);
             this.txtStudentID1.Name = "txtStudentID1";
-            this.txtStudentID1.Size = new System.Drawing.Size(161, 23);
+            this.txtStudentID1.Size = new System.Drawing.Size(396, 34);
             this.txtStudentID1.TabIndex = 6;
             this.txtStudentID1.TextChanged += new System.EventHandler(this.txField_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(216, 11);
+            this.label1.Location = new System.Drawing.Point(216, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "准考证号";
+            this.label1.Text = "人员编号";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtClassName
-            // 
-            this.txtClassName.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtClassName.Location = new System.Drawing.Point(276, 67);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(161, 23);
-            this.txtClassName.TabIndex = 12;
-            this.txtClassName.TextChanged += new System.EventHandler(this.txField_Click);
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.txtName.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtName.Location = new System.Drawing.Point(276, 37);
+            this.txtName.Location = new System.Drawing.Point(276, 53);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(161, 23);
+            this.txtName.Size = new System.Drawing.Size(396, 34);
             this.txtName.TabIndex = 9;
             this.txtName.TextChanged += new System.EventHandler(this.txField_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(214, 71);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "班级名称";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 41);
+            this.label2.Location = new System.Drawing.Point(238, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 15);
             this.label2.TabIndex = 1;
@@ -705,14 +522,9 @@
             this.colName,
             this.colSex,
             this.colIDNumber,
-            this.colGroupID,
-            this.colClassName,
             this.colCardID,
-            this.colState,
-            this.col考试科目,
-            this.col学校代码,
-            this.col平时成绩,
             this.col照片,
+            this.col人脸识别,
             this.colFill});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -735,18 +547,20 @@
             // colFacility
             // 
             this.colFacility.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colFacility.HeaderText = "学校";
-            this.colFacility.MinimumWidth = 100;
+            this.colFacility.HeaderText = "部门";
+            this.colFacility.MinimumWidth = 150;
             this.colFacility.Name = "colFacility";
             this.colFacility.ReadOnly = true;
+            this.colFacility.Width = 150;
             // 
             // colID
             // 
             this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colID.HeaderText = "准考证号";
-            this.colID.MinimumWidth = 100;
+            this.colID.HeaderText = "人员编号";
+            this.colID.MinimumWidth = 150;
             this.colID.Name = "colID";
             this.colID.ReadOnly = true;
+            this.colID.Width = 150;
             // 
             // colName
             // 
@@ -771,61 +585,14 @@
             this.colIDNumber.HeaderText = "身份证号";
             this.colIDNumber.Name = "colIDNumber";
             this.colIDNumber.ReadOnly = true;
-            this.colIDNumber.Width = 160;
-            // 
-            // colGroupID
-            // 
-            this.colGroupID.HeaderText = "分组";
-            this.colGroupID.MinimumWidth = 200;
-            this.colGroupID.Name = "colGroupID";
-            this.colGroupID.ReadOnly = true;
-            this.colGroupID.Width = 200;
-            // 
-            // colClassName
-            // 
-            this.colClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colClassName.HeaderText = "班级";
-            this.colClassName.MinimumWidth = 100;
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
-            this.colClassName.Visible = false;
+            this.colIDNumber.Width = 180;
             // 
             // colCardID
             // 
             this.colCardID.HeaderText = "卡号";
             this.colCardID.Name = "colCardID";
             this.colCardID.ReadOnly = true;
-            this.colCardID.Visible = false;
-            // 
-            // colState
-            // 
-            this.colState.HeaderText = "特殊情况";
-            this.colState.Name = "colState";
-            this.colState.ReadOnly = true;
-            // 
-            // col考试科目
-            // 
-            this.col考试科目.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.col考试科目.HeaderText = "考试科目";
-            this.col考试科目.MinimumWidth = 100;
-            this.col考试科目.Name = "col考试科目";
-            this.col考试科目.ReadOnly = true;
-            // 
-            // col学校代码
-            // 
-            this.col学校代码.HeaderText = "学校代码";
-            this.col学校代码.Name = "col学校代码";
-            this.col学校代码.ReadOnly = true;
-            this.col学校代码.Visible = false;
-            // 
-            // col平时成绩
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.col平时成绩.DefaultCellStyle = dataGridViewCellStyle2;
-            this.col平时成绩.HeaderText = "国标分";
-            this.col平时成绩.Name = "col平时成绩";
-            this.col平时成绩.ReadOnly = true;
-            this.col平时成绩.Width = 80;
+            this.colCardID.Width = 150;
             // 
             // col照片
             // 
@@ -836,6 +603,13 @@
             this.col照片.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.col照片.Width = 60;
             // 
+            // col人脸识别
+            // 
+            this.col人脸识别.HeaderText = "人脸识别";
+            this.col人脸识别.Name = "col人脸识别";
+            this.col人脸识别.ReadOnly = true;
+            this.col人脸识别.Width = 60;
+            // 
             // colFill
             // 
             this.colFill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -843,7 +617,14 @@
             this.colFill.Name = "colFill";
             this.colFill.ReadOnly = true;
             // 
-            // Frm学生信息管理
+            // mnu导出人员照片
+            // 
+            this.mnu导出人员照片.Name = "mnu导出人员照片";
+            this.mnu导出人员照片.Size = new System.Drawing.Size(180, 22);
+            this.mnu导出人员照片.Text = "导出人员照片";
+            this.mnu导出人员照片.Click += new System.EventHandler(this.mnu导出人员照片_Click);
+            // 
+            // Frm人员部门管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -854,8 +635,8 @@
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.pnlLeft);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Frm学生信息管理";
-            this.Text = "学生信息管理";
+            this.Name = "Frm人员部门管理";
+            this.Text = "人员部门管理";
             this.Controls.SetChildIndex(this.pnlLeft, 0);
             this.Controls.SetChildIndex(this.splitter1, 0);
             this.Controls.SetChildIndex(this.ucPaging1, 0);
@@ -864,13 +645,10 @@
             this.pnlLeft.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.DivisionMenu.ResumeLayout(false);
-            this.FacilityMenu.ResumeLayout(false);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -890,16 +668,11 @@
         private System.Windows.Forms.ToolStripMenuItem Mnu_DeleteStudents;
         private System.Windows.Forms.ToolStripMenuItem cMnu_Export;
         private System.Windows.Forms.Splitter splitter1;
-        private HH.ZK.CommonUI.Controls.FacilityTree facilityTree;
+        private HH.ZK.CommonUI.Controls.FacilityTree divisionTree;
         private System.Windows.Forms.ContextMenuStrip DivisionMenu;
-        private System.Windows.Forms.ToolStripMenuItem mnu_AddFacility;
         private System.Windows.Forms.ToolStripMenuItem mnu_AddDivision;
         private System.Windows.Forms.ToolStripMenuItem mnu_DeleteDivision;
         private System.Windows.Forms.ToolStripMenuItem mnu_DepartmentProperty;
-        private System.Windows.Forms.ContextMenuStrip FacilityMenu;
-        private System.Windows.Forms.ToolStripMenuItem mnu_DelFacility;
-        private System.Windows.Forms.ToolStripMenuItem mnu_FacilityProperty;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem mnu导入学生信息;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -916,44 +689,30 @@
         private System.Windows.Forms.RadioButton rdSexAll;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private CommonUI.Controls.StudentStateComboBox txt考试状态;
         private System.Windows.Forms.Button btnFresh;
-        private System.Windows.Forms.Label label4;
         private LJH.GeneralLibrary.WinformControl.DBCTextBox txtStudentID1;
         private System.Windows.Forms.Label label1;
-        private LJH.GeneralLibrary.WinformControl.DBCTextBox txtClassName;
         private LJH.GeneralLibrary.WinformControl.DBCTextBox txtName;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton rd所有特殊状态;
-        private System.Windows.Forms.RadioButton rd指定状态;
-        private System.Windows.Forms.RadioButton rd不限状态;
-        private System.Windows.Forms.ToolStripMenuItem mn刷新学校;
-        private System.Windows.Forms.LinkLabel lnk考试科目;
-        private LJH.GeneralLibrary.WinformControl.DBCTextBox txt考试科目;
-        private System.Windows.Forms.CheckBox chk任意一项;
+        private System.Windows.Forms.ToolStripMenuItem mn刷新部门;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton rd有人脸特征;
         private System.Windows.Forms.RadioButton rd无人脸特征;
         private System.Windows.Forms.RadioButton rd人脸特征全部;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem mnu设置训练计划;
+        private System.Windows.Forms.ToolStripMenuItem mnu导入学生照片;
         private System.Windows.Forms.DataGridViewTextBoxColumn col序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFacility;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSex;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGroupID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCardID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col考试科目;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col学校代码;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col平时成绩;
         private System.Windows.Forms.DataGridViewCheckBoxColumn col照片;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn col人脸识别;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFill;
-        private System.Windows.Forms.ToolStripMenuItem mnu设置训练计划;
+        private System.Windows.Forms.ToolStripMenuItem mnu导出人员照片;
     }
 }

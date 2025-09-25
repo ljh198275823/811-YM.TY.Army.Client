@@ -268,47 +268,11 @@
     <Compile Include="FrmDivisionMaster.designer.cs">
       <DependentUpon>FrmDivisionMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFacilityDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFacilityDetail.designer.cs">
-      <DependentUpon>FrmFacilityDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmFacilityImport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFacilityImport.designer.cs">
-      <DependentUpon>FrmFacilityImport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmFacilityMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFacilityMaster.designer.cs">
-      <DependentUpon>FrmFacilityMaster.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmPhysicalItemMaster.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPhysicalItemMaster.designer.cs">
       <DependentUpon>FrmPhysicalItemMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmScoreCollect_游泳.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmScoreCollect_游泳.designer.cs">
-      <DependentUpon>FrmScoreCollect_游泳.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmScoreCollect_澳亚特.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmScoreCollect_澳亚特.designer.cs">
-      <DependentUpon>FrmScoreCollect_澳亚特.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmScoreImport_文件夹.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmScoreImport_文件夹.designer.cs">
-      <DependentUpon>FrmScoreImport_文件夹.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm修改成绩.cs">
       <SubType>Form</SubType>
@@ -334,23 +298,11 @@
     <Compile Include="Frm增加成绩.designer.cs">
       <DependentUpon>Frm增加成绩.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm导入学生照片.cs">
+    <Compile Include="Frm导入人员照片.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm导入学生照片.designer.cs">
-      <DependentUpon>Frm导入学生照片.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmHostParameters.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmHostParameters.designer.cs">
-      <DependentUpon>FrmHostParameters.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmHosts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmHosts.designer.cs">
-      <DependentUpon>FrmHosts.cs</DependentUpon>
+    <Compile Include="Frm导入人员照片.designer.cs">
+      <DependentUpon>Frm导入人员照片.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogView.cs">
       <SubType>Form</SubType>
@@ -376,24 +328,6 @@
     <Compile Include="FrmScoreCollectStatitics.designer.cs">
       <DependentUpon>FrmScoreCollectStatitics.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmScoreCollect_Com.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmScoreCollect_Com.designer.cs">
-      <DependentUpon>FrmScoreCollect_Com.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmScoreCollect_Wifi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmScoreCollect_Wifi.designer.cs">
-      <DependentUpon>FrmScoreCollect_Wifi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmScoreImport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmScoreImport.designer.cs">
-      <DependentUpon>FrmScoreImport.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmScoreImport_SingleCol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,12 +345,6 @@
     </Compile>
     <Compile Include="FrmSerialRange.designer.cs">
       <DependentUpon>FrmSerialRange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmSoftDog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSoftDog.designer.cs">
-      <DependentUpon>FrmSoftDog.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStudentDownload.cs">
       <SubType>Form</SubType>
@@ -448,12 +376,6 @@
     <Compile Include="FrmTsnConnect.designer.cs">
       <DependentUpon>FrmTsnConnect.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUKey初始化.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmUKey初始化.designer.cs">
-      <DependentUpon>FrmUKey初始化.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm学生照片采集.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -466,11 +388,11 @@
     <Compile Include="Frm导入特殊情况学生.designer.cs">
       <DependentUpon>Frm导入特殊情况学生.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm导出学生照片.cs">
+    <Compile Include="Frm导出人员照片.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm导出学生照片.designer.cs">
-      <DependentUpon>Frm导出学生照片.cs</DependentUpon>
+    <Compile Include="Frm导出人员照片.designer.cs">
+      <DependentUpon>Frm导出人员照片.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm照片采集示例.cs">
       <SubType>Form</SubType>
@@ -561,26 +483,8 @@
     <EmbeddedResource Include="FrmDivisionMaster.resx">
       <DependentUpon>FrmDivisionMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFacilityDetail.resx">
-      <DependentUpon>FrmFacilityDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmFacilityImport.resx">
-      <DependentUpon>FrmFacilityImport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmFacilityMaster.resx">
-      <DependentUpon>FrmFacilityMaster.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmPhysicalItemMaster.resx">
       <DependentUpon>FrmPhysicalItemMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmScoreCollect_游泳.resx">
-      <DependentUpon>FrmScoreCollect_游泳.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmScoreCollect_澳亚特.resx">
-      <DependentUpon>FrmScoreCollect_澳亚特.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmScoreImport_文件夹.resx">
-      <DependentUpon>FrmScoreImport_文件夹.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStudentMasterBase.resx">
       <DependentUpon>FrmStudentMasterBase.cs</DependentUpon>
@@ -597,14 +501,8 @@
     <EmbeddedResource Include="Frm增加成绩.resx">
       <DependentUpon>Frm增加成绩.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm导入学生照片.resx">
-      <DependentUpon>Frm导入学生照片.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmHostParameters.resx">
-      <DependentUpon>FrmHostParameters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmHosts.resx">
-      <DependentUpon>FrmHosts.cs</DependentUpon>
+    <EmbeddedResource Include="Frm导入人员照片.resx">
+      <DependentUpon>Frm导入人员照片.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogView.resx">
       <DependentUpon>FrmLogView.cs</DependentUpon>
@@ -618,15 +516,6 @@
     <EmbeddedResource Include="FrmScoreCollectStatitics.resx">
       <DependentUpon>FrmScoreCollectStatitics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmScoreCollect_Com.resx">
-      <DependentUpon>FrmScoreCollect_Com.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmScoreCollect_Wifi.resx">
-      <DependentUpon>FrmScoreCollect_Wifi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmScoreImport.resx">
-      <DependentUpon>FrmScoreImport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmScoreImport_SingleCol.resx">
       <DependentUpon>FrmScoreImport_SingleCol.cs</DependentUpon>
     </EmbeddedResource>
@@ -635,9 +524,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSerialRange.resx">
       <DependentUpon>FrmSerialRange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmSoftDog.resx">
-      <DependentUpon>FrmSoftDog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStudentDownload.resx">
       <DependentUpon>FrmStudentDownload.cs</DependentUpon>
@@ -651,17 +537,14 @@
     <EmbeddedResource Include="FrmTsnConnect.resx">
       <DependentUpon>FrmTsnConnect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUKey初始化.resx">
-      <DependentUpon>FrmUKey初始化.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm学生照片采集.resx">
       <DependentUpon>Frm学生照片采集.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm导入特殊情况学生.resx">
       <DependentUpon>Frm导入特殊情况学生.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm导出学生照片.resx">
-      <DependentUpon>Frm导出学生照片.cs</DependentUpon>
+    <EmbeddedResource Include="Frm导出人员照片.resx">
+      <DependentUpon>Frm导出人员照片.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm照片采集示例.resx">
       <DependentUpon>Frm照片采集示例.cs</DependentUpon>

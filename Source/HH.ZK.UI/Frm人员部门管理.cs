@@ -19,9 +19,9 @@ using LJH.GeneralLibrary.CardReader;
 
 namespace HH.ZK.UI
 {
-    public partial class Frm学生信息管理 : FrmMasterBase<string,Student>
+    public partial class Frm人员部门管理 : FrmMasterBase<string,Student>
     {
-        public Frm学生信息管理()
+        public Frm人员部门管理()
         {
             InitializeComponent();
         }
@@ -175,9 +175,9 @@ namespace HH.ZK.UI
         private void FreshView(int pageSize, int pageIndex)
         {
             if (pageSize > 0) SaveConfig(_PageSizeConfig, "PageSize", pageSize.ToString());
-            if (this.facilityTree.SelectedNode != null && this.facilityTree.SelectedNode.Tag != null)
+            if (this.divisionTree.SelectedNode != null && this.divisionTree.SelectedNode.Tag != null)
             {
-                if (this.facilityTree.SelectedNode.Tag is Division)
+                if (this.divisionTree.SelectedNode.Tag is Division)
                 {
                 }
             }
@@ -190,31 +190,11 @@ namespace HH.ZK.UI
             if (rdNonePhoto.Checked) _Search.HasPhoto = false;
             if (rd有人脸特征.Checked) _Search.HasFaceFeature = true;
             if (rd无人脸特征.Checked) _Search.HasFaceFeature = false;
-            if(rd所有特殊状态.Checked)
+            if (this.divisionTree.SelectedNode != null && this.divisionTree.SelectedNode.Tag != null)
             {
-                _Search.States = new List<StudentState>();
-                foreach (var item in Enum.GetValues(typeof(StudentState)))
+                if (this.divisionTree.SelectedNode.Tag is Division)
                 {
-                    if ((StudentState)item == StudentState.正常考试) continue;
-                    _Search.States.Add((StudentState)item);
-                }
-            }
-            if (rd指定状态.Checked  && !string.IsNullOrEmpty(txt考试状态.Text))
-            {
-                _Search.States = new List<StudentState>();
-                _Search.States.Add(txt考试状态.SelectedStudentState);
-            }
-            _Search.ClassName = txtClassName.Text;
-            if (txt考试科目.Tag != null)
-            {
-                if (chk任意一项.Checked) _Search.AnyPhysicalItems = txt考试科目.Tag.ToString();
-                else _Search.PhysicalItems = txt考试科目.Tag.ToString();
-            }
-            if (this.facilityTree.SelectedNode != null && this.facilityTree.SelectedNode.Tag != null)
-            {
-                if (this.facilityTree.SelectedNode.Tag is Division)
-                {
-                    _Search.DivisionID = (this.facilityTree.SelectedNode.Tag as Division).ID;
+                    _Search.DivisionID = (this.divisionTree.SelectedNode.Tag as Division).ID;
                 }
             }
             lock (_Locker)
@@ -228,7 +208,7 @@ namespace HH.ZK.UI
         protected override void Init()
         {
             base.Init();
-            this.facilityTree.Init();
+            this.divisionTree.Init();
             //txt考试状态.Init(AppSettings.Current.PhysicalProject.StateSettings, true);
             this.ucPaging1.Init();
             this.ucPaging1.GetPageData += UcPaging1_GetPageData;
@@ -252,10 +232,6 @@ namespace HH.ZK.UI
             Mnu_DeleteStudents.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Delete);
             mnu导入学生信息.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
             cMnu_Export.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Read);
-            //学校
-            mnu_AddFacility.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Facility, PermissionActions.Edit);
-            mnu_DelFacility.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Facility, PermissionActions.Delete);
-            mnu_FacilityProperty.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Facility, PermissionActions.Read);
             //区域
             mnu_AddDivision.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Division, PermissionActions.Edit);
             mnu_DeleteDivision.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Division, PermissionActions.Delete);
@@ -266,7 +242,7 @@ namespace HH.ZK.UI
         {
             if (AppSettings.Current.PhysicalProject != null)
             {
-                this.facilityTree.Init();
+                this.divisionTree.Init();
                 FreshView(ucPaging1.GetPageSize(), 1);
             }
         }
@@ -316,37 +292,33 @@ namespace HH.ZK.UI
         {
             if (e.Button == MouseButtons.Right)
             {
-                TreeNode node = facilityTree.HitTest(e.X, e.Y).Node;
-                if (node != null && node.Tag != null && node.Tag is Facility)
+                TreeNode node = divisionTree.HitTest(e.X, e.Y).Node;
+                if (node != null && node.Tag != null && node.Tag is Division)
                 {
-                    facilityTree.ContextMenuStrip = FacilityMenu;
-                }
-                else
-                {
-                    facilityTree.ContextMenuStrip = DivisionMenu;
+                    divisionTree.ContextMenuStrip = DivisionMenu;
                 }
             }
         }
 
         private void mnu_AddDivision_Click(object sender, EventArgs e)
         {
-            Division pc = facilityTree.SelectedNode.Tag as Division;
+            Division pc = divisionTree.SelectedNode.Tag as Division;
             FrmDivisionDetail frm = new FrmDivisionDetail();
             frm.IsAdding = true;
             frm.ParentDivision = pc;
             frm.ItemAdded += delegate (object obj, ItemAddedEventArgs args)
             {
                 Division item = args.AddedItem as Division;
-                facilityTree.AddDivisionNode(item, facilityTree.SelectedNode);
-                facilityTree.SelectedNode.Expand();
+                divisionTree.AddDivisionNode(item, divisionTree.SelectedNode);
+                divisionTree.SelectedNode.Expand();
             };
             frm.ShowDialog();
         }
 
         private void mnu_DeleteDivision_Click(object sender, EventArgs e)
         {
-            var node = facilityTree.SelectedNode;
-            Division pc = facilityTree.SelectedNode.Tag as Division;
+            var node = divisionTree.SelectedNode;
+            Division pc = divisionTree.SelectedNode.Tag as Division;
             if (MessageBox.Show("是否删除此区域及其子节点?", "询问", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
                 DelNode(node);
@@ -375,7 +347,7 @@ namespace HH.ZK.UI
                     var ret = (new APIClient(AppSettings.Current.ConnStr)).Delete<Guid, Division>(pc, AppSettings.Current.PhysicalProject.ID);
                     if (ret.Result == ResultCode.Successful)
                     {
-                        this.facilityTree.RemoveNode(node);
+                        this.divisionTree.RemoveNode(node);
                     }
                 }
                 Facility f = node.Tag as Facility;
@@ -384,7 +356,7 @@ namespace HH.ZK.UI
                     var ret = new APIClient(AppSettings.Current.ConnStr).Delete<string, Facility>(f, AppSettings.Current.PhysicalProject.ID);
                     if (ret.Result == ResultCode.Successful)
                     {
-                        this.facilityTree.RemoveNode(node);
+                        this.divisionTree.RemoveNode(node);
                     }
                 }
             }
@@ -392,7 +364,7 @@ namespace HH.ZK.UI
 
         private void mnu_DivisionProperty_Click(object sender, EventArgs e)
         {
-            Division pc = facilityTree.SelectedNode.Tag as Division;
+            Division pc = divisionTree.SelectedNode.Tag as Division;
             if (pc != null)
             {
                 FrmDivisionDetail frm = new FrmDivisionDetail();
@@ -400,29 +372,11 @@ namespace HH.ZK.UI
                 frm.UpdatingItem = pc;
                 frm.ItemUpdated += delegate (object obj, ItemUpdatedEventArgs args)
                 {
-                    this.facilityTree.Init();
-                    facilityTree.SelectDivisionNode(pc.ID);
+                    this.divisionTree.Init();
+                    divisionTree.SelectDivisionNode(pc.ID);
                 };
                 frm.ShowDialog();
             }
-        }
-
-        private void mnu_AddFacility_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void mnu_DelFacility_Click(object sender, EventArgs e)
-        {
-            Facility pc = facilityTree.SelectedNode.Tag as Facility;
-            if (pc != null && MessageBox.Show("是否删除此学校?", "询问", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
-            {
-                DelNode(facilityTree.SelectedNode);
-                facilityTree.Init();
-            }
-        }
-
-        private void mnu_FacilityProperty_Click(object sender, EventArgs e)
-        {
         }
         #endregion
 
@@ -443,27 +397,19 @@ namespace HH.ZK.UI
             DeleteStudents(students);
         }
 
-        private void mnu批量修改考试科目_Click(object sender, EventArgs e)
+        private void mnu导入学生照片_Click(object sender, EventArgs e)
         {
-            
+            var frm = new Frm导入人员照片();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+            ReFreshData();
         }
 
-        private void mnu导入学生考试科目_Click(object sender, EventArgs e)
+        private void mnu导出人员照片_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void mnu导入学生特殊情况_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void mnu导入平时成绩_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void mnu设置学生考试状态_Click(object sender, EventArgs e)
-        {
+            var frm = new Frm导出人员照片();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
         }
         #endregion
 
@@ -473,11 +419,6 @@ namespace HH.ZK.UI
             FreshView(ucPaging1.GetPageSize(), 1);
         }
 
-        private void rd指定状态_CheckedChanged(object sender, EventArgs e)
-        {
-            txt考试状态.Enabled = rd指定状态.Checked;
-        }
-
         private void UcPaging1_GetPageData(int pageInex, int pageSize)
         {
             FreshView(pageSize, pageInex);
@@ -485,26 +426,7 @@ namespace HH.ZK.UI
 
         private void mn刷新学校_Click(object sender, EventArgs e)
         {
-            facilityTree.Init();
-        }
-
-        private void lnk考试科目_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var frm = new Frm考试科目选择();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.SelectedPhysicalIDs = txt考试科目.Tag != null ? txt考试科目.Tag.ToString() : null;
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                var sp = frm.SelectedPhysicalIDs;
-                txt考试科目.Tag = frm.SelectedPhysicalIDs;
-                txt考试科目.Text = AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(frm.SelectedPhysicalIDs);
-            }
-        }
-
-        private void txt考试科目_DoubleClick(object sender, EventArgs e)
-        {
-            txt考试科目.Tag = null;
-            txt考试科目.Text = string.Empty;
+            divisionTree.Init();
         }
         #endregion
 
@@ -517,5 +439,7 @@ namespace HH.ZK.UI
             frm.Students = students;
             frm.ShowDialog();
         }
+
+        
     }
 }
