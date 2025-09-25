@@ -98,7 +98,7 @@ namespace HH.ZK.UI
             row.Cells["colClassName"].Value = s.ClassName;
             //row.Cells["col考试科目"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(s.PhysicalItems);
             row.Cells["colFacility"].Value = s.DivisionName;
-            row.Cells["colState"].Value = s.State == StudentState.正常考试 ? null : s.State.ToString();
+            row.Cells["colState"].Value = s.State == StudentState.正常 ? null : s.State.ToString();
             if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) row.Cells["col总分"].Value = s.Total;
             //row.Cells["col检录"].Value = s.CheckTime?.ToString("yyyy-MM-dd HH:mm:ss");
             //row.Cells["col加分"].Value = s.JiaFen.Trim();
@@ -258,7 +258,7 @@ namespace HH.ZK.UI
                 con.States = new List<StudentState>();
                 foreach (var item in Enum.GetValues(typeof(StudentState)))
                 {
-                    if ((StudentState)item == StudentState.正常考试) continue;
+                    if ((StudentState)item == StudentState.正常) continue;
 
                     con.States.Add((StudentState)item);
                 }
@@ -411,8 +411,6 @@ namespace HH.ZK.UI
                 string temp = AppSettings.Current.GetConfigContent("ExportScoreModelTemplateRow");
                 int templateRow = 0;
                 if (!string.IsNullOrEmpty(temp)) int.TryParse(temp, out templateRow);
-                string school = ucStudentSearch1.GetFacilityName();
-                var group = ucStudentSearch1.GetGroup();
                 FolderBrowserDialog dig = new FolderBrowserDialog();
                 if (dig.ShowDialog() != DialogResult.OK) return;
                 var folder = dig.SelectedPath;
@@ -422,7 +420,7 @@ namespace HH.ZK.UI
                 foreach (var gp in groups)
                 {
                     string path = System.IO.Path.Combine(folder, gp.Key + ".xls");
-                    bool ret = new StudentWithTotalExporter(model).ExportToFile(gp.ToList(), path, templateRow, school, group);
+                    bool ret = new StudentWithTotalExporter(model).ExportToFile(gp.ToList(), path, templateRow, null, null);
                 }
                 MessageBox.Show("导出完成");
             }

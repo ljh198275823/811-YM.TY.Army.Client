@@ -42,5 +42,24 @@ namespace HH.ZK.Model
 
         public string Operator { get; set; }
         #endregion
+
+        #region 实时属性
+        /// <summary>
+        /// 获取或设置人员姓名
+        /// </summary>
+        public string StudentName { get; set; }
+        /// <summary>
+        /// 获取或设置部门名称
+        /// </summary>
+        public string DivisionName { get; set; }
+        /// <summary>
+        /// 获取或设置性别
+        /// </summary>
+        public Gender? Gender { get; set; }
+
+        public string ProjectName { get; set; }
+
+        public string ProjectShortName { get; set; }
+        #endregion
     }
 }

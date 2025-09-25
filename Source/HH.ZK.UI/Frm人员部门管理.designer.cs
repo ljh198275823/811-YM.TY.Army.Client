@@ -40,10 +40,10 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnu导入学生信息 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu导入学生照片 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu设置训练计划 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cMnu_SelectColumns = new System.Windows.Forms.ToolStripMenuItem();
             this.cMnu_Export = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu导出人员照片 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.DivisionMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mn刷新部门 = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +84,6 @@
             this.col照片 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col人脸识别 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colFill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mnu导出人员照片 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.DivisionMenu.SuspendLayout();
@@ -127,13 +126,12 @@
             this.toolStripSeparator3,
             this.mnu导入学生信息,
             this.mnu导入学生照片,
-            this.mnu设置训练计划,
             this.toolStripSeparator1,
             this.cMnu_SelectColumns,
             this.cMnu_Export,
             this.mnu导出人员照片});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 236);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 214);
             // 
             // cMnu_Fresh
             // 
@@ -173,13 +171,6 @@
             this.mnu导入学生照片.Text = "导入人员照片";
             this.mnu导入学生照片.Click += new System.EventHandler(this.mnu导入学生照片_Click);
             // 
-            // mnu设置训练计划
-            // 
-            this.mnu设置训练计划.Name = "mnu设置训练计划";
-            this.mnu设置训练计划.Size = new System.Drawing.Size(180, 22);
-            this.mnu设置训练计划.Text = "设置训练计划";
-            this.mnu设置训练计划.Click += new System.EventHandler(this.mnu设置训练计划_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -196,6 +187,13 @@
             this.cMnu_Export.Name = "cMnu_Export";
             this.cMnu_Export.Size = new System.Drawing.Size(180, 22);
             this.cMnu_Export.Text = "导出人员信息...";
+            // 
+            // mnu导出人员照片
+            // 
+            this.mnu导出人员照片.Name = "mnu导出人员照片";
+            this.mnu导出人员照片.Size = new System.Drawing.Size(180, 22);
+            this.mnu导出人员照片.Text = "导出人员照片";
+            this.mnu导出人员照片.Click += new System.EventHandler(this.mnu导出人员照片_Click);
             // 
             // splitter1
             // 
@@ -617,13 +615,6 @@
             this.colFill.Name = "colFill";
             this.colFill.ReadOnly = true;
             // 
-            // mnu导出人员照片
-            // 
-            this.mnu导出人员照片.Name = "mnu导出人员照片";
-            this.mnu导出人员照片.Size = new System.Drawing.Size(180, 22);
-            this.mnu导出人员照片.Text = "导出人员照片";
-            this.mnu导出人员照片.Click += new System.EventHandler(this.mnu导出人员照片_Click);
-            // 
             // Frm人员部门管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -701,7 +692,6 @@
         private System.Windows.Forms.RadioButton rd无人脸特征;
         private System.Windows.Forms.RadioButton rd人脸特征全部;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripMenuItem mnu设置训练计划;
         private System.Windows.Forms.ToolStripMenuItem mnu导入学生照片;
         private System.Windows.Forms.DataGridViewTextBoxColumn col序号;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFacility;

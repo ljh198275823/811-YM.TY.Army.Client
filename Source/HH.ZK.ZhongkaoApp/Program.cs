@@ -18,7 +18,7 @@ namespace HH.ZK.UIApp
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Form frm = new HH.ZK.UI.FrmMain_ZK();
+                Form frm = new HH.ZK.UI.FrmMain();
                 Application.Run(frm);
             }
             else

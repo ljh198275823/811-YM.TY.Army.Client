@@ -87,7 +87,7 @@ namespace HH.ZK.CommonUI
                 //    else ret = null;
                 //    return true;
                 case "特殊情况":
-                    ret = s.State != StudentState.正常考试 ? s.State.ToString() : null;
+                    ret = s.State != StudentState.正常 ? s.State.ToString() : null;
                     return true;
                 default:
                     ret = null;

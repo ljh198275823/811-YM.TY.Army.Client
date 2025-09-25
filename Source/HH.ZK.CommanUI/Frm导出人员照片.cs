@@ -102,15 +102,6 @@ namespace HH.ZK.CommonUI
             dataGridView1.Rows.Clear();
             var con = ucStudentSearch1.GetSearchCondition();
             con.HasPhoto = true;
-            if (txt考试科目.Tag != null)
-            {
-                if (chk任意一项.Checked) con.AnyPhysicalItems = txt考试科目.Tag.ToString();
-                else con.PhysicalItems = txt考试科目.Tag.ToString();
-            }
-            con.States = new List<StudentState>();
-            if (chk正常考试.Checked) con.States.Add(StudentState.正常考试);
-            if (chk择考.Checked) con.States.Add(StudentState.择考);
-            if (chk缓考.Checked) con.States.Add(StudentState.缓考);
             var ret = new APIClient(AppSettings.Current.ConnStr).GetList<string, Student>(con, AppSettings.Current.PhysicalProject.ID);
             if (ret.Result != LJH.GeneralLibrary.ResultCode.Successful)
             {
@@ -248,7 +239,6 @@ namespace HH.ZK.CommonUI
             var folder = dig.SelectedPath;
             string photos = null;
             string fname = null;
-            if (string.IsNullOrEmpty(fname)) fname = ucStudentSearch1.GetFacilityName();
             if (string.IsNullOrEmpty(fname)) fname = ucStudentSearch1.GetDivisionName();
             if (string.IsNullOrEmpty(fname)) fname = DateTime.Now.ToString("yyyyMMddHHmmss");
             try
@@ -299,18 +289,5 @@ namespace HH.ZK.CommonUI
             MessageBox.Show(string.Format("总共导出 {0} 个学生，其中成功导出 {1} 个学生", count, success));
         }
         #endregion
-
-        private void lnk考试科目_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var frm = new Frm考试科目选择();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.SelectedPhysicalIDs = txt考试科目.Tag != null ? txt考试科目.Tag.ToString() : null;
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                var sp = frm.SelectedPhysicalIDs;
-                txt考试科目.Tag = frm.SelectedPhysicalIDs;
-                txt考试科目.Text = AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(frm.SelectedPhysicalIDs);
-            }
-        }
     }
 }

@@ -19,21 +19,10 @@ namespace HH.ZK.CommonUI.Controls
             InitializeComponent();
         }
 
-        private string _ProjectID;
-
         #region 公共方法
         public void Init()
         {
-            cmbDivision.SelectedIndexChanged -= new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
             cmbDivision.Init();
-            cmbDivision.SelectedIndexChanged += new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
-
-            cmbFacility.SelectedIndexChanged -= new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
-            cmbFacility.Init();
-            cmbFacility.SelectedIndexChanged += new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
-
-            txtGroupID.Init(null, null);
-            txtGroupID.Enabled = txtGroupID.Items.Count > 1;
         }
 
         public StudentSearchCondition GetSearchCondition()
@@ -43,9 +32,7 @@ namespace HH.ZK.CommonUI.Controls
             if (rdFemale.Checked) con.Sex = Gender.Female;
             if (!string.IsNullOrEmpty(txtStudentID1.Text)) con.StudentIDLike = txtStudentID1.Text;
             if (!string.IsNullOrEmpty(txtName.Text)) con.Name = txtName.Text;
-            if (!string.IsNullOrEmpty(txtGroupID.Text)) con.GroupID = txtGroupID.SelectedGroupID;
-            else if (!string.IsNullOrEmpty(cmbFacility.Text)) con.FacilityID = cmbFacility.SelectedFacilityID;
-            else if (!string.IsNullOrEmpty(cmbDivision.Text)) con.DivisionID = cmbDivision.SelectedDivisionID;
+            if (!string.IsNullOrEmpty(cmbDivision.Text)) con.DivisionID = cmbDivision.SelectedDivisionID;
             con.SortMode = LJH.GeneralLibrary.SortMode.Asc;
             return con;
         }
@@ -56,47 +43,23 @@ namespace HH.ZK.CommonUI.Controls
             if (rdFemale.Checked) con.Sex = Gender.Female;
             if (!string.IsNullOrEmpty(txtStudentID1.Text)) con.StudentIDLike = txtStudentID1.Text;
             if (!string.IsNullOrEmpty(txtName.Text)) con.Name = txtName.Text;
-            if (!string.IsNullOrEmpty(txtGroupID.Text)) con.GroupID = txtGroupID.SelectedGroupID;
-            else if (!string.IsNullOrEmpty(cmbFacility.Text)) con.FacilityID = cmbFacility.SelectedFacilityID;
-            else if (!string.IsNullOrEmpty(cmbDivision.Text)) con.DivisionID = cmbDivision.SelectedDivisionID;
+            if (!string.IsNullOrEmpty(cmbDivision.Text)) con.DivisionID = cmbDivision.SelectedDivisionID;
             con.SortMode = LJH.GeneralLibrary.SortMode.Asc;
-        }
-
-        public string GetGroupName()
-        {
-            return txtGroupID.Text;
-        }
-
-        public StudentGroupSummary GetGroup()
-        {
-            return txtGroupID.SelectedGroup;
-        }
-
-        public string GetFacilityName()
-        {
-            return cmbFacility.Text;
         }
 
         public string GetDivisionName()
         {
             return cmbDivision.Text;
         }
-        #endregion
 
-        #region 事件处理程序
-        private void cmbDivision_SelectedIndexChanged(object sender, EventArgs e)
+        public string GetFacilityName()
         {
-            cmbFacility.SelectedIndexChanged -= new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
-            cmbFacility.Init(cmbDivision.SelectedDivisionID);
-            txtGroupID.Init(_ProjectID, null);
-            cmbFacility.SelectedIndexChanged += new System.EventHandler(this.cmbFacility_SelectedIndexChanged);
+            return null;
         }
 
-        private void cmbFacility_SelectedIndexChanged(object sender, EventArgs e)
+        public string GetGroup()
         {
-            if (!string.IsNullOrEmpty(cmbFacility.SelectedFacilityID)) txtGroupID.Init(_ProjectID, cmbFacility.SelectedFacilityID);
-            else txtGroupID.Init(_ProjectID, null);
-            txtGroupID.Enabled = txtGroupID.Items.Count > 1;
+            return null;
         }
         #endregion
     }

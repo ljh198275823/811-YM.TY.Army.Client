@@ -28,9 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm导出人员照片));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colFacility = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.gpStudent = new System.Windows.Forms.GroupBox();
@@ -46,21 +53,6 @@
             this.btnNone = new System.Windows.Forms.Button();
             this.btnAll = new System.Windows.Forms.Button();
             this.ucStudentSearch1 = new HH.ZK.CommonUI.Controls.UCStudentSearch();
-            this.chk任意一项 = new System.Windows.Forms.CheckBox();
-            this.chk缓考 = new System.Windows.Forms.CheckBox();
-            this.chk择考 = new System.Windows.Forms.CheckBox();
-            this.chk正常考试 = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lnk考试科目 = new System.Windows.Forms.LinkLabel();
-            this.txt考试科目 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
-            this.colSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colFacility = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.gpStudent.SuspendLayout();
@@ -89,6 +81,59 @@
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridview1_CellContentClick);
+            // 
+            // colSelect
+            // 
+            resources.ApplyResources(this.colSelect, "colSelect");
+            this.colSelect.Name = "colSelect";
+            this.colSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colFacility
+            // 
+            this.colFacility.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            resources.ApplyResources(this.colFacility, "colFacility");
+            this.colFacility.Name = "colFacility";
+            this.colFacility.ReadOnly = true;
+            // 
+            // colClassName
+            // 
+            this.colClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            resources.ApplyResources(this.colClassName, "colClassName");
+            this.colClassName.Name = "colClassName";
+            this.colClassName.ReadOnly = true;
+            // 
+            // colGrade
+            // 
+            resources.ApplyResources(this.colGrade, "colGrade");
+            this.colGrade.Name = "colGrade";
+            this.colGrade.ReadOnly = true;
+            // 
+            // colID
+            // 
+            resources.ApplyResources(this.colID, "colID");
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colName
+            // 
+            resources.ApplyResources(this.colName, "colName");
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colSex
+            // 
+            resources.ApplyResources(this.colSex, "colSex");
+            this.colSex.Name = "colSex";
+            this.colSex.ReadOnly = true;
+            this.colSex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colFill
+            // 
+            this.colFill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.colFill, "colFill");
+            this.colFill.Name = "colFill";
+            this.colFill.ReadOnly = true;
             // 
             // statusStrip1
             // 
@@ -193,117 +238,10 @@
             resources.ApplyResources(this.ucStudentSearch1, "ucStudentSearch1");
             this.ucStudentSearch1.Name = "ucStudentSearch1";
             // 
-            // chk任意一项
-            // 
-            resources.ApplyResources(this.chk任意一项, "chk任意一项");
-            this.chk任意一项.Name = "chk任意一项";
-            this.chk任意一项.UseVisualStyleBackColor = true;
-            // 
-            // chk缓考
-            // 
-            resources.ApplyResources(this.chk缓考, "chk缓考");
-            this.chk缓考.Name = "chk缓考";
-            this.chk缓考.UseVisualStyleBackColor = true;
-            // 
-            // chk择考
-            // 
-            resources.ApplyResources(this.chk择考, "chk择考");
-            this.chk择考.Checked = true;
-            this.chk择考.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk择考.Name = "chk择考";
-            this.chk择考.UseVisualStyleBackColor = true;
-            // 
-            // chk正常考试
-            // 
-            resources.ApplyResources(this.chk正常考试, "chk正常考试");
-            this.chk正常考试.Checked = true;
-            this.chk正常考试.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk正常考试.Name = "chk正常考试";
-            this.chk正常考试.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // lnk考试科目
-            // 
-            resources.ApplyResources(this.lnk考试科目, "lnk考试科目");
-            this.lnk考试科目.Name = "lnk考试科目";
-            this.lnk考试科目.TabStop = true;
-            this.lnk考试科目.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk考试科目_LinkClicked);
-            // 
-            // txt考试科目
-            // 
-            this.txt考试科目.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.txt考试科目, "txt考试科目");
-            this.txt考试科目.Name = "txt考试科目";
-            this.txt考试科目.ReadOnly = true;
-            // 
-            // colSelect
-            // 
-            resources.ApplyResources(this.colSelect, "colSelect");
-            this.colSelect.Name = "colSelect";
-            this.colSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colFacility
-            // 
-            this.colFacility.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            resources.ApplyResources(this.colFacility, "colFacility");
-            this.colFacility.Name = "colFacility";
-            this.colFacility.ReadOnly = true;
-            // 
-            // colClassName
-            // 
-            this.colClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            resources.ApplyResources(this.colClassName, "colClassName");
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
-            // 
-            // colGrade
-            // 
-            resources.ApplyResources(this.colGrade, "colGrade");
-            this.colGrade.Name = "colGrade";
-            this.colGrade.ReadOnly = true;
-            // 
-            // colID
-            // 
-            resources.ApplyResources(this.colID, "colID");
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            resources.ApplyResources(this.colName, "colName");
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colSex
-            // 
-            resources.ApplyResources(this.colSex, "colSex");
-            this.colSex.Name = "colSex";
-            this.colSex.ReadOnly = true;
-            this.colSex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colFill
-            // 
-            this.colFill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.colFill, "colFill");
-            this.colFill.Name = "colFill";
-            this.colFill.ReadOnly = true;
-            // 
-            // Frm导出学生照片
+            // Frm导出人员照片
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.chk任意一项);
-            this.Controls.Add(this.chk缓考);
-            this.Controls.Add(this.chk择考);
-            this.Controls.Add(this.chk正常考试);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lnk考试科目);
-            this.Controls.Add(this.txt考试科目);
             this.Controls.Add(this.ucStudentSearch1);
             this.Controls.Add(this.lbl选择数量);
             this.Controls.Add(this.btnNone);
@@ -312,7 +250,7 @@
             this.Controls.Add(this.gpStudent);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Frm导出学生照片";
+            this.Name = "Frm导出人员照片";
             this.Load += new System.EventHandler(this.FrmScoreBillPrint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -341,13 +279,6 @@
         private System.Windows.Forms.Button btnAll;
         private Controls.UCStudentSearch ucStudentSearch1;
         private System.Windows.Forms.Button btn开始人脸识别文件夹;
-        private System.Windows.Forms.CheckBox chk任意一项;
-        private System.Windows.Forms.CheckBox chk缓考;
-        private System.Windows.Forms.CheckBox chk择考;
-        private System.Windows.Forms.CheckBox chk正常考试;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel lnk考试科目;
-        private LJH.GeneralLibrary.WinformControl.DBCTextBox txt考试科目;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSelect;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFacility;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;

@@ -35,16 +35,18 @@
             this.txtProject = new HH.ZK.CommonUI.Controls.PhysicalProjectComboBox(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dt训练日期 = new System.Windows.Forms.DateTimePicker();
+            this.dt结束训练日期 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dt开始训练日期 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(297, 153);
+            this.btnCancel.Location = new System.Drawing.Point(334, 164);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(119, 34);
+            this.btnCancel.Size = new System.Drawing.Size(90, 52);
             this.btnCancel.TabIndex = 88;
             this.btnCancel.Text = "取消(&C)";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -53,9 +55,9 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(162, 153);
+            this.btnOk.Location = new System.Drawing.Point(93, 164);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(119, 34);
+            this.btnOk.Size = new System.Drawing.Size(218, 52);
             this.btnOk.TabIndex = 87;
             this.btnOk.Text = "确定(&O)";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -89,20 +91,44 @@
             this.label2.TabIndex = 90;
             this.label2.Text = "训练日期";
             // 
-            // dt训练日期
+            // dt结束训练日期
             // 
-            this.dt训练日期.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dt训练日期.Location = new System.Drawing.Point(93, 94);
-            this.dt训练日期.Name = "dt训练日期";
-            this.dt训练日期.Size = new System.Drawing.Size(331, 30);
-            this.dt训练日期.TabIndex = 91;
+            this.dt结束训练日期.CustomFormat = "yyyy-MM-dd";
+            this.dt结束训练日期.Font = new System.Drawing.Font("宋体", 15F);
+            this.dt结束训练日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt结束训练日期.Location = new System.Drawing.Point(275, 94);
+            this.dt结束训练日期.Name = "dt结束训练日期";
+            this.dt结束训练日期.Size = new System.Drawing.Size(152, 30);
+            this.dt结束训练日期.TabIndex = 316;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(252, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.TabIndex = 315;
+            this.label3.Text = "--";
+            // 
+            // dt开始训练日期
+            // 
+            this.dt开始训练日期.CustomFormat = "yyyy-MM-dd";
+            this.dt开始训练日期.Font = new System.Drawing.Font("宋体", 15F);
+            this.dt开始训练日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt开始训练日期.Location = new System.Drawing.Point(93, 94);
+            this.dt开始训练日期.Name = "dt开始训练日期";
+            this.dt开始训练日期.Size = new System.Drawing.Size(152, 30);
+            this.dt开始训练日期.TabIndex = 314;
             // 
             // Frm设置训练计划
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 208);
-            this.Controls.Add(this.dt训练日期);
+            this.ClientSize = new System.Drawing.Size(444, 238);
+            this.Controls.Add(this.dt结束训练日期);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dt开始训练日期);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
@@ -126,6 +152,8 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dt训练日期;
+        private System.Windows.Forms.DateTimePicker dt结束训练日期;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dt开始训练日期;
     }
 }

@@ -48,7 +48,7 @@ namespace HH.ZK.CommonUI.Controls
                     this.Items.Add(item.State.ToString());
                 }
             }
-            if (显示正常状态) this.Items.Add(StudentState.正常考试.ToString());
+            if (显示正常状态) this.Items.Add(StudentState.正常.ToString());
         }
 
         [Browsable(false)]
@@ -67,7 +67,7 @@ namespace HH.ZK.CommonUI.Controls
                         return st;
                     }
                 }
-                return StudentState.正常考试;
+                return StudentState.正常;
             }
             set
             {

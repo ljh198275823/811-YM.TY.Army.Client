@@ -91,7 +91,7 @@ namespace HH.ZK.UI
             row.Cells["colName"].Value = s.Name;
             row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
             row.Cells["colFacility"].Value = s.DivisionName;
-            row.Cells["colState"].Value = s.State == StudentState.正常考试 ? null : s.State.ToString();
+            row.Cells["colState"].Value = s.State == StudentState.正常 ? null : s.State.ToString();
             if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) row.Cells["col总分"].Value = s.Total;
             foreach (DataGridViewColumn col in _ScoreCols)
             {

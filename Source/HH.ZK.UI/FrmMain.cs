@@ -19,9 +19,9 @@ using AutoUpdaterDotNET;
 
 namespace HH.ZK.UI
 {
-    public partial class FrmMain_ZK : Form
+    public partial class FrmMain : Form
     {
-        public FrmMain_ZK()
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -447,7 +447,7 @@ namespace HH.ZK.UI
 
         private void mnu学生成绩管理_Click(object sender, EventArgs e)
         {
-            ShowSingleForm<Frm学生成绩管理>(sender);
+            ShowSingleForm<Frm训练成绩管理>(sender);
         }
 
         private void mnu学生成绩仲裁记录报表_Click(object sender, EventArgs e)
@@ -501,7 +501,17 @@ namespace HH.ZK.UI
 
         private void mmu训练成绩管理_Click(object sender, EventArgs e)
         {
-            ShowSingleForm<Frm学生成绩管理>();
+            ShowSingleForm<Frm训练成绩管理>();
+        }
+
+        private void mnu账号管理_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<Frm账号管理>();
+        }
+
+        private void mnu训练考核计划管理_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<Frm训练计划管理>();
         }
     }
 }

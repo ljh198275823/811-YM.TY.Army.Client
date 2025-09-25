@@ -1,6 +1,6 @@
 ﻿namespace HH.ZK.UI
 {
-    partial class FrmMain_ZK
+    partial class FrmMain
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain_ZK));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_ChangPwd = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +41,7 @@
             this.mnu人员部门管理 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu训练考核大纲管理 = new System.Windows.Forms.ToolStripMenuItem();
             this.训练计划ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu训练考核计划管理 = new System.Windows.Forms.ToolStripMenuItem();
             this.训练结果ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu训练成绩管理 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu导入成绩 = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +74,6 @@
             this.lblOperator = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblState = new System.Windows.Forms.ToolStripStatusLabel();
             this.ucFormViewMain = new LJH.GeneralLibrary.WinformControl.UCFormViewEx();
-            this.训练考核计划管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.mainToolBar.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -145,6 +145,7 @@
             this.mnu账号管理.Name = "mnu账号管理";
             this.mnu账号管理.Size = new System.Drawing.Size(126, 22);
             this.mnu账号管理.Text = "账号管理";
+            this.mnu账号管理.Click += new System.EventHandler(this.mnu账号管理_Click);
             // 
             // mnu基础数据
             // 
@@ -158,24 +159,31 @@
             // mnu人员部门管理
             // 
             this.mnu人员部门管理.Name = "mnu人员部门管理";
-            this.mnu人员部门管理.Size = new System.Drawing.Size(180, 22);
+            this.mnu人员部门管理.Size = new System.Drawing.Size(178, 22);
             this.mnu人员部门管理.Text = "人员部门管理";
             this.mnu人员部门管理.Click += new System.EventHandler(this.mnu人员部门管理_Click);
             // 
             // mnu训练考核大纲管理
             // 
             this.mnu训练考核大纲管理.Name = "mnu训练考核大纲管理";
-            this.mnu训练考核大纲管理.Size = new System.Drawing.Size(180, 22);
+            this.mnu训练考核大纲管理.Size = new System.Drawing.Size(178, 22);
             this.mnu训练考核大纲管理.Text = "训练考核大纲管理";
             this.mnu训练考核大纲管理.Click += new System.EventHandler(this.mnu训练考核大纲管理_Click);
             // 
             // 训练计划ToolStripMenuItem
             // 
             this.训练计划ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.训练考核计划管理ToolStripMenuItem});
+            this.mnu训练考核计划管理});
             this.训练计划ToolStripMenuItem.Name = "训练计划ToolStripMenuItem";
             this.训练计划ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.训练计划ToolStripMenuItem.Text = "训练计划";
+            // 
+            // mnu训练考核计划管理
+            // 
+            this.mnu训练考核计划管理.Name = "mnu训练考核计划管理";
+            this.mnu训练考核计划管理.Size = new System.Drawing.Size(180, 22);
+            this.mnu训练考核计划管理.Text = "训练考核计划管理";
+            this.mnu训练考核计划管理.Click += new System.EventHandler(this.mnu训练考核计划管理_Click);
             // 
             // 训练结果ToolStripMenuItem
             // 
@@ -189,14 +197,14 @@
             // mnu训练成绩管理
             // 
             this.mnu训练成绩管理.Name = "mnu训练成绩管理";
-            this.mnu训练成绩管理.Size = new System.Drawing.Size(180, 22);
+            this.mnu训练成绩管理.Size = new System.Drawing.Size(152, 22);
             this.mnu训练成绩管理.Text = "训练成绩管理";
             this.mnu训练成绩管理.Click += new System.EventHandler(this.mmu训练成绩管理_Click);
             // 
             // mnu导入成绩
             // 
             this.mnu导入成绩.Name = "mnu导入成绩";
-            this.mnu导入成绩.Size = new System.Drawing.Size(180, 22);
+            this.mnu导入成绩.Size = new System.Drawing.Size(152, 22);
             this.mnu导入成绩.Text = "导入成绩";
             this.mnu导入成绩.Click += new System.EventHandler(this.mnu导入成绩_Click);
             // 
@@ -454,13 +462,7 @@
             this.ucFormViewMain.Size = new System.Drawing.Size(1316, 32);
             this.ucFormViewMain.TabIndex = 35;
             // 
-            // 训练考核计划管理ToolStripMenuItem
-            // 
-            this.训练考核计划管理ToolStripMenuItem.Name = "训练考核计划管理ToolStripMenuItem";
-            this.训练考核计划管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.训练考核计划管理ToolStripMenuItem.Text = "训练考核计划管理";
-            // 
-            // FrmMain_ZK
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -472,7 +474,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mainMenu;
-            this.Name = "FrmMain_ZK";
+            this.Name = "FrmMain";
             this.Text = "AI 军事体能考核总系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
@@ -534,7 +536,7 @@
         private System.Windows.Forms.ToolStripMenuItem 训练结果ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnu训练成绩管理;
         private System.Windows.Forms.ToolStripMenuItem mnu导入成绩;
-        private System.Windows.Forms.ToolStripMenuItem 训练考核计划管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnu训练考核计划管理;
     }
 }
 

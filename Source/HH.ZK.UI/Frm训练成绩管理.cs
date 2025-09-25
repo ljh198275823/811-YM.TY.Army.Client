@@ -14,9 +14,9 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.UI
 {
-    public partial class Frm学生成绩管理 : FrmReportBaseWithPaging<string, StudentWithTotal>
+    public partial class Frm训练成绩管理 : FrmReportBaseWithPaging<string, StudentWithTotal>
     {
-        public Frm学生成绩管理()
+        public Frm训练成绩管理()
         {
             InitializeComponent();
         }
@@ -231,10 +231,7 @@ namespace HH.ZK.UI
             btnSearch.Enabled = AppSettings.Current.Operator.PermitAny(Permission.StudentScore, PermissionActions.Read);
             btnSaveAs.Enabled = AppSettings.Current.Operator.PermitAny(Permission.StudentScore, PermissionActions.Read);
             mnu删除所选成绩.Enabled = AppSettings.Current.Operator.PermitAny(Permission.StudentScore, PermissionActions.Delete);
-            mnu删除所选学生.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Delete);
             mnu设置学生类别.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
-            mnu设置学生考试科目.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.Edit);
-            mnu取消检录.Enabled = AppSettings.Current.Operator.PermitAny(Permission.Student, PermissionActions.CheckStudent);
         }
 
         protected override QueryResultList<StudentWithTotal> GetDataSource(int pageSize, int pageIndex)
@@ -247,7 +244,7 @@ namespace HH.ZK.UI
             var con = new StudentWithTotalSearchCondition();
             ucStudentSearch1.GetSearchCondition(con);
             con.ProjectID = txtProject.SelectedProjectID;
-            con.DateRange = new DateTimeRange(DateTime.Today, DateTime.Today);
+            con.DateRange = new DateTimeRange(dt开始训练日期.Value.Date, dt结束训练日期.Value.Date);
             con.PageIndex = pageIndex;
             con.PageSize = pageSize;
 
@@ -257,20 +254,6 @@ namespace HH.ZK.UI
                 if (rd测试完成.Checked) con.TestStates.Add(TestCompleteState.全部完成);
                 if (rd未测试.Checked) con.TestStates.Add(TestCompleteState.未测试);
                 if (rd没有完成测试.Checked) con.TestStates.Add(TestCompleteState.部分科目完成);
-            }
-            if (rd所有特殊状态.Checked)
-            {
-                con.States = new List<StudentState>();
-                foreach (var item in Enum.GetValues(typeof(StudentState)))
-                {
-                    if ((StudentState)item == StudentState.正常考试) continue;
-                    con.States.Add((StudentState)item);
-                }
-            }
-            if (rd指定状态.Checked && !string.IsNullOrEmpty(txt考试状态.Text))
-            {
-                con.States = new List<StudentState>();
-                con.States.Add(txt考试状态.SelectedStudentState);
             }
             var ret = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithTotal>(con, null);
             return ret;
@@ -283,8 +266,10 @@ namespace HH.ZK.UI
             row.Cells["colName"].Value = s.Name;
             row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
             row.Cells["colFacility"].Value = s.DivisionName;
+            row.Cells["col训练日期"].Value = s.TestDate.ToString("yyyy-MM-dd");
+            row.Cells["col训练大纲"].Value = s.ProjectName;
+            if (s.State != StudentState.正常) row.Cells["col状态"].Value = s.State.ToString();
             if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) row.Cells["col总分"].Value = s.Total;
-            row.Cells["col打印"].Value = s.GetProperty("打印成绩单") == "1";
             foreach (DataGridViewColumn col in _ScoreCols)
             {
                 row.Cells[col.Index].ReadOnly = true;
@@ -338,11 +323,6 @@ namespace HH.ZK.UI
             }
         }
 
-        private void rd指定状态_CheckedChanged(object sender, EventArgs e)
-        {
-            txt考试状态.Enabled = rd指定状态.Checked;
-        }
-
         private void mnu删除所选成绩_Click(object sender, EventArgs e)
         {
             var items = GetSelectedScores();
@@ -369,7 +349,6 @@ namespace HH.ZK.UI
             if (_Project != null)
             {
                 ucStudentSearch1.Init();
-                txt考试状态.Init(AppSettings.Current.PhysicalProject.StateSettings, true);
                 dataGridView1.Columns["col总分"].Visible = AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read);
 
                 if (_ScoreCols != null && _ScoreCols.Count > 0)

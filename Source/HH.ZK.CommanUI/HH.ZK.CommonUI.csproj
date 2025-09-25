@@ -322,47 +322,17 @@
     <Compile Include="FrmReportBase.designer.cs">
       <DependentUpon>FrmReportBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmScoreCollectStatitics.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmScoreCollectStatitics.designer.cs">
-      <DependentUpon>FrmScoreCollectStatitics.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmScoreImport_SingleCol.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmScoreImport_SingleCol.designer.cs">
       <DependentUpon>FrmScoreImport_SingleCol.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSelectHostIDs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSelectHostIDs.designer.cs">
-      <DependentUpon>FrmSelectHostIDs.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmSerialRange.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmSerialRange.designer.cs">
       <DependentUpon>FrmSerialRange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmStudentDownload.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmStudentDownload.designer.cs">
-      <DependentUpon>FrmStudentDownload.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmStudentDownloadPara.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmStudentDownloadPara.designer.cs">
-      <DependentUpon>FrmStudentDownloadPara.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmStudentIDRange.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmStudentIDRange.designer.cs">
-      <DependentUpon>FrmStudentIDRange.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStudentMasterBase.cs">
       <SubType>Form</SubType>
@@ -513,26 +483,11 @@
     <EmbeddedResource Include="FrmReportBase.resx">
       <DependentUpon>FrmReportBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmScoreCollectStatitics.resx">
-      <DependentUpon>FrmScoreCollectStatitics.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmScoreImport_SingleCol.resx">
       <DependentUpon>FrmScoreImport_SingleCol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSelectHostIDs.resx">
-      <DependentUpon>FrmSelectHostIDs.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmSerialRange.resx">
       <DependentUpon>FrmSerialRange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmStudentDownload.resx">
-      <DependentUpon>FrmStudentDownload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmStudentDownloadPara.resx">
-      <DependentUpon>FrmStudentDownloadPara.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmStudentIDRange.resx">
-      <DependentUpon>FrmStudentIDRange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTsnConnect.resx">
       <DependentUpon>FrmTsnConnect.cs</DependentUpon>

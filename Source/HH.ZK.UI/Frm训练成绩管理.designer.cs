@@ -1,6 +1,6 @@
 ﻿namespace HH.ZK.UI
 {
-    partial class Frm学生成绩管理
+    partial class Frm训练成绩管理
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm学生成绩管理));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm训练成绩管理));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnu设置学生类别 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu设置学生考试科目 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu删除所选学生 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu删除所选成绩 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu取消检录 = new System.Windows.Forms.ToolStripMenuItem();
             this.rd未测试 = new System.Windows.Forms.RadioButton();
             this.rd没有完成测试 = new System.Windows.Forms.RadioButton();
             this.rd测试完成 = new System.Windows.Forms.RadioButton();
@@ -45,25 +42,26 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cmbFacility = new HH.ZK.CommonUI.Controls.FacilityComboBox(this.components);
-            this.ucStudentSearch1 = new HH.ZK.CommonUI.Controls.UCStudentSearch();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rd所有特殊状态 = new System.Windows.Forms.RadioButton();
-            this.rd指定状态 = new System.Windows.Forms.RadioButton();
-            this.rd不限状态 = new System.Windows.Forms.RadioButton();
-            this.txt考试状态 = new HH.ZK.CommonUI.Controls.StudentStateComboBox(this.components);
             this.txtProject = new HH.ZK.CommonUI.Controls.PhysicalProjectComboBox(this.components);
+            this.ucStudentSearch1 = new HH.ZK.CommonUI.Controls.UCStudentSearch();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dt开始训练日期 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dt结束训练日期 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.colFacility = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col检录 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col训练日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col训练大纲 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col状态 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col总分 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col打印 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnColumn
@@ -82,11 +80,8 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnu设置学生类别,
-            this.mnu设置学生考试科目,
             this.toolStripSeparator1,
-            this.mnu删除所选学生,
-            this.mnu删除所选成绩,
-            this.mnu取消检录});
+            this.mnu删除所选成绩});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
@@ -95,31 +90,16 @@
             this.mnu设置学生类别.Name = "mnu设置学生类别";
             resources.ApplyResources(this.mnu设置学生类别, "mnu设置学生类别");
             // 
-            // mnu设置学生考试科目
-            // 
-            this.mnu设置学生考试科目.Name = "mnu设置学生考试科目";
-            resources.ApplyResources(this.mnu设置学生考试科目, "mnu设置学生考试科目");
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            // 
-            // mnu删除所选学生
-            // 
-            this.mnu删除所选学生.Name = "mnu删除所选学生";
-            resources.ApplyResources(this.mnu删除所选学生, "mnu删除所选学生");
             // 
             // mnu删除所选成绩
             // 
             this.mnu删除所选成绩.Name = "mnu删除所选成绩";
             resources.ApplyResources(this.mnu删除所选成绩, "mnu删除所选成绩");
             this.mnu删除所选成绩.Click += new System.EventHandler(this.mnu删除所选成绩_Click);
-            // 
-            // mnu取消检录
-            // 
-            this.mnu取消检录.Name = "mnu取消检录";
-            resources.ApplyResources(this.mnu取消检录, "mnu取消检录");
             // 
             // rd未测试
             // 
@@ -178,9 +158,10 @@
             this.colID,
             this.colName,
             this.colSex,
-            this.col检录,
-            this.col总分,
-            this.col打印});
+            this.col训练日期,
+            this.col训练大纲,
+            this.col状态,
+            this.col总分});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
@@ -196,55 +177,50 @@
             this.cmbFacility.FormattingEnabled = true;
             this.cmbFacility.Name = "cmbFacility";
             // 
+            // txtProject
+            // 
+            resources.ApplyResources(this.txtProject, "txtProject");
+            this.txtProject.FormattingEnabled = true;
+            this.txtProject.Name = "txtProject";
+            this.txtProject.SelectedIndexChanged += new System.EventHandler(this.txtProject_SelectedIndexChanged);
+            // 
             // ucStudentSearch1
             // 
+            this.ucStudentSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.ucStudentSearch1, "ucStudentSearch1");
             this.ucStudentSearch1.Name = "ucStudentSearch1";
             // 
-            // panel2
+            // label1
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.rd所有特殊状态);
-            this.panel2.Controls.Add(this.rd指定状态);
-            this.panel2.Controls.Add(this.rd不限状态);
-            this.panel2.Controls.Add(this.txt考试状态);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
-            // rd所有特殊状态
+            // dt开始训练日期
             // 
-            resources.ApplyResources(this.rd所有特殊状态, "rd所有特殊状态");
-            this.rd所有特殊状态.Name = "rd所有特殊状态";
-            this.rd所有特殊状态.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.dt开始训练日期, "dt开始训练日期");
+            this.dt开始训练日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt开始训练日期.Name = "dt开始训练日期";
             // 
-            // rd指定状态
+            // label2
             // 
-            resources.ApplyResources(this.rd指定状态, "rd指定状态");
-            this.rd指定状态.Name = "rd指定状态";
-            this.rd指定状态.UseVisualStyleBackColor = true;
-            this.rd指定状态.CheckedChanged += new System.EventHandler(this.rd指定状态_CheckedChanged);
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
             // 
-            // rd不限状态
+            // label3
             // 
-            resources.ApplyResources(this.rd不限状态, "rd不限状态");
-            this.rd不限状态.Checked = true;
-            this.rd不限状态.Name = "rd不限状态";
-            this.rd不限状态.TabStop = true;
-            this.rd不限状态.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
             // 
-            // txt考试状态
+            // dt结束训练日期
             // 
-            this.txt考试状态.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.txt考试状态, "txt考试状态");
-            this.txt考试状态.FormattingEnabled = true;
-            this.txt考试状态.Name = "txt考试状态";
+            resources.ApplyResources(this.dt结束训练日期, "dt结束训练日期");
+            this.dt结束训练日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt结束训练日期.Name = "dt结束训练日期";
             // 
-            // txtProject
+            // label4
             // 
-            this.txtProject.FormattingEnabled = true;
-            resources.ApplyResources(this.txtProject, "txtProject");
-            this.txtProject.Name = "txtProject";
-            this.txtProject.SelectedIndexChanged += new System.EventHandler(this.txtProject_SelectedIndexChanged);
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
             // 
             // colFacility
             // 
@@ -272,12 +248,24 @@
             this.colSex.Name = "colSex";
             this.colSex.ReadOnly = true;
             // 
-            // col检录
+            // col训练日期
             // 
-            resources.ApplyResources(this.col检录, "col检录");
-            this.col检录.Name = "col检录";
-            this.col检录.ReadOnly = true;
-            this.col检录.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            resources.ApplyResources(this.col训练日期, "col训练日期");
+            this.col训练日期.Name = "col训练日期";
+            this.col训练日期.ReadOnly = true;
+            this.col训练日期.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // col训练大纲
+            // 
+            resources.ApplyResources(this.col训练大纲, "col训练大纲");
+            this.col训练大纲.Name = "col训练大纲";
+            this.col训练大纲.ReadOnly = true;
+            // 
+            // col状态
+            // 
+            resources.ApplyResources(this.col状态, "col状态");
+            this.col状态.Name = "col状态";
+            this.col状态.ReadOnly = true;
             // 
             // col总分
             // 
@@ -285,38 +273,41 @@
             this.col总分.Name = "col总分";
             this.col总分.ReadOnly = true;
             // 
-            // col打印
-            // 
-            resources.ApplyResources(this.col打印, "col打印");
-            this.col打印.Name = "col打印";
-            this.col打印.ReadOnly = true;
-            // 
-            // Frm学生成绩管理
+            // Frm训练成绩管理
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dt结束训练日期);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dt开始训练日期);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProject);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.ucStudentSearch1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Name = "Frm学生成绩管理";
+            this.Name = "Frm训练成绩管理";
             this.Controls.SetChildIndex(this.btnSearch, 0);
             this.Controls.SetChildIndex(this.btnSaveAs, 0);
             this.Controls.SetChildIndex(this.btnColumn, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel4, 0);
             this.Controls.SetChildIndex(this.ucStudentSearch1, 0);
-            this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.txtProject, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.dt开始训练日期, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.dt结束训练日期, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -330,25 +321,24 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private CommonUI.Controls.FacilityComboBox cmbFacility;
-        private System.Windows.Forms.ToolStripMenuItem mnu删除所选学生;
         private System.Windows.Forms.ToolStripMenuItem mnu设置学生类别;
         private System.Windows.Forms.RadioButton rd全部;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private CommonUI.Controls.UCStudentSearch ucStudentSearch1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton rd所有特殊状态;
-        private System.Windows.Forms.RadioButton rd指定状态;
-        private System.Windows.Forms.RadioButton rd不限状态;
-        private CommonUI.Controls.StudentStateComboBox txt考试状态;
-        private System.Windows.Forms.ToolStripMenuItem mnu设置学生考试科目;
-        private System.Windows.Forms.ToolStripMenuItem mnu取消检录;
         private CommonUI.Controls.PhysicalProjectComboBox txtProject;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dt开始训练日期;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dt结束训练日期;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFacility;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col检录;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col训练日期;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col训练大纲;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col状态;
         private System.Windows.Forms.DataGridViewTextBoxColumn col总分;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn col打印;
     }
 }

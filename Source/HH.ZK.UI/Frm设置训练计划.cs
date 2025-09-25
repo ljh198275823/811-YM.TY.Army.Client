@@ -21,12 +21,15 @@ namespace HH.ZK.UI
             InitializeComponent();
         }
 
+        public DateTimeRange DateRange { get; set; }
+
         public List<Student> Students { get; set; }
+
+        public List<StudentInProject > CreatedItems { get; set; }
 
         private void FrmPhysicalProjectSelector_Load(object sender, EventArgs e)
         {
             txtProject.Init();
-            if (AppSettings.Current.PhysicalProject != null) txtProject.SelectedProject = AppSettings.Current.PhysicalProject;
             if (txtProject.Items == null || txtProject.Items.Count == 0)
             {
                 MessageBox.Show("还没有创建训练大纲");
@@ -36,32 +39,44 @@ namespace HH.ZK.UI
             {
                 txtProject.SelectedIndex = 0;
             }
+            if (DateRange != null)
+            {
+                dt开始训练日期.Value = DateRange.Begin;
+                dt结束训练日期.Value = DateRange.End;
+            }
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
+        private List<StudentInProject> CreatePlans(DateTime dtBegin, DateTime dtEnd)
         {
-            if (!string.IsNullOrEmpty(txtProject.Text))
+            List<StudentInProject> sps = new List<StudentInProject>();
+            foreach (var s in Students)
             {
-                List<StudentInProject> sps = new List<StudentInProject>();
-                foreach (var s in Students)
+                var dt = dtBegin;
+                while (dt <= dtEnd)
                 {
                     var sp = new StudentInProject()
                     {
                         ID = Guid.NewGuid(),
                         StudentID = s.ID,
                         ProjectID = txtProject.SelectedProjectID,
-                        TestDate = dt训练日期.Value.Date,
+                        TestDate = dt,
                         AddTime = DateTime.Now,
                         Operator = AppSettings.Current.Operator.Name,
                         Teacher = "A",
                     };
                     sps.Add(sp);
+                    dt = dt.AddDays(1);
                 }
-                var ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<Guid, StudentInProject>(sps, ImportOption.Ignore);
-                if(ret.Result ==ResultCode.Successful && (ret.Value.Errors ==null || ret.Value.Errors.Count == 0))
-                {
-                    this.DialogResult = DialogResult.OK;
-                }
+            }
+            return sps;
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtProject.Text))
+            {
+                CreatedItems = CreatePlans(dt开始训练日期.Value.Date, dt结束训练日期.Value.Date);
+                this.DialogResult = DialogResult.OK;
             }
         }
 

@@ -263,7 +263,7 @@ namespace HH.ZK.UI
             //    if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) return item.JiaFen.Trim();
             //    return null;
             //}
-            if (colName == "colState") return item.State != StudentState.正常考试 ? item.State.ToString() : null;
+            if (colName == "colState") return item.State != StudentState.正常 ? item.State.ToString() : null;
             //if (colName == "col学校代码") return item.SchoolCode;
             //if (colName == "col考试科目") return AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(item.PhysicalItems);
             //if (colName == "colGroupID") return item.Groups;
@@ -273,7 +273,7 @@ namespace HH.ZK.UI
         protected override void SetRowStyle(DataGridViewRow row)
         {
             var item = GetRowTag(row);
-            row.DefaultCellStyle.ForeColor = item.State != StudentState.正常考试 ? Color.Red : Color.Black;
+            row.DefaultCellStyle.ForeColor = item.State != StudentState.正常 ? Color.Red : Color.Black;
         }
 
         protected override FrmDetailBase<string,Student> GetDetailForm()
@@ -430,16 +430,5 @@ namespace HH.ZK.UI
         }
         #endregion
 
-        private void mnu设置训练计划_Click(object sender, EventArgs e)
-        {
-            List<Student> students = GetSelectedItems();
-            if (students.Count == 0) return;
-            var frm = new Frm设置训练计划();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.Students = students;
-            frm.ShowDialog();
-        }
-
-        
     }
 }

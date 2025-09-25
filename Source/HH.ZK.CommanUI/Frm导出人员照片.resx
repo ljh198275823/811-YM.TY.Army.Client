@@ -220,7 +220,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>7</value>
   </data>
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -253,7 +253,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>6</value>
   </data>
   <data name="gpStudent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -490,7 +490,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gpStudent.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>5</value>
   </data>
   <data name="btnQuery.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -517,7 +517,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnQuery.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>4</value>
   </data>
   <data name="lbl选择数量.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -553,7 +553,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl选择数量.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="btnNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -580,7 +580,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnNone.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>2</value>
   </data>
   <data name="btnAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -607,13 +607,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAll.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>3</value>
   </data>
   <data name="ucStudentSearch1.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 3</value>
   </data>
   <data name="ucStudentSearch1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>566, 100</value>
+    <value>404, 100</value>
   </data>
   <data name="ucStudentSearch1.TabIndex" type="System.Int32, mscorlib">
     <value>175</value>
@@ -628,217 +628,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ucStudentSearch1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="chk任意一项.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chk任意一项.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chk任意一项.Location" type="System.Drawing.Point, System.Drawing">
-    <value>818, 13</value>
-  </data>
-  <data name="chk任意一项.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 16</value>
-  </data>
-  <data name="chk任意一项.TabIndex" type="System.Int32, mscorlib">
-    <value>299</value>
-  </data>
-  <data name="chk任意一项.Text" xml:space="preserve">
-    <value>任意一项</value>
-  </data>
-  <data name="&gt;&gt;chk任意一项.Name" xml:space="preserve">
-    <value>chk任意一项</value>
-  </data>
-  <data name="&gt;&gt;chk任意一项.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chk任意一项.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chk任意一项.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chk缓考.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chk缓考.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chk缓考.Location" type="System.Drawing.Point, System.Drawing">
-    <value>762, 46</value>
-  </data>
-  <data name="chk缓考.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 16</value>
-  </data>
-  <data name="chk缓考.TabIndex" type="System.Int32, mscorlib">
-    <value>298</value>
-  </data>
-  <data name="chk缓考.Text" xml:space="preserve">
-    <value>缓考</value>
-  </data>
-  <data name="&gt;&gt;chk缓考.Name" xml:space="preserve">
-    <value>chk缓考</value>
-  </data>
-  <data name="&gt;&gt;chk缓考.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chk缓考.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chk缓考.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="chk择考.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chk择考.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chk择考.Location" type="System.Drawing.Point, System.Drawing">
-    <value>708, 46</value>
-  </data>
-  <data name="chk择考.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 16</value>
-  </data>
-  <data name="chk择考.TabIndex" type="System.Int32, mscorlib">
-    <value>297</value>
-  </data>
-  <data name="chk择考.Text" xml:space="preserve">
-    <value>择考</value>
-  </data>
-  <data name="&gt;&gt;chk择考.Name" xml:space="preserve">
-    <value>chk择考</value>
-  </data>
-  <data name="&gt;&gt;chk择考.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chk择考.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chk择考.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="chk正常考试.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chk正常考试.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chk正常考试.Location" type="System.Drawing.Point, System.Drawing">
-    <value>633, 46</value>
-  </data>
-  <data name="chk正常考试.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 16</value>
-  </data>
-  <data name="chk正常考试.TabIndex" type="System.Int32, mscorlib">
-    <value>296</value>
-  </data>
-  <data name="chk正常考试.Text" xml:space="preserve">
-    <value>正常考试</value>
-  </data>
-  <data name="&gt;&gt;chk正常考试.Name" xml:space="preserve">
-    <value>chk正常考试</value>
-  </data>
-  <data name="&gt;&gt;chk正常考试.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chk正常考试.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chk正常考试.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>574, 47</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 12</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>295</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>考试状态</value>
-  </data>
-  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lnk考试科目.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lnk考试科目.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lnk考试科目.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 14</value>
-  </data>
-  <data name="lnk考试科目.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 12</value>
-  </data>
-  <data name="lnk考试科目.TabIndex" type="System.Int32, mscorlib">
-    <value>294</value>
-  </data>
-  <data name="lnk考试科目.Text" xml:space="preserve">
-    <value>考试科目</value>
-  </data>
-  <data name="&gt;&gt;lnk考试科目.Name" xml:space="preserve">
-    <value>lnk考试科目</value>
-  </data>
-  <data name="&gt;&gt;lnk考试科目.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnk考试科目.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lnk考试科目.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="txt考试科目.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>On</value>
-  </data>
-  <data name="txt考试科目.Location" type="System.Drawing.Point, System.Drawing">
-    <value>626, 10</value>
-  </data>
-  <data name="txt考试科目.MaxLength" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="txt考试科目.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 21</value>
-  </data>
-  <data name="txt考试科目.TabIndex" type="System.Int32, mscorlib">
-    <value>293</value>
-  </data>
-  <data name="&gt;&gt;txt考试科目.Name" xml:space="preserve">
-    <value>txt考试科目</value>
-  </data>
-  <data name="&gt;&gt;txt考试科目.Type" xml:space="preserve">
-    <value>LJH.GeneralLibrary.WinformControl.DBCTextBox, LJH.GeneralLibrary, Version=2.0.2022.217, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txt考试科目.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txt考试科目.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -874,12 +664,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>导出学生照片</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
-    <value>toolStripStatusLabel1</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;colSelect.Name" xml:space="preserve">
     <value>colSelect</value>
@@ -929,8 +713,14 @@
   <data name="&gt;&gt;colFill.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Frm导出学生照片</value>
+    <value>Frm导出人员照片</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

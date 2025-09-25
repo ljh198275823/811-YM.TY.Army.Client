@@ -100,7 +100,7 @@ namespace HH.ZK.UI
             row.Cells["colClassName"].Value = s.ClassName;
             //row.Cells["col考试科目"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetNames(s.PhysicalItems);
             row.Cells["colFacility"].Value = s.DivisionName;
-            row.Cells["colState"].Value = s.State == StudentState.正常考试 ? null : s.State.ToString();
+            row.Cells["colState"].Value = s.State == StudentState.正常 ? null : s.State.ToString();
             if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) row.Cells["col总分"].Value = s.Total;
             //row.Cells["col检录"].Value = s.CheckTime?.ToString("yyyy-MM-dd HH:mm:ss");
             //if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) row.Cells["col加分"].Value = s.JiaFen.Trim();
@@ -202,7 +202,7 @@ namespace HH.ZK.UI
                 con.States = new List<StudentState>();
                 foreach (var item in Enum.GetValues(typeof(StudentState)))
                 {
-                    if ((StudentState)item == StudentState.正常考试) continue;
+                    if ((StudentState)item == StudentState.正常) continue;
                     con.States.Add((StudentState)item);
                 }
             }
@@ -255,7 +255,7 @@ namespace HH.ZK.UI
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     string path = saveFileDialog1.FileName;
-                    bool ret = new StudentWithTotalExporter(model).ExportToFile(students, path, templateRow, school, group);
+                    bool ret = new StudentWithTotalExporter(model).ExportToFile(students, path, templateRow, school, null);
                     MessageBox.Show(ret ? "导出成功" : "导出失败");
                 }
             }
@@ -284,7 +284,7 @@ namespace HH.ZK.UI
                 var group = ucStudentSearch1.GetGroup();
                 string dir = LJH.GeneralLibrary.TempFolderManager.GetCurrentFolder();
                 string path = System.IO.Path.Combine(dir, Guid.NewGuid() + ".xls");
-                bool ret = new StudentWithTotalExporter(model).ExportToFile(students, path, templateRow, school, group);
+                bool ret = new StudentWithTotalExporter(model).ExportToFile(students, path, templateRow, school, null);
                 if (ret)
                 {
                     ProcessStartInfo psi = new ProcessStartInfo(path);
@@ -359,7 +359,7 @@ namespace HH.ZK.UI
                 foreach (var gp in groups)
                 {
                     string path = System.IO.Path.Combine(folder, gp.Key + ".xls");
-                    bool ret = new StudentWithTotalExporter(model).ExportToFile(gp.ToList (), path, templateRow, gp.Key, group);
+                    bool ret = new StudentWithTotalExporter(model).ExportToFile(gp.ToList (), path, templateRow, gp.Key, null);
                 }
                 MessageBox.Show("导出完成");
             }

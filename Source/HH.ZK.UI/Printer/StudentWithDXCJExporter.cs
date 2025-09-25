@@ -132,7 +132,7 @@ namespace HH.ZK.UI
                     }
                     else if (express == "[特殊情况]")
                     {
-                        cell.SetCellValue(s.State != StudentState.正常考试 ? s.State.ToString() : null);
+                        cell.SetCellValue(s.State != StudentState.正常 ? s.State.ToString() : null);
                     }
                     else if (express == "[主机号]")
                     {
