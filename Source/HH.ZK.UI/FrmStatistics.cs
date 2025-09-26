@@ -16,7 +16,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.UI
 {
-    public partial class FrmStatistics : FrmReportBaseWithPaging<Guid,ScoreStatistic>
+    public partial class FrmStatistics : FrmReportBaseWithPaging<Guid, ScoreStatistic>
     {
         public FrmStatistics()
         {
@@ -37,8 +37,8 @@ namespace HH.ZK.UI
         protected override void Init()
         {
             base.Init();
-            ucStatiticsSearch1.Init();
-            cmbPhysicalItem.Init(AppSettings.Current.PhysicalProject);
+            ucStudentSearch1.Init();
+            txtProject.Init();
         }
 
         public override void ShowOperatorRights()
@@ -50,26 +50,27 @@ namespace HH.ZK.UI
 
         protected override QueryResultList<ScoreStatistic> GetDataSource(int pageSize, int pageIndex)
         {
-            var con = ucStatiticsSearch1.GetSearchCondition();
-            if (!string.IsNullOrEmpty(cmbPhysicalItem.Text)) con.PhysicalItemIDs = new List<int>() { cmbPhysicalItem.SelectedPhysicalItem };
+            var con = new StatisticSearchCondition();
+            ucStudentSearch1.GetSearchCondition(con);
+            con.ProjectID = txtProject.SelectedProjectID;
+            con.DateRange = new DateTimeRange(dt开始训练日期.Value.Date, dt结束训练日期.Value.Date);
+            if (!string.IsNullOrEmpty(txt科目.Text)) con.TestID = (txt科目.SelectedItem as PhysicalItem).ID;
+            con.ByDivision = chkByDivision.Checked;
+            con.ByGender = chkByGender.Checked;
             con.SortMode = LJH.GeneralLibrary.SortMode.Asc;
             con.PageIndex = pageIndex;
             con.PageSize = pageSize;
-            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, ScoreStatistic>(con, AppSettings.Current.PhysicalProject.ID);
+            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, ScoreStatistic>(con);
             dataGridView1.Columns["colDivision"].Visible = con.ByDivision;
-            dataGridView1.Columns["colFacility"].Visible = con.ByFacility;
-            dataGridView1.Columns["colClassName"].Visible = con.ByClass;
-            dataGridView1.Columns["colSex"].Visible = con.BySex;
+            dataGridView1.Columns["colSex"].Visible = con.ByGender;
             return ret;
         }
 
         protected override void ShowItemInGridViewRow(DataGridViewRow row, ScoreStatistic item)
         {
             row.Cells["colDivision"].Value = item.Key.Division;
-            row.Cells["colFacility"].Value = item.Key.Facility;
-            row.Cells["colClassName"].Value = item.Key.ClassName;
-            row.Cells["colSex"].Value = item.Key.Sex;
-            row.Cells["colPhysicalItem"].Value = item.PhysicalItem;
+            row.Cells["colSex"].Value = item.Key.Gender;
+            row.Cells["colPhysicalItem"].Value = item.TestName;
             row.Cells["col总人数"].Value = item.Total;
             row.Cells["col完成人数"].Value = item.Completed;
             row.Cells["col未测试人数"].Value = item.NoneTest;
@@ -78,7 +79,7 @@ namespace HH.ZK.UI
                 row.Cells["col总成绩"].Value = item.TotalScore;
                 ShowScoreCell(row.Cells["colAverage"], item.Average);
                 row.Cells["col标准差"].Value = item.StandardDeviation;
-                ShowScoreCell ( row.Cells["col最高成绩"], item.MaxScore);
+                ShowScoreCell(row.Cells["col最高成绩"], item.MaxScore);
                 ShowScoreCell(row.Cells["col最低成绩"], item.MinScore);
                 row.Cells["col平均得分"].Value = item.AverageResult;
                 row.Cells["colManFen"].Value = item.ManFen;
@@ -109,16 +110,12 @@ namespace HH.ZK.UI
             {
                 var item = dataGridView1.Rows[e.RowIndex].Tag as ScoreStatistic;
                 var con = new StudentWithDXCJSearchCondition();
-                var con1 = ucStatiticsSearch1.GetSearchCondition();
-                con.DivisionID = con1.DivisionID;
-                con.FacilityID = con1.FacilityID;
-                con.ClassName = con1.ClassName;
-                con.Sex = con1.Sex;
-                con.TestID = item.PhysicalItemID;
-                if (!string.IsNullOrEmpty(item.Key.ClassName)) con.ClassName = item.Key.ClassName;
-                if (!string.IsNullOrEmpty(item.Key.Sex)) con.Sex = item.Key.Sex == "男" ? Gender.Male : Gender.Female;
-                if (!string.IsNullOrEmpty(item.Key.FacilityID)) con.FacilityID = item.Key.FacilityID;
-                if (!string.IsNullOrEmpty(item.Key.DivisionID)) con.DivisionID = Guid.Parse(item.Key.DivisionID);
+                con.ProjectID = txtProject.SelectedProjectID;
+                con.DateRange = new DateTimeRange(dt开始训练日期.Value.Date, dt结束训练日期.Value.Date);
+                con.TestID = item.TestID;
+                con.DivisionID = item.Key.DivisionID;
+                if (item.Key.Gender == "男") con.Gender = Gender.Male;
+                if (item.Key.Gender == "女") con.Gender = Gender.Female;
 
                 if (column.Name == "col总人数") con.HasScore = null;
                 else if (column.Name == "col未测试人数") con.HasScore = false;
@@ -132,14 +129,26 @@ namespace HH.ZK.UI
                 else if (column.Name == "colJige") con.ScoreRank = ScoreRank.及格;
                 else if (column.Name == "colBujige") con.ScoreRank = ScoreRank.不及格;
                 else if (column.Name == "col合格人数") con.ScoreRank = ScoreRank.合格;
-                var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithDXCJ>(con, AppSettings.Current.PhysicalProject.ID).QueryObjects;
+                var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithDXCJ>(con).QueryObjects;
                 if (ss != null && ss.Count > 0)
                 {
-                    var frm = new Frm学生单项成绩查看();
+                    var frm = new Frm人员单项成绩查看();
                     frm.StartPosition = FormStartPosition.CenterParent;
                     frm.Students = ss;
                     frm.ShowDialog();
                 }
+            }
+        }
+
+        private void txtProject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var sp = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, txtProject.SelectedProjectID);
+            if (sp != null && sp.Items != null && sp.Items.Count > 0)
+            {
+                var items = sp.Items;
+                items.Insert(0, new PhysicalItem());
+                txt科目.DataSource = sp.Items;
+                txt科目.DisplayMember = "Name";
             }
         }
     }

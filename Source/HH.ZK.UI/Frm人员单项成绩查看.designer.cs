@@ -1,6 +1,6 @@
 ﻿namespace HH.ZK.UI
 {
-    partial class Frm学生单项成绩查看
+    partial class Frm人员单项成绩查看
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm学生单项成绩查看));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm人员单项成绩查看));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -39,7 +39,6 @@
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhysicalItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCurrentScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCurrentResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,16 +59,16 @@
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 365);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 484);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(873, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1064, 22);
             this.statusStrip1.TabIndex = 160;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(858, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(1049, 17);
             this.toolStripStatusLabel1.Spring = true;
             this.toolStripStatusLabel1.Text = "总共 0 项";
             // 
@@ -86,7 +85,6 @@
             this.colID,
             this.colName,
             this.colSex,
-            this.colClassName,
             this.colPhysicalItem,
             this.colCurrentScore,
             this.colCurrentResult,
@@ -105,7 +103,7 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(873, 365);
+            this.dataGridView1.Size = new System.Drawing.Size(1064, 484);
             this.dataGridView1.TabIndex = 161;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -126,7 +124,7 @@
             // colFacility
             // 
             this.colFacility.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colFacility.HeaderText = "学校";
+            this.colFacility.HeaderText = "部门";
             this.colFacility.MinimumWidth = 120;
             this.colFacility.Name = "colFacility";
             this.colFacility.ReadOnly = true;
@@ -135,7 +133,7 @@
             // colID
             // 
             this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colID.HeaderText = "准考证号";
+            this.colID.HeaderText = "人员编号";
             this.colID.MinimumWidth = 100;
             this.colID.Name = "colID";
             this.colID.ReadOnly = true;
@@ -155,14 +153,6 @@
             this.colSex.ReadOnly = true;
             this.colSex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colSex.Width = 60;
-            // 
-            // colClassName
-            // 
-            this.colClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colClassName.HeaderText = "班级";
-            this.colClassName.MinimumWidth = 100;
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
             // 
             // colPhysicalItem
             // 
@@ -239,16 +229,16 @@
             this.colScores.Name = "colScores";
             this.colScores.ReadOnly = true;
             // 
-            // Frm学生单项成绩查看
+            // Frm人员单项成绩查看
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 387);
+            this.ClientSize = new System.Drawing.Size(1064, 506);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Frm学生单项成绩查看";
-            this.Text = "学生单项成绩查看";
+            this.Name = "Frm人员单项成绩查看";
+            this.Text = "人员单项成绩查看";
             this.Load += new System.EventHandler(this.Frm学生单项成绩查看_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -270,7 +260,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhysicalItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCurrentScore;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCurrentResult;

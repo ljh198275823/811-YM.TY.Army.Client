@@ -9,8 +9,7 @@ namespace HH.ZK.Model.SearchCondition
     public class StudentScoreSearchCondition : StudentSearchCondition
     {
         #region 公共属性
-        public int? PhysicalItem { get; set; }
-        public DateTimeRange DateTimeRange { get; set; }
+        public int? TestID { get; set; }
         public ScoreSource? ScoreFrom { get; set; }
         public string DeviceSN { get; set; }
         public string HostID { get; set; }

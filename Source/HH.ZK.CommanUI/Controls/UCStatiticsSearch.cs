@@ -37,11 +37,9 @@ namespace HH.ZK.CommonUI.Controls
         {
             var con = new StatisticSearchCondition();
             con.ByDivision = chkByDivision.Checked;
-            con.ByFacility = chkByFacility.Checked;
-            con.ByClass = chkByClass.Checked;
-            con.BySex = chkBySex.Checked;
-            if (rdMale.Checked) con.Sex = Gender.Male;
-            if (rdFemale.Checked) con.Sex = Gender.Female;
+            con.ByGender = chkBySex.Checked;
+            if (rdMale.Checked) con.Gender = Gender.Male;
+            if (rdFemale.Checked) con.Gender = Gender.Female;
             if (!string.IsNullOrEmpty(txtClassName.Text)) con.ClassName = txtClassName.Text;
             if (!string.IsNullOrEmpty(cmbFacility.Text)) con.FacilityID = cmbFacility.SelectedFacilityID;
             else if (!string.IsNullOrEmpty(cmbDivision.Text)) con.DivisionID = cmbDivision.SelectedDivisionID;

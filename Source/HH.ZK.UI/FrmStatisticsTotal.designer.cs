@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStatisticsTotal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,11 +43,22 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ucStatiticsSearch1 = new HH.ZK.CommonUI.Controls.UCStatiticsSearch();
+            this.dt结束训练日期 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dt开始训练日期 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtProject = new HH.ZK.CommonUI.Controls.PhysicalProjectComboBox(this.components);
+            this.ucStudentSearch1 = new HH.ZK.CommonUI.Controls.UCStudentSearch();
+            this.txtStudentID1 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
+            this.txtName = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
+            this.cmbDivision = new HH.ZK.CommonUI.Controls.DivisionComboBox(this.components);
+            this.chkByDivision = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chkByGender = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.colDivision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFacility = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col性别 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col总人数 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.col未完成人数 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.col未测试人数 = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -72,6 +84,7 @@
             this.colBujigeRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ucStudentSearch1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnColumn
@@ -109,9 +122,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDivision,
-            this.colFacility,
-            this.colClassName,
-            this.colSex,
+            this.col性别,
             this.col总人数,
             this.col未完成人数,
             this.col未测试人数,
@@ -142,10 +153,87 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // ucStatiticsSearch1
+            // dt结束训练日期
             // 
-            resources.ApplyResources(this.ucStatiticsSearch1, "ucStatiticsSearch1");
-            this.ucStatiticsSearch1.Name = "ucStatiticsSearch1";
+            resources.ApplyResources(this.dt结束训练日期, "dt结束训练日期");
+            this.dt结束训练日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt结束训练日期.Name = "dt结束训练日期";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // dt开始训练日期
+            // 
+            resources.ApplyResources(this.dt开始训练日期, "dt开始训练日期");
+            this.dt开始训练日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt开始训练日期.Name = "dt开始训练日期";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // txtProject
+            // 
+            resources.ApplyResources(this.txtProject, "txtProject");
+            this.txtProject.FormattingEnabled = true;
+            this.txtProject.Name = "txtProject";
+            // 
+            // ucStudentSearch1
+            // 
+            this.ucStudentSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ucStudentSearch1.Controls.Add(this.txtStudentID1);
+            this.ucStudentSearch1.Controls.Add(this.txtName);
+            resources.ApplyResources(this.ucStudentSearch1, "ucStudentSearch1");
+            this.ucStudentSearch1.Name = "ucStudentSearch1";
+            // 
+            // txtStudentID1
+            // 
+            resources.ApplyResources(this.txtStudentID1, "txtStudentID1");
+            this.txtStudentID1.Name = "txtStudentID1";
+            // 
+            // txtName
+            // 
+            resources.ApplyResources(this.txtName, "txtName");
+            this.txtName.Name = "txtName";
+            // 
+            // cmbDivision
+            // 
+            this.cmbDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cmbDivision, "cmbDivision");
+            this.cmbDivision.FormattingEnabled = true;
+            this.cmbDivision.Name = "cmbDivision";
+            // 
+            // chkByDivision
+            // 
+            resources.ApplyResources(this.chkByDivision, "chkByDivision");
+            this.chkByDivision.Checked = true;
+            this.chkByDivision.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkByDivision.Name = "chkByDivision";
+            this.chkByDivision.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // chkByGender
+            // 
+            resources.ApplyResources(this.chkByGender, "chkByGender");
+            this.chkByGender.Name = "chkByGender";
+            this.chkByGender.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
             // 
             // colDivision
             // 
@@ -154,25 +242,11 @@
             this.colDivision.Name = "colDivision";
             this.colDivision.ReadOnly = true;
             // 
-            // colFacility
+            // col性别
             // 
-            this.colFacility.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            resources.ApplyResources(this.colFacility, "colFacility");
-            this.colFacility.Name = "colFacility";
-            this.colFacility.ReadOnly = true;
-            // 
-            // colClassName
-            // 
-            this.colClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            resources.ApplyResources(this.colClassName, "colClassName");
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
-            // 
-            // colSex
-            // 
-            resources.ApplyResources(this.colSex, "colSex");
-            this.colSex.Name = "colSex";
-            this.colSex.ReadOnly = true;
+            resources.ApplyResources(this.col性别, "col性别");
+            this.col性别.Name = "col性别";
+            this.col性别.ReadOnly = true;
             // 
             // col总人数
             // 
@@ -358,18 +432,43 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ucStatiticsSearch1);
+            this.Controls.Add(this.chkByDivision);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.chkByGender);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.dt结束训练日期);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dt开始训练日期);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtProject);
+            this.Controls.Add(this.ucStudentSearch1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cmbDivision);
             this.Name = "FrmStatisticsTotal";
             this.Controls.SetChildIndex(this.btnSearch, 0);
             this.Controls.SetChildIndex(this.btnSaveAs, 0);
+            this.Controls.SetChildIndex(this.cmbDivision, 0);
             this.Controls.SetChildIndex(this.btnColumn, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
-            this.Controls.SetChildIndex(this.ucStatiticsSearch1, 0);
+            this.Controls.SetChildIndex(this.ucStudentSearch1, 0);
+            this.Controls.SetChildIndex(this.txtProject, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.dt开始训练日期, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.dt结束训练日期, 0);
+            this.Controls.SetChildIndex(this.label11, 0);
+            this.Controls.SetChildIndex(this.chkByGender, 0);
+            this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.chkByDivision, 0);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ucStudentSearch1.ResumeLayout(false);
+            this.ucStudentSearch1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -378,11 +477,22 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private CommonUI.Controls.UCStatiticsSearch ucStatiticsSearch1;
+        private System.Windows.Forms.DateTimePicker dt结束训练日期;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dt开始训练日期;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private CommonUI.Controls.PhysicalProjectComboBox txtProject;
+        private CommonUI.Controls.UCStudentSearch ucStudentSearch1;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox txtStudentID1;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox txtName;
+        private CommonUI.Controls.DivisionComboBox cmbDivision;
+        private System.Windows.Forms.CheckBox chkByDivision;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox chkByGender;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDivision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFacility;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col性别;
         private System.Windows.Forms.DataGridViewLinkColumn col总人数;
         private System.Windows.Forms.DataGridViewLinkColumn col未完成人数;
         private System.Windows.Forms.DataGridViewLinkColumn col未测试人数;

@@ -28,8 +28,8 @@ namespace HH.ZK.CommonUI.Controls
         public StudentSearchCondition GetSearchCondition()
         {
             var con = new StudentSearchCondition();
-            if (rdMale.Checked) con.Sex = Gender.Male;
-            if (rdFemale.Checked) con.Sex = Gender.Female;
+            if (rdMale.Checked) con.Gender = Gender.Male;
+            if (rdFemale.Checked) con.Gender = Gender.Female;
             if (!string.IsNullOrEmpty(txtStudentID1.Text)) con.StudentIDLike = txtStudentID1.Text;
             if (!string.IsNullOrEmpty(txtName.Text)) con.Name = txtName.Text;
             if (!string.IsNullOrEmpty(cmbDivision.Text)) con.DivisionID = cmbDivision.SelectedDivisionID;
@@ -39,8 +39,8 @@ namespace HH.ZK.CommonUI.Controls
 
         public void GetSearchCondition(StudentSearchCondition con)
         {
-            if (rdMale.Checked) con.Sex = Gender.Male;
-            if (rdFemale.Checked) con.Sex = Gender.Female;
+            if (rdMale.Checked) con.Gender = Gender.Male;
+            if (rdFemale.Checked) con.Gender = Gender.Female;
             if (!string.IsNullOrEmpty(txtStudentID1.Text)) con.StudentIDLike = txtStudentID1.Text;
             if (!string.IsNullOrEmpty(txtName.Text)) con.Name = txtName.Text;
             if (!string.IsNullOrEmpty(cmbDivision.Text)) con.DivisionID = cmbDivision.SelectedDivisionID;

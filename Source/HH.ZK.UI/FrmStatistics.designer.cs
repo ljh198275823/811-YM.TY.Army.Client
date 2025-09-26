@@ -43,12 +43,26 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cMnu_SelectColumns = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.ucStatiticsSearch1 = new HH.ZK.CommonUI.Controls.UCStatiticsSearch();
-            this.cmbPhysicalItem = new HH.ZK.CommonUI.Controls.PhysicalItemComboBox(this.components);
+            this.chkByDivision = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chkByGender = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dt结束训练日期 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dt开始训练日期 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtProject = new HH.ZK.CommonUI.Controls.PhysicalProjectComboBox(this.components);
+            this.ucStudentSearch1 = new HH.ZK.CommonUI.Controls.UCStudentSearch();
+            this.txtStudentID1 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
+            this.cmbDivision = new HH.ZK.CommonUI.Controls.DivisionComboBox(this.components);
+            this.txtName = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
+            this.dbcTextBox1 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
+            this.dbcTextBox2 = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
+            this.divisionComboBox1 = new HH.ZK.CommonUI.Controls.DivisionComboBox(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt科目 = new System.Windows.Forms.ComboBox();
             this.colDivision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFacility = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhysicalItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col总人数 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.col完成人数 = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -77,21 +91,22 @@
             this.colBujigeRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.ucStudentSearch1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnColumn
             // 
-            this.btnColumn.Location = new System.Drawing.Point(1194, 18);
+            this.btnColumn.Location = new System.Drawing.Point(1108, 15);
             this.btnColumn.Size = new System.Drawing.Size(111, 66);
             // 
             // btnSaveAs
             // 
-            this.btnSaveAs.Location = new System.Drawing.Point(1072, 18);
+            this.btnSaveAs.Location = new System.Drawing.Point(986, 15);
             this.btnSaveAs.Size = new System.Drawing.Size(111, 66);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(934, 18);
+            this.btnSearch.Location = new System.Drawing.Point(848, 15);
             this.btnSearch.Size = new System.Drawing.Size(111, 66);
             // 
             // dataGridView1
@@ -106,9 +121,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDivision,
-            this.colFacility,
             this.colPhysicalItem,
-            this.colClassName,
             this.colSex,
             this.col总人数,
             this.col完成人数,
@@ -163,44 +176,203 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(672, 16);
+            this.label1.Location = new System.Drawing.Point(629, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 18;
-            this.label1.Text = "考试科目";
+            this.label1.Text = "科目";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ucStatiticsSearch1
+            // chkByDivision
             // 
-            this.ucStatiticsSearch1.Location = new System.Drawing.Point(4, 3);
-            this.ucStatiticsSearch1.Name = "ucStatiticsSearch1";
-            this.ucStatiticsSearch1.Size = new System.Drawing.Size(668, 94);
-            this.ucStatiticsSearch1.TabIndex = 191;
+            this.chkByDivision.AutoSize = true;
+            this.chkByDivision.Checked = true;
+            this.chkByDivision.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkByDivision.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.chkByDivision.Location = new System.Drawing.Point(472, 80);
+            this.chkByDivision.Name = "chkByDivision";
+            this.chkByDivision.Size = new System.Drawing.Size(60, 16);
+            this.chkByDivision.TabIndex = 335;
+            this.chkByDivision.Text = "分部门";
+            this.chkByDivision.UseVisualStyleBackColor = true;
             // 
-            // cmbPhysicalItem
+            // label8
             // 
-            this.cmbPhysicalItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPhysicalItem.FormattingEnabled = true;
-            this.cmbPhysicalItem.Location = new System.Drawing.Point(727, 12);
-            this.cmbPhysicalItem.Name = "cmbPhysicalItem";
-            this.cmbPhysicalItem.Size = new System.Drawing.Size(151, 20);
-            this.cmbPhysicalItem.TabIndex = 192;
+            this.label8.AutoSize = true;
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(532, 82);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(11, 12);
+            this.label8.TabIndex = 334;
+            this.label8.Text = "+";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // chkByGender
+            // 
+            this.chkByGender.AutoSize = true;
+            this.chkByGender.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.chkByGender.Location = new System.Drawing.Point(550, 80);
+            this.chkByGender.Name = "chkByGender";
+            this.chkByGender.Size = new System.Drawing.Size(60, 16);
+            this.chkByGender.TabIndex = 333;
+            this.chkByGender.Text = "分性别";
+            this.chkByGender.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label11.Location = new System.Drawing.Point(411, 81);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 12);
+            this.label11.TabIndex = 332;
+            this.label11.Text = "统计方式";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dt结束训练日期
+            // 
+            this.dt结束训练日期.CustomFormat = "yyyy-MM-dd";
+            this.dt结束训练日期.Font = new System.Drawing.Font("宋体", 15F);
+            this.dt结束训练日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt结束训练日期.Location = new System.Drawing.Point(665, 40);
+            this.dt结束训练日期.Name = "dt结束训练日期";
+            this.dt结束训练日期.Size = new System.Drawing.Size(152, 30);
+            this.dt结束训练日期.TabIndex = 331;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(641, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.TabIndex = 330;
+            this.label3.Text = "--";
+            // 
+            // dt开始训练日期
+            // 
+            this.dt开始训练日期.CustomFormat = "yyyy-MM-dd";
+            this.dt开始训练日期.Font = new System.Drawing.Font("宋体", 15F);
+            this.dt开始训练日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt开始训练日期.Location = new System.Drawing.Point(470, 40);
+            this.dt开始训练日期.Name = "dt开始训练日期";
+            this.dt开始训练日期.Size = new System.Drawing.Size(152, 30);
+            this.dt开始训练日期.TabIndex = 329;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(411, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 328;
+            this.label2.Text = "训练日期";
+            // 
+            // txtProject
+            // 
+            this.txtProject.Font = new System.Drawing.Font("宋体", 15F);
+            this.txtProject.FormattingEnabled = true;
+            this.txtProject.Location = new System.Drawing.Point(470, 5);
+            this.txtProject.Name = "txtProject";
+            this.txtProject.Size = new System.Drawing.Size(152, 28);
+            this.txtProject.TabIndex = 327;
+            this.txtProject.SelectedIndexChanged += new System.EventHandler(this.txtProject_SelectedIndexChanged);
+            // 
+            // ucStudentSearch1
+            // 
+            this.ucStudentSearch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ucStudentSearch1.Controls.Add(this.txtStudentID1);
+            this.ucStudentSearch1.Controls.Add(this.cmbDivision);
+            this.ucStudentSearch1.Controls.Add(this.txtName);
+            this.ucStudentSearch1.Controls.Add(this.dbcTextBox1);
+            this.ucStudentSearch1.Controls.Add(this.dbcTextBox2);
+            this.ucStudentSearch1.Location = new System.Drawing.Point(4, 0);
+            this.ucStudentSearch1.Name = "ucStudentSearch1";
+            this.ucStudentSearch1.Size = new System.Drawing.Size(398, 100);
+            this.ucStudentSearch1.TabIndex = 326;
+            // 
+            // txtStudentID1
+            // 
+            this.txtStudentID1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtStudentID1.Location = new System.Drawing.Point(36, 38);
+            this.txtStudentID1.Name = "txtStudentID1";
+            this.txtStudentID1.Size = new System.Drawing.Size(166, 21);
+            this.txtStudentID1.TabIndex = 283;
+            // 
+            // cmbDivision
+            // 
+            this.cmbDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDivision.Enabled = false;
+            this.cmbDivision.Font = new System.Drawing.Font("宋体", 9F);
+            this.cmbDivision.FormattingEnabled = true;
+            this.cmbDivision.Location = new System.Drawing.Point(36, 6);
+            this.cmbDivision.Name = "cmbDivision";
+            this.cmbDivision.Size = new System.Drawing.Size(355, 20);
+            this.cmbDivision.TabIndex = 280;
+            // 
+            // txtName
+            // 
+            this.txtName.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtName.Location = new System.Drawing.Point(36, 71);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(166, 21);
+            this.txtName.TabIndex = 178;
+            // 
+            // dbcTextBox1
+            // 
+            this.dbcTextBox1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.dbcTextBox1.Location = new System.Drawing.Point(36, 38);
+            this.dbcTextBox1.Name = "dbcTextBox1";
+            this.dbcTextBox1.Size = new System.Drawing.Size(166, 21);
+            this.dbcTextBox1.TabIndex = 283;
+            // 
+            // dbcTextBox2
+            // 
+            this.dbcTextBox2.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.dbcTextBox2.Location = new System.Drawing.Point(36, 71);
+            this.dbcTextBox2.Name = "dbcTextBox2";
+            this.dbcTextBox2.Size = new System.Drawing.Size(166, 21);
+            this.dbcTextBox2.TabIndex = 178;
+            // 
+            // divisionComboBox1
+            // 
+            this.divisionComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.divisionComboBox1.Enabled = false;
+            this.divisionComboBox1.Font = new System.Drawing.Font("宋体", 9F);
+            this.divisionComboBox1.FormattingEnabled = true;
+            this.divisionComboBox1.Location = new System.Drawing.Point(41, 5);
+            this.divisionComboBox1.Name = "divisionComboBox1";
+            this.divisionComboBox1.Size = new System.Drawing.Size(355, 20);
+            this.divisionComboBox1.TabIndex = 325;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(411, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 336;
+            this.label4.Text = "训练大纲";
+            // 
+            // txt科目
+            // 
+            this.txt科目.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt科目.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt科目.FormattingEnabled = true;
+            this.txt科目.Location = new System.Drawing.Point(665, 5);
+            this.txt科目.Name = "txt科目";
+            this.txt科目.Size = new System.Drawing.Size(152, 28);
+            this.txt科目.TabIndex = 337;
             // 
             // colDivision
             // 
             this.colDivision.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colDivision.HeaderText = "区域";
+            this.colDivision.HeaderText = "部门";
             this.colDivision.MinimumWidth = 100;
             this.colDivision.Name = "colDivision";
             this.colDivision.ReadOnly = true;
-            // 
-            // colFacility
-            // 
-            this.colFacility.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colFacility.HeaderText = "学校";
-            this.colFacility.MinimumWidth = 100;
-            this.colFacility.Name = "colFacility";
-            this.colFacility.ReadOnly = true;
             // 
             // colPhysicalItem
             // 
@@ -209,14 +381,6 @@
             this.colPhysicalItem.MinimumWidth = 100;
             this.colPhysicalItem.Name = "colPhysicalItem";
             this.colPhysicalItem.ReadOnly = true;
-            // 
-            // colClassName
-            // 
-            this.colClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colClassName.HeaderText = "班级";
-            this.colClassName.MinimumWidth = 100;
-            this.colClassName.Name = "colClassName";
-            this.colClassName.ReadOnly = true;
             // 
             // colSex
             // 
@@ -447,8 +611,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 639);
-            this.Controls.Add(this.cmbPhysicalItem);
-            this.Controls.Add(this.ucStatiticsSearch1);
+            this.Controls.Add(this.txt科目);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.chkByDivision);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.chkByGender);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.dt结束训练日期);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dt开始训练日期);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtProject);
+            this.Controls.Add(this.ucStudentSearch1);
+            this.Controls.Add(this.divisionComboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -460,10 +635,23 @@
             this.Controls.SetChildIndex(this.btnColumn, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.ucStatiticsSearch1, 0);
-            this.Controls.SetChildIndex(this.cmbPhysicalItem, 0);
+            this.Controls.SetChildIndex(this.divisionComboBox1, 0);
+            this.Controls.SetChildIndex(this.ucStudentSearch1, 0);
+            this.Controls.SetChildIndex(this.txtProject, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.dt开始训练日期, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.dt结束训练日期, 0);
+            this.Controls.SetChildIndex(this.label11, 0);
+            this.Controls.SetChildIndex(this.chkByGender, 0);
+            this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.chkByDivision, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.txt科目, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.ucStudentSearch1.ResumeLayout(false);
+            this.ucStudentSearch1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,12 +663,26 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cMnu_SelectColumns;
-        private CommonUI.Controls.UCStatiticsSearch ucStatiticsSearch1;
-        private CommonUI.Controls.PhysicalItemComboBox cmbPhysicalItem;
+        private System.Windows.Forms.CheckBox chkByDivision;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox chkByGender;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dt结束训练日期;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dt开始训练日期;
+        private System.Windows.Forms.Label label2;
+        private CommonUI.Controls.PhysicalProjectComboBox txtProject;
+        private CommonUI.Controls.UCStudentSearch ucStudentSearch1;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox txtStudentID1;
+        private CommonUI.Controls.DivisionComboBox cmbDivision;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox txtName;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox dbcTextBox1;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox dbcTextBox2;
+        private CommonUI.Controls.DivisionComboBox divisionComboBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox txt科目;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDivision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFacility;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhysicalItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSex;
         private System.Windows.Forms.DataGridViewLinkColumn col总人数;
         private System.Windows.Forms.DataGridViewLinkColumn col完成人数;

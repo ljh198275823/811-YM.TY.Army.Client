@@ -12,9 +12,9 @@ namespace HH.ZK.Model
 
         public StatiticKey Key { get; set; }
 
-        public int PhysicalItemID { get; set; }
+        public int TestID { get; set; }
 
-        public string PhysicalItem { get; set; }
+        public string TestName { get; set; }
         /// <summary>
         /// 获取或设置总人数
         /// </summary>

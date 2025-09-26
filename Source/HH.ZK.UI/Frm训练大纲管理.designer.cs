@@ -67,37 +67,37 @@
             this.设置评分标准ToolStripMenuItem,
             this.设置选项ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 120);
             // 
             // cMnu_Fresh
             // 
             this.cMnu_Fresh.Name = "cMnu_Fresh";
-            this.cMnu_Fresh.Size = new System.Drawing.Size(162, 22);
+            this.cMnu_Fresh.Size = new System.Drawing.Size(180, 22);
             this.cMnu_Fresh.Text = "刷新";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // 设置训练科目ToolStripMenuItem
             // 
             this.设置训练科目ToolStripMenuItem.Name = "设置训练科目ToolStripMenuItem";
-            this.设置训练科目ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.设置训练科目ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.设置训练科目ToolStripMenuItem.Text = "1. 设置训练科目";
             this.设置训练科目ToolStripMenuItem.Click += new System.EventHandler(this.设置训练科目ToolStripMenuItem_Click);
             // 
             // 设置评分标准ToolStripMenuItem
             // 
             this.设置评分标准ToolStripMenuItem.Name = "设置评分标准ToolStripMenuItem";
-            this.设置评分标准ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.设置评分标准ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.设置评分标准ToolStripMenuItem.Text = "2. 设置评分标准";
             this.设置评分标准ToolStripMenuItem.Click += new System.EventHandler(this.设置评分标准ToolStripMenuItem_Click);
             // 
             // 设置选项ToolStripMenuItem
             // 
             this.设置选项ToolStripMenuItem.Name = "设置选项ToolStripMenuItem";
-            this.设置选项ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.设置选项ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.设置选项ToolStripMenuItem.Text = "3. 设置选项";
             this.设置选项ToolStripMenuItem.Click += new System.EventHandler(this.设置选项ToolStripMenuItem_Click);
             // 
@@ -116,7 +116,7 @@
             this.toolStripSeparator2});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(795, 50);
+            this.menu.Size = new System.Drawing.Size(973, 50);
             this.menu.TabIndex = 60;
             // 
             // btn_Add
@@ -203,7 +203,7 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(795, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(973, 378);
             this.dataGridView1.TabIndex = 61;
             // 
             // col序号
@@ -231,8 +231,10 @@
             // col简称
             // 
             this.col简称.HeaderText = "简称";
+            this.col简称.MinimumWidth = 150;
             this.col简称.Name = "col简称";
             this.col简称.ReadOnly = true;
+            this.col简称.Width = 150;
             // 
             // col类别
             // 
@@ -258,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 450);
+            this.ClientSize = new System.Drawing.Size(973, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

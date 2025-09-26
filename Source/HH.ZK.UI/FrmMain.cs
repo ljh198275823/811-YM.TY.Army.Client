@@ -91,27 +91,16 @@ namespace HH.ZK.UI
         public void ShowOperatorRights()
         {
             Main_报表.Enabled = AppSettings.Current.Operator != null;
-            this.mainToolBar.Enabled = AppSettings.Current.Operator != null;
             mnu切换用户.Enabled = AppSettings.Current.Operator != null;
             if (AppSettings.Current.Operator != null)
             {
                 var cur = AppSettings.Current.Operator;
-                
                 //报表
-                mnu学生原始成绩查询.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu重复成绩.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu重复成绩.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu学生成绩仲裁记录报表.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
+                mnu原始成绩查询.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 mnu单项成绩统计报表.Enabled = cur.PermitAny(Permission.总分, PermissionActions.Read);
                 mnu总成绩统计报表.Enabled = cur.PermitAny(Permission.总分, PermissionActions.Read);
                 mnu_Log.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                mnu人工修改成绩查询报表.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
                 //工具栏
-                //报表
-                btn单项成绩.Enabled = cur.PermitAny(Permission.StudentScore, PermissionActions.Read);
-                btn单项统计报表.Enabled = mnu单项成绩统计报表.Enabled;
-                btn总成绩统计报表.Enabled = mnu总成绩统计报表.Enabled;
-                mnu仲裁报表.Enabled = mnu学生成绩仲裁记录报表.Enabled;
             }
         }
         #endregion
@@ -448,16 +437,6 @@ namespace HH.ZK.UI
         private void mnu学生成绩管理_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm训练成绩管理>(sender);
-        }
-
-        private void mnu学生成绩仲裁记录报表_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<FrmDiscussionView>();
-        }
-
-        private void mnu仲裁报表_Click(object sender, EventArgs e)
-        {
-            mnu学生成绩仲裁记录报表.PerformClick();
         }
 
         private void mnu导出成绩_Click(object sender, EventArgs e)

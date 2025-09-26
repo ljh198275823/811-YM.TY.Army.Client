@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using HH.ZK.Model;
 using HH.ZK.Model.CRM;
@@ -27,7 +22,8 @@ namespace HH.ZK.UI
         protected override void Init()
         {
             base.Init();
-            ucStatiticsSearch1.Init();
+            txtProject.Init();
+            ucStudentSearch1.Init();
         }
 
         public override void ShowOperatorRights()
@@ -39,15 +35,18 @@ namespace HH.ZK.UI
 
         protected override QueryResultList<TotalStatistic> GetDataSource(int pageSize, int pageIndex)
         {
-            var con = ucStatiticsSearch1.GetSearchCondition();
+            var con = new StatisticSearchCondition();
+            ucStudentSearch1.GetSearchCondition(con);
+            con.ProjectID = txtProject.SelectedProjectID;
+            con.DateRange = new DateTimeRange(dt开始训练日期.Value.Date, dt结束训练日期.Value.Date);
+            con.ByDivision = chkByDivision.Checked;
+            con.ByGender = chkByGender.Checked;
             con.SortMode = LJH.GeneralLibrary.SortMode.Asc;
             con.PageIndex = pageIndex;
             con.PageSize = pageSize;
-            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, TotalStatistic>(con, AppSettings.Current.PhysicalProject.ID);
+            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, TotalStatistic>(con);
             dataGridView1.Columns["colDivision"].Visible = con.ByDivision;
-            dataGridView1.Columns["colFacility"].Visible = con.ByFacility;
-            dataGridView1.Columns["colClassName"].Visible = con.ByClass;
-            dataGridView1.Columns["colSex"].Visible = con.BySex;
+            dataGridView1.Columns["col性别"].Visible = con.ByGender;
             return ret;
         }
 
@@ -55,9 +54,7 @@ namespace HH.ZK.UI
         {
             row.Tag = item;
             row.Cells["colDivision"].Value = item.Key.Division;
-            row.Cells["colFacility"].Value = item.Key.Facility;
-            row.Cells["colClassName"].Value = item.Key.ClassName;
-            row.Cells["colSex"].Value = item.Key.Sex;
+            row.Cells["col性别"].Value = item.Key.Gender;
             row.Cells["col总人数"].Value = item.Total;
             row.Cells["col完成人数"].Value = item.Completed;
             row.Cells["col未完成人数"].Value = item.NotCompleted;
@@ -95,16 +92,11 @@ namespace HH.ZK.UI
             {
                 var item = dataGridView1.Rows[e.RowIndex].Tag as TotalStatistic;
                 var con = new StudentWithTotalSearchCondition();
-                var con1 = ucStatiticsSearch1.GetSearchCondition();
-                con.DivisionID = con1.DivisionID;
-                con.FacilityID = con1.FacilityID;
-                con.ClassName = con1.ClassName;
-                con.Sex = con1.Sex;
-                if (!string.IsNullOrEmpty(item.Key.ClassName)) con.ClassName = item.Key.ClassName;
-                if (!string.IsNullOrEmpty(item.Key.Sex)) con.Sex = item.Key.Sex == "男" ? Gender.Male : Gender.Female;
-                if (!string.IsNullOrEmpty(item.Key.FacilityID)) con.FacilityID = item.Key.FacilityID;
-                if (!string.IsNullOrEmpty(item.Key.DivisionID)) con.DivisionID =Guid.Parse ( item.Key.DivisionID);
-
+                con.ProjectID = txtProject.SelectedProjectID;
+                con.DateRange = new DateTimeRange(dt开始训练日期.Value.Date, dt结束训练日期.Value.Date);
+                con.DivisionID = item.Key.DivisionID;
+                if (item.Key.Gender == "男") con.Gender = Gender.Male;
+                if (item.Key.Gender == "女") con.Gender = Gender.Female;
                 if (column.Name == "col总人数") con.TestStates = null;
                 else if (column.Name == "col未测试人数") con.TestStates = new List<TestCompleteState>() { TestCompleteState.未测试 };
                 else if (column.Name == "col未完成人数") con.TestStates = new List<TestCompleteState>() { TestCompleteState.部分科目完成 };
@@ -117,10 +109,11 @@ namespace HH.ZK.UI
                 else if (column.Name == "colJige") con.TotalRank = ScoreRank.及格;
                 else if (column.Name == "colBujige") con.TotalRank = ScoreRank.不及格;
                 else if (column.Name == "col合格人数") con.TotalRank = ScoreRank.合格;
-                var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithTotal>(con, AppSettings.Current.PhysicalProject.ID).QueryObjects;
+                var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithTotal>(con).QueryObjects;
                 if(ss!=null && ss.Count > 0)
                 {
-                    var frm = new Frm学生成绩查看();
+                    var frm = new Frm人员成绩查看();
+                    frm.ProjectID = txtProject.SelectedProjectID;
                     frm.StartPosition = FormStartPosition.CenterParent;
                     frm.Students = ss;
                     frm.ShowDialog();

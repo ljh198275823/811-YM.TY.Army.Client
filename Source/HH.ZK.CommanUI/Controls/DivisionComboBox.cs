@@ -48,7 +48,7 @@ namespace HH.ZK.CommonUI.Controls
 
         private void AddItems(Guid? parentid, List<Division> source, List<Division> des)
         {
-            var items = source.Where(it => it.ParentID == parentid).OrderBy(it => it.Name).ToList();
+            var items = source.Where(it => it.ParentID == parentid).ToList();
             if (items == null || items.Count == 0) return;
             foreach (var item in items)
             {

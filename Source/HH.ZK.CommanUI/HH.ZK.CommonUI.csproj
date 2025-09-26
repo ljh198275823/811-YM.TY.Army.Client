@@ -280,12 +280,6 @@
     <Compile Include="Frm修改成绩.designer.cs">
       <DependentUpon>Frm修改成绩.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm删除学生成绩.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm删除学生成绩.designer.cs">
-      <DependentUpon>Frm删除学生成绩.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm人工修改成绩查询报表.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,9 +455,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm修改成绩.resx">
       <DependentUpon>Frm修改成绩.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm删除学生成绩.resx">
-      <DependentUpon>Frm删除学生成绩.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm人工修改成绩查询报表.resx">
       <DependentUpon>Frm人工修改成绩查询报表.cs</DependentUpon>

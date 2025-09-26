@@ -215,7 +215,8 @@ namespace HH.ZK.UI
         protected override void Init()
         {
             base.Init();
-            dt结束训练日期.Value = dt开始训练日期.Value.AddDays(13);
+            ucStudentSearch1.Init();
+            dt结束训练日期.Value = dt开始训练日期.Value.AddMonths (1).AddDays(-1);
         }
 
         public override void ShowOperatorRights()

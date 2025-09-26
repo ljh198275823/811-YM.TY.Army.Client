@@ -222,6 +222,7 @@ namespace HH.ZK.UI
         protected override void Init()
         {
             base.Init();
+            ucStudentSearch1.Init();
             txtProject.Init();
         }
 
@@ -334,43 +335,25 @@ namespace HH.ZK.UI
 
         private void txtProject_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var pid = txtProject.SelectedProjectID;
-            Project p = new APIClient(AppSettings.Current.ConnStr).GetByID<string, Project>(pid, null).QueryObject;
-            if (p != null)
+            if (_ScoreCols != null && _ScoreCols.Count > 0)
             {
-                AppSettings.Current.ProjectID = p.ID;
-                AppSettings.Current.PhysicalProject = p;
-                p.PhysicalItems = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, p.ID);
-                p.Options = SysParaSettingsClient.GetOrCreateSetting<ProjectOptions>(AppSettings.Current.ConnStr, p.ID);
-                p.StateSettings = SysParaSettingsClient.GetOrCreateSetting<StudentStateSettings>(AppSettings.Current.ConnStr, p.ID);
-                p.CheckOptions = SysParaSettingsClient.GetOrCreateSetting<CheckOptions>(AppSettings.Current.ConnStr, p.ID);
-                _Project = p;
+                _ScoreCols.ForEach(it => dataGridView1.Columns.Remove(it));
+                _ScoreCols.Clear();
             }
-            if (_Project != null)
+            if (_ResultCols != null && _ResultCols.Count > 0)
             {
-                ucStudentSearch1.Init();
-                dataGridView1.Columns["col总分"].Visible = AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read);
-
-                if (_ScoreCols != null && _ScoreCols.Count > 0)
+                _ResultCols.ForEach(it => dataGridView1.Columns.Remove(it));
+                _ResultCols.Clear();
+            }
+            var sp = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, txtProject.SelectedProjectID);
+            if (sp != null && sp.Items != null && sp.Items.Count > 0)
+            {
+                foreach (var pi in sp.Items)
                 {
-                    _ScoreCols.ForEach(it => dataGridView1.Columns.Remove(it));
-                    _ScoreCols.Clear();
-                }
-                if (_ResultCols != null && _ResultCols.Count > 0)
-                {
-                    _ResultCols.ForEach(it => dataGridView1.Columns.Remove(it));
-                    _ResultCols.Clear();
-                }
-                if (_Project.PhysicalItems != null && _Project.PhysicalItems.Items != null)
-                {
-                    foreach (var pi in _Project.PhysicalItems.Items)
-                    {
-                        AddScoreColumn(pi);
-                        AddResultColumn(pi);
-                    }
+                    AddScoreColumn(pi);
+                    AddResultColumn(pi);
                 }
             }
-
         }
     }
 }

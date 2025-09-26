@@ -10,7 +10,7 @@ namespace HH.ZK.Model.SearchCondition
     {
         public bool ByDivision { get; set; }//分区域
         public bool ByFacility { get; set; }//分学校
-        public bool BySex { get; set; }//分性别
+        public bool ByGender { get; set; }//分性别
         public bool ByClass { get; set; }//分班级
         public List<int> PhysicalItemIDs { get; set; }
 

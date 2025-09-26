@@ -84,7 +84,7 @@ namespace HH.ZK.Model
         public string Memo { get; set; }
         #endregion
 
-        #region 汇海主机记录特有字段
+        #region 主机记录特有字段
         /// <summary>
         /// 获取或设置主机编号
         /// </summary>
@@ -97,6 +97,29 @@ namespace HH.ZK.Model
         /// 获取或设置主机序列号
         /// </summary>
         public string DeviceSn { get; set; }
+        #endregion
+
+        #region 实时属性
+        /// <summary>
+        /// 获取或设置人员姓名
+        /// </summary>
+        public string StudentName { get; set; }
+        /// <summary>
+        /// 获取或设置部门名称
+        /// </summary>
+        public string DivisionName { get; set; }
+        /// <summary>
+        /// 获取或设置性别
+        /// </summary>
+        public Gender? Gender { get; set; }
+
+        public string ProjectName { get; set; }
+
+        public string ProjectShortName { get; set; }
+        /// <summary>
+        /// 获取或设置测试科目名称
+        /// </summary>
+        public string TestName { get; set; }
         #endregion
     }
 }

@@ -187,11 +187,11 @@
     <Compile Include="Frm学生成绩单导出.designer.cs">
       <DependentUpon>Frm学生成绩单导出.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm学生成绩查看.cs">
+    <Compile Include="Frm人员成绩查看.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm学生成绩查看.designer.cs">
-      <DependentUpon>Frm学生成绩查看.cs</DependentUpon>
+    <Compile Include="Frm人员成绩查看.designer.cs">
+      <DependentUpon>Frm人员成绩查看.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm多考点选择.cs">
       <SubType>Form</SubType>
@@ -253,11 +253,11 @@
     <Compile Include="Frm考点名称确认.Designer.cs">
       <DependentUpon>Frm考点名称确认.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm学生单项成绩查看.cs">
+    <Compile Include="Frm人员单项成绩查看.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm学生单项成绩查看.designer.cs">
-      <DependentUpon>Frm学生单项成绩查看.cs</DependentUpon>
+    <Compile Include="Frm人员单项成绩查看.designer.cs">
+      <DependentUpon>Frm人员单项成绩查看.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm违规考试查询报表.cs">
       <SubType>Form</SubType>
@@ -494,8 +494,8 @@
     <EmbeddedResource Include="Frm学生成绩单导出.resx">
       <DependentUpon>Frm学生成绩单导出.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm学生成绩查看.resx">
-      <DependentUpon>Frm学生成绩查看.cs</DependentUpon>
+    <EmbeddedResource Include="Frm人员成绩查看.resx">
+      <DependentUpon>Frm人员成绩查看.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm多考点选择.resx">
       <DependentUpon>Frm多考点选择.cs</DependentUpon>
@@ -527,8 +527,8 @@
     <EmbeddedResource Include="Frm考点名称确认.resx">
       <DependentUpon>Frm考点名称确认.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm学生单项成绩查看.resx">
-      <DependentUpon>Frm学生单项成绩查看.cs</DependentUpon>
+    <EmbeddedResource Include="Frm人员单项成绩查看.resx">
+      <DependentUpon>Frm人员单项成绩查看.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm违规考试查询报表.resx">
       <DependentUpon>Frm违规考试查询报表.cs</DependentUpon>

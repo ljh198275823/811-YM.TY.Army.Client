@@ -22,7 +22,7 @@ namespace HH.ZK.Model.SearchCondition
 
         public string StudentID_IDNumber_CardID { get; set; }
 
-        public Gender? Sex { get; set; }
+        public Gender? Gender { get; set; }
 
         public bool? HasPhoto { get; set; }
 
@@ -47,5 +47,7 @@ namespace HH.ZK.Model.SearchCondition
         public string ProjectID { get; set; }
 
         public DateTimeRange DateRange { get; set; }
+
+        public int? TestID { get; set; }
     }
 }

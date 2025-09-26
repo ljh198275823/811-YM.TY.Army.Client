@@ -56,7 +56,7 @@ namespace HH.ZK.CommonUI
             var con = new StudentScoreSearchCondition() { PageIndex = pageIndex, PageSize = pageSize };
             ucStudentSearch1.GetSearchCondition(con);
             con.SortMode = SortMode.Desc;
-            if (!string.IsNullOrEmpty(cmbPhysicalItem.Text)) con.PhysicalItem = cmbPhysicalItem.SelectedPhysicalItem;
+            if (!string.IsNullOrEmpty(cmbPhysicalItem.Text)) con.TestID = cmbPhysicalItem.SelectedPhysicalItem;
             return new APIClient(AppSettings.Current.ConnStr).GetList<Guid, StudentScoreLog>(con, AppSettings.Current.PhysicalProject.ID);
         }
 

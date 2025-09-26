@@ -31,13 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.chkByDivision = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.chkByFacility = new System.Windows.Forms.CheckBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.chkBySex = new System.Windows.Forms.CheckBox();
-            this.chkByClass = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -73,17 +69,6 @@
             this.label5.Text = "学校";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(424, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(11, 12);
-            this.label12.TabIndex = 300;
-            this.label12.Text = "+";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // chkByDivision
             // 
             this.chkByDivision.AutoSize = true;
@@ -94,65 +79,30 @@
             this.chkByDivision.Name = "chkByDivision";
             this.chkByDivision.Size = new System.Drawing.Size(60, 16);
             this.chkByDivision.TabIndex = 299;
-            this.chkByDivision.Text = "分区域";
+            this.chkByDivision.Text = "分部门";
             this.chkByDivision.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(503, 72);
+            this.label8.Location = new System.Drawing.Point(425, 72);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(11, 12);
             this.label8.TabIndex = 298;
             this.label8.Text = "+";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // chkByFacility
-            // 
-            this.chkByFacility.AutoSize = true;
-            this.chkByFacility.Checked = true;
-            this.chkByFacility.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkByFacility.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chkByFacility.Location = new System.Drawing.Point(439, 70);
-            this.chkByFacility.Name = "chkByFacility";
-            this.chkByFacility.Size = new System.Drawing.Size(60, 16);
-            this.chkByFacility.TabIndex = 297;
-            this.chkByFacility.Text = "分学校";
-            this.chkByFacility.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label13.Location = new System.Drawing.Point(581, 72);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(11, 12);
-            this.label13.TabIndex = 294;
-            this.label13.Text = "+";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // chkBySex
             // 
             this.chkBySex.AutoSize = true;
             this.chkBySex.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chkBySex.Location = new System.Drawing.Point(518, 70);
+            this.chkBySex.Location = new System.Drawing.Point(440, 70);
             this.chkBySex.Name = "chkBySex";
             this.chkBySex.Size = new System.Drawing.Size(60, 16);
             this.chkBySex.TabIndex = 291;
             this.chkBySex.Text = "分性别";
             this.chkBySex.UseVisualStyleBackColor = true;
-            // 
-            // chkByClass
-            // 
-            this.chkByClass.AutoSize = true;
-            this.chkByClass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chkByClass.Location = new System.Drawing.Point(596, 70);
-            this.chkByClass.Name = "chkByClass";
-            this.chkByClass.Size = new System.Drawing.Size(60, 16);
-            this.chkByClass.TabIndex = 290;
-            this.chkByClass.Text = "分班级";
-            this.chkByClass.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -272,20 +222,16 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbDivision);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.chkByDivision);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.chkByFacility);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.chkBySex);
-            this.Controls.Add(this.chkByClass);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtClassName);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
             this.Name = "UCStatiticsSearch";
-            this.Size = new System.Drawing.Size(668, 94);
+            this.Size = new System.Drawing.Size(512, 94);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -299,13 +245,9 @@
         private System.Windows.Forms.Label label2;
         private DivisionComboBox cmbDivision;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox chkByDivision;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox chkByFacility;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox chkBySex;
-        private System.Windows.Forms.CheckBox chkByClass;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
         private ClassNameCombox txtClassName;

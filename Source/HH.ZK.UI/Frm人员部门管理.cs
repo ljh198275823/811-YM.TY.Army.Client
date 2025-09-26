@@ -184,8 +184,8 @@ namespace HH.ZK.UI
             _Search = new StudentSearchCondition() { PageSize = pageSize, PageIndex = pageIndex, SortMode = SortMode.Asc };
             if (!string.IsNullOrEmpty(txtStudentID1.Text)) _Search.StudentIDLike = txtStudentID1.Text;
             if (!string.IsNullOrEmpty(txtName.Text)) _Search.Name = txtName.Text;
-            if (rdMale.Checked) _Search.Sex = Gender.Male;
-            if (rdFemale.Checked) _Search.Sex = Gender.Female;
+            if (rdMale.Checked) _Search.Gender = Gender.Male;
+            if (rdFemale.Checked) _Search.Gender = Gender.Female;
             if (rdHasPhoto.Checked) _Search.HasPhoto = true;
             if (rdNonePhoto.Checked) _Search.HasPhoto = false;
             if (rd有人脸特征.Checked) _Search.HasFaceFeature = true;

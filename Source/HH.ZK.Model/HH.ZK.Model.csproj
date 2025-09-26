@@ -135,7 +135,6 @@
     <Compile Include="SearchCondition\StudentClassSearchCondition.cs" />
     <Compile Include="StatiticKey.cs" />
     <Compile Include="StudentScoreExpress.cs" />
-    <Compile Include="StudentScoreFull.cs" />
     <Compile Include="StudentScoreLog.cs" />
     <Compile Include="StudentStateSettings.cs" />
     <Compile Include="StudentWithDXCJ.cs" />

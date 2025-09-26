@@ -97,17 +97,6 @@ namespace HH.ZK.UI
         {
             FreshView();
         }
-
-        private void mnu删除考点学生成绩_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                var frm = new Frm删除学生成绩();
-                frm.StartPosition = FormStartPosition.CenterParent;
-                frm.Project = GetRowTag(dataGridView1.SelectedRows[0]);
-                frm.ShowDialog();
-            }
-        }
         #endregion
 
         private void 设置训练科目ToolStripMenuItem_Click(object sender, EventArgs e)

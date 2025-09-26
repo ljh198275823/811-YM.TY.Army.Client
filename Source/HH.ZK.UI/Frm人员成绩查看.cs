@@ -6,17 +6,20 @@ using HH.ZK.Model;
 using System.Drawing;
 using HH.ZK.Model.CRM;
 using HH.ZK.CommonUI;
+using HH.ZK.WebAPIClient;
 using LJH.GeneralLibrary;
 using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.UI
 {
-    public partial class Frm学生成绩查看 : Form
+    public partial class Frm人员成绩查看 : Form
     {
-        public Frm学生成绩查看()
+        public Frm人员成绩查看()
         {
             InitializeComponent();
         }
+
+        public string ProjectID { get; set; }
 
         public List<StudentWithTotal> Students { get; set; }
 
@@ -38,12 +41,13 @@ namespace HH.ZK.UI
                 _ResultCols.ForEach(it => dataGridView1.Columns.Remove(it));
                 _ResultCols.Clear();
             }
-            if (AppSettings.Current.PhysicalProject.PhysicalItems != null && AppSettings.Current.PhysicalProject.PhysicalItems.Items != null)
+            var sp = SysParaSettingsClient.GetOrCreateSetting<PhysicalItemSettings>(AppSettings.Current.ConnStr, ProjectID);
+            if (sp != null && sp.Items != null && sp.Items.Count > 0)
             {
-                foreach (var pi in AppSettings.Current.PhysicalProject.PhysicalItems.Items)
+                foreach (var pi in sp.Items)
                 {
                     AddScoreColumn(pi);
-                    if (AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read)) AddResultColumn(pi);
+                    AddResultColumn(pi);
                 }
             }
         }
@@ -91,31 +95,29 @@ namespace HH.ZK.UI
             row.Cells["colName"].Value = s.Name;
             row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
             row.Cells["colFacility"].Value = s.DivisionName;
-            row.Cells["colState"].Value = s.State == StudentState.正常 ? null : s.State.ToString();
             if (AppSettings.Current.Operator.PermitAll(Permission.总分, PermissionActions.Read)) row.Cells["col总分"].Value = s.Total;
             foreach (DataGridViewColumn col in _ScoreCols)
             {
                 row.Cells[col.Index].ReadOnly = true;
                 var pi = col.Tag as PhysicalItem;
-                //if (s.包函考试科目(pi.ID))
-                //{
-                //    var score = s.Scores != null ? s.Scores.SingleOrDefault(it => it.PhysicalItemID == pi.ID) : null;
-                //    if (score == null) row.Cells[col.Index].Style.BackColor = Color.Moccasin;
-                //    else
-                //    {
-                //        row.Cells[col.Index].Tag = score;
-                //        ShowScoreCell(row.Cells[col.Index], score);
-                //        row.Cells[col.Index].Style.BackColor = Color.White;
-                //        foreach (var rcol in _ResultCols)
-                //        {
-                //            if ((rcol.Tag as PhysicalItem).ID == pi.ID && score.Result.HasValue) row.Cells[rcol.Index].Value = score.Result.Value.Trim();
-                //        }
-                //    }
-                //}
+                if (pi.Gender == 1 && s.Gender == Gender.Female) continue;
+                if (pi.Gender == 2 && s.Gender == Gender.Male) continue;
+                var score = s.Scores != null ? s.Scores.SingleOrDefault(it => it.TestID == pi.ID) : null;
+                if (score == null) row.Cells[col.Index].Style.BackColor = Color.Moccasin;
+                else
+                {
+                    row.Cells[col.Index].Tag = score;
+                    ShowScoreCell(row.Cells[col.Index], score);
+                    row.Cells[col.Index].Style.BackColor = Color.White;
+                    foreach (var rcol in _ResultCols)
+                    {
+                        if ((rcol.Tag as PhysicalItem).ID == pi.ID && score.Result.HasValue) row.Cells[rcol.Index].Value = score.Result.Value.Trim();
+                    }
+                }
             }
         }
 
-        private void ShowScoreCell(DataGridViewCell cell, StudentScore score)
+        private void ShowScoreCell(DataGridViewCell cell, StudentScoreExpress score)
         {
             //这么做主要是为了列的排序
             decimal temp;

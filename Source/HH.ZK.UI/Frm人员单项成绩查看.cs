@@ -15,9 +15,9 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.UI
 {
-    public partial class Frm学生单项成绩查看 : Form
+    public partial class Frm人员单项成绩查看 : Form
     {
-        public Frm学生单项成绩查看()
+        public Frm人员单项成绩查看()
         {
             InitializeComponent();
         }
@@ -32,9 +32,7 @@ namespace HH.ZK.UI
             row.Cells["colID"].Value = s.ID;
             row.Cells["colName"].Value = s.Name;
             row.Cells["colSex"].Value = s.Gender == Gender.Male ? "男" : "女";
-            row.Cells["colClassName"].Value = s.ClassName;
-            row.Cells["colPhysicalItem"].Value = AppSettings.Current.PhysicalProject.PhysicalItems?.GetName(s.TestID);
-            var pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(s.TestID);
+            row.Cells["colPhysicalItem"].Value = s.TestID;
             row.DefaultCellStyle.ForeColor = s.OverCountHandled ? Color.Blue : Color.Black;
             var score = s.GetScoreByIndex(0, true);
             if (score != null)
@@ -92,18 +90,18 @@ namespace HH.ZK.UI
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
-            var row = dataGridView1.Rows[e.RowIndex];
-            var student = row.Tag as StudentWithDXCJ;
-            PhysicalItem pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(student.TestID);
-            if (pi == null) return;
-            FrmStudentScoreDetailView frm = new FrmStudentScoreDetailView();
-            frm.Student = new StudentInProject() { StudentID = student.ID, ProjectID = student.ProjectID, TestDate = student.TestDate };
-            frm.PhysicalItem = pi;
-            frm.ShowDialog();
-            var con = new StudentWithDXCJSearchCondition() { StudentID = student.ID, TestID = pi.ID };
-            var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithDXCJ>(con, AppSettings.Current.PhysicalProject.ID).QueryObjects;
-            if (ss != null && ss.Count == 1) ShowItemInGridViewRow(row, ss[0]);
+            //if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            //var row = dataGridView1.Rows[e.RowIndex];
+            //var student = row.Tag as StudentWithDXCJ;
+            //PhysicalItem pi = AppSettings.Current.PhysicalProject.PhysicalItems?.GetPhysicalItem(student.TestID);
+            //if (pi == null) return;
+            //FrmStudentScoreDetailView frm = new FrmStudentScoreDetailView();
+            //frm.Student = new StudentInProject() { StudentID = student.ID, ProjectID = student.ProjectID, TestDate = student.TestDate };
+            //frm.PhysicalItem = pi;
+            //frm.ShowDialog();
+            //var con = new StudentWithDXCJSearchCondition() { StudentID = student.ID, TestID = pi.ID };
+            //var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithDXCJ>(con).QueryObjects;
+            //if (ss != null && ss.Count == 1) ShowItemInGridViewRow(row, ss[0]);
         }
 
         private void mnu导出_Click(object sender, EventArgs e)
