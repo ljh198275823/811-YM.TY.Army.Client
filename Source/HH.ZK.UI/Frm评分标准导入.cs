@@ -187,7 +187,7 @@ namespace HH.ZK.UI
 
         private void ShowStandardItems(Standard s, PhysicalItem pi)
         {
-            string colName = string.Format("col_{0}_{1}", s.PhysicalItemID.ToString(), s.Gender == Gender.Male ? 1 : 2);
+            string colName = string.Format("col_{0}_{1}", s.TestID.ToString(), s.Gender == Gender.Male ? 1 : 2);
             if (viewDestination.Columns[colName] == null) AddPhysicalColumn(pi, s.Gender);
             for (int i = 0; i < s.Items.Count; i++)
             {
@@ -220,7 +220,7 @@ namespace HH.ZK.UI
 
         private void ClearStandard(Standard s)
         {
-            string colName = string.Format("col_{0}_{1}", s.PhysicalItemID.ToString(), s.Gender == Gender.Male ? 1 : 2);
+            string colName = string.Format("col_{0}_{1}", s.TestID.ToString(), s.Gender == Gender.Male ? 1 : 2);
             if (viewDestination.Columns[colName] != null)
             {
                 foreach (DataGridViewRow row in viewDestination.Rows)
@@ -235,7 +235,7 @@ namespace HH.ZK.UI
             Standard ret = new Standard();
             ret.ID = Guid.NewGuid();
             ret.Name = pi.Name + "评分标准";
-            ret.PhysicalItemID = pi.ID;
+            ret.TestID = pi.ID;
             ret.Gender = sex;
             ret.Grade = grade;
             return ret;

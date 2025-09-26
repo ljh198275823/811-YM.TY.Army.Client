@@ -33,7 +33,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置标准适用的测试项目ID
         /// </summary>
-        public int PhysicalItemID { get; set; }
+        public int TestID { get; set; }
         /// <summary>
         /// 获取或设置标准适用的性别
         /// </summary>

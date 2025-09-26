@@ -1,6 +1,6 @@
 ﻿namespace HH.ZK.UI
 {
-    partial class Frm考点选择
+    partial class Frm训练大纲选择
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm考点选择));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm训练大纲选择));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.txtProject = new HH.ZK.CommonUI.Controls.PhysicalProjectComboBox(this.components);

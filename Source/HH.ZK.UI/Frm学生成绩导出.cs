@@ -46,7 +46,7 @@ namespace HH.ZK.UI
                 {
                     if (pi.ID == PhysicalItem._BMI) continue;
                     AddScoreColumn(pi);
-                    if (stds != null && stds.Count > 0 && stds.Exists(it => it.PhysicalItemID == pi.ID))
+                    if (stds != null && stds.Count > 0 && stds.Exists(it => it.TestID == pi.ID))
                     {
                         if (AppSettings.Current.Operator.PermitAny(Permission.总分, PermissionActions.Read)) AddResultColumn(pi);
                     }

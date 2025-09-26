@@ -96,6 +96,31 @@ namespace HH.ZK.UI
             return dic.Values.ToList();
         }
 
+        private List<StudentInProject> GetEmptyPlans(string pid, string teacher)
+        {
+            List<StudentInProject> items = new List<StudentInProject>();
+            foreach (DataGridViewCell cell in GridView.SelectedCells)
+            {
+                if (_DateCols.Contains(dataGridView1.Columns[cell.ColumnIndex]))
+                {
+                    var dt = Convert.ToDateTime(dataGridView1.Columns[cell.ColumnIndex].Tag);
+                    var s = dataGridView1.Rows[cell.RowIndex].Tag as Student;
+                    var sp = new StudentInProject()
+                    {
+                        ID = Guid.NewGuid(),
+                        StudentID = s.ID,
+                        ProjectID = pid,
+                        TestDate = dt,
+                        AddTime = DateTime.Now,
+                        Operator = AppSettings.Current.Operator.Name,
+                        Teacher = teacher,
+                    };
+                    items.Add(sp);
+                }
+            }
+            return items;
+        }
+
         private void AddPlans(List<StudentInProject> items)
         {
             FrmProcessing frm = new FrmProcessing();
@@ -109,7 +134,7 @@ namespace HH.ZK.UI
                         temp.Add(items[i]);
                         if (temp.Count >= 100 || i == items.Count - 1)
                         {
-                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<Guid, StudentInProject>(temp, ImportOption.Ignore);
+                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<Guid, StudentInProject>(temp, ImportOption.Override);
                             frm.ShowProgress(string.Empty, (decimal)(i + 1) / items.Count);
                             temp.Clear();
                         }
@@ -190,7 +215,7 @@ namespace HH.ZK.UI
         protected override void Init()
         {
             base.Init();
-            dt结束训练日期.Value = dt开始训练日期.Value.AddDays(6);
+            dt结束训练日期.Value = dt开始训练日期.Value.AddDays(13);
         }
 
         public override void ShowOperatorRights()
@@ -280,13 +305,12 @@ namespace HH.ZK.UI
         {
             List<Student> students = GetSelectedItems();
             if (students.Count == 0) return;
-            var frm = new Frm设置训练计划();
+            var frm = new Frm训练大纲选择();
             frm.StartPosition = FormStartPosition.CenterParent;
-            frm.Students = students;
-            frm.DateRange = new DateTimeRange(dt开始训练日期.Value.Date, dt结束训练日期.Value.Date);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                AddPlans(frm.CreatedItems);
+                var items = GetEmptyPlans(frm.ProjectID, "A");
+                AddPlans(items);
             }
         }
 

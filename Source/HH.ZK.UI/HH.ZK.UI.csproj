@@ -121,11 +121,11 @@
     <Compile Include="Frm设置训练计划.designer.cs">
       <DependentUpon>Frm设置训练计划.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm考点选择.cs">
+    <Compile Include="Frm训练大纲选择.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm考点选择.designer.cs">
-      <DependentUpon>Frm考点选择.cs</DependentUpon>
+    <Compile Include="Frm训练大纲选择.designer.cs">
+      <DependentUpon>Frm训练大纲选择.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm视频录相机设置.cs">
       <SubType>Form</SubType>
@@ -461,8 +461,8 @@
     <EmbeddedResource Include="Frm设置训练计划.resx">
       <DependentUpon>Frm设置训练计划.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm考点选择.resx">
-      <DependentUpon>Frm考点选择.cs</DependentUpon>
+    <EmbeddedResource Include="Frm训练大纲选择.resx">
+      <DependentUpon>Frm训练大纲选择.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm视频录相机设置.resx">
       <DependentUpon>Frm视频录相机设置.cs</DependentUpon>
