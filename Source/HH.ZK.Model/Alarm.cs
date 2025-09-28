@@ -8,7 +8,7 @@ namespace HH.ZK.Model
     /// <summary>
     /// 表示系统的一些报警日志
     /// </summary>
-    public class Alarm : LJH.GeneralLibrary.IEntity<Guid>
+    public class Alarm : LJH.GeneralLibrary.IEntity<long>
     {
         #region 构造函数
         public Alarm() { }
@@ -18,7 +18,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 报警ID
         /// </summary>
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置报警发生时间
         /// </summary>

@@ -13,9 +13,9 @@ using LJH.GeneralLibrary;
 
 namespace HH.ZK.UI
 {
-    public partial class Frm学生信息导入 : Form
+    public partial class Frm导入人员 : Form
     {
-        public Frm学生信息导入()
+        public Frm导入人员()
         {
             InitializeComponent();
         }

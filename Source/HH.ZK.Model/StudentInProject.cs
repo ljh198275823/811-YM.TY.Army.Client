@@ -6,7 +6,7 @@ using LJH.GeneralLibrary;
 
 namespace HH.ZK.Model
 {
-    public class StudentInProject: IEntity<Guid>
+    public class StudentInProject: IEntity<long>
     {
         #region 构造函数
         public StudentInProject() { }
@@ -16,7 +16,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置ID
         /// </summary>
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置测试日期
         /// </summary>

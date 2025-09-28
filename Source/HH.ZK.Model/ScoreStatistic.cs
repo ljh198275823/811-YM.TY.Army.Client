@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HH.ZK.Model
 {
-    public class ScoreStatistic : LJH.GeneralLibrary.IEntity<Guid>
+    public class ScoreStatistic : LJH.GeneralLibrary.IEntity<long>
     {
-        public Guid ID { get; set; }
+        public long ID { get; set; }
 
         public StatiticKey Key { get; set; }
 

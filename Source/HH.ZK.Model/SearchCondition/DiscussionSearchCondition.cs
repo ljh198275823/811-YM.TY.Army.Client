@@ -14,6 +14,6 @@ namespace HH.ZK.Model.SearchCondition
 
         public string Name { get; set; }
 
-        public Guid? ScoreID { get; set; }
+        public long? ScoreID { get; set; }
     }
 }

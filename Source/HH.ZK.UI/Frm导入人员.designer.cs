@@ -1,6 +1,6 @@
 ﻿namespace HH.ZK.UI
 {
-    partial class Frm学生信息导入
+    partial class Frm导入人员
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm学生信息导入));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm导入人员));
             this.panel1 = new System.Windows.Forms.Panel();
             this.第一步 = new System.Windows.Forms.GroupBox();
             this.lblSource = new System.Windows.Forms.Label();

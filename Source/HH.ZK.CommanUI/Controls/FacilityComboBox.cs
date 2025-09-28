@@ -28,7 +28,7 @@ namespace HH.ZK.CommonUI.Controls
         #region 私有变量
         #endregion
 
-        public void Init(Guid? divisionID = null)
+        public void Init(long? divisionID = null)
         {
             var con = new FacilitySearchCondition() { SortMode = LJH.GeneralLibrary.SortMode.Asc };
             if (divisionID.HasValue ) con.DivisionID = divisionID;

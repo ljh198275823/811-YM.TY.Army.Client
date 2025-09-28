@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HH.ZK.Model
 {
-    public class StudentCheckRecord : LJH.GeneralLibrary.IEntity<Guid>
+    public class StudentCheckRecord : LJH.GeneralLibrary.IEntity<long>
     {
         #region 构造函数
         public StudentCheckRecord()
@@ -14,7 +14,7 @@ namespace HH.ZK.Model
         #endregion
 
         #region 公共属性
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置检录时间
         /// </summary>

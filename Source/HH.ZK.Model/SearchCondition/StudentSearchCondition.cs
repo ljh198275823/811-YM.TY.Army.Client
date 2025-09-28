@@ -8,7 +8,7 @@ namespace HH.ZK.Model.SearchCondition
 {
     public class StudentSearchCondition : LJH.GeneralLibrary.SearchCondition
     {
-        public Guid? DivisionID { get; set; }
+        public long? DivisionID { get; set; }
 
         public string FacilityID { get; set; }
 
@@ -32,7 +32,7 @@ namespace HH.ZK.Model.SearchCondition
 
         public List<StudentState> States { get; set; }
 
-        public Guid? GroupID { get; set; }
+        public long? GroupID { get; set; }
 
         public bool? Grouped { get; set; }
 

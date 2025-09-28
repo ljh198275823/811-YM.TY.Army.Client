@@ -116,7 +116,7 @@ namespace HH.ZK.UI
                 }
                 if (deling.Count > 0)
                 {
-                    CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchDelete<Guid, StudentScore>(deling, AppSettings.Current.PhysicalProject.ID);
+                    CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchDelete<long, StudentScore>(deling, AppSettings.Current.PhysicalProject.ID);
                     if (ret.Result == ResultCode.Successful)
                     {
                         ShowScores();
@@ -191,7 +191,7 @@ namespace HH.ZK.UI
         {
             if (MessageBox.Show("是否要将成绩设置为 " + spt.ToString() + " ?", "询问", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                var patches = new List<UpdateItem<Guid>>();
+                var patches = new List<UpdateItem<long>>();
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (row.Selected)
@@ -199,13 +199,13 @@ namespace HH.ZK.UI
                         var score = row.Tag as StudentScore;
                         if (score.SpecialType == null || score.SpecialType != spt)
                         {
-                            patches.Add(new UpdateItem<Guid>() { ID = score.ID, Key = "State", Value = ((int)spt).ToString() });
+                            patches.Add(new UpdateItem<long>() { ID = score.ID, Key = "State", Value = ((int)spt).ToString() });
                         }
                     }
                 }
                 if (patches.Count > 0)
                 {
-                    CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchPatch<Guid, StudentScore>(patches, AppSettings.Current.PhysicalProject.ID);
+                    CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchPatch<long, StudentScore>(patches, AppSettings.Current.PhysicalProject.ID);
                     if (ret.Result == ResultCode.Successful)
                     {
                         ShowScores();

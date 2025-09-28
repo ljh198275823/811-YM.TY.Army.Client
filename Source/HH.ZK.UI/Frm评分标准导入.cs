@@ -233,7 +233,6 @@ namespace HH.ZK.UI
         private Standard CreateStandard(PhysicalItem pi, int grade, Gender sex)
         {
             Standard ret = new Standard();
-            ret.ID = Guid.NewGuid();
             ret.Name = pi.Name + "评分标准";
             ret.TestID = pi.ID;
             ret.Gender = sex;
@@ -326,7 +325,6 @@ namespace HH.ZK.UI
                         if (decimal.TryParse(strResult, out result) && pi.TryParse(strScore, out score))
                         {
                             StandardItem si = new StandardItem();
-                            si.ID = Guid.NewGuid();
                             si.StandardID = standard.ID;
                             si.Score1 = pi.Convert(score);
                             si.Result = result;
@@ -354,7 +352,7 @@ namespace HH.ZK.UI
                 int success = 0;
                 foreach (var std in _Standards)
                 {
-                    var ret = new APIClient(AppSettings.Current.ConnStr).Add<Guid, Standard>(std, null);
+                    var ret = new APIClient(AppSettings.Current.ConnStr).Add<long, Standard>(std, null);
                     if (ret.Result == ResultCode.Successful) success++;
                 }
                 MessageBox.Show(string.Format("成功导入 {0} 个评分标准", success), "消息", MessageBoxButtons.OK, MessageBoxIcon.Information);

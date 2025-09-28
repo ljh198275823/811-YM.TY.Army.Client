@@ -9,9 +9,9 @@ namespace HH.ZK.Model
     /// <summary>
     /// 表示总分统计
     /// </summary>
-    public class TotalStatistic : LJH.GeneralLibrary.IEntity<Guid>
+    public class TotalStatistic : LJH.GeneralLibrary.IEntity<long>
     {
-        public Guid ID { get; set; }
+        public long ID { get; set; }
 
         public StatiticKey Key { get; set; }
         /// <summary>

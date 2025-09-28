@@ -49,7 +49,7 @@ namespace HH.ZK.UI
         {
             this.dataGridview1.Rows.Clear();
             dataGridview1.Visible = true;
-            var items = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Standard>(new StandardSearchCondition() { PhysicalItem = pi.ID, Sex = sex }, AppSettings.Current.PhysicalProject.ID).QueryObjects;
+            var items = new APIClient(AppSettings.Current.ConnStr).GetList<long, Standard>(new StandardSearchCondition() { PhysicalItem = pi.ID, Sex = sex }, AppSettings.Current.PhysicalProject.ID).QueryObjects;
             if (items != null && items != null && items.Count >= 1)
             {
                 _CurStandard = items[0];

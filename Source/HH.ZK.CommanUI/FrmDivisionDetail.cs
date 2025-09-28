@@ -15,7 +15,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.CommonUI
 {
-    public partial class FrmDivisionDetail : FrmDetailBase<Guid, Division>
+    public partial class FrmDivisionDetail : FrmDetailBase<long, Division>
     {
         public FrmDivisionDetail()
         {
@@ -66,7 +66,7 @@ namespace HH.ZK.CommonUI
             Division ct = UpdatingItem as Division;
             if (IsAdding)
             {
-                ct = new Division() { ID = Guid.NewGuid() };
+                ct = new Division();
             }
             ct.Name = txtName.Text;
             ct.ParentID = txtDivision.SelectedDivisionID;
@@ -76,13 +76,13 @@ namespace HH.ZK.CommonUI
 
         protected override CommandResult<Division> AddItem(Division addingItem)
         {
-            var ret = (new APIClient(AppSettings.Current.ConnStr)).Add<Guid, Division>(addingItem, null);
+            var ret = (new APIClient(AppSettings.Current.ConnStr)).Add<long, Division>(addingItem, null);
             return ret;
         }
 
         protected override CommandResult<Division> UpdateItem(Division updatingItem)
         {
-            return (new APIClient(AppSettings.Current.ConnStr)).Add<Guid, Division>(updatingItem, null);
+            return (new APIClient(AppSettings.Current.ConnStr)).Add<long, Division>(updatingItem, null);
         }
 
         protected override void ClearInput()

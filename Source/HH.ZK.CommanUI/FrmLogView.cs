@@ -10,7 +10,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.CommonUI
 {
-    public partial class FrmLogView : FrmReportBaseWithPaging<Guid,Alarm>
+    public partial class FrmLogView : FrmReportBaseWithPaging<long,Alarm>
     {
         public FrmLogView()
         {
@@ -36,7 +36,7 @@ namespace HH.ZK.CommonUI
         {
             AlarmSearchCondition con = new AlarmSearchCondition() { PageIndex = pageIndex, PageSize = pageSize, SortMode = SortMode.Desc };
             con.AlarmDateTime = new DateTimeRange(this.ucDateTimeInterval1.StartDateTime, this.ucDateTimeInterval1.EndDateTime);
-            return new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Alarm>(con, AppSettings.Current.PhysicalProject.ID);
+            return new APIClient(AppSettings.Current.ConnStr).GetList<long, Alarm>(con, AppSettings.Current.PhysicalProject.ID);
         }
 
         protected override void ShowItemInGridViewRow(DataGridViewRow row, Alarm log)

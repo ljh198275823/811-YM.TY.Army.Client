@@ -8,7 +8,7 @@ namespace HH.ZK.Model
     /// <summary>
     /// 表示成绩仲裁记录
     /// </summary>
-    public class Discussion : LJH.GeneralLibrary.IEntity<Guid>
+    public class Discussion : LJH.GeneralLibrary.IEntity<long>
     {
         #region 构造函数
         public Discussion()
@@ -17,7 +17,7 @@ namespace HH.ZK.Model
         #endregion
 
         #region 公共属性
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置编号
         /// </summary>

@@ -16,7 +16,7 @@ using HH.ZK.WebAPIClient;
 
 namespace HH.ZK.UI
 {
-    public partial class Frm原始成绩查询报表 : FrmReportBaseWithPaging<Guid, StudentScore>
+    public partial class Frm原始成绩查询报表 : FrmReportBaseWithPaging<long, StudentScore>
     {
         public Frm原始成绩查询报表()
         {
@@ -59,7 +59,7 @@ namespace HH.ZK.UI
                         temp.Add(scores[i]);
                         if (temp.Count >= 50 || i == scores.Count - 1)
                         {
-                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchDelete<Guid, StudentScore>(temp);
+                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchDelete<long, StudentScore>(temp);
                             frm.ShowProgress(string.Empty, (decimal)(i + 1) / scores.Count);
                             temp.Clear();
                         }
@@ -86,13 +86,13 @@ namespace HH.ZK.UI
         private void DoSpecialScore(SpecialScoreType spt)
         {
             if (MessageBox.Show("是否要将成绩设置为 " + spt.ToString() + " ?", "询问", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
-            var patches = new List<UpdateItem<Guid>>();
+            var patches = new List<UpdateItem<long>>();
             var items = GetSelectedScores();
             foreach (var score in items)
             {
                 if (score.SpecialType == null || score.SpecialType != spt)
                 {
-                    patches.Add(new UpdateItem<Guid>() { ID = score.ID, Key = "State", Value = ((int)spt).ToString() });
+                    patches.Add(new UpdateItem<long>() { ID = score.ID, Key = "State", Value = ((int)spt).ToString() });
                 }
             }
             if (patches.Count == 0) return;
@@ -101,13 +101,13 @@ namespace HH.ZK.UI
             {
                 try
                 {
-                    List<UpdateItem<Guid>> temp = new List<UpdateItem<Guid>>();
+                    List<UpdateItem<long>> temp = new List<UpdateItem<long>>();
                     for (int i = 0; i < patches.Count; i++)
                     {
                         temp.Add(patches[i]);
                         if (temp.Count >= 50 || i == patches.Count - 1)
                         {
-                            var ret = new APIClient(AppSettings.Current.ConnStr).BatchPatch<Guid, StudentScore>(temp, AppSettings.Current.PhysicalProject.ID);
+                            var ret = new APIClient(AppSettings.Current.ConnStr).BatchPatch<long, StudentScore>(temp, AppSettings.Current.PhysicalProject.ID);
                             frm.ShowProgress(string.Empty, (decimal)(i + 1) / patches.Count);
                             temp.Clear();
                         }
@@ -161,7 +161,7 @@ namespace HH.ZK.UI
             }
             if (!string.IsNullOrEmpty(txtHostSN.Text)) con.DeviceSN = txtHostSN.Text.ToUpper();
             if (!string.IsNullOrEmpty(txtHostID.Text)) con.HostID = txtHostID.Text.ToUpper();
-            return new APIClient(AppSettings.Current.ConnStr).GetList<Guid, StudentScore>(con);
+            return new APIClient(AppSettings.Current.ConnStr).GetList<long, StudentScore>(con);
         }
 
         protected override void ShowItemInGridViewRow(DataGridViewRow row, StudentScore score)

@@ -29,10 +29,10 @@ namespace HH.ZK.CommonUI.Controls
         {
             var des = new List<Division>();
             var con = new DivisionSearchCondition() { SortMode = LJH.GeneralLibrary.SortMode.Asc };
-            List<Division> ds = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Division>(con).QueryObjects;
+            List<Division> ds = new APIClient(AppSettings.Current.ConnStr).GetList<long, Division>(con).QueryObjects;
             if (ds != null && ds.Count > 0)
             {
-                AddItems((Guid?)null, ds, des);
+                AddItems((long?)null, ds, des);
                 des.Insert(0, new Division());
             }
             else
@@ -46,7 +46,7 @@ namespace HH.ZK.CommonUI.Controls
             this.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void AddItems(Guid? parentid, List<Division> source, List<Division> des)
+        private void AddItems(long? parentid, List<Division> source, List<Division> des)
         {
             var items = source.Where(it => it.ParentID == parentid).ToList();
             if (items == null || items.Count == 0) return;
@@ -91,7 +91,7 @@ namespace HH.ZK.CommonUI.Controls
         [Browsable(false)]
         [Localizable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public Guid? SelectedDivisionID
+        public long? SelectedDivisionID
         {
             get
             {

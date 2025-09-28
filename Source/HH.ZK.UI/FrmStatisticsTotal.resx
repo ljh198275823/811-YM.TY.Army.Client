@@ -2165,6 +2165,6 @@
     <value>FrmStatisticsTotal</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>LJH.GeneralLibrary.WinForm.FrmReportBaseWithPaging`2[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[HH.ZK.Model.TotalStatistic, HH.ZK.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LJH.GeneralLibrary, Version=2.0.2022.217, Culture=neutral, PublicKeyToken=null</value>
+    <value>LJH.GeneralLibrary.WinForm.FrmReportBaseWithPaging`2[[System.long, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[HH.ZK.Model.TotalStatistic, HH.ZK.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], LJH.GeneralLibrary, Version=2.0.2022.217, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

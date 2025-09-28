@@ -35,7 +35,7 @@ namespace HH.ZK.WebAPIClient
         protected static string GetControllerUrl<TEntity>()
         {
             var name = typeof(TEntity).Name;
-            return AppSettings.Current.CRMUrl.TrimEnd('/') + "/" + name + "s/";
+            return AppSettings.Current.ConnStr.TrimEnd('/') + "/" + name + "s/";
         }
 
         private static int GetTimestamp(DateTime dt)
@@ -59,7 +59,7 @@ namespace HH.ZK.WebAPIClient
                 using (var client = new WebClient())
                 {
                     client.Headers.Add("accept", "application/json;charset=utf-8");
-                    string url = string.Format("{0}/{1}/{2}/sign/", AppSettings.Current.CRMUrl.TrimEnd('/'), "ukeys", ukeyID);
+                    string url = string.Format("{0}/{1}/{2}/sign/", AppSettings.Current.ConnStr.TrimEnd('/'), "ukeys", ukeyID);
                     var retBytes = client.DownloadData(url);
                     var ret = JsonConvert.DeserializeObject<QueryResult<UKeySign>>(ASCIIEncoding.UTF8.GetString(retBytes));
                     return ret;
@@ -85,7 +85,7 @@ namespace HH.ZK.WebAPIClient
             {
                 using (var client = new WebClient())
                 {
-                    string url = string.Format("{0}/{1}/{2}/", AppSettings.Current.CRMUrl.TrimEnd('/'), "ukeys", "init");
+                    string url = string.Format("{0}/{1}/{2}/", AppSettings.Current.ConnStr.TrimEnd('/'), "ukeys", "init");
                     client.Headers.Add("accept", "application/json;charset=utf-8");
                     client.Headers.Add("content-type", "application/json;charset=utf-8;");
 
@@ -121,7 +121,7 @@ namespace HH.ZK.WebAPIClient
                 if (string.IsNullOrEmpty(logid) && string.IsNullOrEmpty(pwd)) return new CommandResult(ResultCode.Fail, "没有提供用户名或密码");
                 using (var client = new GZipWebClient())
                 {
-                    string url = AppSettings.Current.CRMUrl.TrimEnd('/') + "/" + "tokens/";
+                    string url = AppSettings.Current.ConnStr.TrimEnd('/') + "/" + "tokens/";
                     client.Encoding = System.Text.Encoding.UTF8;
                     client.Headers.Add("accept", "application/json;charset=utf-8");
                     client.Headers.Add("content-type", "application/json;charset=utf-8;");
@@ -170,7 +170,7 @@ namespace HH.ZK.WebAPIClient
                 if (InternetPingService.Current != null && InternetPingService.Current.Pingable == false) return new CommandResult(ResultCode.NotConnected, "网络连接失败");
                 using (var client = new GZipWebClient())
                 {
-                    string url = AppSettings.Current.CRMUrl.TrimEnd('/') + "/" + "sms/send/";
+                    string url = AppSettings.Current.ConnStr.TrimEnd('/') + "/" + "sms/send/";
                     client.Headers.Add("accept", "application/json;charset=utf-8");
                     client.Headers.Add("content-type", "application/json;charset=utf-8;");
                     var content = JsonConvert.SerializeObject(new
@@ -201,7 +201,7 @@ namespace HH.ZK.WebAPIClient
                 if (InternetPingService.Current != null && InternetPingService.Current.Pingable == false) return new CommandResult(ResultCode.NotConnected, "网络连接失败");
                 using (var client = new GZipWebClient())
                 {
-                    string url = AppSettings.Current.CRMUrl.TrimEnd('/') + "/" + "sms/verifycode/";
+                    string url = AppSettings.Current.ConnStr.TrimEnd('/') + "/" + "sms/verifycode/";
                     client.Headers.Add("accept", "application/json;charset=utf-8");
                     client.Headers.Add("content-type", "application/json;charset=utf-8;");
                     if (TokenInfo.Current == null || TokenInfo.Current.NeedNewToken()) GetToken();
@@ -235,7 +235,7 @@ namespace HH.ZK.WebAPIClient
                 if (InternetPingService.Current != null && InternetPingService.Current.Pingable == false) return new CommandResult(ResultCode.NotConnected, "网络连接失败");
                 using (var client = new GZipWebClient())
                 {
-                    string url = AppSettings.Current.CRMUrl.TrimEnd('/') + "/" + "users/resetpwd/";
+                    string url = AppSettings.Current.ConnStr.TrimEnd('/') + "/" + "users/resetpwd/";
                     client.Headers.Add("accept", "application/json;charset=utf-8");
                     client.Headers.Add("content-type", "application/json;charset=utf-8;");
                     var content = JsonConvert.SerializeObject(new
@@ -265,7 +265,7 @@ namespace HH.ZK.WebAPIClient
                 if (InternetPingService.Current != null && InternetPingService.Current.Pingable == false) return new CommandResult<User>(ResultCode.Fail, "网络连接失败", null);
                 using (var client = new GZipWebClient())
                 {
-                    string url = AppSettings.Current.CRMUrl.TrimEnd('/') + "/" + "login/";
+                    string url = AppSettings.Current.ConnStr.TrimEnd('/') + "/" + "login/";
                     client.Headers.Add("accept", "application/json;charset=utf-8");
                     client.Headers.Add("content-type", "application/json;charset=utf-8;");
                     if (TokenInfo.Current == null || TokenInfo.Current.NeedNewToken()) CRMAPIClient.GetToken();
@@ -293,7 +293,7 @@ namespace HH.ZK.WebAPIClient
                 if (InternetPingService.Current != null && InternetPingService.Current.Pingable == false) return new CommandResult(ResultCode.Fail, "网络连接失败");
                 using (var client = new GZipWebClient())
                 {
-                    string url = AppSettings.Current.CRMUrl.TrimEnd('/') + "/" + "logout/";
+                    string url = AppSettings.Current.ConnStr.TrimEnd('/') + "/" + "logout/";
                     client.Headers.Add("accept", "application/json;charset=utf-8");
                     client.Headers.Add("content-type", "application/json;charset=utf-8;");
                     if (TokenInfo.Current == null || TokenInfo.Current.NeedNewToken()) CRMAPIClient.GetToken();

@@ -127,24 +127,6 @@
     <Compile Include="Frm训练大纲选择.designer.cs">
       <DependentUpon>Frm训练大纲选择.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm视频录相机设置.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm视频录相机设置.designer.cs">
-      <DependentUpon>Frm视频录相机设置.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm视频通道明细.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm视频通道明细.Designer.cs">
-      <DependentUpon>Frm视频通道明细.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm设置视频通道.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm设置视频通道.designer.cs">
-      <DependentUpon>Frm设置视频通道.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm原始成绩查询报表.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,12 +163,6 @@
     <Compile Include="Frm多学校选择.designer.cs">
       <DependentUpon>Frm多学校选择.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm学生成绩单导出.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm学生成绩单导出.designer.cs">
-      <DependentUpon>Frm学生成绩单导出.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm人员成绩查看.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,23 +175,11 @@
     <Compile Include="Frm多考点选择.designer.cs">
       <DependentUpon>Frm多考点选择.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm学生成绩速录.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm学生成绩速录.designer.cs">
-      <DependentUpon>Frm学生成绩速录.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm学生特殊情况设置Detail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm学生特殊情况设置Detail.Designer.cs">
       <DependentUpon>Frm学生特殊情况设置Detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm导入平时成绩.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm导入平时成绩.designer.cs">
-      <DependentUpon>Frm导入平时成绩.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm小程序参数.cs">
       <SubType>Form</SubType>
@@ -228,12 +192,6 @@
     </Compile>
     <Compile Include="Frm学生特殊情况设置.designer.cs">
       <DependentUpon>Frm学生特殊情况设置.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm考场视频查询.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm考场视频查询.designer.cs">
-      <DependentUpon>Frm考场视频查询.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm考试科目选择_后台.cs">
       <SubType>Form</SubType>
@@ -265,42 +223,17 @@
     <Compile Include="Frm违规考试查询报表.designer.cs">
       <DependentUpon>Frm违规考试查询报表.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm学生成绩导出.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm学生成绩导出.designer.cs">
-      <DependentUpon>Frm学生成绩导出.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm考试科目导入.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm考试科目导入.designer.cs">
       <DependentUpon>Frm考试科目导入.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm学生成绩导出模板设置.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm学生成绩导出模板设置.Designer.cs">
-      <DependentUpon>Frm学生成绩导出模板设置.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Printer\DiscussionExporter.cs" />
     <Compile Include="Frm软件更新日志.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm软件更新日志.Designer.cs">
       <DependentUpon>Frm软件更新日志.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDiscussionDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDiscussionDetail.designer.cs">
-      <DependentUpon>FrmDiscussionDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDiscussionView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDiscussionView.designer.cs">
-      <DependentUpon>FrmDiscussionView.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -320,12 +253,6 @@
     <Compile Include="FrmOption_后台.designer.cs">
       <DependentUpon>FrmOption_后台.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm成绩公示屏.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm成绩公示屏.designer.cs">
-      <DependentUpon>Frm成绩公示屏.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmStatisticsTotal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,12 +271,6 @@
     <Compile Include="FrmStudentScoreDetailView.designer.cs">
       <DependentUpon>FrmStudentScoreDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm学生单项成绩查询.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm学生单项成绩查询.designer.cs">
-      <DependentUpon>Frm学生单项成绩查询.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm训练成绩管理.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,23 +283,17 @@
     <Compile Include="Frm考场实时状态.designer.cs">
       <DependentUpon>Frm考场实时状态.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm考场视频.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm考场视频.designer.cs">
-      <DependentUpon>Frm考场视频.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmStudentDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmStudentDetail.designer.cs">
       <DependentUpon>FrmStudentDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm学生信息导入.cs">
+    <Compile Include="Frm导入人员.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm学生信息导入.designer.cs">
-      <DependentUpon>Frm学生信息导入.cs</DependentUpon>
+    <Compile Include="Frm导入人员.designer.cs">
+      <DependentUpon>Frm导入人员.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm考点Detail.cs">
       <SubType>Form</SubType>
@@ -410,12 +325,6 @@
     <Compile Include="Frm考试科目设置查看.designer.cs">
       <DependentUpon>Frm考试科目设置查看.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm设置考试时间.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm设置考试时间.designer.cs">
-      <DependentUpon>Frm设置考试时间.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm评分标准查看.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,12 +355,7 @@
     <Compile Include="Frm考试科目设置.designer.cs">
       <DependentUpon>Frm考试科目设置.cs</DependentUpon>
     </Compile>
-    <Compile Include="Printer\StudentScoreSheetPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Printer\StudentWithTotalExporter.cs" />
-    <Compile Include="Printer\StudentWithDXCJExporter.cs" />
-    <Compile Include="VideoLocalDBProvider.cs" />
-    <Compile Include="VideoServerClient.cs" />
     <EmbeddedResource Include="Controls\UC考场进度.resx">
       <DependentUpon>UC考场进度.cs</DependentUpon>
     </EmbeddedResource>
@@ -463,15 +367,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm训练大纲选择.resx">
       <DependentUpon>Frm训练大纲选择.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm视频录相机设置.resx">
-      <DependentUpon>Frm视频录相机设置.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm视频通道明细.resx">
-      <DependentUpon>Frm视频通道明细.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm设置视频通道.resx">
-      <DependentUpon>Frm设置视频通道.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm原始成绩查询报表.resx">
       <DependentUpon>Frm原始成绩查询报表.cs</DependentUpon>
@@ -491,32 +386,20 @@
     <EmbeddedResource Include="Frm多学校选择.resx">
       <DependentUpon>Frm多学校选择.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm学生成绩单导出.resx">
-      <DependentUpon>Frm学生成绩单导出.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm人员成绩查看.resx">
       <DependentUpon>Frm人员成绩查看.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm多考点选择.resx">
       <DependentUpon>Frm多考点选择.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm学生成绩速录.resx">
-      <DependentUpon>Frm学生成绩速录.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm学生特殊情况设置Detail.resx">
       <DependentUpon>Frm学生特殊情况设置Detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm导入平时成绩.resx">
-      <DependentUpon>Frm导入平时成绩.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm小程序参数.resx">
       <DependentUpon>Frm小程序参数.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm学生特殊情况设置.resx">
       <DependentUpon>Frm学生特殊情况设置.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm考场视频查询.resx">
-      <DependentUpon>Frm考场视频查询.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm考试科目选择_后台.resx">
       <DependentUpon>Frm考试科目选择_后台.cs</DependentUpon>
@@ -533,20 +416,8 @@
     <EmbeddedResource Include="Frm违规考试查询报表.resx">
       <DependentUpon>Frm违规考试查询报表.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm学生成绩导出.resx">
-      <DependentUpon>Frm学生成绩导出.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm学生成绩导出模板设置.resx">
-      <DependentUpon>Frm学生成绩导出模板设置.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm软件更新日志.resx">
       <DependentUpon>Frm软件更新日志.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDiscussionDetail.resx">
-      <DependentUpon>FrmDiscussionDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDiscussionView.resx">
-      <DependentUpon>FrmDiscussionView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -560,9 +431,6 @@
     <EmbeddedResource Include="Frm考试科目导入.resx">
       <DependentUpon>Frm考试科目导入.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm成绩公示屏.resx">
-      <DependentUpon>Frm成绩公示屏.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmStatisticsTotal.resx">
       <DependentUpon>FrmStatisticsTotal.cs</DependentUpon>
     </EmbeddedResource>
@@ -572,23 +440,17 @@
     <EmbeddedResource Include="FrmStudentScoreDetailView.resx">
       <DependentUpon>FrmStudentScoreDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm学生单项成绩查询.resx">
-      <DependentUpon>Frm学生单项成绩查询.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm训练成绩管理.resx">
       <DependentUpon>Frm训练成绩管理.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm考场实时状态.resx">
       <DependentUpon>Frm考场实时状态.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm考场视频.resx">
-      <DependentUpon>Frm考场视频.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmStudentDetail.resx">
       <DependentUpon>FrmStudentDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm学生信息导入.resx">
-      <DependentUpon>Frm学生信息导入.cs</DependentUpon>
+    <EmbeddedResource Include="Frm导入人员.resx">
+      <DependentUpon>Frm导入人员.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm考点Detail.resx">
       <DependentUpon>Frm考点Detail.cs</DependentUpon>
@@ -604,9 +466,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm考试科目设置查看.resx">
       <DependentUpon>Frm考试科目设置查看.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm设置考试时间.resx">
-      <DependentUpon>Frm设置考试时间.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm评分标准查看.resx">
       <DependentUpon>Frm评分标准查看.cs</DependentUpon>
@@ -724,6 +583,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fpInput.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Printer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

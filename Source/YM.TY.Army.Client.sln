@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.ZK.UI", "HH.ZK.UI\HH.ZK.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HH.ZK.ZKApp", "HH.ZK.ZhongkaoApp\HH.ZK.ZKApp.csproj", "{E7CE578C-3891-4079-A18F-E233FBCD3BEB}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZK_Setup", "HH.ZK.Setup\ZK_Setup.vdproj", "{CF6FD968-8C94-4517-BB4E-C5988E364582}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -41,9 +39,6 @@ Global
 		{E7CE578C-3891-4079-A18F-E233FBCD3BEB}.Debug|x86.Build.0 = Debug|x86
 		{E7CE578C-3891-4079-A18F-E233FBCD3BEB}.Release|x86.ActiveCfg = Release|x86
 		{E7CE578C-3891-4079-A18F-E233FBCD3BEB}.Release|x86.Build.0 = Release|x86
-		{CF6FD968-8C94-4517-BB4E-C5988E364582}.Debug|x86.ActiveCfg = Debug
-		{CF6FD968-8C94-4517-BB4E-C5988E364582}.Release|x86.ActiveCfg = Release
-		{CF6FD968-8C94-4517-BB4E-C5988E364582}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

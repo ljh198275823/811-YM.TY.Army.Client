@@ -8,7 +8,7 @@ namespace HH.ZK.Model
     /// <summary>
     /// 表示综合评价的模板
     /// </summary>
-    public class AppraiseTemplate : LJH.GeneralLibrary.IEntity<Guid>
+    public class AppraiseTemplate : LJH.GeneralLibrary.IEntity<long>
     {
         #region 构造函数
         public AppraiseTemplate()
@@ -17,7 +17,7 @@ namespace HH.ZK.Model
         #endregion
 
         #region 公共属性
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置综合评价
         /// </summary>

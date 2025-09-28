@@ -8,7 +8,7 @@ namespace HH.ZK.Model
     /// <summary>
     /// 表示区域信息
     /// </summary>
-    public class Division : LJH.GeneralLibrary.IEntity<Guid>
+    public class Division : LJH.GeneralLibrary.IEntity<long>
     {
         #region 构造函数
         public Division() { }
@@ -18,7 +18,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置ID
         /// </summary>
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置名称
         /// </summary>
@@ -28,7 +28,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置上级区域ID
         /// </summary>
-        public Guid? ParentID { get; set; }
+        public long? ParentID { get; set; }
 
         public string FullPath { get; set; }
         #endregion

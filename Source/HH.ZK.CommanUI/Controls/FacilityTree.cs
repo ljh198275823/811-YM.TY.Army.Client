@@ -79,7 +79,7 @@ namespace HH.ZK.CommonUI.Controls
             this.Nodes.Clear();
             this.Nodes.Add("所有机构");
 
-            List<Division> items = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Division>(null, null).QueryObjects;
+            List<Division> items = new APIClient(AppSettings.Current.ConnStr).GetList<long, Division>(null, null).QueryObjects;
             if (items != null && items.Count > 0)
             {
                 AddDivisionNodes(items, this.Nodes[0]);
@@ -113,7 +113,7 @@ namespace HH.ZK.CommonUI.Controls
         /// </summary>
         /// <param name="node"></param>
         /// <param name="parent"></param>
-        public void SelectDivisionNode(Guid deptID)
+        public void SelectDivisionNode(long deptID)
         {
             foreach (TreeNode node in _AllDivisionNodes)
             {

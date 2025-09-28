@@ -9,7 +9,7 @@ namespace HH.ZK.Model
     public class StatiticKey
     {
         public string Division { get; set; }
-        public Guid? DivisionID { get; set; }
+        public long? DivisionID { get; set; }
         public string Gender { get; set; }
     }
 }

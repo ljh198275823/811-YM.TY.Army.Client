@@ -105,8 +105,8 @@ namespace HH.ZK.UI
         {
             if (CheckInput() == false) return;
             if (txtScore.Text == StudentScore.FormatScore) return;
-            var patch = new UpdateItem<Guid>() { ID = StudentScore.ID, Key = "Score", Value = txtScore.Text };
-            var ret = new APIClient(AppSettings.Current.ConnStr).Patch<Guid, StudentScore>(patch.ID, new List<UpdateItem<Guid>>() { patch }, AppSettings.Current.PhysicalProject.ID);
+            var patch = new UpdateItem<long>() { ID = StudentScore.ID, Key = "Score", Value = txtScore.Text };
+            var ret = new APIClient(AppSettings.Current.ConnStr).Patch<long, StudentScore>(patch.ID, new List<UpdateItem<long>>() { patch }, AppSettings.Current.PhysicalProject.ID);
             if (ret.Result == ResultCode.Successful)
             {
                 this.DialogResult = DialogResult.OK;

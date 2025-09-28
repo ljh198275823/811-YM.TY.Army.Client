@@ -15,7 +15,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.CommonUI
 {
-    public partial class Frm人工修改成绩查询报表 : FrmReportBaseWithPaging<Guid, StudentScoreLog>
+    public partial class Frm人工修改成绩查询报表 : FrmReportBaseWithPaging<long, StudentScoreLog>
     {
         public Frm人工修改成绩查询报表()
         {
@@ -57,7 +57,7 @@ namespace HH.ZK.CommonUI
             ucStudentSearch1.GetSearchCondition(con);
             con.SortMode = SortMode.Desc;
             if (!string.IsNullOrEmpty(cmbPhysicalItem.Text)) con.TestID = cmbPhysicalItem.SelectedPhysicalItem;
-            return new APIClient(AppSettings.Current.ConnStr).GetList<Guid, StudentScoreLog>(con, AppSettings.Current.PhysicalProject.ID);
+            return new APIClient(AppSettings.Current.ConnStr).GetList<long, StudentScoreLog>(con, AppSettings.Current.PhysicalProject.ID);
         }
 
         protected override void ShowItemInGridViewRow(DataGridViewRow row, StudentScoreLog log)

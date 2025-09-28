@@ -5,10 +5,10 @@ using System.Text;
 
 namespace HH.ZK.Model
 {
-    public class VideoItem : LJH.GeneralLibrary.IEntity<Guid>
+    public class VideoItem : LJH.GeneralLibrary.IEntity<long>
     {
         #region 公共属性
-        public Guid ID { get; set; }
+        public long ID { get; set; }
 
         public string ProjectID { get; set; }
 
@@ -24,9 +24,9 @@ namespace HH.ZK.Model
 
         public string CameraLocation { get; set; }
 
-        public Guid? VideoID { get; set; }
+        public long? VideoID { get; set; }
 
-        public Guid? ScoreID { get; set; }
+        public long? ScoreID { get; set; }
 
         public string VideoPath { get; set; }
         #endregion

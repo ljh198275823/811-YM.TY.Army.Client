@@ -11,7 +11,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.UI
 {
-    public partial class FrmStatisticsTotal : FrmReportBaseWithPaging<Guid,TotalStatistic>
+    public partial class FrmStatisticsTotal : FrmReportBaseWithPaging<long,TotalStatistic>
     {
         public FrmStatisticsTotal()
         {
@@ -44,7 +44,7 @@ namespace HH.ZK.UI
             con.SortMode = LJH.GeneralLibrary.SortMode.Asc;
             con.PageIndex = pageIndex;
             con.PageSize = pageSize;
-            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, TotalStatistic>(con);
+            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<long, TotalStatistic>(con);
             dataGridView1.Columns["colDivision"].Visible = con.ByDivision;
             dataGridView1.Columns["col性别"].Visible = con.ByGender;
             return ret;

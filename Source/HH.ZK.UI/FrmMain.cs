@@ -36,8 +36,6 @@ namespace HH.ZK.UI
         private Thread _tmrID210 = null;
         private Student _CurStudent = null;
         private DateTime _ShowTime = DateTime.Now;
-
-        private Frm成绩公示屏 _Frm成绩公示屏 = null;
         #endregion
 
         #region 私有方法
@@ -171,122 +169,6 @@ namespace HH.ZK.UI
         } 
         #endregion
 
-        #region 读卡器条码枪相关
-        private void InitICCardReader()
-        {
-            if (_Reader != null)
-            {
-                _Reader.Close();
-                _Reader = null;
-            }
-            if (AppSettings.Current.CardReaderCommport > 0)
-            {
-                try
-                {
-                    _Reader = new ICCardReader(AppSettings.Current.CardReaderCommport, 9600);
-                    _Reader.Log = true;
-                    _Reader.OnCardRead += new ReadCardHandler(_Reader_OnCardRead);
-                    _Reader.Open();
-                }
-                catch (Exception ex)
-                {
-                    LJH.GeneralLibrary.ExceptionPolicy.HandleException(ex);
-                }
-            }
-        }
-
-        private void InitBardcodeReader()
-        {
-            if (_BarcodeReader != null)
-            {
-                _BarcodeReader.Close();
-                _BarcodeReader = null;
-            }
-            if (AppSettings.Current.BarcodeReaderCommport > 0)
-            {
-                try
-                {
-                    _BarcodeReader = new BarcodeReader(AppSettings.Current.BarcodeReaderCommport, 9600);
-                    _BarcodeReader.OnCardRead += new ReadCardHandler(_Reader_OnCardRead);
-                    _BarcodeReader.Open();
-                }
-                catch (Exception ex)
-                {
-                    LJH.GeneralLibrary.ExceptionPolicy.HandleException(ex);
-                }
-            }
-        }
-
-        private void InitID210()
-        {
-            if (_ID210 != null) _ID210.Close();
-            _ID210 = null;
-            int idr210Port = 0;
-            string temp = AppSettings.Current.GetConfigContent("IDR210Port");
-            if (!string.IsNullOrEmpty(temp) && int.TryParse(temp, out idr210Port) && idr210Port > 0)
-            {
-                _ID210 = new IDR210Reader(idr210Port);
-                _ID210.Open();
-            }
-            if (_tmrID210 == null)
-            {
-                _tmrID210 = new Thread(new ThreadStart(tmr210_Tick));
-                _tmrID210.IsBackground = true;
-                _tmrID210.Start();
-            }
-        }
-
-        private void _Reader_OnCardRead(object sender, ReadCardArgs e)
-        {
-            Student s = null;
-            var con = new StudentSearchCondition() { StudentID_IDNumber_CardID = !string.IsNullOrEmpty(e.StudentID) ? e.StudentID : e.CardID };
-            var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, Student>(con, AppSettings.Current.PhysicalProject.ID).QueryObjects;
-            if (ss != null && ss.Count == 1) s = ss[0];
-            if (s != null)
-            {
-                if (_CurStudent != null && s != null && _CurStudent.ID == s.ID && _ShowTime.AddSeconds(5) > DateTime.Now) return;  //前后同一个学生两次刷卡间隔不超过5秒，不显示
-                _CurStudent = s;
-                _ShowTime = DateTime.Now;
-                Action action = delegate ()
-                {
-                    foreach (var f in _openedForms)
-                    {
-                        if (f.Key is Frm学生成绩速录) (f.Key as Frm学生成绩速录).ShowSelectedStudent(s.ID);
-                    }
-                    if (_Frm成绩公示屏 != null) _Frm成绩公示屏.ShowSelectedStudent(s.ID);
-                };
-                this.Invoke(action);
-            }
-        }
-
-        private void tmr210_Tick()
-        {
-            while (true)
-            {
-                Thread.Sleep(500);
-                if (_ID210 == null) continue;
-                IdentityCardInfo info = _ID210.ReadInfo();
-                if (info == null) continue;
-                LJH.GeneralLibrary.FileLog.Log("身份证", "读到身份证号 " + info.IDNumber);
-                var con = new StudentSearchCondition() { StudentID_IDNumber_CardID = info.IDNumber };
-                var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, Student>(con, AppSettings.Current.PhysicalProject.ID).QueryObjects;
-                if (ss != null && ss.Count == 1)
-                {
-                    var s = ss[0];
-                    Action action = delegate ()
-                    {
-                        foreach (var f in _openedForms)
-                        {
-                            if (f.Key is Frm学生成绩速录) (f.Key as Frm学生成绩速录).ShowSelectedStudent(s.ID);
-                        }
-                        if (_Frm成绩公示屏 != null) _Frm成绩公示屏.ShowSelectedStudent(s.ID);
-                    };
-                    this.Invoke(action);
-                }
-            }
-        }
-        #endregion
-
         #region 主菜单
         private void mnu_ChangPwd_Click(object sender, EventArgs e)
         {
@@ -377,11 +259,6 @@ namespace HH.ZK.UI
         {
             mnu总成绩统计报表.PerformClick();
         }
-
-        private void btn单项成绩_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生单项成绩查询>();
-        }
         #endregion
 
         #region 事件处理程序
@@ -392,9 +269,6 @@ namespace HH.ZK.UI
             StartPingInternet();
             DoLogIn();
             ShowOperatorRights();
-            InitICCardReader();
-            InitBardcodeReader();
-            InitID210();
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -437,16 +311,6 @@ namespace HH.ZK.UI
         private void mnu学生成绩管理_Click(object sender, EventArgs e)
         {
             ShowSingleForm<Frm训练成绩管理>(sender);
-        }
-
-        private void mnu导出成绩_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生成绩导出>();
-        }
-
-        private void btn学生成绩单_Click(object sender, EventArgs e)
-        {
-            ShowSingleForm<Frm学生成绩单导出>();
         }
 
         private void mnu切换用户_Click(object sender, EventArgs e)

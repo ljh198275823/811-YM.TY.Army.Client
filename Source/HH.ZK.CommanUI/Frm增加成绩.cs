@@ -109,7 +109,7 @@ namespace HH.ZK.UI
         private void btnOk_Click(object sender, EventArgs e)
         {
             if (CheckInput() == false) return;
-            StudentRawScore raw = new StudentRawScore() { ID = Guid.NewGuid() };
+            StudentRawScore raw = new StudentRawScore();
             raw.StudentID = Student.ID;
             raw.TestID = PhysicalItem.ID;
             raw.ScoreFrom = ScoreSource.手工录入;

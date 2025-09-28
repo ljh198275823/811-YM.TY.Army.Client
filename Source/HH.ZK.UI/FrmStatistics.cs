@@ -16,7 +16,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.UI
 {
-    public partial class FrmStatistics : FrmReportBaseWithPaging<Guid, ScoreStatistic>
+    public partial class FrmStatistics : FrmReportBaseWithPaging<long, ScoreStatistic>
     {
         public FrmStatistics()
         {
@@ -60,7 +60,7 @@ namespace HH.ZK.UI
             con.SortMode = LJH.GeneralLibrary.SortMode.Asc;
             con.PageIndex = pageIndex;
             con.PageSize = pageSize;
-            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, ScoreStatistic>(con);
+            var ret = new APIClient(AppSettings.Current.ConnStr).GetList<long, ScoreStatistic>(con);
             dataGridView1.Columns["colDivision"].Visible = con.ByDivision;
             dataGridView1.Columns["colSex"].Visible = con.ByGender;
             return ret;

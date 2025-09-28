@@ -27,7 +27,7 @@ namespace HH.ZK.CommonUI.Controls
 
         public void Init(string projectID, string facility = null)
         {
-            var ss = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, StudentClass>(new StudentClassSearchCondition() { FacilityID = facility, SortMode = LJH.GeneralLibrary.SortMode.Asc }, projectID).QueryObjects;
+            var ss = new APIClient(AppSettings.Current.ConnStr).GetList<long, StudentClass>(new StudentClassSearchCondition() { FacilityID = facility, SortMode = LJH.GeneralLibrary.SortMode.Asc }, projectID).QueryObjects;
             if (ss != null && ss.Count > 0)
             {
                 ss.Insert(0, new StudentClass());
@@ -81,7 +81,7 @@ namespace HH.ZK.CommonUI.Controls
         [Browsable(false)]
         [Localizable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public Guid? SelectedClassID
+        public long? SelectedClassID
         {
             get
             {

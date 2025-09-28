@@ -49,85 +49,12 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取数据库连接接字符串
         /// </summary>
-        public string CRMUrl
-        {
-            get
-            {
-                return "http://localhost:8080/api";
-                //return "http://106.52.238.226:8080/api";
-            }
-        }
-
-        /// <summary>
-        /// 获取数据库连接接字符串
-        /// </summary>
         public string ConnStr
         {
             get
             {
                 return "http://localhost:8080/api";
                 //return "http://106.52.238.226:8080/api";
-            }
-        }
-        /// <summary>
-        /// 获取本地数据库连接字符串
-        /// </summary>
-        public string LocalDB
-        {
-            get
-            {
-                return $"SQLITE:Data Source={Path.Combine(Application.StartupPath, "HHRawScore.db")}";
-            }
-        }
-        /// <summary>
-        /// 获取或设置主机连接的串口
-        /// </summary>
-        public byte HostCommport
-        {
-            get
-            {
-                var temp = GetConfigContent("HostCommport");
-                byte ret = 0;
-                if (!string.IsNullOrEmpty(temp) && byte.TryParse(temp, out ret)) return ret;
-                return 0;
-            }
-            set
-            {
-                SaveConfig("HostCommport", value.ToString());
-            }
-        }
-        /// <summary>
-        /// 获取或设置读卡器连接的串口
-        /// </summary>
-        public byte CardReaderCommport
-        {
-            get
-            {
-                var temp = GetConfigContent("CardReaderCommport");
-                byte ret = 0;
-                if (!string.IsNullOrEmpty(temp) && byte.TryParse(temp, out ret)) return ret;
-                return 0;
-            }
-            set
-            {
-                SaveConfig("CardReaderCommport", value.ToString());
-            }
-        }
-        /// <summary>
-        /// 获取或设置条码枪的串口
-        /// </summary>
-        public byte BarcodeReaderCommport
-        {
-            get
-            {
-                var temp = GetConfigContent("BarcodeReaderCommport");
-                byte ret = 0;
-                if (!string.IsNullOrEmpty(temp) && byte.TryParse(temp, out ret)) return ret;
-                return 0;
-            }
-            set
-            {
-                SaveConfig("BarcodeReaderCommport", value.ToString());
             }
         }
         /// <summary>
@@ -194,18 +121,6 @@ namespace HH.ZK.Model
             set
             {
                 SaveConfig("LastLogin", value.ToString());
-            }
-        }
-
-        public string ProjectID {
-            get
-            {
-                var temp = GetConfigContent("ProjectID");
-                return temp;
-            }
-            set
-            {
-                SaveConfig("ProjectID", value.ToString());
             }
         }
 

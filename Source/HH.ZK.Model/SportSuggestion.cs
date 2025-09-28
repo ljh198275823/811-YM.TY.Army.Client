@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HH.ZK.Model
 {
-    public class SportSuggestion : LJH.GeneralLibrary.IEntity<Guid>
+    public class SportSuggestion : LJH.GeneralLibrary.IEntity<long>
     {
         #region 构造函数
         public SportSuggestion()
@@ -14,7 +14,7 @@ namespace HH.ZK.Model
         #endregion
 
         #region 公共属性
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置适用此建议的测试项目
         /// </summary>

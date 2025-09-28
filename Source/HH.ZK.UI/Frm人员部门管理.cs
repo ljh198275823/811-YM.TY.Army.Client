@@ -292,11 +292,7 @@ namespace HH.ZK.UI
         {
             if (e.Button == MouseButtons.Right)
             {
-                TreeNode node = divisionTree.HitTest(e.X, e.Y).Node;
-                if (node != null && node.Tag != null && node.Tag is Division)
-                {
-                    divisionTree.ContextMenuStrip = DivisionMenu;
-                }
+                divisionTree.ContextMenuStrip = DivisionMenu;
             }
         }
 
@@ -344,7 +340,7 @@ namespace HH.ZK.UI
                 Division pc = node.Tag as Division;
                 if (pc != null)
                 {
-                    var ret = (new APIClient(AppSettings.Current.ConnStr)).Delete<Guid, Division>(pc, AppSettings.Current.PhysicalProject.ID);
+                    var ret = (new APIClient(AppSettings.Current.ConnStr)).Delete<long, Division>(pc, AppSettings.Current.PhysicalProject.ID);
                     if (ret.Result == ResultCode.Successful)
                     {
                         this.divisionTree.RemoveNode(node);
@@ -383,7 +379,7 @@ namespace HH.ZK.UI
         #region 主网格右键菜单
         private void mnu导入学生信息_Click(object sender, EventArgs e)
         {
-            var frm = new Frm学生信息导入();
+            var frm = new Frm导入人员();
             frm.MinimizeBox = false;
             frm.ShowDialog();
             ReFreshData();

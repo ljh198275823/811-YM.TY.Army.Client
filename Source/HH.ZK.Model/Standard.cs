@@ -9,7 +9,7 @@ namespace HH.ZK.Model
     /// <summary>
     /// 表示评分标准
     /// </summary>
-    public class Standard : LJH.GeneralLibrary.IEntity<Guid>
+    public class Standard : LJH.GeneralLibrary.IEntity<long>
     {
         #region 构造函数
         public Standard()
@@ -21,7 +21,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置ID
         /// </summary>
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置名称
         /// </summary>

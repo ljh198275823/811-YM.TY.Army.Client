@@ -27,7 +27,7 @@ namespace HH.ZK.Model
         #region 公共属性
         public int TestID { get; set; }
 
-        public Guid? BestScoreID { get; set; }
+        public long? BestScoreID { get; set; }
 
         public List<StudentScore> Scores { get; set; }
         /// <summary>

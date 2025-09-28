@@ -56,7 +56,6 @@ namespace HH.ZK.UI
                 {
                     var sp = new StudentInProject()
                     {
-                        ID = Guid.NewGuid(),
                         StudentID = s.ID,
                         ProjectID = txtProject.SelectedProjectID,
                         TestDate = dt,

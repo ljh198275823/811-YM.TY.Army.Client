@@ -14,7 +14,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.CommonUI
 {
-    public partial class FrmDivisionMaster : FrmMasterBase<Guid, Division>
+    public partial class FrmDivisionMaster : FrmMasterBase<long, Division>
     {
         public FrmDivisionMaster()
         {
@@ -31,14 +31,14 @@ namespace HH.ZK.CommonUI
             cMnu_Edit.Enabled = AppSettings.Current.Operator.PermitAll(Permission.Division, PermissionActions.Edit);
         }
 
-        protected override FrmDetailBase<Guid, Division> GetDetailForm()
+        protected override FrmDetailBase<long, Division> GetDetailForm()
         {
             return new FrmDivisionDetail();
         }
 
         protected override QueryResultList<Division> GetDataSource()
         {
-            return (new APIClient(AppSettings.Current.ConnStr)).GetList<Guid, Division>(SearchCondition);
+            return (new APIClient(AppSettings.Current.ConnStr)).GetList<long, Division>(SearchCondition);
         }
 
         protected override List<Division> FilterData(List<Division> items)
@@ -62,7 +62,7 @@ namespace HH.ZK.CommonUI
 
         protected override CommandResult DeletingItem(Division item)
         {
-            return (new APIClient(AppSettings.Current.ConnStr)).Delete<Guid, Division>(item);
+            return (new APIClient(AppSettings.Current.ConnStr)).Delete<long, Division>(item);
         }
         #endregion
 

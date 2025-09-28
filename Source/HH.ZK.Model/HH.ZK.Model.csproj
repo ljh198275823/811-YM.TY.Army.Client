@@ -113,9 +113,6 @@
     <Compile Include="CRM\UserInSchool.cs" />
     <Compile Include="CRM\UserSearchCondition.cs" />
     <Compile Include="StudentCheckPara.cs" />
-    <Compile Include="StudentGroupWithCheckState.cs" />
-    <Compile Include="StudentGroupSummary.cs" />
-    <Compile Include="StudentGroupWithTestState.cs" />
     <Compile Include="StudentFP.cs" />
     <Compile Include="StudentInProject.cs" />
     <Compile Include="StudentPhysicalPair.cs" />
@@ -159,8 +156,6 @@
     <Compile Include="Student.cs" />
     <Compile Include="StudentCheckRecord.cs" />
     <Compile Include="StudentClass.cs" />
-    <Compile Include="StudentGroup.cs" />
-    <Compile Include="StudentGroupPair.cs" />
     <Compile Include="StudentPhoto.cs" />
     <Compile Include="StudentRawScore.cs" />
     <Compile Include="StudentWithTotal.cs" />

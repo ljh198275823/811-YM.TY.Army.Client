@@ -125,7 +125,7 @@ namespace HH.ZK.CommonUI
                 row.Cells["colReason"].Value = "无效的成绩";
                 return null;
             }
-            ret = new StudentRawScore() { ID = Guid.NewGuid(), StudentID = studentID, TestID = pid, Score = score.ToString(), CreateTime = dt, ScoreFrom = ScoreSource.文件导入 };
+            ret = new StudentRawScore() { StudentID = studentID, TestID = pid, Score = score.ToString(), CreateTime = dt, ScoreFrom = ScoreSource.文件导入 };
             return ret;
         }
         #endregion
@@ -224,7 +224,7 @@ namespace HH.ZK.CommonUI
                 try
                 {
                     List<StudentRawScore> temp = new List<StudentRawScore>();
-                    var rows = new Dictionary<Guid, DataGridViewRow>();
+                    var rows = new Dictionary<long, DataGridViewRow>();
                     for (int i = 0; i < viewDestination.Rows.Count; i++)
                     {
                         if (viewDestination.Rows[i].Visible)
@@ -233,7 +233,7 @@ namespace HH.ZK.CommonUI
                             if (score != null)
                             {
                                 temp.Add(score);
-                                rows.Add(score.ID, viewDestination.Rows[i]);
+                                rows.Add(i, viewDestination.Rows[i]);
                             }
                         }
                         if (temp.Count >= perTime || i == viewDestination.Rows.Count - 1)
@@ -241,7 +241,7 @@ namespace HH.ZK.CommonUI
                             ImportOption option = ImportOption.Ignore;
                             if (rdOverride.Checked) option = ImportOption.Override;
                             if (rdAppend.Checked) option = ImportOption.Append;
-                            var ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<Guid,StudentRawScore>(temp, option, null);
+                            var ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<long,StudentRawScore>(temp, option, null);
                             if (ret.Result == ResultCode.Successful)
                             {
                                 success +=temp.Count - (ret.Value.Errors != null ? ret.Value.Errors.Count : 0);

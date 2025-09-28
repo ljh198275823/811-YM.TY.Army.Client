@@ -107,7 +107,6 @@ namespace HH.ZK.UI
                     var s = dataGridView1.Rows[cell.RowIndex].Tag as Student;
                     var sp = new StudentInProject()
                     {
-                        ID = Guid.NewGuid(),
                         StudentID = s.ID,
                         ProjectID = pid,
                         TestDate = dt,
@@ -134,7 +133,7 @@ namespace HH.ZK.UI
                         temp.Add(items[i]);
                         if (temp.Count >= 100 || i == items.Count - 1)
                         {
-                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<Guid, StudentInProject>(temp, ImportOption.Override);
+                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchAdd<long, StudentInProject>(temp, ImportOption.Override);
                             frm.ShowProgress(string.Empty, (decimal)(i + 1) / items.Count);
                             temp.Clear();
                         }
@@ -184,7 +183,7 @@ namespace HH.ZK.UI
                         temp.Add(items[i]);
                         if (temp.Count >= 100 || i == items.Count - 1)
                         {
-                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchDelete<Guid, StudentInProject>(temp);
+                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchDelete<long, StudentInProject>(temp);
                             frm.ShowProgress(string.Empty, (decimal)(i + 1) / items.Count);
                             temp.Clear();
                         }
@@ -251,7 +250,7 @@ namespace HH.ZK.UI
                             var con1 = new StudentSearchCondition();
                             con1.StudentIDS = rids;
                             con1.DateRange = new DateTimeRange(dt开始训练日期.Value.Date, dt结束训练日期.Value.Date);
-                            var tempSteps = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, StudentInProject>(con1).QueryObjects;
+                            var tempSteps = new APIClient(AppSettings.Current.ConnStr).GetList<long, StudentInProject>(con1).QueryObjects;
                             if (tempSteps != null && tempSteps.Count > 0)
                             {
                                 var gps = (from it in tempSteps group it by it.StudentID);

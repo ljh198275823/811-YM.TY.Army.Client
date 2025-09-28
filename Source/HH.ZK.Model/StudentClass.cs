@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HH.ZK.Model
 {
-    public class StudentClass : LJH.GeneralLibrary.IEntity<Guid>
+    public class StudentClass : LJH.GeneralLibrary.IEntity<long>
     {
         public StudentClass()
         {
@@ -16,7 +16,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// 获取或设置ID
         /// </summary>
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置名称
         /// </summary>

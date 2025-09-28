@@ -7,6 +7,6 @@ namespace HH.ZK.Model.SearchCondition
 {
     public class FacilitySearchCondition : LJH.GeneralLibrary.SearchCondition
     {
-        public Guid? DivisionID { get; set; }
+        public long? DivisionID { get; set; }
     }
 }

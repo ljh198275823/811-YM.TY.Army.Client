@@ -366,11 +366,11 @@ namespace HH.ZK.WebAPIClient
         /// <summary>
         /// 批量增加成绩
         /// </summary>
-        public virtual CommandResult<BatchOptResult<Guid, StudentScore>> BatchAddScores(List<StudentRawScore> items, ImportOption option, string projectID)
+        public virtual CommandResult<BatchOptResult<long, StudentScore>> BatchAddScores(List<StudentRawScore> items, ImportOption option, string projectID)
         {
             try
             {
-                if (InternetPingService.Current != null && InternetPingService.Current.Pingable == false) return new CommandResult<BatchOptResult<Guid, StudentScore>>(ResultCode.NotConnected, "网络连接失败", null);
+                if (InternetPingService.Current != null && InternetPingService.Current.Pingable == false) return new CommandResult<BatchOptResult<long, StudentScore>>(ResultCode.NotConnected, "网络连接失败", null);
                 using (var client = new GZipWebClient())
                 {
                     if (TokenInfo.Current == null || TokenInfo.Current.NeedNewToken()) CRMAPIClient.GetToken();
@@ -381,7 +381,7 @@ namespace HH.ZK.WebAPIClient
                     client.Headers.Add("content-type", "application/json;charset=utf-8;");
                     var content = JsonConvert.SerializeObject(items);
                     var retBytes = client.UploadData(url, "POST", System.Text.ASCIIEncoding.UTF8.GetBytes(content));
-                    var ret = JsonConvert.DeserializeObject<CommandResult<BatchOptResult<Guid, StudentScore>>>(System.Text.ASCIIEncoding.UTF8.GetString(retBytes));
+                    var ret = JsonConvert.DeserializeObject<CommandResult<BatchOptResult<long, StudentScore>>>(System.Text.ASCIIEncoding.UTF8.GetString(retBytes));
                     return ret;
                 }
             }
@@ -392,10 +392,10 @@ namespace HH.ZK.WebAPIClient
                     var wex = ex as WebException;
                     var response = wex.Response as System.Net.HttpWebResponse;
                     if (response != null && response.StatusCode == HttpStatusCode.Unauthorized) TokenInfo.Current = null;  //如果是未授权，则清掉当前Token
-                    return new CommandResult<BatchOptResult<Guid, StudentScore>>(ResultCode.Fail, ex.Message, null);
+                    return new CommandResult<BatchOptResult<long, StudentScore>>(ResultCode.Fail, ex.Message, null);
                 }
                 LJH.GeneralLibrary.ExceptionPolicy.HandleException(ex);
-                return new CommandResult<BatchOptResult<Guid, StudentScore>>(ResultCode.Fail, ex.Message, null);
+                return new CommandResult<BatchOptResult<long, StudentScore>>(ResultCode.Fail, ex.Message, null);
             }
         }
 

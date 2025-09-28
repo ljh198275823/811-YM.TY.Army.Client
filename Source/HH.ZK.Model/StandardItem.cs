@@ -15,9 +15,9 @@ namespace HH.ZK.Model
         #endregion
 
         #region 公共属性
-        public Guid ID { get; set; }
+        public long ID { get; set; }
 
-        public Guid StandardID { get; set; }
+        public long StandardID { get; set; }
 
         public Operators Operator1 { get; set; }
 

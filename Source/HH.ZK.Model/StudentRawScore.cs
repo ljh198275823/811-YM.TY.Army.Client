@@ -9,9 +9,9 @@ namespace HH.ZK.Model
     /// <summary>
     /// 表示学生原始成绩记录
     /// </summary>
-    public class StudentRawScore : LJH.GeneralLibrary.IEntity<Guid>
+    public class StudentRawScore : LJH.GeneralLibrary.IEntity<long>
     {
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置学生学号
         /// </summary>

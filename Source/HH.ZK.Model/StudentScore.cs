@@ -6,14 +6,14 @@ using Newtonsoft.Json;
 
 namespace HH.ZK.Model
 {
-    public class StudentScore : LJH.GeneralLibrary.IEntity<Guid>
+    public class StudentScore : LJH.GeneralLibrary.IEntity<long>
     {
         #region 构造函数
         public StudentScore() { }
         #endregion
 
         #region 公共属性
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置学号
         /// </summary>

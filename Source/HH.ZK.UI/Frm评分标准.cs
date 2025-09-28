@@ -52,7 +52,7 @@ namespace HH.ZK.UI
             this.dataGridview1.Rows.Clear();
             dataGridview1.Visible = true;
             var con = new StandardSearchCondition() { PhysicalItem = pi.ID, ProjectID = Project.ID, Sex = sex };
-            var items = new APIClient(AppSettings.Current.ConnStr).GetList<Guid, Standard>(con).QueryObjects;
+            var items = new APIClient(AppSettings.Current.ConnStr).GetList<long, Standard>(con).QueryObjects;
             if (items != null && items != null && items.Count >= 1)
             {
                 _CurStandard = items[0];
@@ -136,7 +136,7 @@ namespace HH.ZK.UI
                 var dig = MessageBox.Show("是否删除这个评分标准?", "询问", MessageBoxButtons.YesNo);
                 if (dig == DialogResult.Yes)
                 {
-                    var ret = new APIClient(AppSettings.Current.ConnStr).Delete<Guid, Standard>(_CurStandard.ID, null);
+                    var ret = new APIClient(AppSettings.Current.ConnStr).Delete<long, Standard>(_CurStandard.ID, null);
                     if (ret.Result == ResultCode.Successful)
                     {
                         dataGridview1.Rows.Clear();

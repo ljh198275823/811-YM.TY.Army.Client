@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HH.ZK.Model
 {
-    public class StudentScoreLog : LJH.GeneralLibrary.IEntity<Guid>
+    public class StudentScoreLog : LJH.GeneralLibrary.IEntity<long>
     {
         #region 构造函数
         public StudentScoreLog()
@@ -18,7 +18,7 @@ namespace HH.ZK.Model
         /// <summary>
         /// ID
         /// </summary>
-        public Guid ID { get; set; }
+        public long ID { get; set; }
         /// <summary>
         /// 获取或设置报警发生时间
         /// </summary>

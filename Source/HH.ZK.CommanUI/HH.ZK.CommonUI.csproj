@@ -178,12 +178,6 @@
     <Compile Include="Controls\ResolveTypeComboBox.designer.cs">
       <DependentUpon>ResolveTypeComboBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\StudentGroupComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\StudentGroupComboBox.designer.cs">
-      <DependentUpon>StudentGroupComboBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\StudentStateComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -196,12 +190,6 @@
     <Compile Include="Controls\TotalCalTypeComboBox.designer.cs">
       <DependentUpon>TotalCalTypeComboBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\UCFacilitySearch.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\UCFacilitySearch.Designer.cs">
-      <DependentUpon>UCFacilitySearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\UCStatiticsSearch.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -213,12 +201,6 @@
     </Compile>
     <Compile Include="Controls\UCStudentSearch.Designer.cs">
       <DependentUpon>UCStudentSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\UC学生信息.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\UC学生信息.designer.cs">
-      <DependentUpon>UC学生信息.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAboat.cs">
       <SubType>Form</SubType>
@@ -394,12 +376,6 @@
     <Compile Include="Frm账号验证.designer.cs">
       <DependentUpon>Frm账号验证.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm组人员实时显示.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm组人员实时显示.designer.cs">
-      <DependentUpon>Frm组人员实时显示.cs</DependentUpon>
-    </Compile>
     <Compile Include="PhysicalScoresSavingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingleFormManager.cs" />
@@ -411,17 +387,11 @@
     <EmbeddedResource Include="Controls\FunctionTree.resx">
       <DependentUpon>FunctionTree.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UCFacilitySearch.resx">
-      <DependentUpon>UCFacilitySearch.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UCStatiticsSearch.resx">
       <DependentUpon>UCStatiticsSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UCStudentSearch.resx">
       <DependentUpon>UCStudentSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UC学生信息.resx">
-      <DependentUpon>UC学生信息.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAboat.resx">
       <DependentUpon>FrmAboat.cs</DependentUpon>
@@ -509,9 +479,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm账号验证.resx">
       <DependentUpon>Frm账号验证.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm组人员实时显示.resx">
-      <DependentUpon>Frm组人员实时显示.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
