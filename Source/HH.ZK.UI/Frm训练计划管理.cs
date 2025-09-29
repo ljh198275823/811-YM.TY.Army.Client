@@ -248,7 +248,7 @@ namespace HH.ZK.UI
                             frm.ShowProgress("数据查询", (decimal)(i) / ss.Count);
                             var rids = ss.Skip(i).Take(50).Select(it => it.ID).ToList();
                             var con1 = new StudentSearchCondition();
-                            con1.StudentIDS = rids;
+                            con1.StudentIDs = rids;
                             con1.DateRange = new DateTimeRange(dt开始训练日期.Value.Date, dt结束训练日期.Value.Date);
                             var tempSteps = new APIClient(AppSettings.Current.ConnStr).GetList<long, StudentInProject>(con1).QueryObjects;
                             if (tempSteps != null && tempSteps.Count > 0)

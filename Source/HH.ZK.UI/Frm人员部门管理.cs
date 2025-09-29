@@ -101,7 +101,7 @@ namespace HH.ZK.UI
                         temp.Add(students[i]);
                         if (temp.Count >= 50 || i == students.Count - 1)
                         {
-                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchDelete<string, Student>(temp, AppSettings.Current.PhysicalProject.ID);
+                            CommandResult ret = new APIClient(AppSettings.Current.ConnStr).BatchDelete<string, Student>(temp);
                             frm.ShowProgress(string.Empty, (decimal)(i + 1) / students.Count);
                             temp.Clear();
                         }

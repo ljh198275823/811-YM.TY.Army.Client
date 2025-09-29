@@ -18,7 +18,7 @@ namespace HH.ZK.Model.SearchCondition
 
         public string StudentIDLike { get; set; }
 
-        public List<string> StudentIDS { get; set; }
+        public List<string> StudentIDs { get; set; }
 
         public string StudentID_IDNumber_CardID { get; set; }
 
