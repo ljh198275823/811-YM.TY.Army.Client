@@ -7,11 +7,7 @@ namespace HH.ZK.Model.SearchCondition
 {
     public class StudentWithDXCJSearchCondition : StudentSearchCondition
     {
-        public int? TestID { get; set; }
-
         public bool? HasScore { get; set; }
-
-        public ScoreRank? ScoreRank { get; set; }
 
         public bool? OverCount { get; set; }
 

@@ -120,15 +120,12 @@ namespace HH.ZK.UI
                 if (column.Name == "col总人数") con.HasScore = null;
                 else if (column.Name == "col未测试人数") con.HasScore = false;
                 else con.HasScore = true;
-
-                if (column.Name == "colManFen") con.ScoreRank = ScoreRank.满分;
-                else if (column.Name == "colYouxiu") con.ScoreRank = ScoreRank.优秀;
-                else if (column.Name == "colLianghao") con.ScoreRank = ScoreRank.良好;
-                else if (column.Name == "col优良人数") con.ScoreRank = ScoreRank.优良;
-                else if (column.Name == "col中等人数") con.ScoreRank = ScoreRank.中等;
-                else if (column.Name == "colJige") con.ScoreRank = ScoreRank.及格;
-                else if (column.Name == "colBujige") con.ScoreRank = ScoreRank.不及格;
-                else if (column.Name == "col合格人数") con.ScoreRank = ScoreRank.合格;
+                if (column.Name == "colYouxiu") con.Ranks = new List<string>() { "优秀" };
+                else if (column.Name == "colLianghao") con.Ranks = new List<string>() { "良好" };
+                else if (column.Name == "col优良人数") con.Ranks = new List<string>() { "优秀", "良好" };
+                else if (column.Name == "colJige") con.Ranks = new List<string>() { "及格" };
+                else if (column.Name == "colBujige") con.Ranks = new List<string>() { "不及格" };
+                else if (column.Name == "col合格人数") con.Ranks = new List<string>() { "优秀", "良好", "及格" };
                 var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithDXCJ>(con).QueryObjects;
                 if (ss != null && ss.Count > 0)
                 {

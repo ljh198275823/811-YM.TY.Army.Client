@@ -11,7 +11,7 @@ using LJH.GeneralLibrary.WinForm;
 
 namespace HH.ZK.UI
 {
-    public partial class FrmStatisticsTotal : FrmReportBaseWithPaging<long,TotalStatistic>
+    public partial class FrmStatisticsTotal : FrmReportBaseWithPaging<long, TotalStatistic>
     {
         public FrmStatisticsTotal()
         {
@@ -101,16 +101,15 @@ namespace HH.ZK.UI
                 else if (column.Name == "col未测试人数") con.TestStates = new List<TestCompleteState>() { TestCompleteState.未测试 };
                 else if (column.Name == "col未完成人数") con.TestStates = new List<TestCompleteState>() { TestCompleteState.部分科目完成 };
                 else con.TestStates = new List<TestCompleteState>() { TestCompleteState.全部完成 };
-                if (column.Name == "colManFen") con.TotalRank = ScoreRank.满分;
-                else if (column.Name == "colYuxiu") con.TotalRank = ScoreRank.优秀;
-                else if (column.Name == "colLianghao") con.TotalRank = ScoreRank.良好;
-                else if (column.Name == "col优良人数") con.TotalRank = ScoreRank.优良;
-                else if (column.Name == "col中等人数") con.TotalRank = ScoreRank.中等;
-                else if (column.Name == "colJige") con.TotalRank = ScoreRank.及格;
-                else if (column.Name == "colBujige") con.TotalRank = ScoreRank.不及格;
-                else if (column.Name == "col合格人数") con.TotalRank = ScoreRank.合格;
+                if (column.Name == "colYuxiu") con.Ranks = new List<string>() { "优秀" };
+                else if (column.Name == "colLianghao") con.Ranks = new List<string>() { "良好" };
+                else if (column.Name == "col优良人数") con.Ranks = new List<string>() { "优秀", "良好" };
+                else if (column.Name == "col中等人数") con.Ranks = new List<string>() { "中等" };
+                else if (column.Name == "colJige") con.Ranks = new List<string>() { "及格" };
+                else if (column.Name == "colBujige") con.Ranks = new List<string>() { "不及格" };
+                else if (column.Name == "col合格人数") con.Ranks = new List<string>() { "优秀", "良好", "中等", "及格" };
                 var ss = new APIClient(AppSettings.Current.ConnStr).GetList<string, StudentWithTotal>(con).QueryObjects;
-                if(ss!=null && ss.Count > 0)
+                if (ss != null && ss.Count > 0)
                 {
                     var frm = new Frm人员成绩查看();
                     frm.ProjectID = txtProject.SelectedProjectID;

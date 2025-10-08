@@ -49,5 +49,7 @@ namespace HH.ZK.Model.SearchCondition
         public DateTimeRange DateRange { get; set; }
 
         public int? TestID { get; set; }
+
+        public List<string> Ranks { get; set; }
     }
 }
