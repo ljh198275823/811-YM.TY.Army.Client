@@ -105,7 +105,7 @@ namespace HH.ZK.UI
             row.Cells["colSer"].Value = row.Index + 1;
             row.Cells["colRank"].Value = si.Rank;
             row.Cells["colResult"].Value = si.Result.Trim();
-            row.Cells["colScore"].Value = pi.ConvertToStr(si.Score1);
+            row.Cells["colScore"].Value = si.StrScore1;
             row.Tag = si;
         }
         #endregion

@@ -23,9 +23,13 @@ namespace HH.ZK.Model
 
         public decimal Score1 { get; set; }
 
+        public string StrScore1 { get; set; }
+
         public Operators? Operator2 { get; set; }
 
         public decimal? Score2 { get; set; }
+
+        public string StrScore2 { get; set; }
         /// <summary>
         /// 获取或设置测试成绩对应的得分
         /// </summary>

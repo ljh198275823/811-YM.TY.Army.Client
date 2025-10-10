@@ -165,6 +165,7 @@ namespace HH.ZK.UI
                     sis[i].Operator1 = Operators.BigOrEquel;
                     sis[i].Operator2 = Operators.Small;
                     sis[i].Score2 = sis[i - 1].Score1;
+                    sis[i].StrScore2 = sis[i - 1].StrScore1;
                     if (string.IsNullOrEmpty(sis[i].Rank)) sis[i].Rank = sis[i - 1].Rank; //等级列将Excel中的合并列分别赋到其余行
                     ret = 2;
                 }
@@ -174,6 +175,7 @@ namespace HH.ZK.UI
                     sis[i].Operator1 = Operators.SmallOrEquel;
                     sis[i].Operator2 = Operators.Big;
                     sis[i].Score2 = sis[i - 1].Score1;
+                    sis[i].StrScore2 = sis[i - 1].StrScore1;
                     if (string.IsNullOrEmpty(sis[i].Rank)) sis[i].Rank = sis[i - 1].Rank; //等级列将Excel中的合并列分别赋到其余行
                     ret = 1;
                 }
@@ -327,6 +329,7 @@ namespace HH.ZK.UI
                             StandardItem si = new StandardItem();
                             si.StandardID = standard.ID;
                             si.Score1 = pi.Convert(score);
+                            si.StrScore1 = si.Score1.ToString();
                             si.Result = result;
                             si.Rank = strRank;
                             sis.Add(si);
