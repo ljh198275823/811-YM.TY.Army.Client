@@ -63,9 +63,7 @@ namespace HH.ZK.UI
             List<StandardItem> objs = null;
             if (s != null && s.Items != null && s.Items.Count > 0)
             {
-                if (s.Items != null && s.Items.Count > 0) objs = (from item in s.Items
-                                                                  orderby item.Result descending  //以分数降序排列
-                                                                  select item).ToList();
+                if (s.Items != null && s.Items.Count > 0) objs = (from item in s.Items select item).ToList();
                 for (int i = 0; i < objs.Count; i++)
                 {
                     int row = dataGridview1.Rows.Add();
