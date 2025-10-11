@@ -19,17 +19,7 @@ namespace HH.ZK.Model
 
         public long StandardID { get; set; }
 
-        public Operators Operator1 { get; set; }
-
-        public decimal Score1 { get; set; }
-
         public string StrScore1 { get; set; }
-
-        public Operators? Operator2 { get; set; }
-
-        public decimal? Score2 { get; set; }
-
-        public string StrScore2 { get; set; }
         /// <summary>
         /// 获取或设置测试成绩对应的得分
         /// </summary>
@@ -41,25 +31,6 @@ namespace HH.ZK.Model
         #endregion
 
         #region 公共方法
-        /// <summary>
-        /// 检测成绩是否落在此标准项的范围内
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public bool InMyRange(decimal value)
-        {
-            if (value == Score1 && Operator1 != Operators.BigOrEquel && Operator1 != Operators.SmallOrEquel) return false;
-            if (value > Score1 && Operator1 != Operators.BigOrEquel && Operator1 != Operators.Big) return false;
-            if (value < Score1 && Operator1 != Operators.SmallOrEquel && Operator1 != Operators.Small) return false;
-            if (Operator2 != null && Score2 != null)
-            {
-                if (value == Score2.Value && Operator2.Value != Operators.BigOrEquel && Operator2.Value != Operators.SmallOrEquel) return false;
-                if (value > Score2.Value && Operator2.Value != Operators.Big && Operator2.Value != Operators.BigOrEquel) return false;
-                if (value < Score2.Value && Operator2.Value != Operators.Small && Operator2.Value != Operators.SmallOrEquel) return false;
-            }
-            return true;
-        }
-
         public StandardItem Clone()
         {
             return MemberwiseClone() as StandardItem;

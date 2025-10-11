@@ -154,39 +154,6 @@ namespace HH.ZK.UI
             return true;
         }
 
-        private List<StandardItem> DoSort(List<StandardItem> sis)
-        {
-            int ret = 0;
-            for (int i = 1; i < sis.Count; i++)
-            {
-                if (sis[i - 1].Score1 > sis[i].Score1 && ret != 1) //降序
-                {
-                    sis[i - 1].Operator1 = Operators.BigOrEquel;
-                    sis[i].Operator1 = Operators.BigOrEquel;
-                    sis[i].Operator2 = Operators.Small;
-                    sis[i].Score2 = sis[i - 1].Score1;
-                    sis[i].StrScore2 = sis[i - 1].StrScore1;
-                    if (string.IsNullOrEmpty(sis[i].Rank)) sis[i].Rank = sis[i - 1].Rank; //等级列将Excel中的合并列分别赋到其余行
-                    ret = 2;
-                }
-                else if (sis[i - 1].Score1 < sis[i].Score1 && ret != 2) //升序
-                {
-                    sis[i - 1].Operator1 = Operators.SmallOrEquel;
-                    sis[i].Operator1 = Operators.SmallOrEquel;
-                    sis[i].Operator2 = Operators.Big;
-                    sis[i].Score2 = sis[i - 1].Score1;
-                    sis[i].StrScore2 = sis[i - 1].StrScore1;
-                    if (string.IsNullOrEmpty(sis[i].Rank)) sis[i].Rank = sis[i - 1].Rank; //等级列将Excel中的合并列分别赋到其余行
-                    ret = 1;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            return sis;
-        }
-
         private void ShowStandardItems(Standard s, PhysicalItem pi)
         {
             string colName = string.Format("col_{0}_{1}", s.TestID.ToString(), s.Gender == Gender.Male ? 1 : 2);
@@ -201,7 +168,7 @@ namespace HH.ZK.UI
                 row.Cells["colSer"].Value = row.Index + 1;
                 row.Cells["colResult"].Value = s.Items[i].Result.Trim();
                 row.Cells["colRank"].Value = s.Items[i].Rank;
-                row.Cells[colName].Value = pi.ConvertToStr(s.Items[i].Score1);
+                row.Cells[colName].Value = s.Items[i].StrScore1;
             }
         }
 
@@ -323,23 +290,15 @@ namespace HH.ZK.UI
                         string strResult = viewSource.Rows[i].Cells[cmbResult.Text].Value != null ? viewSource.Rows[i].Cells[cmbResult.Text].Value.ToString().Trim() : null;
                         string strScore = viewSource.Rows[i].Cells[cmb.Text].Value != null ? viewSource.Rows[i].Cells[cmb.Text].Value.ToString().Trim() : null;
                         decimal result = 0;
-                        decimal score = 0;
-                        if (decimal.TryParse(strResult, out result) && pi.TryParse(strScore, out score))
+                        if (!string.IsNullOrEmpty(strScore) && decimal.TryParse(strResult, out result))
                         {
                             StandardItem si = new StandardItem();
                             si.StandardID = standard.ID;
-                            si.Score1 = pi.Convert(score);
-                            si.StrScore1 = si.Score1.ToString();
+                            si.StrScore1 = strScore;
                             si.Result = result;
                             si.Rank = strRank;
                             sis.Add(si);
                         }
-                    }
-                    sis = DoSort(sis);
-                    if (sis == null)
-                    {
-                        MessageBox.Show("源数据中的评分标准数据不能导入，请确保数据的格式为升序或降序排列", "出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        continue;
                     }
                     standard.Items = sis;
                     if (!_Standards.Contains(standard)) _Standards.Add(standard);
